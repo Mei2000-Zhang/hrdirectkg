@@ -1,23 +1,18 @@
 import React from "react";
-import { motion } from "framer-motion";
 import "tailwindcss/tailwind.css";
-import historyImage from "./images/history.jpg";
-import aboutImage from "./images/about.jpg";
 
 const sections = [
   {
     id: "about",
     title: "О нас",
     content:
-      "HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах. За последний год мы успешно трудоустроили более 500 специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.",
-    image: aboutImage,
+      "HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах.",
   },
   {
     id: "history",
     title: "Наша история",
     content:
-      "Основанное в 2015 году, наше агентство начинало с небольшого офиса в Бишкеке. За годы работы мы выросли в надежного партнера для соискателей, помогая им находить работу за границей с лучшими условиями.",
-    image: historyImage,
+      "Основанное в 2015 году, наше агентство начинало с небольшого офиса в Бишкеке.",
   },
 ];
 
@@ -32,27 +27,15 @@ const App = () => {
         <a href="#history" className="hover:text-gray-200 transition">История</a>
         <a href="#contact" className="hover:text-gray-200 transition">Контакты</a>
       </nav>
-      {sections.map((section, index) => (
-        <motion.section
+      {sections.map((section) => (
+        <section
           key={section.id}
           id={section.id}
-          className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 my-10 flex flex-col md:flex-row items-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 my-10"
         >
-          <img
-            src={section.image}
-            alt={section.title}
-            className="w-full md:w-1/2 rounded-lg shadow-md mb-6 md:mb-0 md:mr-6"
-          />
-          <div>
-            <h2 className="text-2xl font-bold mb-4 text-orange-600">
-              {section.title}
-            </h2>
-            <p className="text-gray-700">{section.content}</p>
-          </div>
-        </motion.section>
+          <h2 className="text-2xl font-bold mb-4 text-orange-600">{section.title}</h2>
+          <p className="text-gray-700">{section.content}</p>
+        </section>
       ))}
       <section id="contact" className="text-center py-10 bg-orange-500 text-white">
         <h2 className="text-2xl font-bold">Свяжитесь с нами</h2>
