@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Direct KG - Трудоустройство за границей</title>
+    <title>HR Direct KG - Работа за границей</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -63,22 +63,6 @@
         .button:hover {
             background-color: #e65c00;
         }
-        .icon-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .icon-block {
-            width: 30%;
-            text-align: center;
-            padding: 20px;
-        }
-        .icon-block img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-        }
         footer {
             background: linear-gradient(90deg, #ff6600, #ff8800);
             color: white;
@@ -103,24 +87,8 @@
     </nav>
     <section id="about">
         <h2>О нас</h2>
-        <p>HR Direct KG – ваш надежный партнер в трудоустройстве за границей. Мы помогаем специалистам найти работу в России, Турции, Венгрии и других странах.</p>
-        <div class="icon-section">
-            <div class="icon-block">
-                <img src="job.png" alt="Работа">
-                <h3>500+ успешных трудоустройств</h3>
-                <p>Мы помогли сотням людей найти работу с достойными условиями.</p>
-            </div>
-            <div class="icon-block">
-                <img src="partners.png" alt="Партнеры">
-                <h3>Международные партнеры</h3>
-                <p>Сотрудничаем с ведущими работодателями, обеспечивая легальное трудоустройство.</p>
-            </div>
-            <div class="icon-block">
-                <img src="support.png" alt="Поддержка">
-                <h3>Полная поддержка</h3>
-                <p>От консультации до оформления документов – мы всегда рядом.</p>
-            </div>
-        </div>
+        <p id="about-text">Нажмите кнопку, чтобы узнать больше!</p>
+        <button class="button" onclick="updateAbout()">Подробнее</button>
     </section>
     <section id="jobs">
         <h2>Актуальные вакансии</h2>
@@ -129,7 +97,8 @@
     </section>
     <section id="reviews">
         <h2>Отзывы наших клиентов</h2>
-        <p>Более 500 успешных трудоустройств. Доверьтесь профессионалам!</p>
+        <p id="review-text">Отзывы загружаются...</p>
+        <button class="button" onclick="loadReviews()">Показать отзывы</button>
     </section>
     <section id="contact">
         <h2>Свяжитесь с нами</h2>
@@ -140,5 +109,19 @@
     <footer>
         &copy; 2024 HR Direct KG - Все права защищены.
     </footer>
+    <script>
+        function updateAbout() {
+            document.getElementById("about-text").innerText = "HR Direct KG – агентство по официальному трудоустройству за границей. Мы работаем с надежными партнерами и помогаем вам найти достойную работу!";
+        }
+        
+        function loadReviews() {
+            const reviews = [
+                "Отличное агентство! Мне помогли быстро найти работу в Турции.",
+                "Очень профессиональный подход, рекомендую!",
+                "Благодарю HR Direct KG за помощь в трудоустройстве в Венгрии!"
+            ];
+            document.getElementById("review-text").innerHTML = reviews.map(review => `<p>${review}</p>`).join('');
+        }
+    </script>
 </body>
 </html>
