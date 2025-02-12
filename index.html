@@ -1,127 +1,86 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Direct KG - Работа за границей</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(90deg, #ff6600, #ff8800);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        nav {
-            text-align: center;
-            padding: 15px;
-            background-color: #ff8800;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            display: inline-block;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease-in-out;
-        }
-        nav a:hover {
-            background-color: #ff6600;
-            border-radius: 5px;
-        }
-        section {
-            padding: 50px;
-            text-align: center;
-            background-color: white;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 15px;
-            color: white;
-            background-color: #ff6600;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease-in-out;
-        }
-        .button:hover {
-            background-color: #e65c00;
-        }
-        footer {
-            background: linear-gradient(90deg, #ff6600, #ff8800);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+
+const reviews = [
+  "Отличное агентство! Помогли найти работу быстро.",
+  "Все было прозрачно, доволен результатом!",
+  "Благодарю HR Direct за профессионализм."
+];
+
+export default function Home() {
+  const [showMore, setShowMore] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-900">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center p-6 text-2xl font-bold uppercase">
         HR Direct KG - Работа за границей
-    </header>
-    <nav>
-        <a href="#about">О нас</a>
-        <a href="#jobs">Вакансии</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contact">Контакты</a>
-    </nav>
-    <section id="about">
-        <h2>О нас</h2>
-        <p id="about-text">Нажмите кнопку, чтобы узнать больше!</p>
-        <button class="button" onclick="updateAbout()">Подробнее</button>
-    </section>
-    <section id="jobs">
-        <h2>Актуальные вакансии</h2>
-        <p>Мы предлагаем работу в гостиничном бизнесе, строительстве, производстве и других сферах.</p>
-        <a href="#contact" class="button">Оставить заявку</a>
-    </section>
-    <section id="reviews">
-        <h2>Отзывы наших клиентов</h2>
-        <p id="review-text">Отзывы загружаются...</p>
-        <button class="button" onclick="loadReviews()">Показать отзывы</button>
-    </section>
-    <section id="contact">
-        <h2>Свяжитесь с нами</h2>
-        <p>Напишите нам в мессенджерах:</p>
-        <a href="https://wa.me/996709686538" class="button">WhatsApp</a>
-        <a href="https://t.me/hrdirect" class="button">Telegram</a>
-    </section>
-    <footer>
+      </header>
+      
+      {/* Navigation */}
+      <nav className="bg-orange-500 text-white flex justify-center space-x-6 p-4 font-semibold">
+        <a href="#about" className="hover:underline">О нас</a>
+        <a href="#jobs" className="hover:underline">Вакансии</a>
+        <a href="#reviews" className="hover:underline">Отзывы</a>
+        <a href="#contact" className="hover:underline">Контакты</a>
+      </nav>
+      
+      {/* About Section */}
+      <section id="about" className="p-8 text-center">
+        <h2 className="text-3xl font-bold">О нас</h2>
+        <p className="mt-4">HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах.</p>
+        {showMore && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2">
+            За последний год мы успешно трудоустроили более 500 специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.
+          </motion.p>
+        )}
+        <Button onClick={() => setShowMore(!showMore)} className="mt-4">
+          {showMore ? "Скрыть" : "Подробнее"}
+        </Button>
+      </section>
+      
+      {/* Jobs Section */}
+      <section id="jobs" className="p-8 text-center bg-white shadow-md rounded-xl mx-6">
+        <h2 className="text-3xl font-bold">Актуальные вакансии</h2>
+        <p className="mt-4">Мы предлагаем работу в гостиничном бизнесе, строительстве, производстве и других сферах.</p>
+        <Button className="mt-4">Оставить заявку</Button>
+      </section>
+      
+      {/* Reviews Section */}
+      <section id="reviews" className="p-8 text-center">
+        <h2 className="text-3xl font-bold">Отзывы наших клиентов</h2>
+        {showReviews && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-4">
+            {reviews.map((review, index) => (
+              <p key={index} className="mt-2 italic">"{review}"</p>
+            ))}
+          </motion.div>
+        )}
+        <Button onClick={() => setShowReviews(!showReviews)} className="mt-4">
+          {showReviews ? "Скрыть отзывы" : "Показать отзывы"}
+        </Button>
+      </section>
+      
+      {/* Contact Section */}
+      <section id="contact" className="p-8 text-center bg-white shadow-md rounded-xl mx-6">
+        <h2 className="text-3xl font-bold">Свяжитесь с нами</h2>
+        <p className="mt-4">Напишите нам в мессенджерах:</p>
+        <div className="mt-4 space-x-4">
+          <Button asChild>
+            <a href="https://wa.me/996709686538">WhatsApp</a>
+          </Button>
+          <Button asChild>
+            <a href="https://t.me/hrdirect">Telegram</a>
+          </Button>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center p-4 mt-8">
         &copy; 2024 HR Direct KG - Все права защищены.
-    </footer>
-    <script>
-        function updateAbout() {
-            document.getElementById("about-text").innerText = "HR Direct KG – агентство по официальному трудоустройству за границей. Мы работаем с надежными партнерами и помогаем вам найти достойную работу!";
-        }
-        
-        function loadReviews() {
-            const reviews = [
-                "Отличное агентство! Мне помогли быстро найти работу в Турции.",
-                "Очень профессиональный подход, рекомендую!",
-                "Благодарю HR Direct KG за помощь в трудоустройстве в Венгрии!"
-            ];
-            document.getElementById("review-text").innerHTML = reviews.map(review => `<p>${review}</p>`).join('');
-        }
-    </script>
-</body>
-</html>
+      </footer>
+    </div>
+  );
+}
