@@ -1,86 +1,74 @@
-import { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import "tailwindcss/tailwind.css";
+import historyImage from "./images/history.jpg";
+import aboutImage from "./images/about.jpg";
 
-const reviews = [
-  "Отличное агентство! Помогли найти работу быстро.",
-  "Все было прозрачно, доволен результатом!",
-  "Благодарю HR Direct за профессионализм."
+const sections = [
+  {
+    id: "about",
+    title: "О нас",
+    content:
+      "HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах. За последний год мы успешно трудоустроили более 500 специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.",
+    image: aboutImage,
+  },
+  {
+    id: "history",
+    title: "Наша история",
+    content:
+      "Основанное в 2015 году, наше агентство начинало с небольшого офиса в Бишкеке. За годы работы мы выросли в надежного партнера для соискателей, помогая им находить работу за границей с лучшими условиями.",
+    image: historyImage,
+  },
 ];
 
-export default function Home() {
-  const [showMore, setShowMore] = useState(false);
-  const [showReviews, setShowReviews] = useState(false);
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center p-6 text-2xl font-bold uppercase">
+    <div className="bg-gray-100 text-gray-900">
+      <header className="bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center py-6 text-3xl font-bold">
         HR Direct KG - Работа за границей
       </header>
-      
-      {/* Navigation */}
-      <nav className="bg-orange-500 text-white flex justify-center space-x-6 p-4 font-semibold">
-        <a href="#about" className="hover:underline">О нас</a>
-        <a href="#jobs" className="hover:underline">Вакансии</a>
-        <a href="#reviews" className="hover:underline">Отзывы</a>
-        <a href="#contact" className="hover:underline">Контакты</a>
+      <nav className="bg-orange-600 text-white py-4 flex justify-center space-x-6 text-lg font-semibold">
+        <a href="#about" className="hover:text-gray-200">О нас</a>
+        <a href="#history" className="hover:text-gray-200">История</a>
+        <a href="#contact" className="hover:text-gray-200">Контакты</a>
       </nav>
-      
-      {/* About Section */}
-      <section id="about" className="p-8 text-center">
-        <h2 className="text-3xl font-bold">О нас</h2>
-        <p className="mt-4">HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах.</p>
-        {showMore && (
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2">
-            За последний год мы успешно трудоустроили более 500 специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.
-          </motion.p>
-        )}
-        <Button onClick={() => setShowMore(!showMore)} className="mt-4">
-          {showMore ? "Скрыть" : "Подробнее"}
-        </Button>
+      {sections.map((section, index) => (
+        <motion.section
+          key={section.id}
+          id={section.id}
+          className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 my-10 flex flex-col md:flex-row items-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={section.image}
+            alt={section.title}
+            className="w-full md:w-1/2 rounded-lg shadow-md mb-6 md:mb-0 md:mr-6"
+          />
+          <div>
+            <h2 className="text-2xl font-bold mb-4 text-orange-600">
+              {section.title}
+            </h2>
+            <p className="text-gray-700">{section.content}</p>
+          </div>
+        </motion.section>
+      ))}
+      <section id="contact" className="text-center py-10 bg-orange-500 text-white">
+        <h2 className="text-2xl font-bold">Свяжитесь с нами</h2>
+        <p className="my-4">Напишите нам в мессенджерах:</p>
+        <a href="https://wa.me/996709686538" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition">
+          WhatsApp
+        </a>
+        <a href="https://t.me/hrdirect" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition ml-4">
+          Telegram
+        </a>
       </section>
-      
-      {/* Jobs Section */}
-      <section id="jobs" className="p-8 text-center bg-white shadow-md rounded-xl mx-6">
-        <h2 className="text-3xl font-bold">Актуальные вакансии</h2>
-        <p className="mt-4">Мы предлагаем работу в гостиничном бизнесе, строительстве, производстве и других сферах.</p>
-        <Button className="mt-4">Оставить заявку</Button>
-      </section>
-      
-      {/* Reviews Section */}
-      <section id="reviews" className="p-8 text-center">
-        <h2 className="text-3xl font-bold">Отзывы наших клиентов</h2>
-        {showReviews && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-4">
-            {reviews.map((review, index) => (
-              <p key={index} className="mt-2 italic">"{review}"</p>
-            ))}
-          </motion.div>
-        )}
-        <Button onClick={() => setShowReviews(!showReviews)} className="mt-4">
-          {showReviews ? "Скрыть отзывы" : "Показать отзывы"}
-        </Button>
-      </section>
-      
-      {/* Contact Section */}
-      <section id="contact" className="p-8 text-center bg-white shadow-md rounded-xl mx-6">
-        <h2 className="text-3xl font-bold">Свяжитесь с нами</h2>
-        <p className="mt-4">Напишите нам в мессенджерах:</p>
-        <div className="mt-4 space-x-4">
-          <Button asChild>
-            <a href="https://wa.me/996709686538">WhatsApp</a>
-          </Button>
-          <Button asChild>
-            <a href="https://t.me/hrdirect">Telegram</a>
-          </Button>
-        </div>
-      </section>
-      
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center p-4 mt-8">
+      <footer className="bg-orange-700 text-white text-center py-4 font-bold">
         &copy; 2024 HR Direct KG - Все права защищены.
       </footer>
     </div>
   );
-}
+};
+
+export default App;
