@@ -23,14 +23,14 @@ const sections = [
 
 const App = () => {
   return (
-    <div className="bg-gray-100 text-gray-900">
+    <div className="bg-gray-100 text-gray-900 scroll-smooth">
       <header className="bg-gradient-to-r from-orange-500 to-orange-700 text-white text-center py-6 text-3xl font-bold">
         HR Direct KG - Работа за границей
       </header>
       <nav className="bg-orange-600 text-white py-4 flex justify-center space-x-6 text-lg font-semibold">
-        <a href="#about" className="hover:text-gray-200">О нас</a>
-        <a href="#history" className="hover:text-gray-200">История</a>
-        <a href="#contact" className="hover:text-gray-200">Контакты</a>
+        <a href="#about" className="hover:text-gray-200 transition">О нас</a>
+        <a href="#history" className="hover:text-gray-200 transition">История</a>
+        <a href="#contact" className="hover:text-gray-200 transition">Контакты</a>
       </nav>
       {sections.map((section, index) => (
         <motion.section
@@ -57,12 +57,14 @@ const App = () => {
       <section id="contact" className="text-center py-10 bg-orange-500 text-white">
         <h2 className="text-2xl font-bold">Свяжитесь с нами</h2>
         <p className="my-4">Напишите нам в мессенджерах:</p>
-        <a href="https://wa.me/996709686538" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition">
-          WhatsApp
-        </a>
-        <a href="https://t.me/hrdirect" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition ml-4">
-          Telegram
-        </a>
+        <div className="flex justify-center">
+          <a href="https://wa.me/996709686538" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition">
+            WhatsApp
+          </a>
+          <a href="https://t.me/hrdirect" className="bg-white text-orange-600 px-6 py-3 rounded-lg shadow-md font-bold hover:bg-gray-200 transition ml-4">
+            Telegram
+          </a>
+        </div>
       </section>
       <footer className="bg-orange-700 text-white text-center py-4 font-bold">
         &copy; 2024 HR Direct KG - Все права защищены.
