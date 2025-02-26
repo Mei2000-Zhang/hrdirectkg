@@ -115,21 +115,56 @@
   <footer>
     &copy; 2025 HR Direct KG - Все права защищены.
   </footer>
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Отслеживание кликов по кнопке WhatsApp
-    document.querySelector('a[href^="https://wa.me"]').addEventListener("click", function () {
-      ym(100066358, "reachGoal", "click_whatsapp"); 
-      console.log("Цель 'click_whatsapp' отправлена в Яндекс.Метрику");
-    });
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    // Отслеживание кликов по кнопке Telegram
-    document.querySelector('a[href^="https://t.me"]').addEventListener("click", function () {
-      ym(100066358, "reachGoal", "click_telegram");
-      console.log("Цель 'click_telegram' отправлена в Яндекс.Метрику");
-    });
+   ym(100066358, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/100066358" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Проверяем, загружена ли Яндекс.Метрика
+    if (typeof ym !== "function") {
+      console.warn("Яндекс.Метрика не загружена.");
+      return;
+    }
+
+    // Функция для отправки событий в Яндекс.Метрику
+    function trackClick(target, goalName) {
+      target.addEventListener("click", function () {
+        ym(100066358, "reachGoal", goalName);
+        console.log(`Цель '${goalName}' отправлена в Яндекс.Метрику`);
+      });
+    }
+
+    // Ищем кнопки WhatsApp и Telegram
+    let whatsappButton = document.querySelector("a[href^='https://wa.me/']");
+    let telegramButton = document.querySelector("a[href^='https://t.me/']");
+
+    if (whatsappButton) {
+      trackClick(whatsappButton, "click_whatsapp");
+    } else {
+      console.warn("Кнопка WhatsApp не найдена.");
+    }
+
+    if (telegramButton) {
+      trackClick(telegramButton, "click_telegram");
+    } else {
+      console.warn("Кнопка Telegram не найдена.");
+    }
   });
 </script>
+
 
 </body>
 </html>
