@@ -82,6 +82,16 @@
       background-color: #ff4500;
     }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2RGXJ59QG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M2RGXJ59QG');
+  </script>
+
 </head>
 <body>
 
@@ -115,48 +125,40 @@
   <footer>
     &copy; 2025 HR Direct KG - Все права защищены.
   </footer>
- 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Проверяем, загружена ли Яндекс.Метрика
-    if (typeof ym !== "function") {
-      console.warn("Яндекс.Метрика не загружена.");
-      return;
-    }
 
-    // Функция для отправки событий в Яндекс.Метрику
-    function trackClick(target, goalName) {
-      target.addEventListener("click", function () {
-        ym(100066358, "reachGoal", goalName);
-        console.log(`Цель '${goalName}' отправлена в Яндекс.Метрику`);
-      });
-    }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Проверяем, загружена ли Яндекс.Метрика
+      if (typeof ym !== "function") {
+        console.warn("Яндекс.Метрика не загружена.");
+        return;
+      }
 
-    // Ищем кнопки WhatsApp и Telegram
-    let whatsappButton = document.querySelector("a[href^='https://wa.me/']");
-    let telegramButton = document.querySelector("a[href^='https://t.me/']");
+      // Функция для отправки событий в Яндекс.Метрику
+      function trackClick(target, goalName) {
+        target.addEventListener("click", function () {
+          ym(100066358, "reachGoal", goalName);
+          console.log(`Цель '${goalName}' отправлена в Яндекс.Метрику`);
+        });
+      }
 
-    if (whatsappButton) {
-      trackClick(whatsappButton, "click_whatsapp");
-    } else {
-      console.warn("Кнопка WhatsApp не найдена.");
-    }
+      // Ищем кнопки WhatsApp и Telegram
+      let whatsappButton = document.querySelector("a[href^='https://wa.me/']");
+      let telegramButton = document.querySelector("a[href^='https://t.me/']");
 
-    if (telegramButton) {
-      trackClick(telegramButton, "click_telegram");
-    } else {
-      console.warn("Кнопка Telegram не найдена.");
-    }
-  });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2RGXJ59QG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      if (whatsappButton) {
+        trackClick(whatsappButton, "click_whatsapp");
+      } else {
+        console.warn("Кнопка WhatsApp не найдена.");
+      }
 
-  gtag('config', 'G-M2RGXJ59QG');
-</script>
+      if (telegramButton) {
+        trackClick(telegramButton, "click_telegram");
+      } else {
+        console.warn("Кнопка Telegram не найдена.");
+      }
+    });
+  </script>
 
 </body>
 </html>
