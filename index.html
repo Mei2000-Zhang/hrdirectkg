@@ -100,11 +100,13 @@
   </header>
 
   <nav>
-    <a href="#about">О нас</a>
-    <a href="#history">Наша история</a>
-    <a href="#contact">Контакты</a>
+  <ul>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#history">Наша история</a></li>
+    <li><a href="#contact">Контакты</a></li>
     <li><a href="russia.html">Работа в России</a></li>
-  </nav>
+  </ul>
+</nav>
 
   <section id="about">
     <h2>О нас</h2>
@@ -122,49 +124,29 @@
     <a href="https://wa.me/996709686538" class="button">WhatsApp</a>
     <a href="https://t.me/hrdirect" class="button">Telegram</a>
   </div>
-  
-  <section id="russia">
-    <h2>Работа в России</h2>
-    <iframe src="russia.html"></iframe>
-  </section>
 
   <footer>
     &copy; 2025 HR Direct KG - Все права защищены.
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Проверяем, загружена ли Яндекс.Метрика
-      if (typeof ym !== "function") {
-        console.warn("Яндекс.Метрика не загружена.");
-        return;
-      }
+ <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) { return; }
+        }
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-      // Функция для отправки событий в Яндекс.Метрику
-      function trackClick(target, goalName) {
-        target.addEventListener("click", function () {
-          ym(100066358, "reachGoal", goalName);
-          console.log(`Цель '${goalName}' отправлена в Яндекс.Метрику`);
-        });
-      }
-
-      // Ищем кнопки WhatsApp и Telegram
-      let whatsappButton = document.querySelector("a[href^='https://wa.me/']");
-      let telegramButton = document.querySelector("a[href^='https://t.me/']");
-
-      if (whatsappButton) {
-        trackClick(whatsappButton, "click_whatsapp");
-      } else {
-        console.warn("Кнопка WhatsApp не найдена.");
-      }
-
-      if (telegramButton) {
-        trackClick(telegramButton, "click_telegram");
-      } else {
-        console.warn("Кнопка Telegram не найдена.");
-      }
+    ym(100066358, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
     });
-  </script>
+</script>
+  <a href="https://wa.me/996709686538" class="button" target="_blank">WhatsApp</a>
+<a href="https://t.me/hrdirect" class="button" target="_blank">Telegram</a>
 </body>
 </html>
 
