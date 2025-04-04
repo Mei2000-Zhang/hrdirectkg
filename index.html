@@ -95,57 +95,33 @@
       font-weight: bold;
       margin: 10px;
     }
-     .image-collage {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    .background-collage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "d e f";
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100vh;
+  padding: 10px;
 }
 
-.image-box {
-  flex: 1 1 calc(33.333% - 20px);
-  height: 33.33vh;
+.collage-item {
   background-size: cover;
   background-position: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.image-box:hover {
-  transform: scale(1.05);
-}
-
-/* Модальное окно */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 90%;
-  margin-top: 5%;
   border-radius: 10px;
-  box-shadow: 0 0 20px #fff;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
 }
 
-.modal-close {
-  position: absolute;
-  top: 20px; right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
+.collage-item:hover {
+  filter: brightness(1);
 }
 
     }
@@ -161,7 +137,16 @@
   </script>
 </head>
 <body>
-
+   
+<div class="background-collage">
+  <div class="collage-item" style="background-image: url('images/img1.jpg'); grid-area: a;"></div>
+  <div class="collage-item" style="background-image: url('images/img2.jpg'); grid-area: b;"></div>
+  <div class="collage-item" style="background-image: url('images/img3.jpg'); grid-area: c;"></div>
+  <div class="collage-item" style="background-image: url('images/img4.jpg'); grid-area: d;"></div>
+  <div class="collage-item" style="background-image: url('images/img5.jpg'); grid-area: e;"></div>
+  <div class="collage-item" style="background-image: url('images/img6.jpg'); grid-area: f;"></div>
+</div>
+   
   <header>
     HR Direct KG - Работа за границей
   </header>
@@ -182,21 +167,6 @@
     <h2>О нас</h2>
     <p>HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах. Мы успешно трудоустраиваем специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.</p>
   </section>
-   
-   <section class="image-collage">
-  <div class="image-box" style="background-image: url('images photo1.jpg');" onclick="openModal('images/img1.jpg')"></div>
-  <div class="image-box" style="background-image: url('images photo2.jpg');" onclick="openModal('images/img2.jpg')"></div>
-  <div class="image-box" style="background-image: url('images photo3.jpg');" onclick="openModal('images/img3.jpg')"></div>
-  <div class="image-box" style="background-image: url('images photo4.jpg');" onclick="openModal('images/img4.jpg')"></div>
-  <div class="image-box" style="background-image: url('images photo5.jpg');" onclick="openModal('images/img5.jpg')"></div>
-  <div class="image-box" style="background-image: url('hr direct kg background.jpg');" onclick="openModal('images/img6.jpg')"></div>
-</section>
-
-<!-- Модальное окно -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <span class="modal-close">&times;</span>
-  <img id="modal-img" class="modal-content">
-</div>
 
  <section id="history">
     <h2>Наша история</h2>
@@ -229,16 +199,7 @@
         trackLinks:true,
         accurateTrackBounce:true
     });
-<script>
-  function openModal(imgSrc) {
-    document.getElementById('modal-img').src = imgSrc;
-    document.getElementById('modal').style.display = 'block';
-  }
 
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-  }
-</script>
    
 </body>
 </html>
