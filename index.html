@@ -95,34 +95,24 @@
       font-weight: bold;
       margin: 10px;
     }
-     /* Стили для коллажа изображений */
-     .collage {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      max-width: 90%;
-      margin: 20px auto;
-    }
+     .image-collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .collage img {
-      width: calc(33.33% - 10px); /* 3 колонки */
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      .collage img {
-        width: calc(50% - 10px); /* 2 колонки на планшетах */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .collage img {
-        width: 100%; /* 1 колонка на мобильных устройствах */
-      }
+.image-box {
+  width: calc(33.33% - 10px);
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
     }
     </style>
 
@@ -158,17 +148,14 @@
     <p>HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах. Мы успешно трудоустраиваем специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.</p>
   </section>
    
-    <section id="collage">
-    <h2>Наши фотографии</h2>
-    <div class="collage">
-      <img src="images photo1.jpg" alt="Фото 1">
-      <img src="images photo2.jpg" alt="Фото 2">
-      <img src="images photo3.jpg" alt="Фото 3">
-      <img src="images photo4.jpg" alt="Фото 4">
-      <img src="images photo5.jpg" alt="Фото 5">
-      <img src="hr direct kg background.jpg" alt="Фото 6">
-    </div>
-  </section>
+    <section class="image-collage">
+  <div class="image-box" style="background-image: url('images img1.jpg');"></div>
+  <div class="image-box" style="background-image: url('images img2.jpg');"></div>
+  <div class="image-box" style="background-image: url('images img3.jpg');"></div>
+  <div class="image-box" style="background-image: url('images img4.jpg');"></div>
+  <div class="image-box" style="background-image: url('images img5.jpg');"></div>
+  <div class="image-box" style="background-image: url('hr direct kg background.jpg');"></div>
+</section>
 
  <section id="history">
     <h2>Наша история</h2>
