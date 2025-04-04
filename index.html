@@ -100,19 +100,54 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .image-box {
-  width: calc(33.33% - 10px);
-  height: 250px;
+  flex: 1 1 calc(33.333% - 20px);
+  height: 33.33vh;
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
     }
     </style>
 
@@ -148,14 +183,20 @@
     <p>HR Direct KG – агентство по официальному трудоустройству в России, Турции, Венгрии и других странах. Мы успешно трудоустраиваем специалистов в различные отрасли, включая гостиничный бизнес, строительство и производство.</p>
   </section>
    
-    <section class="image-collage">
-  <div class="image-box" style="background-image: url('images photo1.jpg');"></div>
-  <div class="image-box" style="background-image: url('images photo2.jpg');"></div>
-  <div class="image-box" style="background-image: url('images photo3.jpg');"></div>
-  <div class="image-box" style="background-image: url('images photo4.jpg');"></div>
-  <div class="image-box" style="background-image: url('images photo5.jpg');"></div>
-  <div class="image-box" style="background-image: url('hr direct kg background.jpg');"></div>
+   <section class="image-collage">
+  <div class="image-box" style="background-image: url('images photo1.jpg');" onclick="openModal('images/img1.jpg')"></div>
+  <div class="image-box" style="background-image: url('images photo2.jpg');" onclick="openModal('images/img2.jpg')"></div>
+  <div class="image-box" style="background-image: url('images photo3.jpg');" onclick="openModal('images/img3.jpg')"></div>
+  <div class="image-box" style="background-image: url('images photo4.jpg');" onclick="openModal('images/img4.jpg')"></div>
+  <div class="image-box" style="background-image: url('images photo5.jpg');" onclick="openModal('images/img5.jpg')"></div>
+  <div class="image-box" style="background-image: url('hr direct kg background.jpg');" onclick="openModal('images/img6.jpg')"></div>
 </section>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="modal-close">&times;</span>
+  <img id="modal-img" class="modal-content">
+</div>
 
  <section id="history">
     <h2>Наша история</h2>
