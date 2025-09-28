@@ -110,6 +110,15 @@
 
     /* Floating WA */
     .wa{position:fixed; right:16px; bottom:16px; width:54px; height:54px; border-radius:50%; background:var(--accent-grad); display:grid; place-items:center; box-shadow:0 12px 26px rgba(255,122,24,.4); z-index:60}
+  .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px}
+.price-card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; text-align:center}
+.price{font-size:22px; font-weight:700; color:#ff9a44}
+
+.reviews{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:20px}
+.review{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:16px; border-radius:12px; font-size:14px}
+.review strong{display:block; margin-bottom:6px}
+
+.map{margin-top:20px; border-radius:12px; overflow:hidden;}
   </style>
 </head>
 <body>
@@ -170,7 +179,50 @@
       <div class="heroArt" aria-hidden="true"></div>
     </div>
   </section>
+    </section> <!-- конец hero -->
 
+  <!-- 🔹 Цены на оформление виз -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Цены на оформление виз</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Шенген</h3>
+          <p class="price">от 100$</p>
+          <p>Анкета, страховка, запись.</p>
+        </div>
+        <div class="price-card">
+          <h3>Япония</h3>
+          <p class="price">от 120$</p>
+          <p>Сбор документов, брони, перевод.</p>
+        </div>
+        <div class="price-card">
+          <h3>ОАЭ</h3>
+          <p class="price">от 100$</p>
+          <p>Электронная виза + страховка.</p>
+        </div>
+        <div class="price-card">
+          <h3>Китай</h3>
+          <p class="price">от 150$</p>
+          <p>Бизнес и туристические визы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="reviews" class="section">
+  <div class="container">
+    <h2>Отзывы клиентов</h2>
+    <div class="reviews">
+      <div class="review"><strong>Алия, Бишкек</strong>«Спасибо HR Direct KG! Получила шенгенскую визу без проблем. Всё объяснили и помогли со страховкой.»</div>
+      <div class="review"><strong>Нурбек, Ош</strong>«Оформил визу в Японию. Процесс понятный, документы приняли с первого раза.»</div>
+      <div class="review"><strong>Айдана, Бишкек</strong>«Обратилась за визой в ОАЭ. Всё сделали быстро, виза пришла на почту через 2 дня.»</div>
+    </div>
+  </div>
+</section>
+
+  <!-- Popular visas / countries -->
+  <section id="visas" class="section">
+    
   <!-- Popular visas / countries -->
   <section id="visas" class="section">
     <div class="container">
@@ -282,9 +334,14 @@
     </div>
   </section>
 
-  <footer>
+    <footer>
     <div class="container">
-      © <span id="year"></span> HR Direct KG — визовая поддержка. Все права защищены.
+      <p>© <span id="year"></span> HR Direct KG — визовая поддержка. Все права защищены.</p>
+      <p>Адрес: г. Бишкек, ул. Ибраимова 115/3а, 4 этаж, офис 405</p>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123!2d74.588!3d42.872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec824!2z0YPQuy4g0JrQu9Cw0YHQutC-0LPQviAxMTUvM8KgLCDQkNC70LXRgNC90YvQuSwg0JrRg9GA0LPRgNCw0L3RgiA!5e0!3m2!1sru!2skg!4v0000000000000"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
   </footer>
 
