@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mei2000-zhang.github.io/hrdirectkg/sitemap.xml
