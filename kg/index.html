@@ -170,6 +170,22 @@
     font-size: 22px;
   }
 }
+    /* === Hero mobile fix (anti-cut) === */
+@media (max-width: 400px){
+  .hero .box{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero .box > div{
+    min-width: 0;
+  }
+
+  .h1{
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+}
   </style>
 </head>
 
