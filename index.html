@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HR Direct KG — Оформление виз: Шенген, Китай, ОАЭ</title>
-  <meta name="description" content="Помощь в оформлении виз: Шенген, Япония, ОАЭ, Китай и др. Консультации, анкеты, запись, страховка. HR Direct KG, Бишкек." />
+  <title>HR Direct KG — Визовая поддержка</title>
+  <meta name="description" content="HR Direct KG — визовая поддержка в Бишкеке. Анкеты, запись на подачу, страховка и сопровождение." />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
@@ -13,412 +13,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0b0c;          /* общий фон */
-      --surface:#111114;     /* карточки/хедер */
-      --muted:#9aa1ab;       /* вторичный текст */
-      --text:#f6f7f9;        /* основной текст на тёмном фоне */
-      --brand-1:#ff7a18;     /* оранжевый 1 */
-      --brand-2:#ff9a44;     /* оранжевый 2 */
-      --brand-3:#ffd194;     /* оранжевый 3 */
+      --bg:#0b0b0c;
+      --muted:#9aa1ab;
+      --text:#f6f7f9;
+      --brand-1:#ff7a18;
+      --brand-2:#ff9a44;
+      --brand-3:#ffd194;
       --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-      --radius:16px;
-      --shadow:0 10px 25px rgba(0,0,0,.3);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text); background:radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%), radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%), var(--bg);
-      line-height:1.55;
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
+        var(--bg);
     }
-    a{color:inherit; text-decoration:none}
+    a{text-decoration:none; color:inherit}
     .container{max-width:1100px; margin:0 auto; padding:0 16px}
 
-    /* === Topbar === */
+    /* Topbar */
     .topbar{background:#0f0f12; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px}
-    .topbar .wrap{display:flex; gap:16px; justify-content:space-between; align-items:center; padding:8px 0}
-    .topbar .langs{display:flex; gap:10px; opacity:.9}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06)}
-    .chip svg{opacity:.9}
+    .topbar .wrap{display:flex; justify-content:space-between; padding:8px 0}
 
-    /* === Header/Nav === */
-    header{position:sticky; top:0; z-index:50; background:rgba(17,17,20,.8); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .logo{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
-    .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad); box-shadow:0 6px 14px rgba(255,122,24,.35)}
-    .menu{display:flex; gap:18px; align-items:center; font-weight:500}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:12px; background:var(--accent-grad); color:#100a00; font-weight:700; box-shadow:0 10px 24px rgba(255,122,24,.35); transition:transform .08s ease}
-    .btn:hover{transform:translateY(-1px)}
-
-    /* === Hero === */
-    .hero{position:relative; overflow:hidden;}
-    .hero .box{display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; padding:48px 0 30px}
-    .badge{display:inline-flex; align-items:center; gap:8px; font-weight:600; color:#130c00; background:var(--accent-grad); padding:6px 12px; border-radius:999px}
-    .h1{font-size:clamp(28px,4.1vw,46px); line-height:1.15; margin:14px 0 8px; font-weight:800}
-    .lead{font-size:18px; color:var(--muted)}
-    .search{margin-top:20px; display:flex; gap:10px}
-    .input{flex:1; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#131317; color:var(--text)}
-    .popular{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
-    .tag{padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.06); font-size:14px; cursor:pointer}
-    .heroCard{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
-    .points{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px}
-    .point{display:flex; gap:10px; align-items:flex-start; color:var(--muted)}
-
-    .heroArt{position:relative; height:100%; min-height:320px; border-radius:24px; background:conic-gradient(from 180deg at 50% 50%, var(--brand-1), var(--brand-2), var(--brand-3), var(--brand-2), var(--brand-1)); filter:saturate(120%); animation:spin 14s linear infinite; box-shadow:0 30px 80px rgba(255,122,24,.25)}
-    .heroArt::after{content:""; position:absolute; inset:1px; border-radius:23px; background:radial-gradient(60% 60% at 30% 20%, rgba(255,255,255,.25), transparent 60%), radial-gradient(60% 60% at 70% 70%, rgba(255,255,255,.12), transparent 65%)}
-    @keyframes spin{to{transform:rotate(1turn)}}
-
-    /* === Country grid === */
-    .section{padding:40px 0}
-    .section h2{font-size:clamp(22px,3vw,34px); margin:0 0 16px}
-    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
-    .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:16px; border-radius:16px; display:flex; flex-direction:column; gap:12px; transition:transform .12s ease, box-shadow .12s ease}
-    .card:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .card .flag{font-size:26px}
-    .card h3{margin:0; font-size:18px}
-    .meta{font-size:14px; color:var(--muted)}
-
-    /* === How it works === */
-    .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
-    .step{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px}
-    .step strong{display:block; margin-bottom:6px}
-
-    /* === FAQ === */
-    details{background:#121217; border:1px solid rgba(255,255,255,.08); padding:14px 16px; border-radius:12px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer; font-weight:600}
-    summary::-webkit-details-marker{display:none}
-
-    /* === Bezviz === */
-    .note{font-size:14px; color:var(--muted)}
-
-    /* === CTA === */
-    .cta{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-    .cta .btn.outline{background:none; color:var(--text); border:1px solid rgba(255,255,255,.16); box-shadow:none}
-
-    /* === Footer === */
-    footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; color:var(--muted)}
-
-    /* === Responsive === */
-    @media (max-width: 900px){
-      .hero .box{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .steps{grid-template-columns:1fr 1fr}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(17,17,20,.85);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06)
     }
-    @media (max-width: 520px){
-      .grid{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .menu{display:none}
+    .nav{display:flex; justify-content:space-between; align-items:center; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:800}
+    .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad)}
+    .menu{display:flex; gap:18px}
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      background:var(--accent-grad);
+      color:#100a00;
+      font-weight:700;
+    }
+    .btn.outline{
+      background:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16)
     }
 
-    /* Floating WA */
-    .wa{position:fixed; right:16px; bottom:16px; width:54px; height:54px; border-radius:50%; background:var(--accent-grad); display:grid; place-items:center; box-shadow:0 12px 26px rgba(255,122,24,.4); z-index:60}
-  .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px}
-.price-card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; text-align:center}
-.price{font-size:22px; font-weight:700; color:#ff9a44}
-
-.reviews{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:20px}
-.review{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:16px; border-radius:12px; font-size:14px}
-.review strong{display:block; margin-bottom:6px}
-
-.map{margin-top:20px; border-radius:12px; overflow:hidden;}
-    /* === Extra mobile tuning === */
-@media (max-width: 400px){
-  .container{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .h1{
-    font-size: 24px;
-    line-height: 1.25;
-    word-break: break-word;
-  }
-
-  .lead{
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 360px){
-  .h1{
-    font-size: 22px;
-  }
-}
-    /* === Hero mobile fix (anti-cut) === */
-@media (max-width: 400px){
-  .hero .box{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .hero .box > div{
-    min-width: 0;
-  }
-
-  .h1{
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-}
-  </style>
-</head>
-<body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container wrap">
-      <div class="chip" aria-label="Контакты">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.66 12.66 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.66 12.66 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
-        <span>+996 709 68 65 38</span>
-      </div>
-      <div class="langs">
-  <a href="../">RU</a> ·
-  <a href="kg/">KG</a> ·
-  <a href="en/">EN</a> ·
-</div>
-    </div>
-  </div>
-
-  <!-- Header/Nav -->
-  <header>
-    <div class="container nav">
-      <div class="logo"><span class="mark"></span><span>HR Direct KG</span></div>
-      <nav class="menu">
-        <a href="/hrdirectkg/about/">О компании</a>
-        <a href="/hrdirectkg/visas/">Визы</a>
-        <a href="/hrdirectkg/pricing/">Цены</a>
-        <a href="/hrdirectkg/how-we-work/">Как мы работаем</a>
-        <a href="/hrdirectkg/faq/">FAQ</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-      <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Хочу%20оформить%20визу." target="_blank" rel="noopener">Консультация</a>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <section id="top" class="hero"> … </section>
-    <div class="container box">
-      <div>
-        <div class="badge">Оформление виз — быстро и прозрачно</div>
-        <h1 class="h1">Шенген, Китай, ОАЭ и другие направления</h1>
-        <p class="lead">Подготовим анкеты, запишем на подачу, сделаем страховку и сопроводим на каждом шаге. Работаем официально.</p>
-        <div class="search" role="search">
-          <input id="search" class="input" placeholder="Мне нужна виза в… (например, Франция)" aria-label="Поиск по странам" />
-          <button class="btn" onclick="scrollToVisas()">Найти</button>
-        </div>
-        <div class="popular" aria-label="Популярные направления">
-          <span class="tag" data-country="Франция">Франция</span>
-          
-          <span class="tag" data-country="Япония">Япония</span>
-          <span class="tag" data-country="ОАЭ">ОАЭ</span>
-          <span class="tag" data-country="Китай">Китай</span>
-          <span class="tag" data-country="Венгрия">Венгрия</span>
-        </div>
-        <div class="heroCard">
-          <strong>Что входит:</strong>
-          <div class="points">
-            <div class="point">• Консультация по требованиям и документам</div>
-            <div class="point">• Заполнение анкеты + запись на подачу</div>
-            <div class="point">• Мед. страховка и брони под пакет</div>
-            <div class="point">• Подготовка к собеседованию (если требуется)</div>
-          </div>
-        </div>
-      </div>
-      <div class="heroArt" aria-hidden="true"></div>
-    </div>
-  </section>
-    </section> <!-- конец hero -->
-
-  <!-- 🔹 Цены на оформление виз -->
-  <section id="pricing" class="section">
-    <div class="container">
-      <h2>Цены на оформление виз</h2>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>Шенген</h3>
-          <p class="price">от 100$</p>
-          <p>Анкета, страховка, запись.</p>
-        </div>
-        <div class="price-card">
-          <h3>Япония</h3>
-          <p class="price">от 120$</p>
-          <p>Сбор документов, брони, перевод.</p>
-        </div>
-        <div class="price-card">
-          <h3>ОАЭ</h3>
-          <p class="price">от 100$</p>
-          <p>Электронная виза + страховка.</p>
-        </div>
-        <div class="price-card">
-          <h3>Китай</h3>
-          <p class="price">от 150$</p>
-          <p>Бизнес и туристические визы.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="reviews" class="section">
-  <div class="container">
-    <h2>Отзывы клиентов</h2>
-    <div class="reviews">
-      <div class="review"><strong>Алия, Бишкек</strong>«Спасибо HR Direct KG! Получила шенгенскую визу без проблем. Всё объяснили и помогли со страховкой.»</div>
-      <div class="review"><strong>Нурбек, Ош</strong>«Оформил визу в Японию. Процесс понятный, документы приняли с первого раза.»</div>
-      <div class="review"><strong>Айдана, Бишкек</strong>«Обратилась за визой в ОАЭ. Всё сделали быстро, виза пришла на почту через 2 дня.»</div>
-    </div>
-  </div>
-</section>
-
-  <!-- Popular visas / countries -->
-  <section id="visas" class="section">
-    
-  <!-- Popular visas / countries -->
-  <section id="visas" class="section">
-    <div class="container">
-      <h2>Популярные направления</h2>
-      <p class="note">* Информация носит справочный характер. Условия зависят от гражданства и могут меняться. </p>
-      <div id="countryGrid" class="grid" aria-live="polite">
-        <!-- Cards -->
-        <article class="card" data-name="Франция Шенген ЕС Европа">
-          <div class="flag">🇫🇷</div>
-          <h3>Франция (Шенген)</h3>
-          <div class="meta">Туризм/гости/деловая. Сопровождение на русском.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-        <article class="card" data-name="Германия Шенген ЕС Европа">
-          <div class="flag">🇩🇪</div>
-          <h3>Германия (Шенген)</h3>
-          <div class="meta">Подготовка пакета, запись, страховка.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-        <article class="card" data-name="Испания Шенген ЕС Европа">
-          <div class="flag">🇪🇸</div>
-          <h3>Испания (Шенген)</h3>
-          <div class="meta">Туристические и гостевые поездки.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-        <article class="card" data-name="Италия Шенген ЕС Европа">
-          <div class="flag">🇮🇹</div>
-          <h3>Италия (Шенген)</h3>
-          <div class="meta">Сбор документов и сопровождение.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-        <article class="card" data-name="Япония Азия Japan">
-          <div class="flag">🇯🇵</div>
-          <h3>Япония</h3>
-          <div class="meta">Пакет документов и брони под подачу.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-        <article class="card" data-name="ОАЭ UAE Дубай">
-          <div class="flag">🇦🇪</div>
-          <h3>ОАЭ</h3>
-          <div class="meta">Электронные визы и страховка.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-       <article class="card" data-name="Китай China Азия">
-<div class="flag">🇨🇳</div>
-<h3>Китай</h3>
-<div class="meta">Подготовка пригласительных документов для туристических и бизнес виз.</div>
-          <div class="meta">Краткосрочные-долгострочные поездки и консультации.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bezviz (link to MFA) -->
-  <section class="section">
-    <div class="container">
-      <h2>Безвизовые направления для граждан КР</h2>
-      <p class="note">Перечень стран и актуальные условия смотрите на сайте МИД КР (официальный источник). Сроки и правила меняются — перед поездкой всегда проверяйте обновления.</p>
-      <div class="cta">
-        <a class="btn outline" href="https://mfa.gov.kg/" target="_blank" rel="noopener">Открыть сайт МИД</a>
-        <a class="btn" href="#contact">Нужна консультация</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Steps -->
-  <section id="steps" class="section">
-    <div class="container">
-      <h2>Как мы работаем</h2>
-      <div class="steps">
-        <div class="step"><strong>1. Бесплатная консультация</strong>Разбираем цель поездки, гражданство, сроки. Даем честную оценку шансов и сроков.</div>
-        <div class="step"><strong>2. Подготовка пакета</strong>Анкеты, переводы, страховка, брони. Проверка и упаковка документов под требования.</div>
-        <div class="step"><strong>3. Запись/подача</strong>Записываем на подачу/собеседование. Готовим к вопросам, сопровождаем.</div>
-        <div class="step"><strong>4. Получение визы</strong>Вы получаете паспорт с визой. Помогаем с последними нюансами поездки.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Гарантируете ли 100% получение визы?</summary>
-        <p>Решение принимает консульство. Мы тщательно готовим пакет и уменьшаем риски, но честно не обещаем невозможного.</p>
-      </details>
-      <details>
-        <summary>Сколько времени занимает оформление?</summary>
-        <p>В среднем от 1 до 6 недель в зависимости от страны, загруженности и полноты документов.</p>
-      </details>
-      <details>
-        <summary>Можно ли без брони отеля/билетов?</summary>
-        <p>Для большинства стран нужны подтверждения. Мы оформляем возвратные брони и страховку под пакет.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Связаться с нами</h2>
-      <p class="lead">Напишите, какая виза нужна и на какие даты планируете поездку — ответим и сориентируем по шагам.</p>
-      <div class="cta">
-        <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Нужна%20консультация%20по%20визе." target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn outline" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn outline" href="mailto:hrdirectkg@example.com?subject=Виза%20—%20консультация">E‑mail</a>
-      </div>
-    </div>
-  </section>
-
-    <footer>
-    <div class="container">
-      <p>© <span id="year"></span> HR Direct KG — визовая поддержка. Все права защищены.</p>
-      <p>Адрес: г. Бишкек, ул. Ибраимова 115/3а, 4 этаж, офис 405</p>
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123!2d74.588!3d42.872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec824!2z0YPQuy4g0JrQu9Cw0YHQutC-0LPQviAxMTUvM8KgLCDQkNC70LXRgNC90YvQuSwg0JrRg9GA0LPRgNCw0L3RgiA!5e0!3m2!1sru!2skg!4v0000000000000"
-                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a class="wa" href="https://wa.me/996709686538?text=Здравствуйте!%20Хочу%20оформить%20визу." aria-label="WhatsApp" target="_blank" rel="noopener">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.88 11.88 0 0 0 12 0a12 12 0 0 0-10.4 17.94L0 24l6.2-1.63A12 12 0 0 0 24 12c0-3.2-1.25-6.2-3.48-8.52ZM12 22a10 10 0 0 1-5.1-1.39l-.37-.22-3 .79.8-2.9-.24-.38A10 10 0 1 1 22 12 10 10 0 0 1 12 22Zm5.45-7.54c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15s-.77.98-.95 1.18-.35.22-.65.07a8.2 8.2 0 0 1-2.41-1.49 9.02 9.02 0 0 1-1.67-2.07c-.17-.3 0-.46.13-.61.13-.15.3-.38.45-.57.15-.2.2-.34.3-.57.1-.23.05-.42-.02-.58-.07-.15-.67-1.63-.92-2.24-.24-.58-.49-.5-.67-.51h-.57a1.1 1.1 0 0 0-.8.38c-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.22 5.14 4.52.72.31 1.29.49 1.73.63.73.23 1.4.2 1.93.12.59-.09 1.78-.73 2.03-1.44.25-.71.25-1.32.17-1.45-.08-.13-.27-.2-.57-.35Z" fill="#0a0a0a"/></svg>
-  </a>
-
-  <script>
-    // Текущий год
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Поиск по странам
-    const grid = document.getElementById('countryGrid');
-    const search = document.getElementById('search');
-    const tags = document.querySelectorAll('.tag');
-
-    function filterCountries(q){
-      const query = q.trim().toLowerCase();
-      grid.querySelectorAll('.card').forEach(card=>{
-        const match = card.dataset.name.toLowerCase().includes(query);
-        card.style.display = match ? '' : 'none';
-      });
-    }
-    search?.addEventListener('input', e=> filterCountries(e.target.value));
-    tags.forEach(t=> t.addEventListener('click', ()=>{ search.value = t.dataset.country; filterCountries(search.value); window.location.hash = '#visas'; }));
-    window.scrollToVisas = ()=> document.querySelector('#visas').scrollIntoView({behavior:'smooth'});
-  </script>
-</body>
-</html>
+    /* Hero */
+    .hero{padding:56px 0}
