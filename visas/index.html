@@ -15,21 +15,14 @@
 
 <style>
 :root{
-  --bg:#0b0b0c;
-  --surface:#111114;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
+  --bg:#0b0b0c; --surface:#111114; --muted:#9aa1ab; --text:#f6f7f9;
+  --brand-1:#ff7a18; --brand-2:#ff9a44; --brand-3:#ffd194;
   --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-  --radius:16px;
-  --shadow:0 10px 25px rgba(0,0,0,.3);
+  --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box}
 body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
   color:var(--text);
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
@@ -37,18 +30,17 @@ body{
     var(--bg);
   line-height:1.55;
 }
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
 /* Header */
 header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
+  position:sticky; top:0; z-index:50;
+  background:rgba(17,17,20,.85); backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,.06)
 }
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.logo{display:flex;gap:12px;font-weight:800;letter-spacing:.2px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
 .logo .mark{width:28px;height:28px;border-radius:8px;background:var(--accent-grad);box-shadow:0 6px 14px rgba(255,122,24,.35)}
 .menu{display:flex;gap:18px;align-items:center;font-weight:500}
 .menu a{opacity:.9}
@@ -58,56 +50,46 @@ header{
   gap:10px;padding:12px 16px;border-radius:12px;
   background:var(--accent-grad);color:#120a00;font-weight:800;
   box-shadow:0 10px 24px rgba(255,122,24,.30);
-  transition:transform .08s ease
+  transition:transform .08s ease;
 }
 .btn:hover{transform:translateY(-1px)}
-.btn.outline{
-  background:none;color:var(--text);
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:none;font-weight:700
-}
+.btn.outline{background:none;color:var(--text);border:1px solid rgba(255,255,255,.16);box-shadow:none;font-weight:700}
 
 /* Hero */
-.hero{padding:48px 0 22px}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 12px;border-radius:999px;
-  background:var(--accent-grad);color:#120a00;font-weight:800
-}
+.hero{padding:48px 0 20px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#130c00;background:var(--accent-grad);padding:6px 12px;border-radius:999px}
 .h1{font-size:clamp(28px,4vw,46px);line-height:1.15;margin:14px 0 10px;font-weight:900}
-.lead{color:var(--muted);font-size:18px;margin:0}
-
-/* Section */
+.lead{font-size:18px;color:var(--muted);margin:0}
 .section{padding:34px 0}
-.section h2{font-size:clamp(22px,3vw,34px);margin:0 0 12px}
-.note{color:var(--muted);font-size:14px;margin:0 0 14px}
+.note{color:var(--muted);font-size:14px;margin:10px 0 0}
 
-/* Cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.card{
+/* Vertical list */
+.vlist{display:grid;gap:12px;margin-top:16px}
+.vitem{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:16px 16px;
   background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:16px;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  transition:transform .12s ease, box-shadow .12s ease;
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
-.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.flag{font-size:28px}
-.card h3{margin:0;font-size:18px}
-.meta{color:var(--muted);font-size:14px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
-.actions .btn{flex:1}
+.vitem:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25);border-color:rgba(255,255,255,.16)}
+.vleft{display:flex;gap:12px;align-items:flex-start}
+.vflag{font-size:26px;line-height:1}
+.vtitle{font-weight:900;font-size:18px;margin:0}
+.vmeta{color:var(--muted);font-size:14px;margin:4px 0 0}
+.varrow{opacity:.9}
+.kbd{
+  font-size:12px; color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.16);
+  padding:4px 8px;border-radius:10px;
+  background:rgba(255,255,255,.04);
+  white-space:nowrap;
+}
 
 /* Footer */
 footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;color:var(--muted)}
-
-/* Responsive */
-@media (max-width:520px){
-  .menu{display:none}
-}
+@media (max-width:520px){.menu{display:none}}
 </style>
 </head>
 
@@ -116,14 +98,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;color:var(--mut
 <header>
   <div class="container nav">
     <div class="logo"><span class="mark"></span><span>HR Direct KG</span></div>
-
     <nav class="menu">
       <a href="/hrdirectkg/">Главная</a>
       <a href="/hrdirectkg/about/">О компании</a>
       <a href="/hrdirectkg/visas/" class="active">Визы</a>
       <a href="/hrdirectkg/#contact">Контакты</a>
     </nav>
-
     <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Нужна%20консультация%20по%20визе." target="_blank" rel="noopener">Консультация</a>
   </div>
 </header>
@@ -132,61 +112,67 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;color:var(--mut
   <div class="container">
     <div class="badge">Раздел “Визы”</div>
     <h1 class="h1">Выберите направление</h1>
-    <p class="lead">Открываете нужный раздел — и там уже всё по стране/типу визы, кратко и понятно.</p>
+    <p class="lead">Нажмите на нужный раздел — откроется отдельная страница с конкретикой.</p>
+    <p class="note">Если хочешь — можешь потом добавить ещё: страховка, анкеты, “как получить визу”.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2>Популярные направления</h2>
-    <p class="note">Нажмите “Открыть” — перейдёте в отдельную страницу с конкретикой.</p>
 
-    <div class="grid">
-      <article class="card">
-        <div class="flag">🇪🇺</div>
-        <h3>Шенген</h3>
-        <div class="meta">Франция • Германия • Испания • Италия • Венгрия</div>
-        <div class="actions">
-          <a class="btn" href="/hrdirectkg/visas/schengen/">Открыть</a>
-          <a class="btn outline" href="/hrdirectkg/#contact">Оставить заявку</a>
+    <div class="vlist">
+      <a class="vitem" href="/hrdirectkg/visas/schengen/">
+        <div class="vleft">
+          <div class="vflag">🇪🇺</div>
+          <div>
+            <div class="vtitle">Шенген</div>
+            <div class="vmeta">Франция • Германия • Испания • Италия • Венгрия</div>
+          </div>
         </div>
-      </article>
+        <div class="varrow">
+          <span class="kbd">Открыть</span>
+        </div>
+      </a>
 
-      <article class="card">
-        <div class="flag">🇨🇳</div>
-        <h3>Китай</h3>
-        <div class="meta">Туристическая и бизнес-виза • пакет документов</div>
-        <div class="actions">
-          <a class="btn" href="/hrdirectkg/visas/china/">Открыть</a>
-          <a class="btn outline" href="/hrdirectkg/#contact">Оставить заявку</a>
+      <a class="vitem" href="/hrdirectkg/visas/china/">
+        <div class="vleft">
+          <div class="vflag">🇨🇳</div>
+          <div>
+            <div class="vtitle">Китай</div>
+            <div class="vmeta">Туристическая и бизнес-виза • подготовка пакета</div>
+          </div>
         </div>
-      </article>
+        <div class="varrow"><span class="kbd">Открыть</span></div>
+      </a>
 
-      <article class="card">
-        <div class="flag">🇯🇵</div>
-        <h3>Япония</h3>
-        <div class="meta">Анкеты • брони • аккуратная подача</div>
-        <div class="actions">
-          <a class="btn" href="/hrdirectkg/visas/japan/">Открыть</a>
-          <a class="btn outline" href="/hrdirectkg/#contact">Оставить заявку</a>
+      <a class="vitem" href="/hrdirectkg/visas/japan/">
+        <div class="vleft">
+          <div class="vflag">🇯🇵</div>
+          <div>
+            <div class="vtitle">Япония</div>
+            <div class="vmeta">Анкеты • брони • аккуратная подача</div>
+          </div>
         </div>
-      </article>
+        <div class="varrow"><span class="kbd">Открыть</span></div>
+      </a>
 
-      <article class="card">
-        <div class="flag">🇦🇪</div>
-        <h3>ОАЭ (Дубай)</h3>
-        <div class="meta">Электронная виза • быстро и удобно</div>
-        <div class="actions">
-          <a class="btn" href="/hrdirectkg/visas/dubai/">Открыть</a>
-          <a class="btn outline" href="/hrdirectkg/#contact">Оставить заявку</a>
+      <a class="vitem" href="/hrdirectkg/visas/dubai/">
+        <div class="vleft">
+          <div class="vflag">🇦🇪</div>
+          <div>
+            <div class="vtitle">ОАЭ (Дубай)</div>
+            <div class="vmeta">Электронная виза • быстро и удобно</div>
+          </div>
         </div>
-      </article>
+        <div class="varrow"><span class="kbd">Открыть</span></div>
+      </a>
     </div>
 
     <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
       <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Хочу%20оформить%20визу.%20Направление:%20____%20Даты:%20____" target="_blank" rel="noopener">Написать в WhatsApp</a>
       <a class="btn outline" href="/hrdirectkg/#contact">Контакты</a>
     </div>
+
   </div>
 </section>
 
