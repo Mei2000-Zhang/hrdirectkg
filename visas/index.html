@@ -4,22 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>HR Direct KG — Визовая поддержка</title>
-  <meta name="description" content="HR Direct KG — визовая поддержка в Бишкеке. Анкеты, запись на подачу, страховка и сопровождение." />
-
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
+  <title>Визы — Шенген, Китай, Япония, Дубай | HR Direct KG</title>
+  <meta name="description" content="Выберите направление визы: Шенген, Китай, Япония, Дубай (ОАЭ). HR Direct KG — анкеты, страховка, запись и сопровождение. Бишкек." />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
   <meta name="publisher" content="HR Direct KG">
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
+    :root{
       --bg:#0b0b0c;
       --muted:#9aa1ab;
       --text:#f6f7f9;
@@ -28,10 +26,8 @@
       --brand-3:#ffd194;
       --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
     }
-
-    * { box-sizing:border-box; }
-
-    body {
+    *{box-sizing:border-box}
+    body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
@@ -40,99 +36,100 @@
         radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
         var(--bg);
     }
-
-    a { text-decoration:none; color:inherit; }
-
-    .container {
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 16px;
-    }
+    a{text-decoration:none; color:inherit}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
 
     /* Topbar */
-    .topbar {
+    .topbar{
       background:#0f0f12;
       border-bottom:1px solid rgba(255,255,255,.06);
       font-size:14px;
     }
-
-    .topbar .wrap {
+    .topbar .wrap{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:12px;
       padding:8px 0;
     }
-
-    .topbar .right { opacity:.9; }
+    .topbar .right{opacity:.9}
 
     /* Header */
-    header {
-      position:sticky;
-      top:0;
-      z-index:50;
+    header{
+      position:sticky; top:0; z-index:50;
       background:rgba(17,17,20,.85);
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:visible;
     }
 
-    .nav {
+    .nav{
       display:grid;
       grid-template-columns:auto 1fr auto;
       align-items:center;
       gap:18px;
       padding:14px 0 10px;
+      overflow:visible;
     }
+    .nav__left{min-width:max-content}
+    .nav__center{min-width:0; overflow:visible}
+    .nav__right{min-width:max-content}
 
-    .logo {
+    .logo{
       display:flex;
       align-items:center;
       gap:12px;
       font-weight:800;
       white-space:nowrap;
     }
-
-    .logo .mark {
-      width:28px;
-      height:28px;
+    .logo .mark{
+      width:28px; height:28px;
       border-radius:8px;
       background:var(--accent-grad);
+      flex:0 0 auto;
     }
 
-    /* MENU — единственное, что меняли */
-    .menu {
+    /* Меню — компактный размер (как на главной) */
+    .menu{
       display:flex;
       align-items:center;
       gap:10px;
-      font-size:13px;
       white-space:nowrap;
+      justify-content:flex-start;
+      min-width:0;
+      font-size:13px;
     }
-
-    .menu a {
-      padding:4px 2px;
+    .menu a{
+      white-space:nowrap;
       color:rgba(246,247,249,.92);
+      padding:4px 2px;
     }
+    .menu a:hover{opacity:.9}
 
-    .subnav {
+    /* Submenu */
+    .subnav{
+      padding:0 0 12px;
       border-top:1px solid rgba(255,255,255,.06);
-      padding-bottom:12px;
     }
-
-    .submenu {
+    .submenu{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
       padding-top:10px;
       font-size:12px;
+      color:rgba(246,247,249,.86);
     }
-
-    .submenu a {
+    .submenu a{
       padding:6px 8px;
       border-radius:999px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
+      white-space:nowrap;
     }
+    .submenu a:hover{ background:rgba(255,255,255,.07); }
 
-    .btn {
+    /* Buttons */
+    .btn{
       padding:12px 16px;
       border-radius:12px;
       background:var(--accent-grad);
@@ -140,17 +137,18 @@
       font-weight:700;
       display:inline-flex;
       align-items:center;
+      justify-content:center;
+      white-space:nowrap;
     }
-
-    .btn.outline {
+    .btn.outline{
       background:none;
       color:var(--text);
       border:1px solid rgba(255,255,255,.16);
     }
 
-    .hero { padding:56px 0; }
-
-    .badge {
+    /* Page */
+    .hero{padding:46px 0 18px}
+    .badge{
       display:inline-block;
       background:var(--accent-grad);
       color:#120a00;
@@ -159,28 +157,42 @@
       font-weight:600;
       font-size:14px;
     }
+    .h1{font-size:clamp(28px,4vw,44px); margin:14px 0 10px}
+    .lead{color:var(--muted); max-width:760px}
+    .actions{display:flex; gap:14px; margin-top:18px; flex-wrap:wrap}
 
-    .h1 {
-      font-size:clamp(28px,4vw,44px);
-      margin:14px 0 10px;
-    }
+    /* Directions list (вертикально) */
+    .section{padding:26px 0 56px}
+    .h2{font-size:22px; margin:0 0 8px}
+    .note{color:var(--muted); margin:0 0 14px; font-size:14px}
 
-    .lead {
-      color:var(--muted);
-      max-width:700px;
-    }
-
-    .actions {
+    .visa-list{
       display:flex;
-      gap:14px;
-      margin-top:20px;
-      flex-wrap:wrap;
+      flex-direction:column;
+      gap:12px;
+      max-width:520px;
     }
+    .visa-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:650;
+      transition:.18s ease;
+    }
+    .visa-link:hover{ background:rgba(255,255,255,.07); }
+    .visa-meta{color:var(--muted); font-size:13px; font-weight:500}
+
+    /* anchor offset for sticky header */
+    #directions{scroll-margin-top:140px;}
   </style>
 </head>
 
 <body>
-
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container wrap">
       <div>+996 709 68 65 38</div>
@@ -188,48 +200,84 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header>
     <div class="container nav">
-      <div class="logo">
-        <span class="mark"></span>
-        HR Direct KG
+      <div class="nav__left">
+        <div class="logo"><span class="mark"></span>HR Direct KG</div>
       </div>
 
-      <nav class="menu">
-        <a href="/hrdirectkg/about/">О компании</a>
-        <a href="/hrdirectkg/visas/">Визы</a>
-        <a href="/hrdirectkg/insurance/">Страховка</a>
-        <a href="/hrdirectkg/forms/">Анкеты</a>
-        <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-        <a href="/hrdirectkg/pricing/">Цены</a>
-        <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
-      </nav>
+      <div class="nav__center">
+        <nav class="menu" aria-label="Основная навигация">
+          <a href="/hrdirectkg/about/">О компании</a>
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/insurance/">Страховка</a>
+          <a href="/hrdirectkg/forms/">Анкеты</a>
+          <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+          <a href="/hrdirectkg/pricing/">Цены</a>
+          <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
+        </nav>
+      </div>
 
-      <a class="btn" href="https://wa.me/996709686538" target="_blank">Консультация</a>
+      <div class="nav__right">
+        <a class="btn" href="https://wa.me/996709686538" target="_blank" rel="noopener">Консультация</a>
+      </div>
     </div>
 
     <div class="subnav">
-      <div class="container submenu">
-        <a href="/hrdirectkg/faq/">FAQ</a>
-        <a href="/hrdirectkg/contact/">Контакты</a>
-        <a href="/hrdirectkg/employment/">Трудоустройство</a>
-        <a href="/hrdirectkg/partners/">Для партнёров</a>
+      <div class="container">
+        <nav class="submenu" aria-label="Дополнительная навигация">
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+          <a href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Для партнёров</a>
+        </nav>
       </div>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <span class="badge">Визовая поддержка</span>
-      <h1 class="h1">Шенген, Китай, ОАЭ и другие направления</h1>
+      <span class="badge">Визы</span>
+      <h1 class="h1">Выберите направление</h1>
       <p class="lead">
-        Подготовим анкеты, запишем на подачу, сделаем страховку и сопроводим на каждом шаге.
-        Работаем официально.
+        Ниже — все основные направления. Нажимаете на нужное, и попадаете на страницу с деталями по визе.
       </p>
 
       <div class="actions">
-        <a class="btn" href="/hrdirectkg/visas/">Выбрать направление</a>
-        <a class="btn outline" href="/hrdirectkg/pricing/">Посмотреть цены</a>
+        <a class="btn" href="#directions">Смотреть направления</a>
+        <a class="btn outline" href="https://wa.me/996709686538" target="_blank" rel="noopener">Задать вопрос</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions -->
+  <section class="section" id="directions">
+    <div class="container">
+      <h2 class="h2">Направления виз</h2>
+      <p class="note">Кликайте — откроется страница с полной информацией.</p>
+
+      <div class="visa-list" aria-label="Список визовых направлений">
+        <a class="visa-link" href="/hrdirectkg/visas/schengen/">
+          <span>Шенгенская виза</span>
+          <span class="visa-meta">Франция, Германия, Италия… →</span>
+        </a>
+
+        <a class="visa-link" href="/hrdirectkg/visas/china/">
+          <span>Виза в Китай</span>
+          <span class="visa-meta">туризм / бизнес →</span>
+        </a>
+
+        <a class="visa-link" href="/hrdirectkg/visas/japan/">
+          <span>Виза в Японию</span>
+          <span class="visa-meta">туризм →</span>
+        </a>
+
+        <a class="visa-link" href="/hrdirectkg/visas/dubai/">
+          <span>Виза в Дубай (ОАЭ)</span>
+          <span class="visa-meta">туризм →</span>
+        </a>
       </div>
     </div>
   </section>
