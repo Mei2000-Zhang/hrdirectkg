@@ -22,9 +22,16 @@
       --brand-1:#ff7a18;
       --brand-2:#ff9a44;
       --brand-3:#ffd194;
-      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --accent-grad:linear-gradient(
+        135deg,
+        var(--brand-1),
+        var(--brand-2) 50%,
+        var(--brand-3)
+      );
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -34,8 +41,14 @@
         radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
         var(--bg);
     }
-    a{text-decoration:none; color:inherit}
-    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px;
+    }
 
     /* Topbar */
     .topbar{
@@ -60,22 +73,15 @@
       background:rgba(17,17,20,.85);
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(255,255,255,.06);
-      overflow:visible;
     }
 
-    /* 3-zone header: logo | menu | CTA */
     .nav{
       display:grid;
       grid-template-columns:auto 1fr auto;
       align-items:center;
       gap:18px;
       padding:14px 0 10px;
-      overflow:visible;
     }
-
-    .nav__left{min-width:max-content}
-    .nav__center{min-width:0; overflow:visible}
-    .nav__right{min-width:max-content}
 
     .logo{
       display:flex;
@@ -84,53 +90,48 @@
       font-weight:800;
       white-space:nowrap;
     }
+
     .logo .mark{
       width:28px;
       height:28px;
       border-radius:8px;
       background:var(--accent-grad);
-      flex:0 0 auto;
     }
 
-    /* Main desktop menu (row 1) — compact */
+    /* === МЕНЮ (ТОЛЬКО ЭТО ВАЖНО) === */
     .menu{
       display:flex;
       align-items:center;
-      gap:10px;              /* compact */
+      gap:10px;
       white-space:nowrap;
-      justify-content:flex-start;
-      min-width:0;
-      font-size:13px;        /* compact */
+      font-size:13px;   /* размер меню */
     }
-    .menu a{
-      white-space:nowrap;
-      color:rgba(246,247,249,.92);
-      padding:4px 2px;       /* compact */
-    }
-    .menu a:hover{opacity:.9}
 
-    /* Submenu (row 2) — compact chips */
+    .menu a{
+      padding:4px 2px;
+      color:rgba(246,247,249,.92);
+    }
+
+    /* Submenu */
     .subnav{
-      padding:0 0 12px;
+      padding-bottom:12px;
       border-top:1px solid rgba(255,255,255,.06);
     }
+
     .submenu{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
       padding-top:10px;
-      font-size:12px;        /* compact */
+      font-size:12px;   /* размер подменю */
       color:rgba(246,247,249,.86);
     }
+
     .submenu a{
-      padding:6px 8px;       /* compact */
+      padding:6px 8px;
       border-radius:999px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
-      white-space:nowrap;
-    }
-    .submenu a:hover{
-      background:rgba(255,255,255,.07);
     }
 
     /* Buttons */
@@ -142,9 +143,8 @@
       font-weight:700;
       display:inline-flex;
       align-items:center;
-      justify-content:center;
-      white-space:nowrap;
     }
+
     .btn.outline{
       background:none;
       color:var(--text);
@@ -153,6 +153,7 @@
 
     /* Hero */
     .hero{padding:56px 0}
+
     .badge{
       display:inline-block;
       background:var(--accent-grad);
@@ -162,14 +163,17 @@
       font-weight:600;
       font-size:14px;
     }
+
     .h1{
       font-size:clamp(28px,4vw,44px);
       margin:14px 0 10px;
     }
+
     .lead{
       color:var(--muted);
       max-width:700px;
     }
+
     .actions{
       display:flex;
       gap:14px;
@@ -180,6 +184,7 @@
 </head>
 
 <body>
+
   <!-- Topbar -->
   <div class="topbar">
     <div class="container wrap">
@@ -191,36 +196,30 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <div class="nav__left">
-        <div class="logo"><span class="mark"></span>HR Direct KG</div>
+      <div class="logo">
+        <span class="mark"></span>
+        HR Direct KG
       </div>
 
-      <div class="nav__center">
-        <nav class="menu" aria-label="Основная навигация">
-          <a href="/hrdirectkg/about/">О компании</a>
-          <a href="/hrdirectkg/visas/">Визы</a>
-          <a href="/hrdirectkg/insurance/">Страховка</a>
-          <a href="/hrdirectkg/forms/">Анкеты</a>
-          <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-          <a href="/hrdirectkg/pricing/">Цены</a>
-          <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
-        </nav>
-      </div>
+      <nav class="menu">
+        <a href="/hrdirectkg/about/">О компании</a>
+        <a href="/hrdirectkg/visas/">Визы</a>
+        <a href="/hrdirectkg/insurance/">Страховка</a>
+        <a href="/hrdirectkg/forms/">Анкеты</a>
+        <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+        <a href="/hrdirectkg/pricing/">Цены</a>
+        <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
+      </nav>
 
-      <div class="nav__right">
-        <a class="btn" href="https://wa.me/996709686538" target="_blank" rel="noopener">Консультация</a>
-      </div>
+      <a class="btn" href="https://wa.me/996709686538" target="_blank">Консультация</a>
     </div>
 
-    <!-- Secondary nav row: grows with new pages -->
     <div class="subnav">
-      <div class="container">
-        <nav class="submenu" aria-label="Дополнительная навигация">
-          <a href="/hrdirectkg/faq/">FAQ</a>
-          <a href="/hrdirectkg/contact/">Контакты</a>
-          <a href="/hrdirectkg/employment/">Трудоустройство</a>
-          <a href="/hrdirectkg/partners/">Для партнёров</a>
-        </nav>
+      <div class="container submenu">
+        <a href="/hrdirectkg/faq/">FAQ</a>
+        <a href="/hrdirectkg/contact/">Контакты</a>
+        <a href="/hrdirectkg/employment/">Трудоустройство</a>
+        <a href="/hrdirectkg/partners/">Для партнёров</a>
       </div>
     </div>
   </header>
@@ -241,5 +240,6 @@
       </div>
     </div>
   </section>
+
 </body>
 </html>
