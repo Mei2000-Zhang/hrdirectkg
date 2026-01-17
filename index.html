@@ -58,6 +58,7 @@
       background:rgba(17,17,20,.85);
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:visible;
     }
 
     /* 3-zone header: logo | menu | CTA */
@@ -65,12 +66,13 @@
       display:grid;
       grid-template-columns:auto 1fr auto;
       align-items:center;
-      gap:24px;
-      padding:14px 0;
+      gap:18px;
+      padding:14px 0 10px;
+      overflow:visible;
     }
 
     .nav__left{min-width:max-content}
-    .nav__center{min-width:0; overflow:hidden}
+    .nav__center{min-width:0; overflow:visible}
     .nav__right{min-width:max-content}
 
     .logo{
@@ -87,20 +89,46 @@
       flex:0 0 auto;
     }
 
-    /* Desktop menu always visible */
+    /* Main desktop menu (row 1) — compact */
     .menu{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:10px;              /* compact */
       white-space:nowrap;
       justify-content:flex-start;
       min-width:0;
+      font-size:13px;        /* compact */
     }
     .menu a{
       white-space:nowrap;
       color:rgba(246,247,249,.92);
+      padding:4px 2px;       /* compact */
     }
     .menu a:hover{opacity:.9}
+
+    /* Submenu (row 2) — compact chips */
+    .subnav{
+      padding:0 0 12px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .submenu{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:10px;
+      font-size:12px;        /* compact */
+      color:rgba(246,247,249,.86);
+    }
+    .submenu a{
+      padding:6px 8px;       /* compact */
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      white-space:nowrap;
+    }
+    .submenu a:hover{
+      background:rgba(255,255,255,.07);
+    }
 
     /* Buttons */
     .btn{
@@ -154,33 +182,31 @@
       </div>
 
       <div class="nav__center">
-       <nav class="menu" aria-label="Основная навигация">
-  <a href="/hrdirectkg/about/">О компании</a>
-  <a href="/hrdirectkg/visas/">Визы</a>
-  <a href="/hrdirectkg/insurance/">Страховка</a>
-  <a href="/hrdirectkg/forms/">Анкеты</a>
-  <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-  <a href="/hrdirectkg/pricing/">Цены</a>
-  <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
-
-  <!-- Ещё (выпадающее) -->
-  <details class="menu__more">
-    <summary>Ещё</summary>
-    <div class="menu__more-panel">
-      <a href="/hrdirectkg/faq/">FAQ</a>
-      <a href="/hrdirectkg/contact/">Контакты</a>
-
-      <!-- будущие страницы (добавляй сюда) -->
-      <a href="/hrdirectkg/employment/">Трудоустройство</a>
-      <a href="/hrdirectkg/partners/">Для партнёров</a>
-    </div>
-  </details>
-</nav>
-
+        <nav class="menu" aria-label="Основная навигация">
+          <a href="/hrdirectkg/about/">О компании</a>
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/insurance/">Страховка</a>
+          <a href="/hrdirectkg/forms/">Анкеты</a>
+          <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+          <a href="/hrdirectkg/pricing/">Цены</a>
+          <a href="/hrdirectkg/how-we-work/">Процесс визы</a>
+        </nav>
       </div>
 
       <div class="nav__right">
         <a class="btn" href="https://wa.me/996709686538" target="_blank" rel="noopener">Консультация</a>
+      </div>
+    </div>
+
+    <!-- Secondary nav row: grows with new pages -->
+    <div class="subnav">
+      <div class="container">
+        <nav class="submenu" aria-label="Дополнительная навигация">
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+          <a href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Для партнёров</a>
+        </nav>
       </div>
     </div>
   </header>
