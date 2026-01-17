@@ -83,13 +83,14 @@
       white-space:nowrap;
     }
     .logo .mark{
-      width:28px; height:28px;
+      width:28px;
+      height:28px;
       border-radius:8px;
       background:var(--accent-grad);
       flex:0 0 auto;
     }
 
-    /* Main desktop menu (row 1) — compact */
+    /* === МЕНЮ: размеры как на главной === */
     .menu{
       display:flex;
       align-items:center;
@@ -97,7 +98,9 @@
       white-space:nowrap;
       justify-content:flex-start;
       min-width:0;
-      font-size:13px;
+
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; /* шрифт меню */
+      font-size:13px; /* размер меню */
     }
     .menu a{
       white-space:nowrap;
@@ -106,7 +109,7 @@
     }
     .menu a:hover{opacity:.9}
 
-    /* Submenu (row 2) — compact chips */
+    /* Submenu (row 2) */
     .subnav{
       padding:0 0 12px;
       border-top:1px solid rgba(255,255,255,.06);
@@ -116,7 +119,10 @@
       gap:12px;
       flex-wrap:wrap;
       padding-top:10px;
-      font-size:12px;
+
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; /* шрифт подменю */
+      font-size:12px; /* размер подменю */
+
       color:rgba(246,247,249,.86);
     }
     .submenu a{
@@ -198,7 +204,7 @@
       </div>
     </div>
 
-    <!-- Secondary nav row -->
+    <!-- Secondary nav row: grows with new pages -->
     <div class="subnav">
       <div class="container">
         <nav class="submenu" aria-label="Дополнительная навигация">
