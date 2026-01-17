@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HR Direct KG — Цены на оформление виз</title>
-  <meta name="description" content="Цены на оформление виз в HR Direct KG (Бишкек): Шенген, Япония, ОАЭ, Китай." />
+  <meta name="description" content="Цены на оформление виз в HR Direct KG (Бишкек): Шенген, Япония, ОАЭ, Китай. Прозрачные пакеты, что входит, контакты и карта офиса." />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/pricing/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
@@ -18,14 +18,18 @@
   <style>
     :root{
       --bg:#0b0b0c;
+      --surface:#111114;
       --muted:#9aa1ab;
       --text:#f6f7f9;
       --brand-1:#ff7a18;
       --brand-2:#ff9a44;
       --brand-3:#ffd194;
       --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --radius:16px;
+      --shadow:0 10px 25px rgba(0,0,0,.3);
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
@@ -36,25 +40,27 @@
         var(--bg);
       line-height:1.55;
     }
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
 
     /* Topbar */
-    .topbar{background:#0f0f12;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
-    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .topbar{background:#0f0f12; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px}
+    .topbar .wrap{display:flex; gap:16px; justify-content:space-between; align-items:center; padding:8px 0}
+    .topbar .langs{display:flex; gap:10px; opacity:.9}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06)}
 
-    /* Header */
+    /* Header/Nav */
     header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(17,17,20,.85);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06);
+      position:sticky; top:0; z-index:50;
+      background:rgba(17,17,20,.8);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06)
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:800;white-space:nowrap}
-    .logo .mark{width:28px;height:28px;border-radius:8px;background:var(--accent-grad)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:800}
+    .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad)}
 
-    /* МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ */
+    /* ✅ МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ */
     .menu{
       display:flex;
       align-items:center;
@@ -66,6 +72,7 @@
     .menu a{padding:4px 2px}
     .menu a.active{
       background:rgba(255,255,255,.08);
+      padding:6px 8px;
       border-radius:8px;
     }
 
@@ -78,27 +85,26 @@
       white-space:nowrap;
     }
 
-    @media(max-width:520px){
+    @media (max-width:520px){
       .menu{display:none}
     }
 
-    /* CONTENT */
-    .section{padding:48px 0}
-    h1{font-size:clamp(26px,4vw,40px);margin:0 0 12px}
-    .lead{color:var(--muted);max-width:700px}
-    .prices{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:16px;
-      margin-top:24px;
-    }
-    .card{
+    /* Content */
+    .section{padding:40px 0}
+    .h1{font-size:clamp(24px,3.3vw,36px); margin:0 0 10px; font-weight:800}
+    .lead{font-size:16px; color:var(--muted)}
+    .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:18px}
+
+    .price-card{
       background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:16px;
-      padding:18px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
-    .price{font-size:22px;font-weight:800;color:#ff9a44;margin-top:6px}
+    .price{font-size:22px;font-weight:800;color:#ff9a44}
   </style>
 </head>
 
@@ -106,8 +112,8 @@
 
 <div class="topbar">
   <div class="container wrap">
-    <div>+996 709 68 65 38</div>
-    <div>RU · KG · EN</div>
+    <div class="chip">+996 709 68 65 38</div>
+    <div class="langs">RU · KG · EN</div>
   </div>
 </div>
 
@@ -115,38 +121,31 @@
   <div class="container nav">
     <div class="logo"><span class="mark"></span>HR Direct KG</div>
     <nav class="menu">
-      <a href="../">Главная</a>
+      <a href="../#top">Главная</a>
       <a href="/hrdirectkg/about/">О компании</a>
       <a href="/hrdirectkg/visas/">Визы</a>
+      <a href="/hrdirectkg/insurance/">Страховка</a>
+      <a href="/hrdirectkg/forms/">Анкеты</a>
+      <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
       <a href="/hrdirectkg/pricing/" class="active">Цены</a>
+      <a href="/hrdirectkg/how-we-work/">Как мы работаем</a>
+      <a href="/hrdirectkg/faq/">FAQ</a>
       <a href="/hrdirectkg/contact/">Контакты</a>
     </nav>
     <a class="btn" href="https://wa.me/996709686538" target="_blank">Консультация</a>
   </div>
 </header>
 
-<section class="section">
+<section class="section" id="top">
   <div class="container">
-    <h1>Цены на оформление виз</h1>
-    <p class="lead">Прозрачно и без скрытых условий — вы выбираете направление, мы готовим пакет.</p>
+    <h1 class="h1">Цены на оформление виз</h1>
+    <p class="lead">Прозрачно и по делу: выбираете направление — мы готовим пакет.</p>
 
-    <div class="prices">
-      <div class="card">
-        <strong>Шенген</strong>
-        <div class="price">от 100 $</div>
-      </div>
-      <div class="card">
-        <strong>Япония</strong>
-        <div class="price">от 120 $</div>
-      </div>
-      <div class="card">
-        <strong>ОАЭ (Дубай)</strong>
-        <div class="price">от 100 $</div>
-      </div>
-      <div class="card">
-        <strong>Китай</strong>
-        <div class="price">от 150 $</div>
-      </div>
+    <div class="pricing">
+      <div class="price-card"><strong>Шенген</strong><div class="price">от 100$</div></div>
+      <div class="price-card"><strong>Япония</strong><div class="price">от 120$</div></div>
+      <div class="price-card"><strong>ОАЭ</strong><div class="price">от 100$</div></div>
+      <div class="price-card"><strong>Китай</strong><div class="price">от 150$</div></div>
     </div>
   </div>
 </section>
