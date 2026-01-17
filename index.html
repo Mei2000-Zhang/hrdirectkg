@@ -46,3 +46,148 @@
     .topbar .wrap{
       display:flex;
       justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:8px 0;
+    }
+    .topbar .right{opacity:.9}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(17,17,20,.85);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    /* 3-zone header: logo | menu | CTA */
+    .nav{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:24px;
+      padding:14px 0;
+    }
+
+    .nav__left{min-width:max-content}
+    .nav__center{min-width:0; overflow:hidden}
+    .nav__right{min-width:max-content}
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .logo .mark{
+      width:28px; height:28px;
+      border-radius:8px;
+      background:var(--accent-grad);
+      flex:0 0 auto;
+    }
+
+    /* Desktop menu always visible */
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      white-space:nowrap;
+      justify-content:flex-start;
+      min-width:0;
+    }
+    .menu a{
+      white-space:nowrap;
+      color:rgba(246,247,249,.92);
+    }
+    .menu a:hover{opacity:.9}
+
+    /* Buttons */
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      background:var(--accent-grad);
+      color:#100a00;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+    }
+    .btn.outline{
+      background:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    /* Hero */
+    .hero{padding:56px 0}
+    .badge{
+      display:inline-block;
+      background:var(--accent-grad);
+      color:#120a00;
+      padding:6px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+    }
+    .h1{font-size:clamp(28px,4vw,44px); margin:14px 0 10px}
+    .lead{color:var(--muted); max-width:700px}
+    .actions{display:flex; gap:14px; margin-top:20px; flex-wrap:wrap}
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div>+996 709 68 65 38</div>
+      <div class="right">RU · KG · EN</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="nav__left">
+        <div class="logo"><span class="mark"></span>HR Direct KG</div>
+      </div>
+
+      <div class="nav__center">
+        <nav class="menu" aria-label="Основная навигация">
+          <a href="/hrdirectkg/about/">О компании</a>
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/insurance/">Страховка для виз</a>
+          <a href="/hrdirectkg/forms/">Заполнение анкет</a>
+          <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+          <a href="/hrdirectkg/pricing/">Цены</a>
+          <a href="/hrdirectkg/how-we-work/">Как мы работаем</a>
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+        </nav>
+      </div>
+
+      <div class="nav__right">
+        <a class="btn" href="https://wa.me/996709686538" target="_blank" rel="noopener">Консультация</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Визовая поддержка</span>
+      <h1 class="h1">Шенген, Китай, ОАЭ и другие направления</h1>
+      <p class="lead">
+        Подготовим анкеты, запишем на подачу, сделаем страховку и сопроводим на каждом шаге.
+        Работаем официально.
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="/hrdirectkg/visas/">Выбрать направление</a>
+        <a class="btn outline" href="/hrdirectkg/pricing/">Посмотреть цены</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
