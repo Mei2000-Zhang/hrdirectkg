@@ -3,36 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>HR Direct KG — Визовая поддержка</title>
   <meta name="description" content="HR Direct KG — визовая поддержка в Бишкеке. Анкеты, запись на подачу, страховка и сопровождение." />
+
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
   <meta name="publisher" content="HR Direct KG">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --bg:#0b0b0c;
       --muted:#9aa1ab;
       --text:#f6f7f9;
       --brand-1:#ff7a18;
       --brand-2:#ff9a44;
       --brand-3:#ffd194;
-      --accent-grad:linear-gradient(
-        135deg,
-        var(--brand-1),
-        var(--brand-2) 50%,
-        var(--brand-3)
-      );
+      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
     }
 
-    *{box-sizing:border-box}
+    * { box-sizing:border-box; }
 
-    body{
+    body {
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
@@ -42,31 +41,32 @@
         var(--bg);
     }
 
-    a{text-decoration:none;color:inherit}
+    a { text-decoration:none; color:inherit; }
 
-    .container{
+    .container {
       max-width:1100px;
       margin:0 auto;
       padding:0 16px;
     }
 
     /* Topbar */
-    .topbar{
+    .topbar {
       background:#0f0f12;
       border-bottom:1px solid rgba(255,255,255,.06);
       font-size:14px;
     }
-    .topbar .wrap{
+
+    .topbar .wrap {
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:12px;
       padding:8px 0;
     }
-    .topbar .right{opacity:.9}
+
+    .topbar .right { opacity:.9; }
 
     /* Header */
-    header{
+    header {
       position:sticky;
       top:0;
       z-index:50;
@@ -75,7 +75,7 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .nav{
+    .nav {
       display:grid;
       grid-template-columns:auto 1fr auto;
       align-items:center;
@@ -83,7 +83,7 @@
       padding:14px 0 10px;
     }
 
-    .logo{
+    .logo {
       display:flex;
       align-items:center;
       gap:12px;
@@ -91,51 +91,48 @@
       white-space:nowrap;
     }
 
-    .logo .mark{
+    .logo .mark {
       width:28px;
       height:28px;
       border-radius:8px;
       background:var(--accent-grad);
     }
 
-    /* === МЕНЮ (ТОЛЬКО ЭТО ВАЖНО) === */
-    .menu{
+    /* MENU — единственное, что меняли */
+    .menu {
       display:flex;
       align-items:center;
       gap:10px;
+      font-size:13px;
       white-space:nowrap;
-      font-size:13px;   /* размер меню */
     }
 
-    .menu a{
+    .menu a {
       padding:4px 2px;
       color:rgba(246,247,249,.92);
     }
 
-    /* Submenu */
-    .subnav{
-      padding-bottom:12px;
+    .subnav {
       border-top:1px solid rgba(255,255,255,.06);
+      padding-bottom:12px;
     }
 
-    .submenu{
+    .submenu {
       display:flex;
       gap:12px;
       flex-wrap:wrap;
       padding-top:10px;
-      font-size:12px;   /* размер подменю */
-      color:rgba(246,247,249,.86);
+      font-size:12px;
     }
 
-    .submenu a{
+    .submenu a {
       padding:6px 8px;
       border-radius:999px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
     }
 
-    /* Buttons */
-    .btn{
+    .btn {
       padding:12px 16px;
       border-radius:12px;
       background:var(--accent-grad);
@@ -145,16 +142,15 @@
       align-items:center;
     }
 
-    .btn.outline{
+    .btn.outline {
       background:none;
       color:var(--text);
       border:1px solid rgba(255,255,255,.16);
     }
 
-    /* Hero */
-    .hero{padding:56px 0}
+    .hero { padding:56px 0; }
 
-    .badge{
+    .badge {
       display:inline-block;
       background:var(--accent-grad);
       color:#120a00;
@@ -164,17 +160,17 @@
       font-size:14px;
     }
 
-    .h1{
+    .h1 {
       font-size:clamp(28px,4vw,44px);
       margin:14px 0 10px;
     }
 
-    .lead{
+    .lead {
       color:var(--muted);
       max-width:700px;
     }
 
-    .actions{
+    .actions {
       display:flex;
       gap:14px;
       margin-top:20px;
@@ -185,7 +181,6 @@
 
 <body>
 
-  <!-- Topbar -->
   <div class="topbar">
     <div class="container wrap">
       <div>+996 709 68 65 38</div>
@@ -193,7 +188,6 @@
     </div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="container nav">
       <div class="logo">
@@ -224,7 +218,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <span class="badge">Визовая поддержка</span>
