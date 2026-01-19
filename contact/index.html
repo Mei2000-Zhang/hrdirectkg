@@ -58,6 +58,25 @@
       box-shadow:0 10px 24px rgba(255,122,24,.35);
     }
     .btn.outline{background:none; color:var(--text); border:1px solid rgba(255,255,255,.16); box-shadow:none}
+    
+/* ✅ МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ (КОМПАКТНОЕ) */
+.menu{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+  font-size:13px;        /* 🔑 главное */
+  font-weight:500;
+}
+.menu a{
+  padding:4px 2px;       /* 🔑 компактные кликабельные зоны */
+  opacity:.85;
+}
+.menu a.active{
+  opacity:1;
+  background:rgba(255,255,255,.08);
+  border-radius:8px;
+}
 
     .section{padding:40px 0}
     .h1{font-size:clamp(24px,3.3vw,36px); margin:0 0 10px; font-weight:800}
