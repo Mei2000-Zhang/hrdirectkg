@@ -92,6 +92,25 @@
       padding:20px;
     }
 
+    /* ✅ МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ (КОМПАКТНОЕ) */
+.menu{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+  font-size:13px;        /* 🔑 главное */
+  font-weight:500;
+}
+.menu a{
+  padding:4px 2px;       /* 🔑 компактные кликабельные зоны */
+  opacity:.85;
+}
+.menu a.active{
+  opacity:1;
+  background:rgba(255,255,255,.08);
+  border-radius:8px;
+}
+
     /* Contact */
     .cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
     .map{margin-top:20px; border-radius:12px; overflow:hidden;}
