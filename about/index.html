@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>О компании — HR Direct KG | Визовая поддержка Бишкек</title>
   <meta name="description" content="HR Direct KG — визовая поддержка для граждан Кыргызстана. Оформляем визы: Шенген, Япония, ОАЭ, Китай. Офис в Бишкеке: Ибраимова 115/3а, 4 этаж, офис 405." />
- <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
   <meta name="publisher" content="HR Direct KG">
+
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b0b0c; --surface:#111114; --muted:#9aa1ab; --text:#f6f7f9;
@@ -33,71 +35,90 @@
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 16px}
+
     .topbar{background:#0f0f12; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px}
     .topbar .wrap{display:flex; gap:16px; justify-content:space-between; align-items:center; padding:8px 0}
     .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06)}
-    header{position:sticky; top:0; z-index:50; background:rgba(17,17,20,.8); backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.06)}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(17,17,20,.8);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .logo{display:flex; align-items:center; gap:12px; font-weight:800}
     .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad); box-shadow:0 6px 14px rgba(255,122,24,.35)}
-    .menu{display:flex; gap:18px; align-items:center; font-weight:500}
-    .menu a.active{background:rgba(255,255,255,.08); padding:8px 10px; border-radius:10px}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:12px; background:var(--accent-grad); color:#100a00; font-weight:700; box-shadow:0 10px 24px rgba(255,122,24,.35)}
+
+    /* ✅ МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ (КОМПАКТНОЕ) */
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+      font-size:13px;
+      font-weight:500;
+      min-width:0;
+    }
+    .menu a{
+      padding:4px 2px;
+      opacity:.9;
+      white-space:nowrap;
+    }
+    .menu a.active{
+      background:rgba(255,255,255,.08);
+      border-radius:8px;
+      opacity:1;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:12px;
+      background:var(--accent-grad);
+      color:#100a00; font-weight:700;
+      box-shadow:0 10px 24px rgba(255,122,24,.35)
+    }
+
     .hero{padding:48px 0}
     .badge{display:inline-flex; align-items:center; gap:8px; font-weight:600; color:#130c00; background:var(--accent-grad); padding:6px 12px; border-radius:999px}
     .h1{font-size:clamp(28px,4.1vw,46px); line-height:1.15; margin:14px 0 8px; font-weight:800}
     .lead{font-size:18px; color:var(--muted)}
+
     .section{padding:40px 0}
     .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:18px; border-radius:16px}
     .grid-2{display:grid; grid-template-columns:1.2fr .8fr; gap:20px}
-    .list{display:grid; gap:1ю0px; margin:10px 0 0}
+
+    /* ✅ FIX: было 1ю0px */
+    .list{display:grid; gap:10px; margin:10px 0 0}
+
     .points{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
     .point{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:14px; font-size:14px}
     .cta{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:10px}
     footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; color:var(--muted)}
     .map{margin-top:20px; border-radius:12px; overflow:hidden;}
-    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+    @media (max-width:900px){
+      .grid-2{grid-template-columns:1fr}
+      .points{grid-template-columns:1fr}
+    }
+
+    /* ✅ чтобы меню не ломало мобилку */
+    @media (max-width:520px){
+      .menu{display:none}
+    }
+
     /* === Extra mobile tuning === */
-@media (max-width: 400px){
-  .container{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .h1{
-    font-size: 24px;
-    line-height: 1.25;
-    word-break: break-word;
-  }
-
-  .lead{
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 360px){
-  .h1{
-    font-size: 22px;
-  }
-}
-    /* === Hero mobile fix (anti-cut) === */
-@media (max-width: 400px){
-  .hero .box{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .hero .box > div{
-    min-width: 0;
-  }
-
-  .h1{
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-}
+    @media (max-width: 400px){
+      .container{padding-left:12px; padding-right:12px}
+      .h1{font-size:24px; line-height:1.25; word-break:break-word}
+      .lead{font-size:16px}
+    }
+    @media (max-width: 360px){
+      .h1{font-size:22px}
+    }
   </style>
 </head>
+
 <body>
   <!-- Topbar -->
   <div class="topbar">
@@ -111,11 +132,9 @@
   <header>
     <div class="container nav">
       <div class="logo"><span class="mark"></span><span>HR Direct KG</span></div>
-   <nav class="menu">
-  <!-- На главную (вверх страницы) -->
-  <a href="../#top">Главная</a>
 
-  <!-- Секции главной -->
+      <nav class="menu">
+        <a href="../#top">Главная</a>
         <a href="/hrdirectkg/visas/">Визы</a>
         <a href="/hrdirectkg/insurance/">Страховка для виз</a>
         <a href="/hrdirectkg/forms/">Заполнение анкет</a>
@@ -124,10 +143,9 @@
         <a href="/hrdirectkg/how-we-work/">Как мы работаем</a>
         <a href="/hrdirectkg/faq/">FAQ</a>
         <a href="/hrdirectkg/contact/">Контакты</a>
+        <a href="./" class="active">О компании</a>
+      </nav>
 
-  <!-- Текущая страница -->
-  <a href="./" class="active">О компании</a>
-</nav>
       <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Хочу%20оформить%20визу." target="_blank" rel="noopener">Консультация</a>
     </div>
   </header>
@@ -147,24 +165,29 @@
       <div class="card">
         <h2>Кто мы</h2>
         <p><strong>HR Direct KG</strong> — команда, которая помогает пройти путь от «хочу поехать» до «виза в паспорте». Консультируем, собираем документы, оформляем страховку, записываем на подачу и готовим к собеседованию.</p>
+
         <h2>Наш опыт</h2>
         <p>Работаем со странами Европы (Шенген), Азии (Япония, Китай, ОАЭ). Знаем актуальные требования и типичные ошибки — экономим ваше время и снижаем риск отказа.</p>
+
         <div class="points">
           <div class="point">Шенген — туристические, гостевые, деловые визы</div>
           <div class="point">Япония — пакет под консульство, переводы, брони</div>
           <div class="point">ОАЭ и Китай — электронные/бизнес/туристические визы</div>
         </div>
       </div>
+
       <div class="card">
         <h2>Миссия</h2>
         <p>Сделать визовый процесс простым и честным: без «магии», с понятными сроками и шагами. Вы занимаетесь целями поездки — мы закрываем бюрократию.</p>
+
         <h2>Контакты</h2>
         <div class="list">
           <div>Адрес: г. Бишкек, ул. Ибраимова 115/3а, 4 этаж, офис 405</div>
-          <div>Телефон / WhatsApp: <a href="https://wa.me/996709686538" target="_blank">+996 709 68 65 38</a></div>
-          <div>Telegram: <a href="https://t.me/" target="_blank">@HRDirectKG</a></div>
+          <div>Телефон / WhatsApp: <a href="https://wa.me/996709686538" target="_blank" rel="noopener">+996 709 68 65 38</a></div>
+          <div>Telegram: <a href="https://t.me/" target="_blank" rel="noopener">@HRDirectKG</a></div>
           <div>Email: <a href="mailto:hrdirectkg@example.com">hrdirectkg@example.com</a></div>
         </div>
+
         <div class="cta">
           <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Нужна%20консультация%20по%20визе." target="_blank" rel="noopener">Написать в WhatsApp</a>
         </div>
@@ -194,4 +217,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
