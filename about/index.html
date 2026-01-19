@@ -71,6 +71,33 @@
       opacity:1;
     }
 
+    /* Submenu — как на странице виз */
+.subnav{
+  padding:0 0 12px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.submenu{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  padding-top:10px;
+  font-size:12px;                 /* 🔑 ВАЖНО */
+  color:rgba(246,247,249,.86);
+}
+
+.submenu a{
+  padding:6px 8px;                /* 🔑 компактно */
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  white-space:nowrap;
+}
+
+.submenu a:hover{
+  background:rgba(255,255,255,.07);
+}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 16px; border-radius:12px;
@@ -140,12 +167,20 @@
         <a href="/hrdirectkg/forms/">Заполнение анкет</a>
         <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
         <a href="/hrdirectkg/pricing/">Цены</a>
-        <a href="/hrdirectkg/faq/">FAQ</a>
-        <a href="/hrdirectkg/contact/">Контакты</a>
         <a href="./" class="active">О компании</a>
       </nav>
 
       <a class="btn" href="https://wa.me/996709686538?text=Здравствуйте!%20Хочу%20оформить%20визу." target="_blank" rel="noopener">Консультация</a>
+    </div>
+    <div class="subnav">
+      <div class="container">
+        <nav class="submenu" aria-label="Дополнительная навигация">
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+          <a href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Для партнёров</a>
+        </nav>
+      </div>
     </div>
   </header>
 
