@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HR Direct KG — Визы и трудоустройсвто за границей</title>
-  <meta name="description" content="HR Direct KG — визы и трудоустройство за границей для граждан Кыргызстана. HR Direct KG: анкеты, страховка, запись на подачу,  Анкеты, запись на подачу,сопровождение. Бишкек." />
+  <meta name="description" content="HR Direct KG — визы и трудоустройство за границей для граждан Кыргызстана. HR Direct KG: анкеты, страховка, запись на подачу, анкеты, запись на подачу, сопровождение. Бишкек." />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
@@ -50,7 +50,33 @@
       gap:12px;
       padding:8px 0;
     }
-    .topbar .right{opacity:.9}
+
+    /* Language switch */
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      opacity:.95;
+      white-space:nowrap;
+      user-select:none;
+    }
+    .lang a{
+      color:rgba(246,247,249,.92);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid transparent;
+      line-height:1.2;
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.10);
+    }
+    .lang a.active{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.14);
+      font-weight:700;
+    }
+    .lang .sep{opacity:.6}
 
     /* Header */
     header{
@@ -93,16 +119,16 @@
     .menu{
       display:flex;
       align-items:center;
-      gap:10px;              /* compact */
+      gap:10px;
       white-space:nowrap;
       justify-content:flex-start;
       min-width:0;
-      font-size:13px;        /* compact */
+      font-size:13px;
     }
     .menu a{
       white-space:nowrap;
       color:rgba(246,247,249,.92);
-      padding:4px 2px;       /* compact */
+      padding:4px 2px;
     }
     .menu a:hover{opacity:.9}
 
@@ -116,11 +142,11 @@
       gap:12px;
       flex-wrap:wrap;
       padding-top:10px;
-      font-size:12px;        /* compact */
+      font-size:12px;
       color:rgba(246,247,249,.86);
     }
     .submenu a{
-      padding:6px 8px;       /* compact */
+      padding:6px 8px;
       border-radius:999px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
@@ -170,7 +196,15 @@
   <div class="topbar">
     <div class="container wrap">
       <div>+996 990 241 949</div>
-      <div class="right">RU · KG · EN</div>
+
+      <!-- clickable language switch -->
+      <div class="lang" aria-label="Выбор языка">
+        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
+        <span class="sep">·</span>
+        <a href="/hrdirectkg/kg/">KG</a>
+        <span class="sep">·</span>
+        <a href="/hrdirectkg/en/">EN</a>
+      </div>
     </div>
   </div>
 
@@ -197,7 +231,7 @@
       </div>
     </div>
 
-    <!-- Secondary nav row: grows with new pages -->
+    <!-- Secondary nav row -->
     <div class="subnav">
       <div class="container">
         <nav class="submenu" aria-label="Дополнительная навигация">
@@ -216,9 +250,9 @@
       <span class="badge">Визы и трудоустройство</span>
       <h1 class="h1">Визы и работа за границей для граждан Кыргызстана</h1>
       <p class="lead">
-         Шенген, Китай, ОАЭ и другие направления.
-      Подготовка документов, страховка, запись на подачу
-      и сопровождение трудоустройства за рубежом.
+        Шенген, Китай, ОАЭ и другие направления.
+        Подготовка документов, страховка, запись на подачу
+        и сопровождение трудоустройства за рубежом.
       </p>
 
       <div class="actions">
