@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Direct KG — Виза боюнча FAQ</title>
+  <meta name="description" content="Виза алуу боюнча көп берилүүчү суроолорго жооптор: мөөнөттөр, документтер, жазылуу, камсыздандыруу, брондор, баш тартуу себептери. HR Direct KG, Бишкек." />
+
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/kg/faq/" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HR Direct KG">
+  <meta name="publisher" content="HR Direct KG">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/faq/" />
+  <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/faq/" />
+  <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/faq/" />
+  <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/faq/" />
+
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --muted:#9aa1ab;
+      --text:#f6f7f9;
+      --brand-1:#ff7a18;
+      --brand-2:#ff9a44;
+      --brand-3:#ffd194;
+      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --shadow:0 10px 25px rgba(0,0,0,.3);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+
+    /* Topbar */
+    .topbar{background:#0f0f12; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px}
+    .topbar .wrap{display:flex; justify-content:space-between; align-items:center; padding:8px 0; gap:12px}
+    .topbar .langs{display:flex; gap:10px; opacity:.9; white-space:nowrap}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06)}
+
+    /* Header/Nav */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(17,17,20,.85);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex; justify-content:space-between; align-items:center; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px;
+      background:var(--accent-grad);
+      color:#100a00; font-weight:700;
+      box-shadow:0 10px 24px rgba(255,122,24,.35);
+    }
+    .btn.outline{background:none; color:var(--text); border:1px solid rgba(255,255,255,.16); box-shadow:none}
+
+    /* ✅ Компактное меню */
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+      font-size:13px;
+      font-weight:500;
+      min-width:0;
+    }
+    .menu a{
+      padding:4px 2px;
+      opacity:.85;
+      white-space:nowrap;
+    }
+    .menu a.active{
+      opacity:1;
+      background:rgba(255,255,255,.08);
+      border-radius:8px;
+    }
+
+    /* Submenu */
+    .subnav{
+      padding:0 0 12px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .submenu{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:10px;
+      font-size:12px;
+      color:rgba(246,247,249,.86);
+    }
+    .submenu a{
+      padding:6px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      white-space:nowrap;
+    }
+    .submenu a:hover{ background:rgba(255,255,255,.07); }
+
+    /* Content */
+    .section{padding:40px 0}
+    .h1{font-size:clamp(24px,3.3vw,36px); margin:0 0 10px; font-weight:800}
+    .lead{color:var(--muted); margin:0; max-width:760px}
+    .note{color:var(--muted); font-size:14px; margin-top:10px}
+
+    /* FAQ blocks */
+    details{
+      background:#121217;
+      border:1px solid rgba(255,255,255,.08);
+      padding:14px 16px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+    details+details{margin-top:10px}
+    summary{cursor:pointer; font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted)}
+
+    /* Contact */
+    .cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
+
+    footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; color:var(--muted)}
+    @media(max-width:520px){ .menu{display:none} }
+
+    /* Floating WA */
+    .wa{
+      position:fixed; right:16px; bottom:16px;
+      width:54px; height:54px; border-radius:50%;
+      background:var(--accent-grad);
+      display:grid; place-items:center;
+      box-shadow:0 12px 26px rgba(255,122,24,.4);
+      z-index:60
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="chip">+996 990 241 949</div>
+      <div class="langs">
+        <a href="/hrdirectkg/faq/">RU</a> ·
+        <a href="/hrdirectkg/kg/faq/">KG</a> ·
+        <a href="/hrdirectkg/en/faq/">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="mark"></span><span>HR Direct KG</span></div>
+
+      <nav class="menu" aria-label="Негизги навигация">
+        <a href="/hrdirectkg/kg/">Башкы</a>
+        <a href="/hrdirectkg/kg/about/">Компания тууралуу</a>
+        <a href="/hrdirectkg/kg/visas/">Визалар</a>
+        <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
+        <a href="/hrdirectkg/kg/forms/">Анкета толтуруу</a>
+        <a href="/hrdirectkg/kg/how-to-get-visa/">Визаны кантип алса болот</a>
+        <a href="/hrdirectkg/kg/pricing/">Баа</a>
+      </nav>
+
+      <a class="btn" href="https://wa.me/996990241949?text=Салам!%20Виза%20боюнча%20суроом%20бар." target="_blank" rel="noopener">Консультация</a>
+    </div>
+
+    <div class="subnav">
+      <div class="container">
+        <nav class="submenu" aria-label="Кошумча навигация">
+          <a href="/hrdirectkg/kg/faq/" aria-current="page">FAQ</a>
+          <a href="/hrdirectkg/kg/contact/">Байланыш</a>
+          <a href="/hrdirectkg/kg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <h1 class="h1">FAQ — виза боюнча көп берилүүчү суроолор</h1>
+      <p class="lead">
+        Эң көп суралган суроолорго жоопторду чогулттук. Эгер сиздики бул жерде жок болсо — WhatsApp'ка жазыңыз, жагдайыңызга жараша айтып беребиз.
+      </p>
+
+      <div style="margin-top:18px">
+        <details>
+          <summary>Сиздер визаны 100% кепилдейсиздерби?</summary>
+          <p>Жок. Чечимди консулдук же визалык борбор кабыл алат. Биз документ топтомун туура даярдап, тобокелди азайтабыз, бирок “мүмкүн эмес” нерсени убада кылбайбыз.</p>
+        </details>
+
+        <details>
+          <summary>Оформление канча убакыт алат?</summary>
+          <p>Өлкөгө жана тапшырууга бош убакыт (слот) бар-жогуна байланыштуу. Орточо эсеп менен бир нече күндөн 4–6 жумага чейин. Так мөөнөттү өлкө жана даталарды тактагандан кийин айтабыз.</p>
+        </details>
+
+        <details>
+          <summary>Адатта кандай документтер керек?</summary>
+          <p>Көп учурда: чет өлкөлүк паспорт, сүрөт, анкета, иш/киреше маалымкаттары, банктык көчүрмө, жашоо жайы/маршрут боюнча бронь жана камсыздандыруу. Талаптар өлкөгө жараша өзгөрөт.</p>
+        </details>
+
+        <details>
+          <summary>Анкетаны жана жазылууну да жасап бересиздерби?</summary>
+          <p>Ооба. Анкетаны толтурабыз, документтер боюнча кеңеш беребиз жана тапшырууга жазылууга жардам беребиз (өлкө боюнча мүмкүн болсо).</p>
+        </details>
+
+        <details>
+          <summary>Чыныгы билет жана мейманкана брону керекпи?</summary>
+          <p>Көп учурда кандайдыр бир тастыктоолор керек болот. Биз өлкө жана виза түрүнө жараша кайсы вариант туура экенин айтып беребиз.</p>
+        </details>
+
+        <details>
+          <summary>Иши жок болсо да виза алса болобу?</summary>
+          <p>Айрым учурларда болот, бирок финансылык мүмкүнчүлүктү жана сапардын максатын ишенимдүү көрсөтүү маанилүү. Сиздин жагдайды карап, пакетти кандай даярдаса жакшы болорун сунуштайбыз.</p>
+        </details>
+
+        <details>
+          <summary>Эмне үчүн баш тартуулар болот?</summary>
+          <p>Көп кездешкен себептер: толук эмес/ынандырбаган пакет, сапардын максаты документтерге дал келбеши, финансылык далилдин жетишсиздиги, анкетадагы ката, алсыз визалык тарых. Биз мунун баарын алдын ала текшерүүгө жардам беребиз.</p>
+        </details>
+
+        <details>
+          <summary>Эгер баш тартуу болсо — кайра тапшырууга болобу?</summary>
+          <p>Көпчүлүк учурда — ооба. Негизи себепти түшүнүп, документтерди оңдоо керек. Бизге жазыңыз — талдап, туура стратегия сунуштайбыз.</p>
+        </details>
+
+        <details>
+          <summary>Кызмат баасы канча?</summary>
+          <p>Баа багытка жана виза түрүнө жараша. «Баа» бөлүмүн караңыз же бизге жазыңыз — тез жана ачык айтып беребиз.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top:18px">
+        <a class="btn" href="https://wa.me/996990241949?text=Салам!%20Виза%20боюнча%20суроом%20бар." target="_blank" rel="noopener">WhatsApp'ка суроо берүү</a>
+        <a class="btn outline" href="/hrdirectkg/kg/pricing/">Баа</a>
+        <a class="btn outline" href="/hrdirectkg/kg/contact/">Байланыш</a>
+      </div>
+
+      <p class="note">Эскертүү: консулдук/сервис төлөмдөрү өзүнчө төлөнөт.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — визалык колдоо
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/996990241949?text=Салам!%20Виза%20боюнча%20суроом%20бар." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span style="font-weight:900; color:#120a00;">WA</span>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
