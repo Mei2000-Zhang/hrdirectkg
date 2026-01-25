@@ -5,59 +5,293 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Кытай визасы — туристтик жана бизнес | HR Direct KG</title>
-  <meta name="description" content="Кыргызстандын жарандары үчүн Кытай визасы: туристтик жана бизнес. Анкета, чакыруу, брондор, камсыздандыруу, коштоо. Бишкек." />
-
+  <meta name="description" content="Кыргызстандын жарандары үчүн Кытай визасы: туристтик жана бизнес. Анкета, чакыруу, брондор, камсыздандыруу жана коштоо. Бишкек." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/kg/visas/china/" />
 
-  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/visas/china/" />
+  <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/visas/china/" />
+  <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/visas/china/" />
+  <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/visas/china/" />
+
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c;
-  --surface:#111114;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
-  --accent:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-  --radius:16px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --surface:#111114;
+      --muted:#9aa1ab;
+      --text:#f6f7f9;
+      --brand-1:#ff7a18;
+      --brand-2:#ff9a44;
+      --brand-3:#ffd194;
+      --accent:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --line: rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .muted{color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.05);
+      font-size:13px;color:rgba(246,247,249,.92);
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid var(--line);background:rgba(255,255,255,.06);
+      color:var(--text);font-weight:800;cursor:pointer;transition:.15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.09)}
+    .btn.primary{border:0;background:var(--accent);color:#120b06}
+    .card{
+      border:1px solid var(--line);
+      background:rgba(17,17,20,.72);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .list{margin:0;padding-left:18px;color:rgba(246,247,249,.9)}
+    .list li{margin:8px 0}
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:8px 0;
-}
-/* Language switch */
-.lang{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  opacity:.95;
+    /* Topbar */
+    .topbar{background:#0f0f12;border-bottom:1px solid var(--line);font-size:14px}
+    .topbar .wrap{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;
+    }
+
+    /* Language switch */
+    .lang{display:flex;align-items:center;gap:8px;opacity:.95;white-space:nowrap;user-select:none}
+    .lang a{
+      color:rgba(246,247,249,.92);
+      padding:2px 8px;border-radius:10px;border:1px solid transparent;line-height:1.2;
+      font-weight:650;
+    }
+    .lang a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+    .lang a.active{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.14);font-weight:850}
+    .lang .sep{opacity:.6}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(17,17,20,.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .logo{
+      display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px;min-width:210px;
+    }
+    .logo .mark{
+      width:28px;height:28px;border-radius:10px;background:var(--accent);
+      box-shadow:0 8px 20px rgba(255,122,24,.25);flex:0 0 auto;
+    }
+    .logo .text{display:flex;flex-direction:column;gap:2px;line-height:1.1}
+    .logo .text span:first-child{font-size:14px;opacity:.95}
+    .logo .text span:last-child{font-size:12px;color:var(--muted);font-weight:650}
+
+    /* Menu */
+    .menu{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .menu a{
+      padding:9px 10px;border-radius:12px;border:1px solid transparent;
+      color:rgba(246,247,249,.92);font-weight:650;font-size:14px;transition:.15s ease;white-space:nowrap;
+    }
+    .menu a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+    .menu a.active{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.14);font-weight:850}
+
+    /* Hero */
+    .hero{padding:34px 0 18px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
+    h1{margin:0 0 10px;font-size:34px;line-height:1.15;letter-spacing:-.3px}
+    .lead{margin:0 0 14px;color:rgba(246,247,249,.88);font-size:16px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .hero-side{display:flex;flex-direction:column;gap:12px}
+
+    .sec{padding:14px 0 30px}
+    h2{margin:0 0 12px;font-size:20px;letter-spacing:-.2px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);background:rgba(10,10,12,.7);padding:22px 0;color:rgba(246,247,249,.86)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:start}
+    .contact a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.25)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .logo{min-width:auto}
+      h1{font-size:30px}
+      .footer-grid{grid-template-columns:1fr}
+      .menu{justify-content:flex-start}
+    }
+    @media (max-width: 420px){
+      h1{font-size:26px}
+      .menu a{font-size:13px;padding:8px 9px}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="muted">Виза колдоо • Бишкек</div>
+      <div class="lang" aria-label="Language switch">
+        <a href="/hrdirectkg/visas/china/">RU</a>
+        <span class="sep">|</span>
+        <a class="active" href="/hrdirectkg/kg/visas/china/">KG</a>
+        <span class="sep">|</span>
+        <a href="/hrdirectkg/en/visas/china/">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="/hrdirectkg/kg/">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="text">
+          <span>HR Direct KG</span>
+          <span>Визалык колдоо</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Main navigation">
+        <a href="/hrdirectkg/kg/about/">Компания тууралуу</a>
+        <a class="active" href="/hrdirectkg/kg/visas/">Визалар</a>
+        <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
+        <a href="/hrdirectkg/kg/forms/">Анкета толтуруу</a>
+        <a href="/hrdirectkg/kg/pricing/">Баа</a>
+        <a href="/hrdirectkg/kg/how-we-work/">Кантип иштейбиз</a>
+        <a href="/hrdirectkg/kg/faq/">FAQ</a>
+        <a href="/hrdirectkg/kg/contact/">Байланыш</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="card">
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+          <span class="chip">Кытай</span>
+          <span class="chip">Туристтик</span>
+          <span class="chip">Бизнес</span>
+        </div>
+
+        <h1>Кытай визасы — туристтик жана бизнес</h1>
+        <p class="lead">
+          Кытайга виза алуу үчүн документтерди туура топтоп, анкетаңызды так толтуруп беребиз.
+          Туристтик жана бизнес визалар боюнча консультация, чакыруу (болсо), брондор жана коштоо.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="/hrdirectkg/kg/contact/">Консультация алуу</a>
+          <a class="btn" href="/hrdirectkg/kg/pricing/">Баа көрүү</a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Талаптар визанын түрүнө жана сиздин профилиңизге жараша өзгөрүшү мүмкүн — алдын ала текшерип беребиз.
+        </p>
+      </div>
+
+      <div class="hero-side">
+        <div class="card">
+          <h2>Кызматтар</h2>
+          <ul class="list">
+            <li>Консультация жана визанын түрүн тандоо</li>
+            <li>Анкета толтуруу</li>
+            <li>Документтердин тизмеги жана текшерүүсү</li>
+            <li>Брондор боюнча жардам (мейманкана/учуу)</li>
+            <li>Камсыздандыруу боюнча сунуш</li>
+            <li>Тапшырууга чейин коштоо</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Визанын түрлөрү</h2>
+          <ul class="list">
+            <li>Туристтик виза</li>
+            <li>Бизнес виза</li>
+          </ul>
+          <p class="small" style="margin-top:10px;">
+            Бизнес визада көп учурда чакыруу жана компаниялык документтер талап кылынат.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="sec">
+    <div class="container grid2">
+      <div class="card">
+        <h2>Кандай документтер керек</h2>
+        <ul class="list">
+          <li>Паспорт жана көчүрмөлөр</li>
+          <li>Сүрөт (визалык формат)</li>
+          <li>Иштен справка же окуудан маалымкат</li>
+          <li>Банктык эсептен көчүрмө</li>
+          <li>Брондор (учуу/мейманкана) же маршрут</li>
+          <li>Бизнес визада: чакыруу жана компаниялык документтер (болсо)</li>
+        </ul>
+        <p class="small" style="margin-top:10px;">
+          Так тизмек консулдуктун талаптарына жана визанын түрүнө жараша такталат.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Кантип иштейбиз</h2>
+        <ul class="list">
+          <li>Кыска консультация: визанын түрү, максат, даталар</li>
+          <li>Документтерди кабыл алуу жана алдын ала текшерүү</li>
+          <li>Анкетаны толтуруу жана топтомду даярдоо</li>
+          <li>Тапшырууга чейин коштоо</li>
+        </ul>
+        <div style="margin-top:12px;">
+          <a class="btn" href="/hrdirectkg/kg/how-we-work/">Толук маалымат</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div style="font-weight:900; margin-bottom:6px;">HR Direct KG</div>
+        <div class="small">Виза колдоо кызматтары: Шенген, Япония, Кытай, БАЭ жана башка багыттар.</div>
+      </div>
+
+      <div class="contact">
+        <div style="font-weight:800; margin-bottom:6px;">Байланыш</div>
+        <div class="small">
+          Суроолор болсо, байланышыңыз: <a href="/hrdirectkg/kg/contact/">Контакттар</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
