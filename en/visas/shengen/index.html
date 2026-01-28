@@ -1,0 +1,372 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Schengen Visa — France, Germany, Spain | HR Direct KG</title>
+  <meta name="description" content="Schengen visa for citizens of Kyrgyzstan: France, Germany, Spain, Italy, Hungary. Forms, insurance, appointment booking, and support. Bishkek.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/schengen/" />
+
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --surface:#111114;
+      --muted:#9aa1ab;
+      --text:#f6f7f9;
+      --brand-1:#ff7a18;
+      --brand-2:#ff9a44;
+      --brand-3:#ffd194;
+      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+    /* Topbar (phone + languages) */
+    .topbar{
+      background:#0f0f12;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      font-size:14px;
+    }
+    .topbar .wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:8px 0;
+    }
+    .topbar .phone{opacity:.95}
+
+    /* Language switch */
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      opacity:.95;
+    }
+    .lang a{opacity:.75}
+    .lang a.active{opacity:1;font-weight:700}
+    .sep{opacity:.35}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(17,17,20,.85);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:visible;
+    }
+    .nav{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:18px;
+      padding:14px 0 10px;
+      overflow:visible;
+    }
+    .nav__left{min-width:max-content}
+    .nav__center{min-width:0; overflow:visible}
+    .nav__right{min-width:max-content}
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .logo .mark{
+      width:28px;
+      height:28px;
+      border-radius:8px;
+      background:var(--accent-grad);
+      flex:0 0 auto;
+    }
+
+    /* Menu */
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+      justify-content:flex-start;
+      min-width:0;
+      font-size:13px;
+    }
+    .menu a{
+      white-space:nowrap;
+      color:rgba(246,247,249,.92);
+      padding:4px 2px;
+      opacity:.9;
+    }
+    .menu a:hover{opacity:1}
+    .menu a.active{opacity:1;font-weight:700}
+
+    /* Submenu */
+    .subnav{
+      padding:0 0 12px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .submenu{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:10px;
+      font-size:12px;
+      color:rgba(246,247,249,.86);
+    }
+    .submenu a{
+      padding:6px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      white-space:nowrap;
+    }
+    .submenu a:hover{background:rgba(255,255,255,.07);}
+
+    /* Buttons */
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      background:var(--accent-grad);
+      color:#120a00;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+    }
+    .btn.outline{
+      background:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    /* Hero */
+    .hero{padding:48px 0 28px}
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--accent-grad);
+      color:#120a00;
+      font-weight:700;
+      font-size:14px;
+    }
+    .h1{
+      font-size:clamp(28px,4vw,44px);
+      margin:14px 0 10px;
+      font-weight:800;
+    }
+    .lead{font-size:18px;color:var(--muted);max-width:760px}
+
+    /* Cards & sections */
+    .section{padding:36px 0}
+    .note{font-size:14px;color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      padding:18px;
+    }
+    .flag{font-size:26px}
+    .meta{font-size:14px;color:var(--muted);margin:6px 0 10px}
+
+    /* Hero card */
+    .heroCard{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      padding:16px;
+      margin-top:18px;
+    }
+    .points{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
+      margin-top:8px;
+    }
+    .point{font-size:14px;color:var(--muted)}
+
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:24px 0;
+      color:var(--muted);
+    }
+
+    /* Mobile */
+    @media(max-width:820px){
+      .menu{flex-wrap:wrap; white-space:normal}
+    }
+    @media(max-width:520px){
+      .menu{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="phone">+996 990 241 949</div>
+
+      <div class="lang" aria-label="Language switch">
+        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
+        <span class="sep">·</span>
+        <a href="/hrdirectkg/kg/">KG</a>
+        <span class="sep">·</span>
+        <a href="/hrdirectkg/en/">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="nav__left">
+        <a class="logo" href="/hrdirectkg/">
+          <span class="mark"></span><span>HR Direct KG</span>
+        </a>
+      </div>
+
+      <div class="nav__center">
+        <nav class="menu" aria-label="Main navigation">
+          <a href="/hrdirectkg/">Home</a>
+          <a href="/hrdirectkg/about/">About</a>
+          <a href="/hrdirectkg/visas/" class="active">Visas</a>
+          <a href="/hrdirectkg/insurance/">Insurance</a>
+          <a href="/hrdirectkg/forms/">Forms</a>
+          <a href="/hrdirectkg/how-to-get-visa/">How to get a visa</a>
+          <a href="/hrdirectkg/pricing/">Pricing</a>
+        </nav>
+      </div>
+
+      <div class="nav__right">
+        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Consultation</a>
+      </div>
+    </div>
+
+    <div class="subnav">
+      <div class="container">
+        <nav class="submenu" aria-label="Secondary navigation">
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Contacts</a>
+          <a href="/hrdirectkg/employment/">Employment</a>
+          <a href="/hrdirectkg/partners/">For partners</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Schengen visa</div>
+      <h1 class="h1">France, Germany, Spain, Italy, Hungary</h1>
+      <p class="lead">
+        We prepare your documents so the consulate has fewer questions — and more reasons to say “yes”.
+      </p>
+
+      <div class="heroCard">
+        <strong>What we do:</strong>
+        <div class="points">
+          <div class="point">• Review your documents and visa history</div>
+          <div class="point">• Fill in forms and assemble the application package</div>
+          <div class="point">• Insurance and bookings for submission</div>
+          <div class="point">• Appointment booking and guidance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countries -->
+  <section class="section">
+    <div class="container">
+      <h2>Schengen by country</h2>
+      <p class="note">Short and clear — choose a destination.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="flag">🇫🇷</div>
+          <strong>France</strong>
+          <div class="meta">Tourism, visiting friends/family</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">🇩🇪</div>
+          <strong>Germany</strong>
+          <div class="meta">A well-structured application package</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">🇪🇸</div>
+          <strong>Spain</strong>
+          <div class="meta">Holidays and trips</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">🇮🇹</div>
+          <strong>Italy</strong>
+          <div class="meta">A clear travel purpose</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">🇭🇺</div>
+          <strong>Hungary</strong>
+          <div class="meta">Short trips</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20want%20to%20apply%20for%20a%20Schengen%20visa." target="_blank" rel="noopener">
+        Message on WhatsApp
+      </a>
+      <a class="btn outline" href="/hrdirectkg/visas/">All visas</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — visa support
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
