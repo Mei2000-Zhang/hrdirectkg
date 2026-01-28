@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
 
   <title>Visas — Schengen, China, Japan, Dubai | HR Direct KG</title>
   <meta name="description" content="Choose a visa destination: Schengen, China, Japan, Dubai (UAE). HR Direct KG — forms, insurance, appointment booking, and support. Bishkek." />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/" />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/visas/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
   <meta name="publisher" content="HR Direct KG">
@@ -54,6 +54,17 @@
     }
     .topbar .right{opacity:.9}
 
+    /* Language switch (was missing) */
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      opacity:.95;
+    }
+    .lang a{opacity:.75}
+    .lang a.active{opacity:1;font-weight:700}
+    .sep{opacity:.35}
+
     /* Header */
     header{
       position:sticky; top:0; z-index:50;
@@ -89,7 +100,7 @@
       flex:0 0 auto;
     }
 
-    /* Меню — компактный размер (как на главной) */
+    /* Menu */
     .menu{
       display:flex;
       align-items:center;
@@ -161,7 +172,6 @@
     .lead{color:var(--muted); max-width:760px}
     .actions{display:flex; gap:14px; margin-top:18px; flex-wrap:wrap}
 
-    /* Directions list (вертикально) */
     .section{padding:26px 0 56px}
     .h2{font-size:22px; margin:0 0 8px}
     .note{color:var(--muted); margin:0 0 14px; font-size:14px}
@@ -186,7 +196,6 @@
     .visa-link:hover{ background:rgba(255,255,255,.07); }
     .visa-meta{color:var(--muted); font-size:13px; font-weight:500}
 
-    /* anchor offset for sticky header */
     #directions{scroll-margin-top:140px;}
   </style>
 </head>
@@ -196,14 +205,13 @@
   <div class="topbar">
     <div class="container wrap">
       <div>+996 990 241 949</div>
-      
-     <!-- clickable language switch -->
+
       <div class="lang" aria-label="Language switch">
-        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
+        <a href="/hrdirectkg/">RU</a>
         <span class="sep">·</span>
         <a href="/hrdirectkg/kg/">KG</a>
         <span class="sep">·</span>
-        <a href="/hrdirectkg/en/">EN</a>
+        <a href="/hrdirectkg/en/" class="active" aria-current="page">EN</a>
       </div>
     </div>
   </div>
@@ -212,17 +220,19 @@
   <header>
     <div class="container nav">
       <div class="nav__left">
-        <div class="logo"><span class="mark"></span>HR Direct KG</div>
+        <a class="logo" href="/hrdirectkg/en/">
+          <span class="mark"></span>HR Direct KG
+        </a>
       </div>
 
       <div class="nav__center">
         <nav class="menu" aria-label="Main navigation">
-          <a href="/hrdirectkg/about/">About</a>
-          <a href="/hrdirectkg/visas/">Visas</a>
-          <a href="/hrdirectkg/insurance/">Insurance</a>
-          <a href="/hrdirectkg/forms/">Forms</a>
-          <a href="/hrdirectkg/how-to-get-visa/">How to get a visa</a>
-          <a href="/hrdirectkg/pricing/">Pricing</a>
+          <a href="/hrdirectkg/en/about/">About</a>
+          <a href="/hrdirectkg/en/visas/">Visas</a>
+          <a href="/hrdirectkg/en/insurance/">Insurance</a>
+          <a href="/hrdirectkg/en/forms/">Forms</a>
+          <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
+          <a href="/hrdirectkg/en/pricing/">Pricing</a>
         </nav>
       </div>
 
@@ -234,10 +244,10 @@
     <div class="subnav">
       <div class="container">
         <nav class="submenu" aria-label="Secondary navigation">
-          <a href="/hrdirectkg/faq/">FAQ</a>
-          <a href="/hrdirectkg/contact/">Contacts</a>
-          <a href="/hrdirectkg/employment/">Employment</a>
-          <a href="/hrdirectkg/partners/">For partners</a>
+          <a href="/hrdirectkg/en/faq/">FAQ</a>
+          <a href="/hrdirectkg/en/contact/">Contacts</a>
+          <a href="/hrdirectkg/en/employment/">Employment</a>
+          <a href="/hrdirectkg/en/partners/">For partners</a>
         </nav>
       </div>
     </div>
@@ -266,22 +276,22 @@
       <p class="note">Click to open the page with full information.</p>
 
       <div class="visa-list" aria-label="List of visa destinations">
-        <a class="visa-link" href="/hrdirectkg/visas/schengen/">
+        <a class="visa-link" href="/hrdirectkg/en/visas/schengen/">
           <span>Schengen visa</span>
           <span class="visa-meta">France, Germany, Italy… →</span>
         </a>
 
-        <a class="visa-link" href="/hrdirectkg/visas/china/">
+        <a class="visa-link" href="/hrdirectkg/en/visas/china/">
           <span>China visa</span>
           <span class="visa-meta">tourism / business →</span>
         </a>
 
-        <a class="visa-link" href="/hrdirectkg/visas/japan/">
+        <a class="visa-link" href="/hrdirectkg/en/visas/japan/">
           <span>Japan visa</span>
           <span class="visa-meta">tourism →</span>
         </a>
 
-        <a class="visa-link" href="/hrdirectkg/visas/dubai/">
+        <a class="visa-link" href="/hrdirectkg/en/visas/dubai/">
           <span>Dubai (UAE) visa</span>
           <span class="visa-meta">tourism →</span>
         </a>
