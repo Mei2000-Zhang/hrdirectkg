@@ -16,7 +16,6 @@
   <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/visas/japan/" />
 
   <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -30,15 +29,13 @@
       --brand-1:#ff7a18;
       --brand-2:#ff9a44;
       --brand-3:#ffd194;
-      --accent:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
       --radius:16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --line: rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
         radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
@@ -48,44 +45,11 @@
     }
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .muted{color:var(--muted)}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight:700;
-      cursor:pointer;
-      transition:.15s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{transform:translateY(-1px); background: rgba(255,255,255,.09)}
-    .btn.primary{
-      border:0;
-      background: var(--accent);
-      color:#120b06;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      font-size:13px;
-      color: rgba(246,247,249,.92);
-    }
 
     /* Topbar */
     .topbar{
       background:#0f0f12;
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid rgba(255,255,255,.06);
       font-size:14px;
     }
     .topbar .wrap{
@@ -95,6 +59,7 @@
       gap:12px;
       padding:8px 0;
     }
+    .topbar .phone{opacity:.95}
 
     /* Language switch */
     .lang{
@@ -105,24 +70,9 @@
       white-space:nowrap;
       user-select:none;
     }
-    .lang a{
-      color:rgba(246,247,249,.92);
-      padding:2px 8px;
-      border-radius:10px;
-      border:1px solid transparent;
-      line-height:1.2;
-      font-weight:600;
-    }
-    .lang a:hover{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.10);
-    }
-    .lang a.active{
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.14);
-      font-weight:800;
-    }
-    .lang .sep{opacity:.6}
+    .lang a{opacity:.75}
+    .lang a.active{opacity:1;font-weight:700}
+    .sep{opacity:.35}
 
     /* Header */
     header{
@@ -130,169 +80,184 @@
       top:0;
       z-index:50;
       background:rgba(17,17,20,.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:visible;
     }
     .nav{
-      display:flex;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
       align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
+      gap:18px;
+      padding:14px 0 10px;
+      overflow:visible;
     }
+    .nav__left{min-width:max-content}
+    .nav__center{min-width:0; overflow:visible}
+    .nav__right{min-width:max-content}
+
     .logo{
       display:flex;
       align-items:center;
       gap:12px;
-      font-weight:900;
-      letter-spacing:.2px;
-      min-width: 210px;
+      font-weight:800;
+      white-space:nowrap;
     }
     .logo .mark{
-      width:28px;
-      height:28px;
-      border-radius:10px;
-      background: var(--accent);
-      box-shadow: 0 8px 20px rgba(255,122,24,.25);
+      width:28px;height:28px;
+      border-radius:8px;
+      background:var(--accent-grad);
       flex:0 0 auto;
     }
-    .logo .text{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      line-height:1.1;
-    }
-    .logo .text span:first-child{font-size:14px; opacity:.95}
-    .logo .text span:last-child{font-size:12px; color:var(--muted); font-weight:600}
 
-    /* Menu */
+    /* Main menu */
     .menu{
       display:flex;
       align-items:center;
       gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+      white-space:nowrap;
+      justify-content:flex-start;
+      min-width:0;
+      font-size:13px;
     }
     .menu a{
-      padding:9px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
+      white-space:nowrap;
       color:rgba(246,247,249,.92);
-      font-weight:650;
-      font-size:14px;
-      transition:.15s ease;
+      padding:4px 2px;
+      opacity:.9;
+    }
+    .menu a:hover{opacity:1}
+    .menu a.active{opacity:1;font-weight:700}
+
+    /* Submenu */
+    .subnav{
+      padding:0 0 12px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .submenu{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      padding-top:10px;
+      font-size:12px;
+      color:rgba(246,247,249,.86);
+    }
+    .submenu a{
+      padding:6px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
       white-space:nowrap;
     }
-    .menu a:hover{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.10);
+    .submenu a:hover{background:rgba(255,255,255,.07);}
+
+    /* Buttons */
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      background:var(--accent-grad);
+      color:#120a00;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
     }
-    .menu a.active{
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.14);
-      font-weight:800;
+    .btn.outline{
+      background:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16);
     }
 
     /* Hero */
-    .hero{
-      padding:34px 0 18px;
+    .hero{padding:48px 0 28px}
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--accent-grad);
+      color:#120a00;
+      font-weight:700;
+      font-size:14px;
     }
-    .hero-grid{
+    .h1{
+      font-size:clamp(28px,4vw,44px);
+      margin:14px 0 10px;
+      font-weight:800;
+    }
+    .lead{font-size:18px;color:var(--muted);max-width:820px}
+
+    /* Sections */
+    .section{padding:36px 0}
+    .note{font-size:14px;color:var(--muted)}
+    .grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:16px;
     }
     .card{
-      border:1px solid var(--line);
-      background:rgba(17,17,20,.72);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
       padding:18px;
     }
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.15;
-      letter-spacing:-.3px;
+    .flag{font-size:26px}
+    .meta{font-size:14px;color:var(--muted);margin:6px 0 10px}
+
+    /* HeroCard */
+    .heroCard{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      padding:16px;
+      margin-top:18px;
     }
-    .lead{
-      margin:0 0 14px;
-      color: rgba(246,247,249,.88);
-      font-size:16px;
-    }
-    .hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-    .hero-side{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .list{
-      margin:0;
-      padding-left:18px;
-      color: rgba(246,247,249,.9);
-    }
-    .list li{margin:8px 0}
-    .sec{
-      padding:14px 0 30px;
-    }
-    h2{
-      margin:0 0 12px;
-      font-size:20px;
-      letter-spacing:-.2px;
-    }
-    .grid2{
+    .points{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
+      margin-top:8px;
+    }
+    .point{font-size:14px;color:var(--muted)}
+
+    /* CTA row helper */
+    .ctaRow{
+      margin-top:14px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     /* Footer */
     footer{
-      border-top:1px solid var(--line);
-      background:rgba(10,10,12,.7);
-      padding:22px 0;
-      color: rgba(246,247,249,.86);
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:24px 0;
+      color:var(--muted);
     }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:start;
-    }
-    .small{font-size:13px; color: var(--muted)}
-    .contact a{text-decoration:underline; text-decoration-color: rgba(255,255,255,.25)}
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr}
-      .logo{min-width:auto}
-      h1{font-size:30px}
-      .footer-grid{grid-template-columns:1fr}
-      .menu{justify-content:flex-start}
+    /* Mobile */
+    @media(max-width:820px){
+      .menu{flex-wrap:wrap; white-space:normal}
     }
-    @media (max-width: 420px){
-      h1{font-size:26px}
-      .menu a{font-size:13px; padding:8px 9px}
+    @media(max-width:520px){
+      .menu{display:none}
     }
   </style>
 </head>
 
 <body>
+
   <!-- Topbar -->
   <div class="topbar">
     <div class="container wrap">
-      <div class="muted">Виза колдоо • Бишкек</div>
-      <div class="lang" aria-label="Language switch">
+      <div class="phone">+996 990 241 949</div>
+
+      <div class="lang" aria-label="Тилди тандоо">
         <a href="/hrdirectkg/visas/japan/">RU</a>
-        <span class="sep">|</span>
-        <a class="active" href="/hrdirectkg/kg/visas/japan/">KG</a>
-        <span class="sep">|</span>
+        <span class="sep">·</span>
+        <a href="/hrdirectkg/kg/visas/japan/" class="active" aria-current="page">KG</a>
+        <span class="sep">·</span>
         <a href="/hrdirectkg/en/visas/japan/">EN</a>
       </div>
     </div>
@@ -301,122 +266,120 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="logo" href="/hrdirectkg/kg/">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="text">
-          <span>HR Direct KG</span>
-          <span>Визалык колдоо</span>
-        </span>
-      </a>
+      <div class="nav__left">
+        <a class="logo" href="/hrdirectkg/kg/">
+          <span class="mark"></span><span>HR Direct KG</span>
+        </a>
+      </div>
 
-      <nav class="menu" aria-label="Main navigation">
-        <a href="/hrdirectkg/kg/about/">Компания тууралуу</a>
-        <a class="active" href="/hrdirectkg/kg/visas/">Визалар</a>
-        <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
-        <a href="/hrdirectkg/kg/forms/">Анкета толтуруу</a>
-        <a href="/hrdirectkg/kg/pricing/">Баа</a>
-        <a href="/hrdirectkg/kg/how-we-work/">Кантип иштейбиз</a>
-        <a href="/hrdirectkg/kg/faq/">FAQ</a>
-        <a href="/hrdirectkg/kg/contact/">Байланыш</a>
-      </nav>
+      <div class="nav__center">
+        <nav class="menu" aria-label="Негизги навигация">
+          <a href="/hrdirectkg/kg/">Башкы бет</a>
+          <a href="/hrdirectkg/kg/about/">Компания жөнүндө</a>
+          <a href="/hrdirectkg/kg/visas/" class="active">Визалар</a>
+          <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
+          <a href="/hrdirectkg/kg/forms/">Анкеталар</a>
+          <a href="/hrdirectkg/kg/how-to-get-visa/">Виза кантип алынат</a>
+          <a href="/hrdirectkg/kg/pricing/">Баалар</a>
+        </nav>
+      </div>
+
+      <div class="nav__right">
+        <a class="btn"
+           href="https://wa.me/996990241949?text=Салам!%20Японияга%20виза%20боюнча%20консультация%20керек."
+           target="_blank" rel="noopener">Консультация</a>
+      </div>
+    </div>
+
+    <div class="subnav">
+      <div class="container">
+        <nav class="submenu" aria-label="Кошумча навигация">
+          <a href="/hrdirectkg/kg/faq/">FAQ</a>
+          <a href="/hrdirectkg/kg/contact/">Байланыш</a>
+          <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
+          <a href="/hrdirectkg/kg/partners/">Партнёрлор үчүн</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="card">
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
-          <span class="chip">Япония</span>
-          <span class="chip">Туристтик виза</span>
-          <span class="chip">Бишкек</span>
-        </div>
+    <div class="container">
+      <div class="badge">Япония визасы</div>
+      <h1 class="h1">Тыкан пакет — тынч тапшыруу</h1>
+      <p class="lead">
+        Япония тартипти жана логиканы баалайт. Биз документтерди туура топтоого,
+        анкетаны так толтурууга жана тапшырууга чейин баарын даярдоого жардам беребиз.
+      </p>
 
-        <h1>Японияга туристтик виза</h1>
-        <p class="lead">
-          Документтерди туура жана логикалуу топтоп, анкетаңызды тыкан толтуруп беребиз.
-          Брондор, камсыздандыруу жана тапшырууга чейин коштоо — баары бир жерде.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="/hrdirectkg/kg/contact/">Консультация алуу</a>
-          <a class="btn" href="/hrdirectkg/kg/pricing/">Баа көрүү</a>
-        </div>
-
-        <p class="small" style="margin-top:12px;">
-          Так тизмек жана талаптар сиздин профилиңизге жараша өзгөрүшү мүмкүн — алдын ала текшерип беребиз.
-        </p>
-      </div>
-
-      <div class="hero-side">
-        <div class="card">
-          <h2>Кызматтар</h2>
-          <ul class="list">
-            <li>Консультация жана талаптарды текшерүү</li>
-            <li>Анкета толтуруу</li>
-            <li>Документтерди тизмектеп, туура топтом түзүү</li>
-            <li>Маршрут/брон боюнча жардам</li>
-            <li>Камсыздандыруу боюнча сунуш</li>
-            <li>Тапшырууга чейин коштоо</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>Орточо мөөнөт</h2>
-          <p class="muted" style="margin:0;">
-            Мөөнөт консулдуктун графигине жана документтердин даяр болушуна жараша болот.
-            Биз сизге этаптарды так айтып, убакытты үнөмдөөгө жардам беребиз.
-          </p>
+      <div class="heroCard">
+        <strong>Биз эмне кылабыз:</strong>
+        <div class="points">
+          <div class="point">• Сапардын максаты/даталары боюнча кеңеш</div>
+          <div class="point">• Анкета толтуруу жана документтерди текшерүү</div>
+          <div class="point">• Брондор, маршрут, камсыздандыруу боюнча жардам</div>
+          <div class="point">• Тапшырууга чейинки так план жана багыт берүү</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Content -->
-  <section class="sec">
-    <div class="container grid2">
-      <div class="card">
-        <h2>Кандай документтер керек</h2>
-        <ul class="list">
-          <li>Паспорт жана көчүрмөлөр</li>
-          <li>Сүрөт (визалык формат)</li>
-          <li>Иштен справка же окуудан маалымкат</li>
-          <li>Банктык эсептен көчүрмө</li>
-          <li>Мейманкана жана авиабилет брондору</li>
-        </ul>
-        <p class="small" style="margin-top:10px;">Кошумча документтер кырдаалга жараша талап кылынышы мүмкүн.</p>
+  <!-- Cards -->
+  <section class="section">
+    <div class="container">
+      <h2>Япония визасы боюнча көп берилген суроолор</h2>
+      <p class="note">Кыска жана түшүнүктүү — ашыкча бюрократиясыз.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="flag">🧳</div>
+          <strong>Сапардын максаты</strong>
+          <div class="meta">Туризм, конокко баруу. Маршрут жана мөөнөт логикалуу болушу маанилүү.</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">📝</div>
+          <strong>Анкета</strong>
+          <div class="meta">Так, туура жана бири-бирине каршы келбеген маалымат.</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">🏨</div>
+          <strong>Брондор</strong>
+          <div class="meta">Тапшырууга ылайыктуу брондорду тандап беребиз.</div>
+        </div>
+
+        <div class="card">
+          <div class="flag">⏳</div>
+          <strong>Мөөнөттөр</strong>
+          <div class="meta">Кайсы учурда баштоо жакшы экенин айтып беребиз — шашпай, туура.</div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>Кантип иштейбиз</h2>
-        <ul class="list">
-          <li>Кыска консультация: максат жана даталар</li>
-          <li>Документтердин алдын ала текшерүүсү</li>
-          <li>Анкетаны толтуруу жана топтомду даярдоо</li>
-          <li>Тапшырууга даярдап берүү жана коштоо</li>
-        </ul>
-        <div style="margin-top:12px;">
-          <a class="btn" href="/hrdirectkg/kg/how-we-work/">Толук маалымат</a>
-        </div>
+      <div class="ctaRow">
+        <a class="btn"
+           href="https://wa.me/996990241949?text=Салам!%20Японияга%20виза%20жасаткым%20келет.%20Даталар:%20____%20Маршрут:%20____"
+           target="_blank" rel="noopener">WhatsApp'ка жазуу</a>
+
+        <a class="btn outline" href="/hrdirectkg/kg/visas/">Бардык визалар</a>
+        <a class="btn outline" href="/hrdirectkg/kg/visas/schengen/">Шенген</a>
+        <a class="btn outline" href="/hrdirectkg/kg/visas/china/">Кытай</a>
+        <a class="btn outline" href="/hrdirectkg/kg/visas/dubai/">Дубай</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <div style="font-weight:900; margin-bottom:6px;">HR Direct KG</div>
-        <div class="small">Виза колдоо кызматтары: Шенген, Япония, Кытай, БАЭ жана башка багыттар.</div>
-      </div>
-
-      <div class="contact">
-        <div style="font-weight:800; margin-bottom:6px;">Байланыш</div>
-        <div class="small">
-          Суроолор болсо, байланышыңыз: <a href="/hrdirectkg/kg/contact/">Контакттар</a>
-        </div>
-      </div>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — визалык колдоо
     </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
