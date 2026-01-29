@@ -156,6 +156,158 @@
       filter:none;
     }
 
+    /* Header controls */
+    .head-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .iconbtn{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .iconbtn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,122,24,.40);
+    }
+    .iconbtn:active{transform: translateY(0)}
+    .burger{
+      width:18px;
+      height:14px;
+      position:relative;
+    }
+    .burger span{
+      position:absolute;
+      left:0; right:0;
+      height:2px;
+      border-radius:999px;
+      background: rgba(246,247,249,.88);
+      transition: transform .18s ease, opacity .18s ease;
+    }
+    .burger span:nth-child(1){top:0}
+    .burger span:nth-child(2){top:6px}
+    .burger span:nth-child(3){bottom:0}
+
+    /* Off-canvas menu */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .22s ease;
+      z-index:80;
+    }
+    .drawer{
+      position:fixed;
+      top:0;
+      right:0;
+      height:100%;
+      width:min(360px, 92vw);
+      background: rgba(15,16,18,.92);
+      border-left:1px solid rgba(255,255,255,.10);
+      box-shadow: -18px 0 60px rgba(0,0,0,.55);
+      transform: translateX(100%);
+      transition: transform .26s ease;
+      z-index:90;
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:16px 16px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .drawer-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .drawer-close{
+      width:40px;height:40px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition: background .18s ease, border-color .18s ease;
+    }
+    .drawer-close:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,122,24,.40);
+    }
+    .drawer-body{
+      padding:10px 12px 14px;
+      overflow:auto;
+    }
+    .drawer-nav{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin:6px 0 14px;
+    }
+    .drawer-nav a{
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      color: rgba(246,247,249,.92);
+      font-weight:700;
+      font-size:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      background: rgba(255,122,24,.06);
+      border-color: rgba(255,122,24,.35);
+      transform: translateY(-1px);
+    }
+    .drawer-nav small{
+      color: rgba(246,247,249,.60);
+      font-weight:600;
+      font-size:12px;
+    }
+    .drawer-cta{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+    .drawer-note{
+      margin-top:14px;
+      color: rgba(246,247,249,.60);
+      font-size:12px;
+      line-height:1.5;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:12px;
+    }
+
+    /* Open state */
+    body.menu-open{overflow:hidden}
+    body.menu-open .overlay{opacity:1; pointer-events:auto}
+    body.menu-open .drawer{transform: translateX(0)}
+
     /* Layout blocks */
     .section{padding:72px 0}
     .section.compact{padding:56px 0}
@@ -205,15 +357,13 @@
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
     .card.pad{padding:18px}
     .card.soft{box-shadow:none; background: rgba(255,255,255,.02)}
     .card:hover{
       transform: translateY(-4px);
       box-shadow: 0 22px 55px rgba(0,0,0,.65);
-    }
-    .card{
-      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .meta{
@@ -354,10 +504,10 @@
       .grid{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr 1fr}
       .headline{flex-direction:column; align-items:flex-start}
+      .menu{display:none} /* на планшете/мобилке живём через бургер */
     }
     @media (max-width: 640px){
       .topbar .row{flex-direction:column; align-items:flex-start}
-      .menu{display:none} /* чисто и без каши; позже можно добавить бургер */
       .steps{grid-template-columns:1fr}
       .section{padding:56px 0}
     }
@@ -406,10 +556,56 @@
           <a href="/hrdirectkg/contact/">Контакты</a>
         </nav>
 
-        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Консультация</a>
+        <div class="head-actions">
+          <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Консультация</a>
+
+          <!-- Burger (visible always; on desktop it’s just an extra option) -->
+          <button class="iconbtn" type="button" id="menuBtn" aria-label="Открыть меню" aria-controls="drawer" aria-expanded="false">
+            <span class="burger" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
+
+  <!-- Off-canvas menu -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawer" aria-label="Меню сайта" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <span class="mark" aria-hidden="true"></span>
+        <span>HR Direct KG</span>
+      </div>
+      <button class="drawer-close" type="button" id="closeBtn" aria-label="Закрыть меню">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <nav class="drawer-nav" aria-label="Разделы">
+        <a href="/hrdirectkg/about/">О компании <small>кто мы</small></a>
+        <a href="/hrdirectkg/visas/">Визы <small>направления</small></a>
+        <a href="/hrdirectkg/insurance/">Страховка <small>под требования</small></a>
+        <a href="/hrdirectkg/forms/">Анкеты <small>без ошибок</small></a>
+        <a href="/hrdirectkg/how-to-get-visa/">Как получить визу <small>пошагово</small></a>
+        <a href="/hrdirectkg/pricing/">Цены <small>прозрачно</small></a>
+        <a href="/hrdirectkg/employment/">Трудоустройство <small>консультация</small></a>
+        <a href="/hrdirectkg/partners/">Для партнёров <small>сотрудничество</small></a>
+        <a href="/hrdirectkg/faq/">FAQ <small>ответы</small></a>
+        <a href="/hrdirectkg/contact/">Контакты <small>офис/связь</small></a>
+      </nav>
+
+      <div class="drawer-cta">
+        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn outline" href="tel:+996990241949">Позвонить</a>
+      </div>
+
+      <div class="drawer-note">
+        Подсказка: меню закрывается по кнопке ✕, клику по фону и клавише Esc.
+      </div>
+    </div>
+  </aside>
 
   <!-- Hero -->
   <main>
@@ -606,7 +802,45 @@
   </footer>
 
   <script>
+    // year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // drawer menu
+    const body = document.body;
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+    const drawer = document.getElementById('drawer');
+
+    function openMenu(){
+      body.classList.add('menu-open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      overlay.setAttribute('aria-hidden', 'false');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeMenu(){
+      body.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      overlay.setAttribute('aria-hidden', 'true');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    menuBtn.addEventListener('click', () => {
+      if(body.classList.contains('menu-open')) closeMenu();
+      else openMenu();
+    });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && body.classList.contains('menu-open')) closeMenu();
+    });
+
+    // close when clicking a link inside drawer
+    drawer.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if(a) closeMenu();
+    });
   </script>
 </body>
 </html>
