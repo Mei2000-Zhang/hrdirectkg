@@ -14,50 +14,48 @@
   <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#06070a;
       --text:#f6f7f9;
-      --muted:rgba(246,247,249,.72);
+      --muted:rgba(246,247,249,.78);
 
-      /* cold premium accents */
-      --ice-1:#bfe6ff;
-      --ice-2:#76c7ff;
-      --ice-3:#4aa0ff;
+      --glass: rgba(10,12,16,.48);
+      --glass2: rgba(10,12,16,.86);
 
       --line:rgba(255,255,255,.10);
-      --line2:rgba(191,230,255,.18);
-
-      --glass: rgba(9,10,13,.56);
-      --glass2: rgba(10,12,16,.88);
-
       --radius:18px;
 
-      /* ✅ change only this line if needed */
+      /* ✅ your photo */
       --hero-img: url("assets/ben.jpg");
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background: var(--bg);
       overflow-x:hidden;
+
+      /* no “black background”: use photo as page background */
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     a{color:inherit; text-decoration:none}
-    .container{width:min(1160px, calc(100% - 32px)); margin:0 auto}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
     /* ===== Topbar ===== */
     .topbar{
       position:relative;
       z-index:70;
       border-bottom:1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.28);
+      background: rgba(0,0,0,.24);
       backdrop-filter: blur(10px);
     }
     .topbar .row{
@@ -67,9 +65,9 @@
       gap:12px;
       padding:10px 0;
       font-size:13px;
-      color:rgba(246,247,249,.80);
+      color:rgba(246,247,249,.82);
     }
-    .topbar a{color:rgba(246,247,249,.84)}
+    .topbar a{color:rgba(246,247,249,.86)}
     .topbar a:hover{color:var(--text)}
 
     .lang{
@@ -92,10 +90,10 @@
       color:var(--text);
     }
     .lang a.active{
-      border-color: rgba(191,230,255,.35);
-      background: rgba(191,230,255,.10);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
       color: var(--text);
-      font-weight:800;
+      font-weight:900;
     }
 
     /* ===== Header ===== */
@@ -103,7 +101,7 @@
       position:sticky;
       top:0;
       z-index:80;
-      background: linear-gradient(180deg, rgba(9,10,13,.78), rgba(9,10,13,.42));
+      background: rgba(0,0,0,.20);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
@@ -114,7 +112,6 @@
       gap:14px;
       padding:14px 0;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -125,52 +122,20 @@
       min-width:max-content;
     }
     .mark{
-      width:32px;
-      height:32px;
+      width:32px;height:32px;
       border-radius:12px;
-      background:
-        radial-gradient(18px 18px at 35% 35%, rgba(255,255,255,.55), transparent 55%),
-        linear-gradient(135deg, rgba(191,230,255,.78), rgba(118,199,255,.24));
-      border: 1px solid rgba(191,230,255,.35);
-      box-shadow:
-        0 14px 40px rgba(0,0,0,.50),
-        0 0 0 6px rgba(191,230,255,.06);
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
       flex:0 0 auto;
     }
 
-    /* only key sections in header, rest in drawer */
-    .topmenu{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:flex-end;
-      margin-left:auto;
-      white-space:nowrap;
-    }
-    .topmenu a{
-      font-size:13px;
-      font-weight:750;
-      letter-spacing:.01em;
-      color: rgba(246,247,249,.78);
-      padding:10px 12px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      transition: background .18s ease, border-color .18s ease, color .18s ease;
-    }
-    .topmenu a:hover{
-      color: var(--text);
-      background: rgba(255,255,255,.04);
-      border-color: rgba(255,255,255,.08);
-    }
-
+    /* Burger */
     .burger{
-      width:46px;
-      height:46px;
+      width:46px;height:46px;
       border-radius: 16px;
-      border:1px solid rgba(191,230,255,.20);
-      background:
-        radial-gradient(500px 140px at 0% 0%, rgba(118,199,255,.10), transparent 60%),
-        rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
       display:inline-flex;
       flex-direction:column;
       align-items:center;
@@ -182,65 +147,40 @@
     }
     .burger:hover{
       transform: translateY(-1px);
-      border-color: rgba(191,230,255,.35);
-      background:
-        radial-gradient(500px 140px at 0% 0%, rgba(118,199,255,.16), transparent 60%),
-        rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.05);
     }
     .burger span{
-      width:18px;
-      height:2px;
+      width:18px;height:2px;
       background: rgba(246,247,249,.92);
       border-radius: 2px;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO (ONE SCREEN ONLY) ===== */
     .hero{
       position:relative;
       min-height: calc(100vh - 106px);
-      padding: 62px 0 34px;
-      overflow:hidden;
-      isolation:isolate;
       display:flex;
       align-items:flex-end;
+      padding: 56px 0 60px;
+      overflow:hidden;
     }
 
+    /* overlays to make text readable over photo */
     .hero::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background:
-        radial-gradient(1200px 700px at 50% 10%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg, rgba(6,7,10,.18) 0%, rgba(6,7,10,.78) 72%, rgba(6,7,10,.96) 100%),
-        var(--hero-img);
-      background-size: cover;
-      background-position: center;
-      background-repeat:no-repeat;
-      filter: saturate(1.02) contrast(1.08);
-      transform: scale(1.045);
-      z-index:-2;
-    }
-
-    .hero::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(700px 440px at 16% 42%, rgba(191,230,255,.12), transparent 60%),
-        radial-gradient(540px 360px at 70% 26%, rgba(118,199,255,.10), transparent 58%),
-        linear-gradient(90deg, rgba(255,255,255,.02), transparent 40%, rgba(255,255,255,.02));
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.65) 72%, rgba(0,0,0,.78) 100%);
       pointer-events:none;
-      z-index:-1;
-      mix-blend-mode: screen;
-      opacity:.92;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items:end;
+    .hero .content{
+      position:relative;
       width:100%;
+      z-index:2;
     }
 
     .badge{
@@ -249,21 +189,19 @@
       gap:10px;
       padding:9px 12px;
       border-radius:999px;
-      border:1px solid rgba(191,230,255,.22);
-      background:
-        radial-gradient(600px 160px at 0% 0%, rgba(118,199,255,.14), transparent 55%),
-        rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
       color: rgba(246,247,249,.92);
       font-size:12px;
       font-weight:900;
-      letter-spacing:.13em;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
     }
     .badge .dot{
       width:8px;height:8px;border-radius:999px;
-      background: rgba(191,230,255,.95);
-      box-shadow: 0 0 0 6px rgba(191,230,255,.10);
+      background: rgba(246,247,249,.90);
+      box-shadow: 0 0 0 6px rgba(246,247,249,.08);
     }
 
     h1{
@@ -272,14 +210,15 @@
       line-height: 1.02;
       letter-spacing: -0.03em;
       max-width: 22ch;
-      text-shadow: 0 14px 44px rgba(0,0,0,.58);
+      text-shadow: 0 14px 44px rgba(0,0,0,.55);
     }
+
     .lead{
       margin:0;
-      color: rgba(246,247,249,.82);
+      color: var(--muted);
       font-size:16px;
       line-height:1.75;
-      max-width: 75ch;
+      max-width: 72ch;
       text-shadow: 0 12px 40px rgba(0,0,0,.45);
     }
 
@@ -299,243 +238,46 @@
       border-radius:16px;
       font-weight:900;
       font-size:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background:
-        radial-gradient(800px 220px at 20% 0%, rgba(118,199,255,.12), transparent 60%),
-        rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
       color: var(--text);
       transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
       white-space:nowrap;
-      box-shadow: 0 16px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
     }
     .btn:hover{
       transform: translateY(-1px);
-      background:
-        radial-gradient(800px 220px at 20% 0%, rgba(118,199,255,.18), transparent 60%),
-        rgba(255,255,255,.08);
-      border-color: rgba(191,230,255,.28);
+      background: rgba(0,0,0,.24);
+      border-color: rgba(255,255,255,.26);
     }
-    .btn:active{transform: translateY(0)}
-
     .btn.primary{
-      color:#061018;
-      border-color: rgba(191,230,255,.55);
-      background: linear-gradient(135deg, rgba(191,230,255,.96), rgba(118,199,255,.92) 55%, rgba(74,160,255,.88));
-      box-shadow:
-        0 18px 64px rgba(0,0,0,.42),
-        0 0 0 7px rgba(118,199,255,.10);
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
     }
-    .btn.primary:hover{filter: brightness(1.02)}
+    .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
 
-    /* right column: "quick choose" cards */
-    .panel{
-      border-radius: 22px;
-      border: 1px solid rgba(191,230,255,.16);
-      background:
-        radial-gradient(900px 320px at 0% 0%, rgba(118,199,255,.12), transparent 62%),
-        rgba(10,12,16,.52);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 22px 70px rgba(0,0,0,.55);
-      overflow:hidden;
-    }
-
-    .panel-head{
+    .subline{
+      margin-top:18px;
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .panel-head strong{
-      font-size:13px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color: rgba(246,247,249,.88);
-    }
-    .panel-head span{
-      font-size:12px;
-      color: rgba(246,247,249,.70);
-    }
-
-    .gridcards{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:10px;
-      padding: 12px;
-    }
-
-    .card{
-      position:relative;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding: 14px 14px 14px 14px;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    }
-    .card:hover{
-      transform: translateY(-1px);
-      border-color: rgba(191,230,255,.20);
-      background: rgba(255,255,255,.04);
-    }
-    .card h3{
-      margin:0 0 6px;
-      font-size:15px;
-      letter-spacing:-0.01em;
-    }
-    .card p{
-      margin:0;
-      font-size:13px;
-      color: rgba(246,247,249,.72);
-      line-height:1.55;
-    }
-    .card .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:10px;
-      font-size:12px;
-      font-weight:850;
-      color: rgba(246,247,249,.86);
-      border:1px solid rgba(191,230,255,.18);
-      padding:6px 10px;
-      border-radius: 999px;
-      background: rgba(118,199,255,.08);
-    }
-    .pill i{
-      width:7px;height:7px;border-radius:50%;
-      display:inline-block;
-      background: rgba(191,230,255,.95);
-      box-shadow: 0 0 0 6px rgba(191,230,255,.10);
-    }
-
-    /* ===== Below hero ===== */
-    section{
-      padding: 54px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(900px 420px at 16% 0%, rgba(118,199,255,.06), transparent 62%),
-        radial-gradient(900px 420px at 84% 10%, rgba(191,230,255,.04), transparent 65%),
-        var(--bg);
-    }
-
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
       gap:14px;
-      margin-bottom: 16px;
-    }
-    .section-title h2{
-      margin:0;
-      font-size: 22px;
-      letter-spacing:-0.02em;
-    }
-    .section-title p{
-      margin:0;
-      font-size: 13px;
-      color: rgba(246,247,249,.70);
-      line-height:1.5;
-      max-width: 60ch;
-    }
-
-    .features{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .feature{
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      padding: 16px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.25);
-    }
-    .feature b{
-      display:block;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .feature span{
-      display:block;
-      font-size: 13px;
-      color: rgba(246,247,249,.72);
-      line-height:1.55;
-    }
-
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .step{
-      border-radius: 20px;
-      border: 1px solid rgba(191,230,255,.14);
-      background:
-        radial-gradient(800px 260px at 0% 0%, rgba(118,199,255,.10), transparent 60%),
-        rgba(255,255,255,.03);
-      padding: 14px 14px 16px;
-    }
-    .step .n{
-      width:30px;height:30px;
-      border-radius: 12px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      background: rgba(191,230,255,.12);
-      border: 1px solid rgba(191,230,255,.22);
-      margin-bottom: 10px;
-    }
-    .step b{display:block; margin-bottom: 6px; font-size:14px;}
-    .step span{display:block; font-size:13px; color: rgba(246,247,249,.72); line-height:1.55;}
-
-    .cta-row{
-      margin-top: 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
       flex-wrap:wrap;
-      border-radius: 22px;
-      border: 1px solid rgba(191,230,255,.16);
-      background:
-        radial-gradient(900px 320px at 0% 0%, rgba(118,199,255,.14), transparent 62%),
-        rgba(255,255,255,.03);
-      padding: 16px;
-    }
-    .cta-row .mini{
-      color: rgba(246,247,249,.74);
-      font-size: 13px;
-      line-height:1.5;
-      max-width: 70ch;
-    }
-
-    footer{
-      border-top: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-      padding: 18px 0 26px;
       color: rgba(246,247,249,.72);
-      font-size: 13px;
+      font-size:13px;
     }
-    .foot{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+    .subline a{
+      color: rgba(246,247,249,.82);
+      border-bottom: 1px solid rgba(255,255,255,.28);
+      padding-bottom:2px;
     }
-    .foot b{color: rgba(246,247,249,.88)}
-    .foot a{color: rgba(246,247,249,.86); border-bottom: 1px solid rgba(191,230,255,.26)}
-    .foot a:hover{color: var(--text); border-bottom-color: rgba(191,230,255,.55)}
+    .subline a:hover{color:var(--text); border-bottom-color: rgba(255,255,255,.45)}
 
     /* ===== Drawer ===== */
     .drawer-backdrop{
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.58);
+      background: rgba(0,0,0,.60);
       z-index: 90;
     }
     .drawer{
@@ -544,11 +286,9 @@
       right: 0;
       height: 100vh;
       width: min(460px, 88vw);
-      background:
-        radial-gradient(900px 260px at 0% 0%, rgba(118,199,255,.14), transparent 60%),
-        var(--glass2);
+      background: var(--glass2);
       backdrop-filter: blur(16px);
-      border-left: 1px solid rgba(191,230,255,.16);
+      border-left: 1px solid rgba(255,255,255,.12);
       z-index: 100;
       transform: translateX(105%);
       transition: transform .25s ease;
@@ -565,20 +305,13 @@
       padding:16px 18px;
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
-    .drawer-head b{letter-spacing:.2px}
     .drawer-close{
       width:42px;height:42px;
       border-radius: 14px;
-      border:1px solid rgba(191,230,255,.18);
+      border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.03);
       color: var(--text);
       cursor:pointer;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    }
-    .drawer-close:hover{
-      transform: translateY(-1px);
-      border-color: rgba(191,230,255,.30);
-      background: rgba(255,255,255,.05);
     }
 
     .drawer-nav{
@@ -594,20 +327,13 @@
       border:1px solid transparent;
       color: rgba(246,247,249,.86);
       font-weight: 800;
-      background: rgba(255,255,255,.00);
       transition: background .18s ease, border-color .18s ease, transform .18s ease;
     }
     .drawer-nav a:hover{
       transform: translateY(-1px);
       background: rgba(255,255,255,.04);
-      border-color: rgba(191,230,255,.16);
+      border-color: rgba(255,255,255,.12);
       color: var(--text);
-    }
-
-    .drawer-block{
-      padding: 12px 12px 6px;
-      color: rgba(246,247,249,.72);
-      font-size: 12px;
     }
 
     .drawer-cta{
@@ -620,33 +346,19 @@
       text-align:center;
       padding: 14px 16px;
       border-radius: 16px;
-      border:1px solid rgba(191,230,255,.28);
-      background:
-        radial-gradient(800px 220px at 20% 0%, rgba(118,199,255,.14), transparent 60%),
-        rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
       font-weight: 950;
       color: var(--text);
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
     }
     .drawer-cta .cta:hover{
-      transform: translateY(-1px);
-      border-color: rgba(191,230,255,.40);
-      background:
-        radial-gradient(800px 220px at 20% 0%, rgba(118,199,255,.20), transparent 60%),
-        rgba(255,255,255,.08);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr; }
-      .panel{max-width: 720px;}
-      .features{grid-template-columns: 1fr;}
-      .steps{grid-template-columns: 1fr;}
-    }
-    @media (max-width: 820px){
-      .topmenu{display:none;}
+    @media (max-width: 760px){
+      .hero{padding: 44px 0 54px;}
       h1{max-width: 24ch;}
-      .hero{padding-top: 52px;}
     }
   </style>
 </head>
@@ -680,14 +392,6 @@
           <span>HR Direct KG</span>
         </a>
 
-        <!-- On the bar: ONLY key items -->
-        <nav class="topmenu" aria-label="Основная навигация">
-          <a href="/hrdirectkg/about/">О компании</a>
-          <a href="/hrdirectkg/visas/">Визы</a>
-          <a href="/hrdirectkg/employment/">Трудоустройство</a>
-          <a href="/hrdirectkg/partners/">Для партнёров</a>
-        </nav>
-
         <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="drawer" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -704,19 +408,16 @@
       <button class="drawer-close" id="close" aria-label="Закрыть">✕</button>
     </div>
 
-    <div class="drawer-block">Основные разделы</div>
     <nav class="drawer-nav" aria-label="Разделы сайта">
       <a href="/hrdirectkg/about/">О компании</a>
       <a href="/hrdirectkg/visas/">Визы</a>
       <a href="/hrdirectkg/employment/">Трудоустройство</a>
       <a href="/hrdirectkg/partners/">Для партнёров</a>
 
-      <div class="drawer-block">Сервисы</div>
       <a href="/hrdirectkg/insurance/">Страховка</a>
       <a href="/hrdirectkg/forms/">Анкеты</a>
       <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
 
-      <div class="drawer-block">Информация</div>
       <a href="/hrdirectkg/pricing/">Цены</a>
       <a href="/hrdirectkg/faq/">FAQ</a>
       <a href="/hrdirectkg/contact/">Контакты</a>
@@ -729,145 +430,27 @@
 
   <!-- HERO -->
   <main class="hero" role="main">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <span class="badge"><span class="dot" aria-hidden="true"></span>Бишкек · визы · трудоустройство</span>
-          <h1>Оформим визу и доведём до результата — спокойно, по шагам</h1>
-          <p class="lead">
-            Шенген, Китай, ОАЭ и другие направления. Подготовка документов, страховка, запись на подачу и сопровождение трудоустройства.
-            Без хаоса. С понятным планом.
-          </p>
+    <div class="container content">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>Бишкек · визы · трудоустройство</span>
 
-          <div class="actions">
-            <a class="btn primary" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
-            <a class="btn" href="#services">Что мы делаем</a>
-            <a class="btn" href="/hrdirectkg/contact/">Адрес и контакты</a>
-          </div>
+      <h1>Визы и работа за границей — спокойно и по шагам</h1>
 
-          <div style="margin-top:18px; display:flex; gap:14px; flex-wrap:wrap; color: rgba(246,247,249,.72); font-size:13px;">
-            <span>Офис: <a href="/hrdirectkg/contact/" style="border-bottom:1px solid rgba(191,230,255,.32);">Ибраимова 115/3а, 4 этаж, офис 405</a></span>
-            <span>Тел: <a href="tel:+996990241949" style="border-bottom:1px solid rgba(191,230,255,.32);">+996 990 241 949</a></span>
-          </div>
-        </div>
+      <p class="lead">
+        Подготовим документы, заполним анкеты, оформим страховку и запишем на подачу.
+        Сопровождаем от консультации до результата.
+      </p>
 
-        <aside class="panel" aria-label="Быстрый выбор">
-          <div class="panel-head">
-            <strong>Быстрый старт</strong>
-            <span>Выбери направление</span>
-          </div>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn" href="/hrdirectkg/visas/">Выбрать услугу</a>
+      </div>
 
-          <div class="gridcards">
-            <a class="card" href="/hrdirectkg/visas/">
-              <h3>Визы</h3>
-              <p>Запись, анкеты, список документов, сопровождение.</p>
-              <span class="pill"><i aria-hidden="true"></i>Шенген · Китай · ОАЭ</span>
-            </a>
-
-            <a class="card" href="/hrdirectkg/employment/">
-              <h3>Трудоустройство</h3>
-              <p>Подбор вакансий и сопровождение до выезда.</p>
-              <span class="pill"><i aria-hidden="true"></i>Официально · по договору</span>
-            </a>
-
-            <a class="card" href="/hrdirectkg/insurance/">
-              <h3>Страховка</h3>
-              <p>Полис под требования страны и сроки поездки.</p>
-              <span class="pill"><i aria-hidden="true"></i>Подберём за 1 день</span>
-            </a>
-          </div>
-        </aside>
+      <div class="subline">
+        <span>Офис: <a href="/hrdirectkg/contact/">Ибраимова 115/3а, 4 этаж, офис 405</a></span>
+        <span>Тел: <a href="tel:+996990241949">+996 990 241 949</a></span>
       </div>
     </div>
   </main>
-
-  <!-- SERVICES / TRUST -->
-  <section id="services" aria-label="Услуги и преимущества">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>С нами проще: всё разложим по полочкам</h2>
-          <p>Ты не обязана знать “что такое бронь, анкета, спонсор и выписка”. Это наша работа.</p>
-        </div>
-      </div>
-
-      <div class="features">
-        <div class="feature">
-          <b>Проверим документы</b>
-          <span>Соберём пакет и подскажем, что исправить, чтобы не было отказа из-за мелочей.</span>
-        </div>
-        <div class="feature">
-          <b>Анкеты и запись</b>
-          <span>Заполним анкеты корректно и поможем попасть на удобную дату подачи.</span>
-        </div>
-        <div class="feature">
-          <b>Сопровождение</b>
-          <span>От первого сообщения до результата — без пропаданий и “ожидайте, как получится”.</span>
-        </div>
-      </div>
-
-      <div class="section-title" style="margin-top:26px;">
-        <div>
-          <h2>Как мы работаем</h2>
-          <p>Коротко. Без магии. Просто нормальный процесс.</p>
-        </div>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="n">1</div>
-          <b>Консультация</b>
-          <span>Определяем цель: туризм, гости, работа. Проверяем сроки и риски.</span>
-        </div>
-        <div class="step">
-          <div class="n">2</div>
-          <b>Документы</b>
-          <span>Даём список, помогаем собрать, объясняем простыми словами.</span>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <b>Анкеты и запись</b>
-          <span>Заполняем без ошибок и записываем на подачу.</span>
-        </div>
-        <div class="step">
-          <div class="n">4</div>
-          <b>Сопровождение</b>
-          <span>Поддерживаем до результата. Ты не одна в этом квесте 🙂</span>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <div class="mini">
-          <b style="color: rgba(246,247,249,.90);">Хочешь, я сразу скажу, что нужно именно тебе?</b><br/>
-          Напиши в WhatsApp: страну, цель поездки и примерные даты — и мы начнём.
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="https://wa.me/996990241949" target="_blank" rel="noopener">Получить консультацию</a>
-          <a class="btn" href="/hrdirectkg/pricing/">Посмотреть цены</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="foot">
-        <div>
-          <b>HR Direct KG</b><br/>
-          Визы и трудоустройство за границей · Бишкек
-        </div>
-
-        <div>
-          <div>Тел: <a href="tel:+996990241949">+996 990 241 949</a></div>
-          <div>Адрес: <a href="/hrdirectkg/contact/">Ибраимова 115/3а, 4 этаж, офис 405</a></div>
-        </div>
-
-        <div>
-          <a href="/hrdirectkg/faq/">FAQ</a> · <a href="/hrdirectkg/contact/">Контакты</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script>
     const burger = document.getElementById('burger');
