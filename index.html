@@ -3,264 +3,610 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HR Direct KG — Визы и трудоустройсвто за границей</title>
-  <meta name="description" content="HR Direct KG — визы и трудоустройство за границей для граждан Кыргызстана. HR Direct KG: анкеты, страховка, запись на подачу, анкеты, запись на подачу, сопровождение. Бишкек." />
+
+  <title>HR Direct KG — Визы и трудоустройство за границей | Бишкек</title>
+  <meta name="description" content="HR Direct KG — визовая поддержка и трудоустройство за границей для граждан Кыргызстана: анкеты, страховка, запись на подачу и сопровождение. Бишкек." />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="HR Direct KG">
-  <meta name="publisher" content="HR Direct KG">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="HR Direct KG" />
+  <meta name="publisher" content="HR Direct KG" />
+
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
       --bg:#0b0b0c;
-      --muted:#9aa1ab;
+      --surface:#0f1012;
+      --surface2:#141519;
       --text:#f6f7f9;
-      --brand-1:#ff7a18;
-      --brand-2:#ff9a44;
-      --brand-3:#ffd194;
-      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+      --muted:rgba(246,247,249,.66);
+      --line: rgba(255,255,255,.08);
+
+      /* black–orange vibe (accent only) */
+      --accent:#ff7a18;
+      --accent2:#ff9a44;
+
+      --radius:14px;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
+        radial-gradient(900px 520px at 12% -10%, rgba(255,122,24,.10), transparent 60%),
         var(--bg);
     }
-    a{text-decoration:none; color:inherit}
-    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1120px, calc(100% - 32px)); margin:0 auto}
 
     /* Topbar */
     .topbar{
-      background:#0f0f12;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      font-size:14px;
+      border-bottom:1px solid var(--line);
+      background: rgba(0,0,0,.25);
     }
-    .topbar .wrap{
+    .topbar .row{
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      align-items:center;
       gap:12px;
-      padding:8px 0;
+      padding:10px 0;
+      font-size:13px;
+      color:rgba(246,247,249,.78);
     }
-
-    /* Language switch */
+    .topbar a:hover{color:var(--text)}
     .lang{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      opacity:.95;
-      white-space:nowrap;
-      user-select:none;
+      display:flex; align-items:center; gap:8px;
+      user-select:none; white-space:nowrap;
     }
     .lang a{
-      color:rgba(246,247,249,.92);
-      padding:2px 6px;
-      border-radius:8px;
+      padding:4px 8px;
+      border-radius:999px;
       border:1px solid transparent;
-      line-height:1.2;
+      color:rgba(246,247,249,.78);
     }
-    .lang a:hover{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.10);
-    }
+    .lang a:hover{background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.10); color:var(--text)}
     .lang a.active{
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.14);
+      border-color:rgba(255,122,24,.35);
+      background:rgba(255,122,24,.10);
+      color:var(--text);
       font-weight:700;
     }
-    .lang .sep{opacity:.6}
 
     /* Header */
     header{
       position:sticky; top:0; z-index:50;
-      background:rgba(17,17,20,.85);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      overflow:visible;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,12,.72);
+      border-bottom:1px solid var(--line);
     }
-
-    /* 3-zone header: logo | menu | CTA */
-    .nav{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:18px;
-      padding:14px 0 10px;
-      overflow:visible;
-    }
-
-    .nav__left{min-width:max-content}
-    .nav__center{min-width:0; overflow:visible}
-    .nav__right{min-width:max-content}
-
-    .logo{
+    .head{
       display:flex;
       align-items:center;
-      gap:12px;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
       font-weight:800;
+      letter-spacing:.2px;
       white-space:nowrap;
     }
-    .logo .mark{
+    .mark{
       width:28px; height:28px;
-      border-radius:8px;
-      background:var(--accent-grad);
+      border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 25px rgba(255,122,24,.18);
       flex:0 0 auto;
     }
 
-    /* Main desktop menu (row 1) — compact */
     .menu{
       display:flex;
       align-items:center;
-      gap:10px;
-      white-space:nowrap;
-      justify-content:flex-start;
-      min-width:0;
-      font-size:13px;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
     .menu a{
-      white-space:nowrap;
-      color:rgba(246,247,249,.92);
-      padding:4px 2px;
+      padding:8px 10px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:600;
+      color:rgba(246,247,249,.78);
+      border:1px solid transparent;
     }
-    .menu a:hover{opacity:.9}
-
-    /* Submenu (row 2) — compact chips */
-    .subnav{
-      padding:0 0 12px;
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    .submenu{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      padding-top:10px;
-      font-size:12px;
-      color:rgba(246,247,249,.86);
-    }
-    .submenu a{
-      padding:6px 8px;
-      border-radius:999px;
+    .menu a:hover{
+      color:var(--text);
       background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      white-space:nowrap;
-    }
-    .submenu a:hover{
-      background:rgba(255,255,255,.07);
+      border-color:rgba(255,255,255,.08);
     }
 
     /* Buttons */
     .btn{
-      padding:12px 16px;
-      border-radius:12px;
-      background:var(--accent-grad);
-      color:#100a00;
-      font-weight:700;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
       white-space:nowrap;
+      border:1px solid rgba(255,255,255,.08);
+      background: var(--accent);
+      color:#140a00;
+      transition: filter .18s ease, transform .18s ease, background .18s ease, border-color .18s ease;
     }
+    .btn:hover{filter:brightness(1.05); transform: translateY(-1px)}
+    .btn:active{transform: translateY(0)}
     .btn.outline{
-      background:none;
-      color:var(--text);
-      border:1px solid rgba(255,255,255,.16);
+      background: transparent;
+      color: var(--text);
+      border:1px solid var(--line);
+    }
+    .btn.outline:hover{
+      border-color: rgba(255,122,24,.45);
+      background: rgba(255,122,24,.06);
+      filter:none;
+    }
+
+    /* Layout blocks */
+    .section{padding:72px 0}
+    .section.compact{padding:56px 0}
+    .eyebrow{
+      margin:0 0 14px;
+      color: var(--muted);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    h1{
+      font-size: clamp(36px, 4.3vw, 56px);
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      margin:0 0 14px;
+    }
+    h2{
+      font-size: 20px;
+      letter-spacing:-0.01em;
+      margin:0 0 10px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.7;
+      max-width: 68ch;
     }
 
     /* Hero */
-    .hero{padding:56px 0}
-    .badge{
-      display:inline-block;
-      background:var(--accent-grad);
-      color:#120a00;
-      padding:6px 12px;
-      border-radius:999px;
-      font-weight:600;
+    .hero{
+      padding:88px 0 78px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:start;
+    }
+    .actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{padding:18px}
+    .card.soft{box-shadow:none; background: rgba(255,255,255,.02)}
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.65);
+    }
+    .card{
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .meta{
+      display:grid;
+      gap:10px;
+    }
+    .meta .row{
+      padding:14px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+    }
+    .meta b{display:block; font-size:13px; margin-bottom:6px}
+    .meta span{display:block; color:var(--muted); font-size:13px; line-height:1.45}
+
+    /* Services */
+    .headline{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .headline p{margin:0; color:var(--muted); font-size:14px; max-width: 60ch}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .service{
+      padding:18px;
+    }
+    .service h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .service p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .link{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      color:rgba(246,247,249,.92);
+      font-weight:700;
       font-size:14px;
     }
-    .h1{font-size:clamp(28px,4vw,44px); margin:14px 0 10px}
-    .lead{color:var(--muted); max-width:700px}
-    .actions{display:flex; gap:14px; margin-top:20px; flex-wrap:wrap}
+    .link .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: rgba(255,122,24,.85);
+      box-shadow: 0 0 0 6px rgba(255,122,24,.10);
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    .step{
+      padding:16px;
+      background: rgba(255,255,255,.02);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .n{
+      width:34px; height:34px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:12px;
+      background: rgba(255,122,24,.14);
+      border:1px solid rgba(255,122,24,.28);
+      color: var(--accent2);
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .step b{display:block; margin-bottom:6px}
+    .step span{color:var(--muted); font-size:13px; line-height:1.45}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(255,255,255,.02);
+      padding:12px 14px;
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      margin:10px 0 0;
+    }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      padding:26px 0 34px;
+      color:rgba(246,247,249,.72);
+      font-size:13px;
+      background: rgba(0,0,0,.18);
+    }
+    .foot{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .foot b{color:var(--text)}
+    .footlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .footlinks a{
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .footlinks a:hover{background: rgba(255,255,255,.05)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{padding:72px 0 56px}
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .headline{flex-direction:column; align-items:flex-start}
+    }
+    @media (max-width: 640px){
+      .topbar .row{flex-direction:column; align-items:flex-start}
+      .menu{display:none} /* чисто и без каши; позже можно добавить бургер */
+      .steps{grid-template-columns:1fr}
+      .section{padding:56px 0}
+    }
   </style>
 </head>
 
 <body>
   <!-- Topbar -->
   <div class="topbar">
-    <div class="container wrap">
-      <div>+996 990 241 949</div>
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.55"> · </span>
+          <a href="/hrdirectkg/contact/">Ибраимова 115/3а, офис 405</a>
+        </div>
 
-      <!-- clickable language switch -->
-      <div class="lang" aria-label="Выбор языка">
-        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
-        <span class="sep">·</span>
-        <a href="/hrdirectkg/kg/">KG</a>
-        <span class="sep">·</span>
-        <a href="/hrdirectkg/en/">EN</a>
+        <div class="lang" aria-label="Выбор языка">
+          <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
+          <a href="/hrdirectkg/kg/">KG</a>
+          <a href="/hrdirectkg/en/">EN</a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Header -->
   <header>
-    <div class="container nav">
-      <div class="nav__left">
-        <div class="logo"><span class="mark"></span>HR Direct KG</div>
-      </div>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-      <div class="nav__center">
-        <nav class="menu" aria-label="Основная навигация">
+        <nav class="menu" aria-label="Навигация">
           <a href="/hrdirectkg/about/">О компании</a>
           <a href="/hrdirectkg/visas/">Визы</a>
           <a href="/hrdirectkg/insurance/">Страховка</a>
           <a href="/hrdirectkg/forms/">Анкеты</a>
           <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
           <a href="/hrdirectkg/pricing/">Цены</a>
-        </nav>
-      </div>
-
-      <div class="nav__right">
-        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Консультация</a>
-      </div>
-    </div>
-
-    <!-- Secondary nav row -->
-    <div class="subnav">
-      <div class="container">
-        <nav class="submenu" aria-label="Дополнительная навигация">
-          <a href="/hrdirectkg/faq/">FAQ</a>
-          <a href="/hrdirectkg/contact/">Контакты</a>
           <a href="/hrdirectkg/employment/">Трудоустройство</a>
           <a href="/hrdirectkg/partners/">Для партнёров</a>
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
         </nav>
+
+        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Консультация</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <span class="badge">Визы и трудоустройство</span>
-      <h1 class="h1">Визы и работа за границей для граждан Кыргызстана</h1>
-      <p class="lead">
-        Шенген, Китай, ОАЭ и другие направления.
-        Подготовка документов, страховка, запись на подачу
-        и сопровождение трудоустройства за рубежом.
-      </p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Бишкек · визовая поддержка · сопровождение</p>
+            <h1>Визы и работа за границей — спокойно и по шагам</h1>
+            <p class="lead">
+              Подготовим анкеты, подберём страховку, поможем с записью на подачу и проверим пакет документов.
+              Для трудоустройства — консультация и сопровождение процесса.
+            </p>
 
-      <div class="actions">
-        <a class="btn" href="/hrdirectkg/visas/">Выбрать визу</a>
-        <a class="btn outline" href="/hrdirectkg/employment/">Трудоустройство</a>
-        <a class="btn outline" href="/hrdirectkg/pricing/">Посмотреть цены</a>
+            <div class="actions">
+              <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
+              <a class="btn outline" href="/hrdirectkg/visas/">Выбрать визу</a>
+              <a class="btn outline" href="/hrdirectkg/pricing/">Цены</a>
+            </div>
+          </div>
+
+          <aside class="card pad soft" style="box-shadow:none">
+            <div class="meta">
+              <div class="row">
+                <b>Что нужно для старта</b>
+                <span>Паспорт, страна, цель поездки и примерные даты. Дальше ведём по чек-листу.</span>
+              </div>
+              <div class="row">
+                <b>Срок ответа</b>
+                <span>В рабочие часы обычно отвечаем в течение дня.</span>
+              </div>
+              <div class="row">
+                <b>Офис</b>
+                <span>Ибраимова 115/3а, 4 этаж, офис 405 (Бишкек).</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section compact">
+      <div class="container">
+        <div class="headline">
+          <div>
+            <h2>Услуги</h2>
+            <p>Минимализм в интерфейсе, порядок в документах. Оранжевый — только по делу 🙂</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card service">
+            <h3>Визы</h3>
+            <p>Шенген, ОАЭ, Китай и другие направления. Список документов и сопровождение.</p>
+            <a class="link" href="/hrdirectkg/visas/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+
+          <div class="card service">
+            <h3>Анкеты</h3>
+            <p>Заполним аккуратно и проверим данные, чтобы не было ошибок и лишних отказов.</p>
+            <a class="link" href="/hrdirectkg/forms/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+
+          <div class="card service">
+            <h3>Страховка</h3>
+            <p>Подберём полис под требования страны и сроки поездки.</p>
+            <a class="link" href="/hrdirectkg/insurance/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+
+          <div class="card service">
+            <h3>Как получить визу</h3>
+            <p>Пошаговая инструкция: от подготовки документов до подачи.</p>
+            <a class="link" href="/hrdirectkg/how-to-get-visa/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+
+          <div class="card service">
+            <h3>Трудоустройство</h3>
+            <p>Консультация и сопровождение в рамках доступных программ.</p>
+            <a class="link" href="/hrdirectkg/employment/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+
+          <div class="card service">
+            <h3>Цены</h3>
+            <p>Прозрачно: что входит в услугу и какие расходы могут быть дополнительно.</p>
+            <a class="link" href="/hrdirectkg/pricing/"><span class="dot" aria-hidden="true"></span>Открыть</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section compact">
+      <div class="container">
+        <div class="headline">
+          <div>
+            <h2>Как мы работаем</h2>
+            <p>Чёткая схема без «сюрпризов». Если что — объясняем человеческим языком.</p>
+          </div>
+          <a class="btn outline" href="/hrdirectkg/how-to-get-visa/">Подробнее</a>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="n">1</div>
+            <b>Бриф</b>
+            <span>Страна, цель, даты и текущие документы.</span>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <b>Подготовка</b>
+            <span>Анкеты, список, проверки, рекомендации.</span>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <b>Запись и страховка</b>
+            <span>Помогаем с записью и оформляем полис.</span>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <b>Сопровождение</b>
+            <span>Контроль шагов и финальная проверка пакета.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section compact" id="faq">
+      <div class="container">
+        <div class="headline">
+          <div>
+            <h2>FAQ</h2>
+            <p>Короткие ответы на частые вопросы. Без воды — как на северных морях.</p>
+          </div>
+          <a class="btn outline" href="/hrdirectkg/faq/">Все вопросы</a>
+        </div>
+
+        <details>
+          <summary>Сколько времени занимает подготовка документов?</summary>
+          <p>Чаще всего 1–3 рабочих дня, зависит от страны и того, насколько готовы ваши документы.</p>
+        </details>
+        <details>
+          <summary>Вы гарантируете одобрение визы?</summary>
+          <p>Гарантии одобрения не даёт никто. Мы гарантируем корректную подготовку анкеты и пакета документов.</p>
+        </details>
+        <details>
+          <summary>Можно сделать часть услуг дистанционно?</summary>
+          <p>Да. Часто достаточно переписки и сканов. В некоторых кейсах удобнее прийти в офис.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section compact">
+      <div class="container">
+        <div class="card pad">
+          <h2 style="margin:0 0 10px;">Готовы начать?</h2>
+          <p class="lead" style="margin:0 0 18px;">
+            Напишите в WhatsApp: страна + даты + цель поездки. Мы ответим, что нужно и какой следующий шаг.
+          </p>
+          <div class="actions" style="margin-top:0;">
+            <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
+            <a class="btn outline" href="/hrdirectkg/contact/">Контакты и офис</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <b>HR Direct KG</b><br />
+          Бишкек, Ибраимова 115/3а, 4 этаж, офис 405<br />
+          <a href="tel:+996990241949">+996 990 241 949</a>
+        </div>
+
+        <div class="footlinks">
+          <a href="/hrdirectkg/about/">О компании</a>
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/pricing/">Цены</a>
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; opacity:.75;">
+        © <span id="y"></span> HR Direct KG
       </div>
     </div>
-  </section>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
