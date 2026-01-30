@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Виза в Японию — туристическая | HR Direct KG</title>
-  <meta name="description" content="Виза в Японию для граждан Кыргызстана: анкета, документы, брони, сопровождение. Поможем собрать аккуратный пакет. Бишкек." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/japan/" />
-
-  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
@@ -20,67 +12,46 @@
       --muted:rgba(246,247,249,.78);
 
       --glass: rgba(10,12,16,.50);
-      --glass2: rgba(10,12,16,.88);
+      --glass2: rgba(10,12,16,.92);
 
       --line:rgba(255,255,255,.12);
       --radius:18px;
 
-      /* фон как на главной */
-      --hero-img: url("/hrdirectkg/ben.jpg");
+      /* твой фон */
+      --hero-img:url("/hrdirectkg/ben.jpg");
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
       overflow-x:hidden;
 
-      background-image: var(--hero-img);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      line-height:1.55;
+      background-image:var(--hero-img);
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
     }
 
-    a{color:inherit; text-decoration:none}
-    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px));margin:0 auto}
 
     /* ===== Topbar ===== */
     .topbar{
-      position:relative;
-      z-index:70;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.45);
-      backdrop-filter: blur(12px);
-    }
-    .topbar .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 0;
-      font-size:13.5px;
-      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+      background:rgba(0,0,0,.45);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.1);
+      font-size:13px;
     }
 
-    .lang{
+    .topbar .row{
       display:flex;
-      gap:8px;
-    }
-    .lang a{
-      padding:4px 9px;
-      border-radius:999px;
-      border:1px solid transparent;
-      opacity:.85;
-    }
-    .lang a.active{
-      opacity:1;
-      border-color: rgba(255,255,255,.28);
-      background: rgba(255,255,255,.12);
-      font-weight:800;
+      justify-content:space-between;
+      padding:10px 0;
     }
 
     /* ===== Header ===== */
@@ -88,126 +59,105 @@
       position:sticky;
       top:0;
       z-index:80;
-      background: rgba(0,0,0,.28);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.35);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.1);
     }
+
     .head{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
       padding:14px 0;
     }
+
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
       font-weight:900;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      text-shadow: 0 12px 40px rgba(0,0,0,.55);
-    }
-    .mark{
-      width:32px;height:32px;
-      border-radius:12px;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      display:flex;
+      gap:10px;
+      align-items:center;
     }
 
+    .mark{
+      width:30px;height:30px;
+      border-radius:10px;
+      background:rgba(255,255,255,.2);
+    }
+
+    /* ===== Main nav ===== */
     .main-nav{
       display:flex;
       gap:22px;
-    }
-    .main-nav a{
       font-weight:700;
-      font-size:14px;
-      opacity:.9;
-      position:relative;
     }
-    .main-nav a.active{opacity:1}
-    .main-nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-6px;
-      width:0;
-      height:2px;
-      background:rgba(246,247,249,.85);
-      transition:.2s;
-    }
-    .main-nav a:hover::after{width:100%}
 
     @media(max-width:980px){
       .main-nav{display:none}
     }
 
-    /* Burger */
+    /* ===== Burger ===== */
     .burger{
       width:46px;height:46px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.20);
-      background: rgba(0,0,0,.18);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.2);
+      background:rgba(0,0,0,.25);
       display:flex;
       flex-direction:column;
-      align-items:center;
       justify-content:center;
+      align-items:center;
       gap:6px;
       cursor:pointer;
     }
+
     .burger span{
       width:18px;height:2px;
-      background:#f6f7f9;
-      border-radius:2px;
+      background:white;
     }
 
-    /* Drawer */
+    /* ===== Drawer ===== */
     .drawer-backdrop{
-      position:fixed; inset:0;
+      position:fixed;
+      inset:0;
       background:rgba(0,0,0,.6);
       z-index:90;
     }
+
     .drawer{
       position:fixed;
-      top:0; right:0;
+      top:0;
+      right:0;
       height:100vh;
-      width:min(460px,88vw);
+      width:min(360px,85vw);
       background:var(--glass2);
       backdrop-filter:blur(16px);
-      border-left:1px solid rgba(255,255,255,.12);
       transform:translateX(105%);
       transition:.25s;
       z-index:100;
-      display:flex;
-      flex-direction:column;
+      padding:20px;
     }
-    .drawer.open{transform:translateX(0)}
+
+    .drawer.open{
+      transform:translateX(0);
+    }
+
     .drawer-nav{
-      padding:16px;
       display:flex;
       flex-direction:column;
-      gap:6px;
-    }
-    .drawer-nav a{
-      padding:13px 12px;
-      border-radius:16px;
+      gap:12px;
       font-weight:800;
-      opacity:.85;
     }
-    .drawer-nav a:hover{opacity:1}
 
     /* ===== Content ===== */
-    main.page{
+    main{
+      padding:60px 0 80px;
       position:relative;
-      padding:48px 0 72px;
     }
-    main.page::before{
+
+    main::before{
       content:"";
       position:fixed;
       inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.7) 60%, rgba(0,0,0,.85) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.8));
       z-index:-1;
     }
 
@@ -215,79 +165,26 @@
       display:inline-block;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.25);
+      background:rgba(255,255,255,.12);
       font-weight:900;
-      letter-spacing:.1em;
       font-size:12px;
     }
 
-    h1{
-      margin:16px 0 10px;
-      font-size:clamp(28px,4vw,46px);
-      text-shadow:0 14px 44px rgba(0,0,0,.6);
-    }
-    .lead{
-      max-width:760px;
-      color:var(--muted);
-      font-size:16px;
-    }
+    h1{font-size:40px;margin:16px 0}
+    .lead{color:var(--muted);max-width:650px}
 
     .card{
-      margin-top:18px;
-      padding:18px;
+      margin-top:20px;
+      padding:20px;
+      border-radius:var(--radius);
       background:var(--glass);
       border:1px solid rgba(255,255,255,.12);
-      border-radius:var(--radius);
-      backdrop-filter:blur(14px);
-    }
-
-    .points{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:10px;
-      margin-top:10px;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:14px;
-      margin-top:16px;
-    }
-    .mini{
-      padding:16px;
-      border-radius:16px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-    }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      margin-top:26px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      padding:12px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.22);
-      font-weight:900;
-    }
-    .btn.primary{
-      background:#f6f7f9;
-      color:#0b0b0c;
     }
 
     footer{
-      margin-top:26px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.1);
-      font-size:14px;
+      margin-top:40px;
       color:var(--muted);
+      font-size:14px;
     }
   </style>
 </head>
@@ -296,85 +193,91 @@
 
 <!-- Topbar -->
 <div class="topbar">
-  <div class="container">
-    <div class="row">
-      <div>+996 990 241 949 · Ибраимова 115/3а</div>
-      <div class="lang">
-        <a class="active">RU</a>
-        <a href="/hrdirectkg/kg/">KG</a>
-        <a href="/hrdirectkg/en/">EN</a>
-      </div>
-    </div>
+  <div class="container row">
+    <div>+996 990 241 949</div>
+    <div>RU · KG · EN</div>
   </div>
 </div>
 
 <header>
   <div class="container head">
+
     <a class="brand" href="/hrdirectkg/">
-      <span class="mark"></span>HR Direct KG
+      <span class="mark"></span> HR Direct KG
     </a>
 
     <nav class="main-nav">
-      <a href="/hrdirectkg/visas/" class="active">Визы</a>
+      <a href="/hrdirectkg/visas/">Визы</a>
       <a href="/hrdirectkg/employment/">Трудоустройство</a>
       <a href="/hrdirectkg/partners/">Партнёрам</a>
       <a href="/hrdirectkg/faq/">FAQ</a>
       <a href="/hrdirectkg/contact/">Контакты</a>
     </nav>
 
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
 </header>
 
-<main class="page">
-  <div class="container">
+<!-- Drawer -->
+<div class="drawer-backdrop" id="backdrop" hidden></div>
 
+<aside class="drawer" id="drawer">
+  <nav class="drawer-nav">
+    <a href="/hrdirectkg/">Главная</a>
+    <a href="/hrdirectkg/visas/">Визы</a>
+    <a href="/hrdirectkg/employment/">Трудоустройство</a>
+    <a href="/hrdirectkg/partners/">Партнёрам</a>
+    <a href="/hrdirectkg/faq/">FAQ</a>
+    <a href="/hrdirectkg/contact/">Контакты</a>
+  </nav>
+</aside>
+
+<main>
+  <div class="container">
     <span class="badge">Виза в Японию</span>
     <h1>Аккуратный пакет — спокойная подача</h1>
-    <p class="lead">
-      Япония ценит порядок и логику. Мы помогаем собрать документы так,
-      чтобы подача прошла без лишних вопросов.
-    </p>
+    <p class="lead">Мы соберём документы так, чтобы подача прошла без лишних вопросов.</p>
 
-    <section class="card">
-      <strong>Что мы делаем:</strong>
-      <div class="points">
-        <div>• Консультация по цели и срокам поездки</div>
-        <div>• Заполнение анкеты и проверка пакета</div>
-        <div>• Брони, маршрут, страховка под подачу</div>
-        <div>• Чёткий план шагов до подачи</div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Частые вопросы</h2>
-      <div class="grid">
-        <div class="mini">🧳 Цель поездки — логика маршрута</div>
-        <div class="mini">📝 Анкета без противоречий</div>
-        <div class="mini">🏨 Подходящие брони</div>
-        <div class="mini">⏳ Сроки без спешки</div>
-      </div>
-    </section>
-
-    <div class="actions">
-      <a class="btn primary"
-         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу%20в%20Японию."
-         target="_blank">Написать в WhatsApp</a>
-      <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
+    <div class="card">
+      ✔ Консультация<br>
+      ✔ Проверка документов<br>
+      ✔ Брони и страховка<br>
+      ✔ Пошаговый план
     </div>
 
     <footer>
       © <span id="year"></span> HR Direct KG
     </footer>
-
   </div>
 </main>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  const burger = document.getElementById('burger');
-  burger.onclick = () => alert('Drawer уже есть — можно подключить как на главной 😉');
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+
+burger.addEventListener('click', ()=>{
+  drawer.classList.add('open');
+  backdrop.hidden=false;
+  document.body.style.overflow='hidden';
+});
+
+backdrop.addEventListener('click', close);
+
+function close(){
+  drawer.classList.remove('open');
+  backdrop.hidden=true;
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') close();
+});
 </script>
 
 </body>
