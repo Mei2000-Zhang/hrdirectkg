@@ -9,404 +9,365 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/dubai/" />
 
-  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#0b0b0c;
-      --surface:#111114;
-      --muted:#9aa1ab;
       --text:#f6f7f9;
-      --brand-1:#ff7a18;
-      --brand-2:#ff9a44;
-      --brand-3:#ffd194;
-      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-      --radius:16px;
+      --muted:rgba(246,247,249,.78);
+
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+
+      /* общий фон */
+      --hero-img: url("/hrdirectkg/ben.jpg");
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-        var(--bg);
+      overflow-x:hidden;
       line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    /* Topbar (дежурный номер + языки) */
-    .topbar{
-      background:#0f0f12;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      font-size:14px;
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
-    .topbar .wrap{
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      background:rgba(0,0,0,.45);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .topbar .row{
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:12px;
-      padding:8px 0;
+      padding:10px 0;
+      font-size:13.5px;
+      text-shadow:0 2px 10px rgba(0,0,0,.55);
     }
-    .topbar .phone{opacity:.95}
 
-    /* Language switch */
-    .lang{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      opacity:.95;
+    .lang{display:flex; gap:8px}
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      opacity:.85;
     }
-    .lang a{opacity:.75}
-    .lang a.active{opacity:1;font-weight:700}
-    .sep{opacity:.35}
+    .lang a.active{
+      opacity:1;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.12);
+    }
 
-    /* Header */
+    /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
-      z-index:50;
-      background:rgba(17,17,20,.85);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      overflow:visible;
+      z-index:80;
+      background:rgba(0,0,0,.28);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
-    .nav{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
+    .head{
+      display:flex;
       align-items:center;
-      gap:18px;
-      padding:14px 0 10px;
-      overflow:visible;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
     }
-    .nav__left{min-width:max-content}
-    .nav__center{min-width:0; overflow:visible}
-    .nav__right{min-width:max-content}
 
-    .logo{
+    .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      font-weight:800;
+      font-weight:900;
       white-space:nowrap;
+      text-shadow:0 12px 40px rgba(0,0,0,.55);
     }
-    .logo .mark{
-      width:28px;
-      height:28px;
-      border-radius:8px;
-      background:var(--accent-grad);
-      flex:0 0 auto;
-    }
-
-    /* Menu */
-    .menu{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      white-space:nowrap;
-      justify-content:flex-start;
-      min-width:0;
-      font-size:13px;
-    }
-    .menu a{
-      white-space:nowrap;
-      color:rgba(246,247,249,.92);
-      padding:4px 2px;
-      opacity:.9;
-    }
-    .menu a:hover{opacity:1}
-    .menu a.active{opacity:1;font-weight:700}
-
-    /* Submenu */
-    .subnav{
-      padding:0 0 12px;
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    .submenu{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      padding-top:10px;
-      font-size:12px;
-      color:rgba(246,247,249,.86);
-    }
-    .submenu a{
-      padding:6px 8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      white-space:nowrap;
-    }
-    .submenu a:hover{background:rgba(255,255,255,.07);}
-
-    /* Buttons */
-    .btn{
-      padding:12px 16px;
+    .mark{
+      width:32px;height:32px;
       border-radius:12px;
-      background:var(--accent-grad);
-      color:#120a00;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 14px 40px rgba(0,0,0,.35);
+    }
+
+    .main-nav{
+      display:flex;
+      gap:22px;
+    }
+    .main-nav a{
+      font-size:14px;
       font-weight:700;
-      display:inline-flex;
+      opacity:.9;
+      position:relative;
+    }
+    .main-nav a.active{opacity:1}
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:.2s;
+    }
+    .main-nav a:hover::after{width:100%}
+
+    @media(max-width:980px){
+      .main-nav{display:none}
+    }
+
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
-      white-space:nowrap;
+      gap:6px;
+      cursor:pointer;
     }
-    .btn.outline{
-      background:none;
-      color:var(--text);
-      border:1px solid rgba(255,255,255,.16);
+    .burger span{
+      width:18px;height:2px;
+      background:#f6f7f9;
+      border-radius:2px;
     }
 
-    /* Hero */
-    .hero{padding:48px 0 28px}
+    /* Drawer */
+    .drawer-backdrop{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.6);
+      z-index:90;
+    }
+    .drawer{
+      position:fixed;
+      top:0; right:0;
+      height:100vh;
+      width:min(460px,88vw);
+      background:var(--glass2);
+      backdrop-filter:blur(16px);
+      border-left:1px solid rgba(255,255,255,.12);
+      transform:translateX(105%);
+      transition:.25s;
+      z-index:100;
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer-nav{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .drawer-nav a{
+      padding:13px 12px;
+      border-radius:16px;
+      font-weight:800;
+      opacity:.85;
+    }
+    .drawer-nav a:hover{opacity:1}
+
+    /* ===== Page ===== */
+    main.page{
+      position:relative;
+      padding:48px 0 72px;
+    }
+    main.page::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.70) 60%, rgba(0,0,0,.85) 100%);
+      z-index:-1;
+    }
+
     .badge{
       display:inline-block;
-      padding:6px 12px;
+      padding:8px 12px;
       border-radius:999px;
-      background:var(--accent-grad);
-      color:#120a00;
-      font-weight:700;
-      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.25);
+      font-weight:900;
+      letter-spacing:.08em;
+      font-size:12px;
     }
-    .h1{
-      font-size:clamp(28px,4vw,44px);
-      margin:14px 0 10px;
-      font-weight:800;
-    }
-    .lead{font-size:18px;color:var(--muted);max-width:820px}
 
-    /* Sections */
-    .section{padding:36px 0}
-    .note{font-size:14px;color:var(--muted)}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:16px;
+    h1{
+      margin:16px 0 10px;
+      font-size:clamp(28px,4vw,46px);
+      text-shadow:0 14px 44px rgba(0,0,0,.6);
     }
+    .lead{
+      max-width:820px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
     .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px;
-      padding:18px;
-    }
-    .flag{font-size:26px}
-    .meta{font-size:14px;color:var(--muted);margin:6px 0 10px}
-
-    /* HeroCard */
-    .heroCard{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px;
-      padding:16px;
       margin-top:18px;
+      padding:18px;
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);
+      backdrop-filter:blur(14px);
     }
+
     .points{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:10px;
-      margin-top:8px;
-    }
-    .point{font-size:14px;color:var(--muted)}
-
-    /* CTA row helper */
-    .ctaRow{
-      margin-top:14px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    /* Footer */
-    footer{
-      border-top:1px solid rgba(255,255,255,.06);
-      padding:24px 0;
+      margin-top:10px;
+      font-size:14px;
       color:var(--muted);
     }
 
-    /* anchor offset for sticky header */
-    #contact{scroll-margin-top:140px;}
-
-    /* Mobile */
-    @media(max-width:820px){
-      .menu{flex-wrap:wrap; white-space:normal}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      margin-top:16px;
     }
-    @media(max-width:520px){
-      .menu{display:none}
+    .mini{
+      padding:16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      margin-top:26px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:12px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.22);
+      font-weight:900;
+    }
+    .btn.primary{
+      background:#f6f7f9;
+      color:#0b0b0c;
+    }
+
+    footer{
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      font-size:14px;
+      color:var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container wrap">
-      <div class="phone">+996 990 241 949</div>
-
-      <div class="lang" aria-label="Выбор языка">
-        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
-        <span class="sep">·</span>
+<div class="topbar">
+  <div class="container">
+    <div class="row">
+      <div>+996 990 241 949 · Ибраимова 115/3а</div>
+      <div class="lang">
+        <a class="active">RU</a>
         <a href="/hrdirectkg/kg/">KG</a>
-        <span class="sep">·</span>
         <a href="/hrdirectkg/en/">EN</a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <div class="nav__left">
-        <a class="logo" href="/hrdirectkg/">
-          <span class="mark"></span><span>HR Direct KG</span>
-        </a>
+<header>
+  <div class="container head">
+    <a class="brand" href="/hrdirectkg/">
+      <span class="mark"></span>HR Direct KG
+    </a>
+
+    <nav class="main-nav">
+      <a href="/hrdirectkg/visas/" class="active">Визы</a>
+      <a href="/hrdirectkg/employment/">Трудоустройство</a>
+      <a href="/hrdirectkg/partners/">Партнёрам</a>
+      <a href="/hrdirectkg/faq/">FAQ</a>
+      <a href="/hrdirectkg/contact/">Контакты</a>
+    </nav>
+
+    <button class="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <span class="badge">Виза в Дубай (ОАЭ)</span>
+    <h1>Электронная виза — быстро и без лишних шагов</h1>
+    <p class="lead">
+      ОАЭ оформляется онлайн. Важно, чтобы документы и данные были поданы корректно —
+      именно это мы и берём на себя.
+    </p>
+
+    <section class="card">
+      <strong>Что мы берём на себя:</strong>
+      <div class="points">
+        <div>• Подскажем тип и срок визы</div>
+        <div>• Проверим документы и данные</div>
+        <div>• Сопроводим подачу онлайн</div>
+        <div>• Дадим инструкцию перед вылетом</div>
       </div>
+    </section>
 
-      <div class="nav__center">
-        <nav class="menu" aria-label="Основная навигация">
-          <a href="/hrdirectkg/">Главная</a>
-          <a href="/hrdirectkg/about/">О компании</a>
-          <a href="/hrdirectkg/visas/" class="active">Визы</a>
-          <a href="/hrdirectkg/insurance/">Страховка</a>
-          <a href="/hrdirectkg/forms/">Анкеты</a>
-          <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-          <a href="/hrdirectkg/pricing/">Цены</a>
-        </nav>
-      </div>
-
-      <div class="nav__right">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация%20по%20визе%20в%20ОАЭ%20(Дубай)."
-           target="_blank" rel="noopener">Консультация</a>
-      </div>
-    </div>
-
-    <div class="subnav">
-      <div class="container">
-        <nav class="submenu" aria-label="Дополнительная навигация">
-          <a href="/hrdirectkg/faq/">FAQ</a>
-          <a href="/hrdirectkg/contact/">Контакты</a>
-          <a href="/hrdirectkg/employment/">Трудоустройство</a>
-          <a href="/hrdirectkg/partners/">Для партнёров</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge">Виза в Дубай (ОАЭ)</div>
-      <h1 class="h1">Электронная виза — быстро, удобно, без визитов “туда-сюда”</h1>
-      <p class="lead">
-        ОАЭ часто оформляется онлайн: главное — корректные данные и аккуратные документы.
-        Мы проверим всё перед подачей, чтобы не было задержек из-за мелочей.
-      </p>
-
-      <div class="heroCard">
-        <strong>Что берём на себя:</strong>
-        <div class="points">
-          <div class="point">• Сориентируем по типу и срокам визы</div>
-          <div class="point">• Проверим документы и данные (без ошибок)</div>
-          <div class="point">• Сопроводим подачу до результата</div>
-          <div class="point">• Дадим “что делать дальше” перед вылетом</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section class="section">
-    <div class="container">
-      <h2>Как обычно проходит оформление</h2>
-      <p class="note">Максимум ясности. Минимум лишних движений.</p>
-
+    <section class="card">
+      <h2>Как проходит оформление</h2>
       <div class="grid">
-        <article class="card">
-          <div class="flag">📩</div>
-          <h3 style="margin:8px 0 0">1) Вы пишете нам</h3>
-          <div class="meta">Даты, цель, кто летит. Сразу скажем, что подготовить.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-
-        <article class="card">
-          <div class="flag">🧾</div>
-          <h3 style="margin:8px 0 0">2) Проверяем документы</h3>
-          <div class="meta">Сверяем данные и формат — то, где обычно “спотыкаются”.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-
-        <article class="card">
-          <div class="flag">🖥️</div>
-          <h3 style="margin:8px 0 0">3) Подача онлайн</h3>
-          <div class="meta">Электронная подача. Вы в курсе на каждом шаге.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
-
-        <article class="card">
-          <div class="flag">✅</div>
-          <h3 style="margin:8px 0 0">4) Результат</h3>
-          <div class="meta">Получаете визу + короткую инструкцию перед вылетом.</div>
-          <a class="btn" href="#contact">Оставить заявку</a>
-        </article>
+        <div class="mini">📩 Вы пишете нам</div>
+        <div class="mini">🧾 Проверяем документы</div>
+        <div class="mini">🖥️ Подаём онлайн</div>
+        <div class="mini">✅ Получаете визу</div>
       </div>
+    </section>
 
-      <div class="heroCard" style="margin-top:16px">
-        <strong>Что написать нам для быстрого старта:</strong>
-        <div class="points">
-          <div class="point">• Даты поездки и длительность</div>
-          <div class="point">• Цель: туризм / гости / транзит</div>
-          <div class="point">• Кто летит: 1 человек / семья</div>
-          <div class="point">• Нужна ли страховка</div>
-        </div>
-      </div>
-
-      <div class="ctaRow">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу%20в%20ОАЭ%20(Дубай).%20Даты:%20____%20Длительность:%20____%20Цель:%20____"
-           target="_blank" rel="noopener">Написать в WhatsApp</a>
-
-        <a class="btn outline" href="/hrdirectkg/visas/">Все визы</a>
-        <a class="btn outline" href="/hrdirectkg/visas/japan/">Япония</a>
-        <a class="btn outline" href="/hrdirectkg/visas/china/">Китай</a>
-        <a class="btn outline" href="/hrdirectkg/visas/schengen/">Шенген</a>
-      </div>
+    <div class="actions">
+      <a class="btn primary"
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу%20в%20ОАЭ%20(Дубай)."
+         target="_blank">Написать в WhatsApp</a>
+      <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Связаться с нами</h2>
-      <p class="lead">Напишите даты и цель поездки — ответим и дадим понятный план.</p>
+    <footer>
+      © <span id="year"></span> HR Direct KG
+    </footer>
 
-      <div class="ctaRow">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация%20по%20визе%20в%20ОАЭ%20(Дубай)."
-           target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</main>
 
-        <a class="btn outline"
-           href="mailto:hrdirectkg@gmail.com?subject=Виза%20в%20ОАЭ%20(Дубай)%20—%20консультация">E-mail</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      © <span id="year"></span> HR Direct KG — визовая поддержка
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
