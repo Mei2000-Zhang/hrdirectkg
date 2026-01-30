@@ -162,41 +162,88 @@
       border-radius:2px;
     }
 
-    /* Drawer */
+    /* ===== Drawer (как у Schengen) ===== */
     .drawer-backdrop{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.6);
-      z-index:90;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
     }
     .drawer{
-      position:fixed;
-      top:0; right:0;
-      height:100vh;
-      width:min(460px,88vw);
-      background:var(--glass2);
-      backdrop-filter:blur(16px);
-      border-left:1px solid rgba(255,255,255,.12);
-      transform:translateX(105%);
-      transition:.25s;
-      z-index:100;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
       display:flex;
       flex-direction:column;
       box-shadow: -24px 0 70px rgba(0,0,0,.60);
     }
-    .drawer.open{transform:translateX(0)}
+    .drawer.open{ transform: translateX(0); }
+
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
+
     .drawer-nav{
-      padding:16px;
+      padding: 10px;
       display:flex;
       flex-direction:column;
       gap:6px;
+      overflow:auto;
     }
     .drawer-nav a{
-      padding:13px 12px;
-      border-radius:16px;
-      font-weight:800;
-      opacity:.85;
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
     }
-    .drawer-nav a:hover{opacity:1}
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
 
     /* ===== Content ===== */
     main.page{
@@ -333,15 +380,21 @@
 <div class="drawer-backdrop" id="backdrop" hidden></div>
 
 <aside class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-head" style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.10);">
+  <div class="drawer-head">
     <b>Меню</b>
-    <button class="drawer-close" id="close" aria-label="Закрыть"
-      style="width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:var(--text);cursor:pointer;">✕</button>
+    <button class="drawer-close" id="close" aria-label="Закрыть">✕</button>
   </div>
 
   <nav class="drawer-nav" aria-label="Разделы сайта">
     <a href="/hrdirectkg/about/">О компании</a>
-    <a href="/hrdirectkg/visas/">Визы</a>
+
+    <!-- Визы (как ты просила: все визы + направления) -->
+    <a href="/hrdirectkg/visas/">Все визы</a>
+    <a href="/hrdirectkg/visas/schengen/">Шенген</a>
+    <a href="/hrdirectkg/visas/china/">Китай</a>
+    <a href="/hrdirectkg/visas/dubai/">Дубай</a>
+    <a href="/hrdirectkg/visas/japan/">Япония</a>
+
     <a href="/hrdirectkg/employment/">Трудоустройство</a>
     <a href="/hrdirectkg/partners/">Для партнёров</a>
 
@@ -354,9 +407,8 @@
     <a href="/hrdirectkg/contact/">Контакты</a>
   </nav>
 
-  <div class="drawer-cta" style="margin-top:auto;padding:14px 14px 18px;border-top:1px solid rgba(255,255,255,.10);">
-    <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener"
-      style="display:block;text-align:center;padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);font-weight:950;color:var(--text);">WhatsApp консультация</a>
+  <div class="drawer-cta">
+    <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener">WhatsApp консультация</a>
   </div>
 </aside>
 
@@ -373,69 +425,4 @@
     <section class="card">
       <strong>Что мы делаем:</strong>
       <div class="points">
-        <div>• Консультация по цели и срокам поездки</div>
-        <div>• Заполнение анкеты и проверка пакета</div>
-        <div>• Брони, маршрут, страховка под подачу</div>
-        <div>• Чёткий план шагов до подачи</div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Частые вопросы</h2>
-      <div class="grid">
-        <div class="mini">🧳 Цель поездки — логика маршрута</div>
-        <div class="mini">📝 Анкета без противоречий</div>
-        <div class="mini">🏨 Подходящие брони</div>
-        <div class="mini">⏳ Сроки без спешки</div>
-      </div>
-    </section>
-
-    <div class="actions">
-      <a class="btn primary"
-         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу%20в%20Японию."
-         target="_blank" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
-    </div>
-
-    <footer>
-      © <span id="year"></span> HR Direct KG
-    </footer>
-
-  </div>
-</main>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const burger = document.getElementById('burger');
-  const drawer = document.getElementById('drawer');
-  const backdrop = document.getElementById('backdrop');
-  const closeBtn = document.getElementById('close');
-
-  function openDrawer(){
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden','false');
-    backdrop.hidden = false;
-    burger.setAttribute('aria-expanded','true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeDrawer(){
-    drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden','true');
-    backdrop.hidden = true;
-    burger.setAttribute('aria-expanded','false');
-    document.body.style.overflow = '';
-  }
-
-  burger.addEventListener('click', openDrawer);
-  closeBtn.addEventListener('click', closeDrawer);
-  backdrop.addEventListener('click', closeDrawer);
-
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') closeDrawer();
-  });
-</script>
-
-</body>
-</html>
+        <div>• Кон
