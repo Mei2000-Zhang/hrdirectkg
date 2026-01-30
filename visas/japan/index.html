@@ -425,4 +425,69 @@
     <section class="card">
       <strong>Что мы делаем:</strong>
       <div class="points">
-        <div>• Кон
+        <div>• Консультация по цели и срокам поездки</div>
+        <div>• Заполнение анкеты и проверка пакета</div>
+        <div>• Брони, маршрут, страховка под подачу</div>
+        <div>• Чёткий план шагов до подачи</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Частые вопросы</h2>
+      <div class="grid">
+        <div class="mini">🧳 Цель поездки — логика маршрута</div>
+        <div class="mini">📝 Анкета без противоречий</div>
+        <div class="mini">🏨 Подходящие брони</div>
+        <div class="mini">⏳ Сроки без спешки</div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="btn primary"
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу%20в%20Японию."
+         target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> HR Direct KG
+    </footer>
+
+  </div>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  const backdrop = document.getElementById('backdrop');
+  const closeBtn = document.getElementById('close');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden','false');
+    backdrop.hidden = false;
+    burger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden','true');
+    backdrop.hidden = true;
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeDrawer();
+  });
+</script>
+
+</body>
+</html>
