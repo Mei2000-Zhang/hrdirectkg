@@ -26,32 +26,41 @@
 
   <style>
     :root{
-      --bg:#0b0b0c;
-      --muted:#9aa1ab;
       --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+
       --brand-1:#ff7a18;
       --brand-2:#ff9a44;
       --brand-3:#ffd194;
       --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-      --shadow:0 10px 25px rgba(0,0,0,.3);
-      --glass: rgba(10,12,16,.50);
-      --glass2: rgba(10,12,16,.88);
-      --line:rgba(255,255,255,.12);
-      --radius:18px;
+
+      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
+      --hero-img: url("/hrdirectkg/ben.jpg");
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-        var(--bg);
-      line-height:1.55;
       overflow-x:hidden;
+
+      /* Photo as global background (как на главной) */
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
+
     a{color:inherit; text-decoration:none}
     .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
@@ -71,6 +80,7 @@
       padding:10px 0;
       font-size:13.5px;
       color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
     }
     .topbar a{
       color:rgba(246,247,249,.98);
@@ -92,6 +102,7 @@
       border:1px solid transparent;
       color:rgba(246,247,249,.90);
       transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
     }
     .lang a:hover{
       background:rgba(255,255,255,.06);
@@ -129,6 +140,7 @@
       letter-spacing:.2px;
       white-space:nowrap;
       min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
     .mark{
       width:32px;height:32px;
@@ -149,6 +161,7 @@
       font-size:14px;
       color:rgba(246,247,249,.92);
       position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
     }
     .main-nav a::after{
       content:"";
@@ -162,11 +175,12 @@
     }
     .main-nav a:hover::after{width:100%;}
     .main-nav a.active{font-weight:900;}
+
     @media (max-width: 980px){
       .main-nav{display:none;}
     }
 
-    /* Burger */
+    /* Burger (как на главной) */
     .burger{
       width:46px;height:46px;
       border-radius: 16px;
@@ -192,7 +206,7 @@
       border-radius: 2px;
     }
 
-    /* Drawer */
+    /* ===== Drawer (как на главной) ===== */
     .drawer-backdrop{
       position: fixed;
       inset: 0;
@@ -254,11 +268,6 @@
       border-color: rgba(255,255,255,.12);
       color: var(--text);
     }
-    .drawer-nav a.active{
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.14);
-      color: var(--text);
-    }
 
     .drawer-cta{
       margin-top:auto;
@@ -280,27 +289,48 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Content (оставляем твой текст) ===== */
-    .section{
-      padding: 22px 0 50px;
+    /* ===== PAGE CONTENT (вместо hero) ===== */
+    main.page{
       position:relative;
+      min-height: calc(100vh - 106px);
+      padding: 44px 0 60px;
+      overflow:hidden;
     }
-    .section::before{
+    /* overlays to make text readable (как на главной hero::before) */
+    main.page::before{
       content:"";
       position:absolute;
       inset:0;
-      background: rgba(0,0,0,.42);
-      backdrop-filter: blur(10px);
-      border-top:1px solid rgba(255,255,255,.10);
-      border-bottom:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
       pointer-events:none;
     }
-    .section .inner{position:relative; z-index:2;}
+    .page .content{position:relative; z-index:2;}
 
-    .h1{font-size:clamp(24px,3.3vw,36px); margin:0 0 10px; font-weight:900}
-    .lead{color:var(--muted); margin:0; max-width:900px}
-    .note{color:var(--muted); font-size:14px; margin-top:10px}
-    .ctaRow{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
+    .h1{
+      margin:18px 0 12px;
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 72ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+      align-items:center;
+    }
 
     .btn{
       display:inline-flex;
@@ -330,7 +360,22 @@
     }
     .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
 
-    .map{margin-top:20px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12);}
+    .note{
+      margin-top:16px;
+      color: rgba(246,247,249,.86);
+      font-size:13px;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    .map{
+      margin-top:20px;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      background: rgba(0,0,0,.20);
+      backdrop-filter: blur(10px);
+    }
 
     footer{
       border-top:1px solid rgba(255,255,255,.10);
@@ -339,6 +384,7 @@
       padding:18px 0;
       color: rgba(246,247,249,.80);
       font-size:13px;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
     }
 
     /* Floating WA */
@@ -350,11 +396,14 @@
       box-shadow:0 12px 26px rgba(255,122,24,.4);
       z-index:60
     }
+
+    @media (max-width: 760px){
+      main.page{padding: 38px 0 54px;}
+    }
   </style>
 </head>
 
 <body>
-
   <!-- Topbar -->
   <div class="topbar">
     <div class="container">
@@ -367,8 +416,8 @@
 
         <div class="lang" aria-label="Тилди тандоо">
           <a href="/hrdirectkg/contact/">RU</a>
-          <a href="/hrdirectkg/kg/contact/" class="active" aria-current="page">KG</a>
-          <a href="/hrdirectkg/en/contact/">EN</a>
+          <a href="/hrdirectkg/kg/" >KG</a>
+          <a href="/hrdirectkg/en/">EN</a>
         </div>
       </div>
     </div>
@@ -383,10 +432,9 @@
           <span>HR Direct KG</span>
         </a>
 
-        <!-- Desktop nav (как на главной) -->
         <nav class="main-nav" aria-label="Негизги меню">
           <a href="/hrdirectkg/kg/visas/">Визалар</a>
-          <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
+          <a href="/hrdirectkg/kg/employment/">Трудоустройство</a>
           <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
           <a href="/hrdirectkg/kg/faq/">FAQ</a>
           <a href="/hrdirectkg/kg/contact/" class="active" aria-current="page">Байланыш</a>
@@ -409,52 +457,49 @@
     </div>
 
     <nav class="drawer-nav" aria-label="Сайт бөлүмдөрү">
-      <a href="/hrdirectkg/kg/">Башкы</a>
       <a href="/hrdirectkg/kg/about/">Компания тууралуу</a>
 
       <a href="/hrdirectkg/kg/visas/">Визалар</a>
+      <a href="/hrdirectkg/kg/employment/">Трудоустройство</a>
+      <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
+
       <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
       <a href="/hrdirectkg/kg/forms/">Анкеталар</a>
       <a href="/hrdirectkg/kg/how-to-get-visa/">Визаны кантип алуу</a>
+
       <a href="/hrdirectkg/kg/pricing/">Баалар</a>
-
-      <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
-      <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
-
       <a href="/hrdirectkg/kg/faq/">FAQ</a>
       <a class="active" href="/hrdirectkg/kg/contact/" aria-current="page">Байланыш</a>
     </nav>
 
     <div class="drawer-cta">
-      <a class="cta"
-         href="https://wa.me/996990241949?text=Салам!%20Кеңеш%20керек.%20Өлкө:%20____%20Даталар:%20____"
-         target="_blank" rel="noopener">WhatsApp'ка жазуу</a>
+      <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener">WhatsApp консультация</a>
     </div>
   </aside>
 
-  <!-- CONTENT (твой текст как есть) -->
-  <section class="section">
-    <div class="container inner">
+  <!-- PAGE CONTENT -->
+  <main class="page" role="main">
+    <div class="container content">
       <h1 class="h1">Байланыш</h1>
       <p class="lead">Өлкөңүздү жана сапардын даталарын жазыңыз — виза же ишке орношуу боюнча кийинки кадамды айтып беребиз.</p>
 
-      <div class="ctaRow">
+      <div class="actions">
         <a class="btn primary" href="https://wa.me/996990241949?text=Салам!%20Кеңеш%20керек." target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn" href="mailto:officehhrdirectkg@gmail.com?subject=Кеңеш%20—%20HR%20Direct%20KG">E-mail</a>
         <a class="btn" href="tel:+996990241949">Чалуу</a>
       </div>
 
-      <p class="note" style="margin-top:14px">
+      <div class="note">
         Дарек: Бишкек ш., Ибраимова 115/3а, 4-кабат, 405-кабинет
-      </p>
+      </div>
 
       <div class="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123!2d74.588!3d42.872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec824!2z0YPQuy4g0JrQu9Cw0YHQutC-0LPQviAxMTUvM8KgLCDQkNC70LXRgNC90YvQuSwg0JrRg9GA0LPRgNCw0L3RgiA!5e0!3m2!1sru!2skg!4v0000000000000"
-          width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer>
     <div class="container">
@@ -481,6 +526,7 @@
       burger.setAttribute('aria-expanded','true');
       document.body.style.overflow = 'hidden';
     }
+
     function closeDrawer(){
       drawer.classList.remove('open');
       drawer.setAttribute('aria-hidden','true');
@@ -492,6 +538,7 @@
     burger.addEventListener('click', openDrawer);
     closeBtn.addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
+
     document.addEventListener('keydown', (e) => {
       if(e.key === 'Escape') closeDrawer();
     });
