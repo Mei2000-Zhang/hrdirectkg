@@ -21,261 +21,579 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
-  --accent:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <style>
+    :root{
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:8px 0;
-}
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
 
-/* Language switch */
-.lang{
-  display:flex;
-  gap:8px;
-}
-.lang a{
-  padding:2px 6px;
-  border-radius:8px;
-}
-.lang a.active{
-  background:rgba(255,255,255,.10);
-  font-weight:700;
-}
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
 
-/* Header */
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 0;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:800;
-}
-.logo .mark{
-  width:28px;height:28px;border-radius:8px;
-  background:var(--accent);
-}
+      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
+      --hero-img: url("/hrdirectkg/ben.jpg");
+    }
 
-.menu{
-  display:flex;
-  gap:10px;
-  font-size:13px;
-}
-.menu a{opacity:.85}
-.menu a.active{
-  opacity:1;
-  background:rgba(255,255,255,.08);
-  border-radius:8px;
-  padding:4px 6px;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-.btn{
-  padding:12px 16px;
-  border-radius:12px;
-  background:var(--accent);
-  color:#120a00;
-  font-weight:700;
-}
-.btn.outline{
-  background:none;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.2);
-}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
 
-/* Submenu */
-.subnav{
-  padding-bottom:12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;
-}
-.submenu a{
-  padding:6px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-}
+      /* Photo as global background */
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      line-height:1.55;
+    }
 
-/* Content */
-.section{padding:40px 0}
-.h1{font-size:clamp(26px,3.5vw,40px);margin:0 0 10px;font-weight:800}
-.lead{color:var(--muted);max-width:760px}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-/* FAQ */
-details{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;
-  padding:16px;
-}
-details+details{margin-top:12px}
-summary{
-  cursor:pointer;
-  font-weight:700;
-}
-summary::-webkit-details-marker{display:none}
-details p{
-  margin:10px 0 0;
-  color:var(--muted);
-}
+    /* ===== Topbar ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
 
-.cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
 
-footer{
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:24px 0;
-  color:var(--muted);
-}
+    /* ===== Header ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
 
-@media(max-width:520px){
-  .menu{display:none}
-}
-</style>
+    /* ===== Main navigation ===== */
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active{font-weight:900;}
+
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
+
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
+
+    /* ===== Drawer ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
+
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
+
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.14);
+      color: var(--text);
+    }
+
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    /* ===== HERO (как у главной, но компактнее) ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 28px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
+
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      max-width: 28ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 78ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
+
+    /* ===== CONTENT SECTION ===== */
+    .section{
+      position:relative;
+      padding: 22px 0 56px;
+    }
+    .section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,.42);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      pointer-events:none;
+    }
+    .section .inner{position:relative; z-index:2;}
+
+    /* ===== FAQ blocks (текст НЕ трогаем) ===== */
+    .faq-list{margin-top:20px; display:flex; flex-direction:column; gap:12px;}
+
+    details{
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 16px 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color: rgba(246,247,249,.96);
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    summary::-webkit-details-marker{display:none;}
+    summary::after{
+      content:"▾";
+      opacity:.85;
+      transform: translateY(-1px);
+      transition: transform .18s ease;
+      flex:0 0 auto;
+    }
+    details[open] summary::after{
+      transform: rotate(180deg) translateY(1px);
+    }
+    details p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.7;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+      padding:18px 0;
+      color: rgba(246,247,249,.80);
+      font-size:13px;
+    }
+
+    @media (max-width: 760px){
+      .hero{padding: 44px 0 22px;}
+      h1{max-width: 30ch;}
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/contact/">Ибраимова 115/3а, офис 405</a>
+        </div>
 
-<div class="topbar">
-  <div class="container wrap">
-    <div>+996 990 241 949</div>
-    <div class="lang">
-      <a href="/hrdirectkg/faq/" class="active">RU</a> ·
-      <a href="/hrdirectkg/kg/faq/">KG</a> ·
-      <a href="/hrdirectkg/en/faq/">EN</a>
+        <div class="lang" aria-label="Выбор языка">
+          <a href="/hrdirectkg/faq/" class="active" aria-current="page">RU</a>
+          <a href="/hrdirectkg/kg/faq/">KG</a>
+          <a href="/hrdirectkg/en/faq/">EN</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<header>
-  <div class="container nav">
-    <div class="logo"><span class="mark"></span>HR Direct KG</div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-    <nav class="menu">
-      <a href="/hrdirectkg/">Главная</a>
+        <nav class="main-nav" aria-label="Основное меню">
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Партнёрам</a>
+          <a class="active" href="/hrdirectkg/faq/" aria-current="page">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Меню</b>
+      <button class="drawer-close" id="close" aria-label="Закрыть">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Разделы сайта">
       <a href="/hrdirectkg/about/">О компании</a>
+
       <a href="/hrdirectkg/visas/">Визы</a>
+      <a href="/hrdirectkg/employment/">Трудоустройство</a>
+      <a href="/hrdirectkg/partners/">Для партнёров</a>
+
       <a href="/hrdirectkg/insurance/">Страховка</a>
       <a href="/hrdirectkg/forms/">Анкеты</a>
       <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+
       <a href="/hrdirectkg/pricing/">Цены</a>
+      <a class="active" href="/hrdirectkg/faq/" aria-current="page">FAQ</a>
+      <a href="/hrdirectkg/contact/">Контакты</a>
     </nav>
 
-    <a class="btn" href="https://wa.me/996990241949?text=Здравствуйте!%20У%20меня%20вопрос%20по%20визе." target="_blank">Консультация</a>
-  </div>
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Здравствуйте!%20У%20меня%20вопрос%20по%20визе."
+         target="_blank" rel="noopener">WhatsApp консультация</a>
+    </div>
+  </aside>
 
-  <div class="subnav">
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <!-- ТЕКСТ НЕ ТРОГАЕМ -->
+      <h1>FAQ — частые вопросы по визам</h1>
+      <p class="lead">
+        Коротко и по делу. Без обещаний невозможного.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary"
+           href="https://wa.me/996990241949?text=Здравствуйте!%20У%20меня%20вопрос%20по%20визе."
+           target="_blank" rel="noopener">Задать вопрос</a>
+        <a class="btn" href="/hrdirectkg/pricing/">Цены</a>
+        <a class="btn" href="/hrdirectkg/contact/">Контакты</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTENT -->
+  <section class="section">
+    <div class="container inner">
+      <div class="faq-list">
+        <!-- ТЕКСТ НЕ ТРОГАЕМ -->
+        <details>
+          <summary>Вы даёте 100% гарантию на визу?</summary>
+          <p>Нет. Решение принимает консульство. Мы готовим корректный пакет и снижаем риски, но не даём ложных гарантий.</p>
+        </details>
+
+        <details>
+          <summary>Сколько времени занимает оформление визы?</summary>
+          <p>От нескольких дней до 4–6 недель — зависит от страны и записи. Точные сроки говорим после консультации.</p>
+        </details>
+
+        <details>
+          <summary>Помогаете ли вы с анкетами и записью?</summary>
+          <p>Да. Заполняем анкеты, проверяем документы и помогаем с записью, если это требуется.</p>
+        </details>
+
+        <details>
+          <summary>Почему могут отказать?</summary>
+          <p>Ошибки в анкете, слабые финансы, несоответствие цели поездки документам, плохая визовая история.</p>
+        </details>
+
+        <details>
+          <summary>Если был отказ — можно подать снова?</summary>
+          <p>В большинстве случаев — да. Главное понять причину и исправить пакет.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
     <div class="container">
-      <nav class="submenu">
-        <a href="/hrdirectkg/faq/">FAQ</a>
-        <a href="/hrdirectkg/contact/">Контакты</a>
-        <a href="/hrdirectkg/employment/">Трудоустройство</a>
-        <a href="/hrdirectkg/partners/">Для партнёров</a>
-      </nav>
+      © <span id="year"></span> HR Direct KG — визовая поддержка
     </div>
-  </div>
-</header>
+  </footer>
 
-<section class="section">
-  <div class="container">
-    <h1 class="h1">FAQ — частые вопросы по визам</h1>
-    <p class="lead">
-      Коротко и по делу. Без обещаний невозможного.
-    </p>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <div style="margin-top:20px">
-      <details>
-        <summary>Вы даёте 100% гарантию на визу?</summary>
-        <p>Нет. Решение принимает консульство. Мы готовим корректный пакет и снижаем риски, но не даём ложных гарантий.</p>
-      </details>
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
 
-      <details>
-        <summary>Сколько времени занимает оформление визы?</summary>
-        <p>От нескольких дней до 4–6 недель — зависит от страны и записи. Точные сроки говорим после консультации.</p>
-      </details>
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
 
-      <details>
-        <summary>Помогаете ли вы с анкетами и записью?</summary>
-        <p>Да. Заполняем анкеты, проверяем документы и помогаем с записью, если это требуется.</p>
-      </details>
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
 
-      <details>
-        <summary>Почему могут отказать?</summary>
-        <p>Ошибки в анкете, слабые финансы, несоответствие цели поездки документам, плохая визовая история.</p>
-      </details>
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
 
-      <details>
-        <summary>Если был отказ — можно подать снова?</summary>
-        <p>В большинстве случаев — да. Главное понять причину и исправить пакет.</p>
-      </details>
-    </div>
-
-    <div class="cta">
-      <a class="btn" href="https://wa.me/996990241949?text=Здравствуйте!%20У%20меня%20вопрос%20по%20визе." target="_blank">Задать вопрос</a>
-      <a class="btn outline" href="/hrdirectkg/pricing/">Цены</a>
-      <a class="btn outline" href="/hrdirectkg/contact/">Контакты</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © <span id="year"></span> HR Direct KG — визовая поддержка
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeDrawer();
+    });
+  </script>
 </body>
 </html>
