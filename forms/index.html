@@ -286,54 +286,50 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Page content (твой текст) ===== */
-    main.page{
+    /* ===== HERO + SECTIONS (как на KG) ===== */
+    .hero{
       position:relative;
-      padding: 26px 0 56px;
-      min-height: calc(100vh - 106px);
+      padding: 52px 0 18px;
     }
-    main.page::before{
+    .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
         radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.20) 0%, rgba(0,0,0,.62) 70%, rgba(0,0,0,.78) 100%);
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.55) 70%, rgba(0,0,0,.70) 100%);
       pointer-events:none;
     }
-    .content{
-      position:relative;
-      z-index:2;
-      padding-top: 14px;
-    }
+    .hero .content{position:relative; z-index:2;}
 
     .badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:6px 12px;
+      padding:7px 12px;
       border-radius:999px;
-      background: rgba(255,255,255,.12);
       border:1px solid rgba(255,255,255,.18);
-      color: rgba(246,247,249,.95);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
       font-weight:900;
-      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+      font-size:13px;
     }
 
-    h1{
-      margin:16px 0 10px;
+    .h1{
+      margin:16px 0 12px;
       font-size: clamp(30px, 4.2vw, 52px);
       line-height:1.05;
-      letter-spacing:-0.03em;
+      letter-spacing:-0.02em;
       text-shadow: 0 14px 44px rgba(0,0,0,.60);
-      max-width: 28ch;
+      max-width: 36ch;
     }
+
     .lead{
       margin:0;
       color: var(--muted);
       font-size:16px;
       line-height:1.75;
-      max-width: 78ch;
+      max-width: 92ch;
       text-shadow: 0 12px 40px rgba(0,0,0,.50);
     }
 
@@ -341,9 +337,12 @@
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top: 18px;
+      margin-top:22px;
       align-items:center;
+      position:relative;
+      z-index:2;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -372,6 +371,86 @@
     }
     .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
 
+    .section{
+      padding: 22px 0 50px;
+      position:relative;
+    }
+    .section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,.42);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      pointer-events:none;
+    }
+    .section .inner{position:relative; z-index:2;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+    .card{
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding:16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .flag{font-size:26px}
+    .meta{font-size:14px;color:var(--muted);margin:8px 0 0; line-height:1.6}
+
+    .heroCard{
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding:16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      margin-top:16px;
+    }
+
+    .points{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .point{
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-size:14px;
+      color: var(--muted);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .step{
+      padding:14px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-size:14px;
+      color: var(--muted);
+      line-height:1.6;
+    }
+    .step b{
+      display:block;
+      color:rgba(246,247,249,.96);
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
     footer{
       border-top:1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.45);
@@ -380,6 +459,7 @@
       color: rgba(246,247,249,.80);
       font-size:13px;
     }
+    #contact{scroll-margin-top:140px;}
   </style>
 </head>
 
@@ -459,25 +539,121 @@
     </div>
   </aside>
 
-  <!-- CONTENT (твой текст) -->
-  <main class="page" role="main">
+  <!-- HERO -->
+  <main class="hero" role="main">
     <div class="container content">
       <div class="badge">Заполнение анкет</div>
-      <h1>Заполним анкету без ошибок</h1>
+      <h1 class="h1">Заполним анкету без ошибок — чтобы не “завернули” из-за мелочей</h1>
+
       <p class="lead">
-        Проверяем даты, маршруты, работу и документы —
-        чтобы отказа не было из-за мелочей.
+        Чаще всего отказ или возврат документов случается не из-за “плохой истории”, а из-за несостыковок в данных.
+        Мы заранее всё сверяем: даты, маршрут, работу, адреса — и логику ответов, чтобы одно не противоречило другому.
       </p>
 
       <div class="actions">
         <a class="btn primary"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужно%20заполнить%20анкету%20на%20визу.%20Страна:%20____%20Даты:%20____"
-           target="_blank" rel="noopener">Написать в WhatsApp</a>
+           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужно%20заполнить%20анкету%20на%20визу.%20Страна:%20____%20Даты:%20____%20Цель:%20____"
+           target="_blank" rel="noopener">WhatsApp</a>
+
         <a class="btn" href="/hrdirectkg/visas/">Выбрать визу</a>
         <a class="btn" href="/hrdirectkg/insurance/">Страховка</a>
       </div>
+
+      <div class="heroCard">
+        <strong>Что мы делаем для вас:</strong>
+        <div class="points">
+          <div class="point">• Заполняем анкету по требованиям конкретной страны</div>
+          <div class="point">• Проверяем, нет ли противоречий в данных и ответах</div>
+          <div class="point">• Подсказываем, какие документы лучше приложить к анкете</div>
+          <div class="point">• Делаем финальную проверку перед подачей</div>
+        </div>
+      </div>
     </div>
   </main>
+
+  <!-- CONTENT -->
+  <section class="section">
+    <div class="container inner">
+      <h2 style="margin:0 0 8px;">Где чаще всего ошибаются</h2>
+      <p style="margin:0; color:var(--muted); max-width:90ch;">
+        Эти “мелочи” потом стоят времени и нервов. Мы закрываем риски заранее.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="flag">📅</div>
+          <h3 style="margin:8px 0 0">Даты и маршрут</h3>
+          <div class="meta">Даты поездки, брони, маршрут и цель иногда не совпадают. Выравниваем логику — чтобы всё “сходилось”.</div>
+        </article>
+
+        <article class="card">
+          <div class="flag">🏠</div>
+          <h3 style="margin:8px 0 0">Адреса и контакты</h3>
+          <div class="meta">Неполный адрес, разные форматы, “не так указано”. Приводим к одному аккуратному стандарту.</div>
+        </article>
+
+        <article class="card">
+          <div class="flag">💼</div>
+          <h3 style="margin:8px 0 0">Работа и доход</h3>
+          <div class="meta">Сомнительные формулировки и “как бы написать”. Помогаем написать понятно, корректно и без лишних вопросов.</div>
+        </article>
+
+        <article class="card">
+          <div class="flag">🧾</div>
+          <h3 style="margin:8px 0 0">Сканы/фото документов</h3>
+          <div class="meta">Качество, формат, “не тот файл”. Подскажем, как подготовить правильно, чтобы приняли с первого раза.</div>
+        </article>
+      </div>
+
+      <div class="heroCard" style="margin-top:16px">
+        <strong>Как мы работаем с анкетой (коротко):</strong>
+        <div class="steps">
+          <div class="step"><b>1) Собираем данные</b> Страна, цель, даты, работа, адрес, прошлые визы — по чек-листу.</div>
+          <div class="step"><b>2) Заполняем и сверяем</b> Заполнение + проверка логики, чтобы ответы не “спорили” между собой.</div>
+          <div class="step"><b>3) Финальная проверка</b> Перед подачей: опечатки, формат, соответствие документам.</div>
+          <div class="step"><b>4) Дальше — по визе</b> Если нужно: брони, страховка, запись, сопровождение до результата.</div>
+        </div>
+      </div>
+
+      <div class="heroCard" style="margin-top:16px">
+        <strong>Чтобы начать — напишите нам:</strong>
+        <div class="points">
+          <div class="point">• Страна и тип визы (если знаете)</div>
+          <div class="point">• Даты поездки (примерно)</div>
+          <div class="point">• Цель: туризм / гости / бизнес</div>
+          <div class="point">• Были ли визы раньше (в любую страну)</div>
+        </div>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary"
+             href="https://wa.me/996990241949?text=Здравствуйте!%20Нужно%20заполнить%20анкету%20на%20визу.%20Страна:%20____%20Даты:%20____%20Цель:%20____"
+             target="_blank" rel="noopener">Написать в WhatsApp</a>
+          <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
+          <a class="btn" href="/hrdirectkg/insurance/">Страховка</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container inner">
+      <h2 style="margin:0 0 8px;">Связаться с нами</h2>
+      <p class="lead" style="max-width:92ch;">Напишите страну и даты — быстро ответим и начнём с анкеты.</p>
+
+      <div class="actions" style="margin-top:12px">
+        <a class="btn primary"
+           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужно%20заполнить%20анкету%20на%20визу.%20Страна:%20____%20Даты:%20____"
+           target="_blank" rel="noopener">WhatsApp</a>
+
+        <a class="btn"
+           href="mailto:officehhrdirectkg@gmail.com?subject=Заполнение%20анкеты%20—%20консультация"
+        >E-mail</a>
+
+        <a class="btn" href="/hrdirectkg/contact/">Офис</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
