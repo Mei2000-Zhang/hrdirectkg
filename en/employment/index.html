@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Language switch */
-.lang{display:flex;gap:8px}
+.lang{display:flex;gap:8px; align-items:center}
 .lang a{padding:2px 6px;border-radius:8px}
 .lang a.active{background:rgba(255,255,255,.10);font-weight:700}
 
@@ -66,6 +66,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:14px;
   padding:14px 0;
 }
 .logo{
@@ -73,6 +74,7 @@ header{
   align-items:center;
   gap:12px;
   font-weight:800;
+  white-space:nowrap;
 }
 .logo .mark{
   width:28px;height:28px;border-radius:8px;
@@ -83,6 +85,8 @@ header{
   display:flex;
   gap:10px;
   font-size:13px;
+  white-space:nowrap;
+  min-width:0;
 }
 .menu a{opacity:.85}
 .menu a.active{
@@ -98,6 +102,7 @@ header{
   background:var(--accent);
   color:#120a00;
   font-weight:700;
+  white-space:nowrap;
 }
 .btn.outline{
   background:none;
@@ -125,14 +130,14 @@ header{
 }
 
 /* Hero */
-.hero{padding:48px 0}
+.hero{padding:48px 0 22px}
 .badge{
   display:inline-block;
   padding:6px 12px;
   border-radius:999px;
   background:var(--accent);
   color:#120a00;
-  font-weight:700;
+  font-weight:800;
 }
 .h1{
   font-size:clamp(28px,4vw,46px);
@@ -144,6 +149,7 @@ header{
   color:var(--muted);
   max-width:900px;
 }
+.meta{font-size:14px;color:var(--muted);margin-top:10px}
 
 /* Sections */
 .section{padding:40px 0}
@@ -152,13 +158,24 @@ header{
   grid-template-columns:1.2fr .8fr;
   gap:20px;
 }
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
 .card{
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.08);
   border-radius:16px;
   padding:18px;
 }
-.meta{font-size:14px;color:var(--muted);margin-top:10px}
+.card h2, .card h3{margin:0 0 10px}
+.card p{margin:0}
+.note{
+  margin-top:10px;
+  font-size:13px;
+  color:rgba(154,161,171,.95);
+}
 
 .points{
   display:grid;
@@ -173,6 +190,13 @@ header{
   padding:14px;
   font-size:14px;
 }
+.list{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+.list li{margin:7px 0}
 
 .steps{display:grid;gap:12px;margin-top:14px}
 .step{
@@ -190,12 +214,33 @@ header{
   margin-top:16px;
 }
 
+.kicker{
+  display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
+}
+.kicker .pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:rgba(246,247,249,.88);
+  font-size:13px;
+}
+
 footer{
   border-top:1px solid rgba(255,255,255,.06);
   padding:24px 0;
   color:var(--muted);
 }
 
+/* anchor offset for sticky header */
+#apply{scroll-margin-top:140px;}
+#process{scroll-margin-top:140px;}
+#requirements{scroll-margin-top:140px;}
+
+@media(max-width:980px){
+  .grid-3{grid-template-columns:1fr}
+}
 @media(max-width:900px){
   .grid-2{grid-template-columns:1fr}
   .points{grid-template-columns:1fr}
@@ -223,7 +268,7 @@ footer{
   <div class="container nav">
     <div class="logo"><span class="mark"></span>HR Direct KG</div>
 
-    <nav class="menu">
+    <nav class="menu" aria-label="Main navigation">
       <a href="/hrdirectkg/en/">Home</a>
       <a href="/hrdirectkg/en/visas/">Visas</a>
       <a href="/hrdirectkg/en/insurance/">Insurance</a>
@@ -233,14 +278,16 @@ footer{
       <a href="/hrdirectkg/en/employment/" class="active">Employment</a>
     </nav>
 
-    <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20would%20like%20to%20ask%20about%20employment%20abroad.%20Country:%20____%20Position:%20____" target="_blank">
+    <a class="btn"
+       href="https://wa.me/996990241949?text=Hello!%20I%20would%20like%20to%20ask%20about%20employment%20abroad.%20Country:%20____%20Position:%20____"
+       target="_blank" rel="noopener">
       Consultation
     </a>
   </div>
 
   <div class="subnav">
     <div class="container">
-      <nav class="submenu">
+      <nav class="submenu" aria-label="Secondary navigation">
         <a href="/hrdirectkg/en/faq/">FAQ</a>
         <a href="/hrdirectkg/en/contact/">Contacts</a>
         <a href="/hrdirectkg/en/employment/" aria-current="page">Employment</a>
@@ -256,14 +303,26 @@ footer{
     <h1 class="h1">Overseas jobs — officially and step by step</h1>
     <p class="lead">
       We help candidates from Kyrgyzstan go through the entire process —
-      from initial inquiry to departure. Job matching, document guidance,
-      and structured support. If you are looking for a <strong>realistic and legal</strong> option,
-      you are in the right place.
+      from inquiry to departure. Job matching, document guidance, and structured support.
+      If you are looking for a <strong>legal and realistic</strong> option — you are in the right place.
     </p>
+
+    <div class="kicker" aria-label="Highlights">
+      <div class="pill">✅ Legal employment</div>
+      <div class="pill">📄 Clear document requirements</div>
+      <div class="pill">🧭 Step-by-step coordination</div>
+      <div class="pill">🤝 Support until departure</div>
+    </div>
 
     <p class="meta">
       ⚠️ No unrealistic promises. Timelines and requirements are discussed in advance.
     </p>
+
+    <div class="actions">
+      <a class="btn" href="#apply">Apply</a>
+      <a class="btn outline" href="#process">How it works</a>
+      <a class="btn outline" href="#requirements">Requirements</a>
+    </div>
   </div>
 </section>
 
@@ -273,7 +332,7 @@ footer{
     <div class="card">
       <h2>Most in-demand sectors</h2>
       <p class="meta">
-        Vacancies depend on experience, documents, and work schedule readiness.
+        Vacancies depend on experience, documents, and readiness for shifts/schedule.
         Common sectors include:
       </p>
 
@@ -292,27 +351,34 @@ footer{
       </p>
     </div>
 
-    <div class="card">
-      <h2>What you should know</h2>
+    <div class="card" id="apply">
+      <h2>Apply for a job</h2>
       <p class="meta">
-        • Requirements vary by country, position, and employer.<br>
-        • Documents and timelines are critical — shortcuts usually lead to problems.<br>
-        • We explain the process clearly and honestly from the start.
+        Send the basics — we will reply with available options and next steps.
       </p>
 
-      <h2 style="margin-top:18px">Contacts</h2>
-      <p class="meta">
-        WhatsApp: <a href="https://wa.me/996990241949" target="_blank">+996 990 241 949</a><br>
-        Email: <a href="mailto:officehhrdirectkg@gmail.com">officehhrdirectkg@gmail.com</a><br>
-        Office: Bishkek, Ibraimova 115/3a, 4th floor, office 405
-      </p>
+      <ul class="list">
+        <li>Age</li>
+        <li>Work experience (if any)</li>
+        <li>Preferred country / sector</li>
+        <li>Passport availability</li>
+        <li>Phone number (WhatsApp)</li>
+      </ul>
 
       <div class="actions">
-        <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20want%20to%20apply%20for%20employment%20abroad.%20Country:%20____%20Experience:%20____%20Age:%20____" target="_blank">
-          Apply now
+        <a class="btn"
+           href="https://wa.me/996990241949?text=Hello!%20I%20want%20to%20apply%20for%20employment%20abroad.%0AAge:%20____%0AExperience:%20____%0APreferred%20country:%20____%0ASector:%20____%0APassport:%20Yes/No%0APhone:%20____"
+           target="_blank" rel="noopener">
+          Apply via WhatsApp
         </a>
         <a class="btn outline" href="/hrdirectkg/en/partners/">For employers</a>
       </div>
+
+      <p class="meta">
+        WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
+        Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a><br>
+        Office: Bishkek, Ibraimova 115/3a, 4th floor, office 405
+      </p>
     </div>
 
   </div>
@@ -320,34 +386,108 @@ footer{
 
 <section class="section">
   <div class="container">
+    <div class="grid-3">
+
+      <div class="card">
+        <h3>What we provide</h3>
+        <ul class="list">
+          <li>Vacancy matching based on your profile</li>
+          <li>Explanation of requirements and conditions</li>
+          <li>Document guidance and checklist</li>
+          <li>Support through the process</li>
+        </ul>
+        <p class="note">We focus on clarity and compliance — not “fast promises”.</p>
+      </div>
+
+      <div class="card">
+        <h3>What you should avoid</h3>
+        <ul class="list">
+          <li>Buying “fake invitations” or fake documents</li>
+          <li>Agreeing to unclear contracts</li>
+          <li>Paying money without receipts / terms</li>
+          <li>Leaving without understanding your role and schedule</li>
+        </ul>
+        <p class="note">Shortcuts usually become expensive later.</p>
+      </div>
+
+      <div class="card">
+        <h3>Transparency note</h3>
+        <ul class="list">
+          <li>Employer conditions are discussed before start</li>
+          <li>Timelines depend on documents and quotas</li>
+          <li>Final decision belongs to employer/authorities</li>
+        </ul>
+        <p class="note">We tell you “yes/no” honestly, not emotionally.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
     <div class="card">
       <h2>How we work</h2>
+      <p class="meta">Simple structure — and you always know what’s next.</p>
 
       <div class="steps">
         <div class="step">
           <strong>1) Inquiry</strong>
-          You contact us with basic details: country, sector, experience, age, language skills.
+          You message us with basics: country, sector, experience, age, language skills (if any).
         </div>
         <div class="step">
-          <strong>2) Job matching</strong>
-          We propose available options and explain requirements, timelines, and documents.
+          <strong>2) Matching</strong>
+          We propose available options and explain conditions, timelines, and documents.
         </div>
         <div class="step">
           <strong>3) Preparation</strong>
-          Guidance on documents and applications, with attention to common mistakes.
+          We provide a clear checklist and help avoid typical mistakes.
         </div>
         <div class="step">
-          <strong>4) Process support</strong>
+          <strong>4) Coordination</strong>
           We stay in touch and guide you through each stage until the result.
         </div>
       </div>
 
       <div class="actions">
-        <a class="btn" href="https://wa.me/996990241949" target="_blank">Write on WhatsApp</a>
+        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Write on WhatsApp</a>
         <a class="btn outline" href="/hrdirectkg/en/contact/">Contacts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="requirements">
+  <div class="container">
+    <div class="card">
+      <h2>Basic requirements (usually)</h2>
+      <p class="meta">
+        Exact requirements depend on country and vacancy. Below is the typical minimum.
+      </p>
+
+      <div class="points">
+        <div class="point">🛂 Passport (valid for the required period)</div>
+        <div class="point">📄 Personal documents (ID, certificates if needed)</div>
+        <div class="point">🧠 Readiness to work shifts / physical tasks</div>
+        <div class="point">🧾 Clean and honest information in documents</div>
+        <div class="point">🗣 Basic language (optional, depends on employer)</div>
+        <div class="point">✅ Discipline and reliability (always required)</div>
       </div>
 
       <p class="meta">
+        If you are not sure what you qualify for — message us, and we will suggest realistic options.
+      </p>
+
+      <div class="actions">
+        <a class="btn"
+           href="https://wa.me/996990241949?text=Hello!%20Please%20suggest%20realistic%20job%20options%20for%20me.%0AAge:%20____%0AExperience:%20____%0ACountry%20(preferred):%20____"
+           target="_blank" rel="noopener">
+          Get options
+        </a>
+        <a class="btn outline" href="/hrdirectkg/en/partners/">For partners</a>
+      </div>
+
+      <p class="note">
         Employers looking for workforce solutions can visit the
         <a href="/hrdirectkg/en/partners/"><u>For partners</u></a> page.
       </p>
