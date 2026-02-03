@@ -7,10 +7,8 @@
   <title>Contacts — HR Direct KG</title>
   <meta name="description" content="HR Direct KG contacts: Bishkek office address, phone and WhatsApp, email, map. Visa support and employment abroad." />
 
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/contact/" />
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="HR Direct KG">
-  <meta name="publisher" content="HR Direct KG">
 
   <!-- hreflang -->
   <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/contact/" />
@@ -18,380 +16,699 @@
   <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/contact/" />
   <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/contact/" />
 
-  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c; --muted:#9aa1ab; --text:#f6f7f9;
-  --brand1:#ff7a18; --brand2:#ff9a44; --brand3:#ffd194;
-  --accent:linear-gradient(135deg,var(--brand1),var(--brand2) 50%,var(--brand3));
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <style>
+    :root{
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+      --hero-img: url("/hrdirectkg/ben.jpg");
+    }
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:8px 0;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-/* Language switch */
-.lang{display:flex;gap:8px;align-items:center;white-space:nowrap}
-.lang a{padding:2px 6px;border-radius:8px}
-.lang a.active{background:rgba(255,255,255,.10);font-weight:700}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
 
-/* Header */
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  padding:14px 0;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:800;
-  white-space:nowrap;
-}
-.logo .mark{
-  width:28px;height:28px;border-radius:8px;
-  background:var(--accent);
-}
-.menu{
-  display:flex;
-  gap:10px;
-  font-size:13px;
-  white-space:nowrap;
-}
-.menu a{opacity:.85}
-.menu a.active{
-  opacity:1;
-  background:rgba(255,255,255,.08);
-  border-radius:8px;
-  padding:4px 6px;
-}
-.btn{
-  padding:12px 16px;
-  border-radius:12px;
-  background:var(--accent);
-  color:#120a00;
-  font-weight:800;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-}
-.btn.outline{
-  background:none;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.2);
-}
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-/* Submenu */
-.subnav{
-  padding-bottom:12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;
-}
-.submenu a{
-  padding:6px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-/* Content */
-.section{padding:40px 0}
-.h1{font-size:clamp(26px,3.5vw,40px);margin:0 0 10px;font-weight:900}
-.lead{color:var(--muted);max-width:780px}
+    /* ===== Topbar ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
 
-.grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:16px;
-  margin-top:18px;
-}
-.card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:18px;
-}
-.card h2{margin:0 0 10px}
-.meta{color:var(--muted);font-size:14px;margin:8px 0 0}
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
 
-.cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
+    /* ===== Header ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
 
-.list{
-  margin:10px 0 0;
-  padding-left:18px;
-  color:var(--muted);
-  font-size:14px;
-}
-.list li{margin:8px 0}
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active::after{width:100%;}
 
-.map{
-  margin-top:12px;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-}
-.map iframe{
-  width:100%;
-  height:270px;
-  border:0;
-  display:block;
-}
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
 
-.quick{
-  display:grid;
-  gap:10px;
-  margin-top:12px;
-}
-.quick a{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  padding:12px 12px;
-  border-radius:14px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-}
-.quick b{display:block}
-.quick span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
 
-footer{
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:24px 0;
-  color:var(--muted);
-}
+    /* ===== Drawer ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
 
-/* Floating WhatsApp */
-.wa{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:var(--accent);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(255,122,24,.4);
-  z-index:60;
-  border:1px solid rgba(255,255,255,.14);
-}
-.wa svg{width:26px;height:26px;fill:#120a00}
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
 
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
-}
-@media(max-width:520px){
-  .menu{display:none}
-}
-</style>
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 10px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
+
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:900;
+      font-size:13px;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(34px, 4.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 34ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 92ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+      cursor:pointer;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.02);
+      background: rgba(246,247,249,.98);
+    }
+
+    /* ===== Content ===== */
+    .section{
+      position:relative;
+      padding: 26px 0 62px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr;}
+    }
+
+    .card{
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+    .card h2{
+      margin:0 0 10px;
+      text-shadow: 0 10px 36px rgba(0,0,0,.55);
+    }
+    .meta{
+      color: rgba(246,247,249,.78);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+      align-items:center;
+    }
+
+    .quick{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+    .quick a{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border-radius:18px;
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .quick a:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.18);
+    }
+    .quick b{display:block; font-weight:950}
+    .quick span{display:block; color: rgba(246,247,249,.70); font-size:13px; margin-top:2px}
+
+    .map{
+      margin-top:12px;
+      border-radius: 22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+    }
+    .map iframe{
+      width:100%;
+      height: 290px;
+      border:0;
+      display:block;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      padding:24px 0;
+      color:rgba(246,247,249,.70);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    /* Floating WhatsApp */
+    .wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      color:#0b0b0c;
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .wa svg{width:26px;height:26px;fill:#0b0b0c}
+  </style>
 </head>
 
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/en/contact/">Ibraimova 115/3a, office 405</a>
+        </div>
 
-<div class="topbar">
-  <div class="container wrap">
-    <div>+996 990 241 949</div>
-    <div class="lang">
-      <a href="/hrdirectkg/contact/">RU</a> ·
-      <a href="/hrdirectkg/kg/contact/">KG</a> ·
-      <a href="/hrdirectkg/en/contact/" class="active">EN</a>
+        <div class="lang" aria-label="Language switch">
+          <a href="/hrdirectkg/contact/">RU</a>
+          <a href="/hrdirectkg/kg/contact/">KG</a>
+          <a href="/hrdirectkg/en/contact/" class="active" aria-current="page">EN</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<header>
-  <div class="container nav">
-    <div class="logo"><span class="mark"></span>HR Direct KG</div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/en/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-    <nav class="menu" aria-label="Main navigation">
-      <a href="/hrdirectkg/en/">Home</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/hrdirectkg/en/visas/">Visas</a>
+          <a href="/hrdirectkg/en/employment/">Employment</a>
+          <a href="/hrdirectkg/en/partners/">For partners</a>
+          <a href="/hrdirectkg/en/faq/">FAQ</a>
+          <a class="active" href="/hrdirectkg/en/contact/">Contacts</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Menu</b>
+      <button class="drawer-close" id="close" aria-label="Close">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site sections">
+      <a href="/hrdirectkg/en/about/">About</a>
+
       <a href="/hrdirectkg/en/visas/">Visas</a>
+      <a href="/hrdirectkg/en/employment/">Employment</a>
+      <a href="/hrdirectkg/en/partners/">For partners</a>
+
       <a href="/hrdirectkg/en/insurance/">Insurance</a>
       <a href="/hrdirectkg/en/forms/">Forms</a>
       <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
+
       <a href="/hrdirectkg/en/pricing/">Pricing</a>
-      <a href="/hrdirectkg/en/contact/" class="active">Contacts</a>
+      <a href="/hrdirectkg/en/faq/">FAQ</a>
+      <a class="active" href="/hrdirectkg/en/contact/">Contacts</a>
     </nav>
 
-    <a class="btn"
-       href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
-       target="_blank" rel="noopener">Consultation</a>
-  </div>
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+         target="_blank" rel="noopener">Consultation</a>
+    </div>
+  </aside>
 
-  <div class="subnav">
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <span class="badge">Contacts</span>
+      <h1>Contacts</h1>
+      <p class="lead">
+        Tell us your destination and dates — we’ll reply with a clear plan for a visa
+        or employment abroad (without “magic guarantees”).
+      </p>
+
+      <div class="actions">
+        <a class="btn primary"
+           href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+           target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="mailto:officehhrdirectkg@gmail.com?subject=HR%20Direct%20KG%20—%20Consultation">E-mail</a>
+        <a class="btn" href="tel:+996990241949">Call</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTENT -->
+  <section class="section">
     <div class="container">
-      <nav class="submenu" aria-label="Secondary navigation">
-        <a href="/hrdirectkg/en/faq/">FAQ</a>
-        <a href="/hrdirectkg/en/contact/" aria-current="page">Contacts</a>
-        <a href="/hrdirectkg/en/employment/">Employment</a>
-        <a href="/hrdirectkg/en/partners/">For partners</a>
-      </nav>
-    </div>
-  </div>
-</header>
 
-<section class="section">
-  <div class="container">
-    <h1 class="h1">Contacts</h1>
-    <p class="lead">
-      Tell us your destination and dates — we’ll reply with a clear plan for a visa
-      or employment abroad (without “magic guarantees”).
-    </p>
+      <div class="grid">
 
-    <div class="grid">
+        <div class="card">
+          <h2>How to reach us</h2>
 
-      <div class="card">
-        <h2>How to reach us</h2>
+          <div class="ctaRow">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+               target="_blank" rel="noopener">WhatsApp</a>
 
-        <div class="cta">
-          <a class="btn"
-             href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
-             target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn"
+               href="mailto:officehhrdirectkg@gmail.com?subject=HR%20Direct%20KG%20—%20Consultation">E-mail</a>
 
-          <a class="btn outline" href="mailto:officehhrdirectkg@gmail.com?subject=HR%20Direct%20KG%20—%20Consultation">E-mail</a>
-          <a class="btn outline" href="tel:+996990241949">Call</a>
+            <a class="btn" href="tel:+996990241949">Call</a>
+          </div>
+
+          <p class="meta" style="margin-top:12px">
+            Phone/WhatsApp: <a href="tel:+996990241949"><u>+996 990 241 949</u></a><br>
+            Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a>
+          </p>
+
+          <h2 style="margin-top:18px">Office address</h2>
+          <p class="meta">
+            Bishkek, Ibraimova Street 115/3a, 4th floor, office 405
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=Ibraimova+115%2F3a+Bishkek"
+               target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="btn" href="/hrdirectkg/en/pricing/">Pricing</a>
+          </div>
+
+          <p class="meta" style="margin-top:12px">
+            Working hours: Mon–Sat (by appointment).<br>
+            If you plan to visit the office — message us first so we can confirm time.
+          </p>
         </div>
 
-        <p class="meta">
-          Phone/WhatsApp: <a href="tel:+996990241949"><u>+996 990 241 949</u></a><br>
-          Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a>
-        </p>
+        <div class="card">
+          <h2>Quick messages</h2>
+          <p class="meta" style="margin-top:0">Tap a template — it opens WhatsApp with ready text.</p>
 
-        <h2 style="margin-top:18px">Office address</h2>
-        <p class="meta">
-          Bishkek, Ibraimova Street 115/3a, 4th floor, office 405
-        </p>
+          <div class="quick">
+            <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20visa%20consultation.%20Country:%20____%20Dates:%20____%20Purpose:%20Tourism/Business"
+               target="_blank" rel="noopener">
+              <div>
+                <b>Visa</b>
+                <span>Country, dates, purpose — we’ll tell you the exact steps.</span>
+              </div>
+            </a>
 
-        <div class="cta">
-          <!-- IMPORTANT: this link works even if the embed is not perfect -->
-          <a class="btn outline"
-             href="https://www.google.com/maps/search/?api=1&query=Ibraimova+115%2F3a+Bishkek"
-             target="_blank" rel="noopener">Open in Google Maps</a>
-          <a class="btn outline" href="/hrdirectkg/en/pricing/">Pricing</a>
+            <a href="https://wa.me/996990241949?text=Hello!%20I%20want%20employment%20abroad.%20Age:%20____%20Experience:%20____%20Country:%20____%20Sector:%20____%20Passport:%20Yes/No"
+               target="_blank" rel="noopener">
+              <div>
+                <b>Employment abroad</b>
+                <span>Age + experience + preferred country/sector — we’ll propose options.</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20insurance%20for%20a%20visa.%20Country:%20____%20Dates:%20____%20Number%20of%20travelers:%20____"
+               target="_blank" rel="noopener">
+              <div>
+                <b>Insurance</b>
+                <span>Country + travel dates + number of travelers.</span>
+              </div>
+            </a>
+          </div>
+
+          <h2 style="margin-top:18px">Map</h2>
+          <p class="meta" style="margin-top:0">
+            If the embedded map doesn’t load — use “Open in Google Maps”.
+          </p>
+
+          <div class="map">
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Ibraimova%20115/3a%20Bishkek&output=embed">
+            </iframe>
+          </div>
         </div>
 
-        <p class="meta">
-          Working hours: Mon–Sat (by appointment).<br>
-          If you plan to visit the office — message us first so we can confirm time.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Quick messages</h2>
-        <p class="meta">Tap a template — it opens WhatsApp with ready text.</p>
-
-        <div class="quick">
-          <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20visa%20consultation.%20Country:%20____%20Dates:%20____%20Purpose:%20Tourism/Business"
-             target="_blank" rel="noopener">
-            <div>
-              <b>Visa</b>
-              <span>Country, dates, purpose — we’ll tell you the exact steps.</span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/996990241949?text=Hello!%20I%20want%20employment%20abroad.%20Age:%20____%20Experience:%20____%20Country:%20____%20Sector:%20____%20Passport:%20Yes/No"
-             target="_blank" rel="noopener">
-            <div>
-              <b>Employment abroad</b>
-              <span>Age + experience + preferred country/sector — we’ll propose options.</span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20insurance%20for%20a%20visa.%20Country:%20____%20Dates:%20____%20Number%20of%20travelers:%20____"
-             target="_blank" rel="noopener">
-            <div>
-              <b>Insurance</b>
-              <span>Country + travel dates + number of travelers.</span>
-            </div>
-          </a>
-        </div>
-
-        <h2 style="margin-top:18px">Map</h2>
-        <p class="meta">
-          If the embedded map doesn’t load — use “Open in Google Maps”.
-        </p>
-
-        <div class="map">
-          <!-- Universal embed: may show approximate area.
-               For exact pin: replace iframe src with your real embed from Google Maps. -->
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Ibraimova%20115/3a%20Bishkek&output=embed">
-          </iframe>
-        </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    © <span id="year"></span> HR Direct KG — visa support & employment abroad.
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — visa support & employment abroad.
+    </div>
+  </footer>
 
-<a class="wa"
-   href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <!-- WhatsApp icon -->
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
+  <!-- Floating WA -->
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Drawer
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
+  </script>
 </body>
 </html>
