@@ -19,263 +19,828 @@
   <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
-  --accent:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <style>
+    :root{
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+      --hero-img: url("/hrdirectkg/ben.jpg");
+    }
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:8px 0;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-/* Language switch */
-.lang{
-  display:flex;
-  gap:8px;
-}
-.lang a{
-  padding:2px 6px;
-  border-radius:8px;
-}
-.lang a.active{
-  background:rgba(255,255,255,.10);
-  font-weight:700;
-}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
 
-/* Header */
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 0;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:800;
-}
-.logo .mark{
-  width:28px;height:28px;border-radius:8px;
-  background:var(--accent);
-}
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-.menu{
-  display:flex;
-  gap:10px;
-  font-size:13px;
-}
-.menu a{opacity:.85}
-.menu a.active{
-  opacity:1;
-  background:rgba(255,255,255,.08);
-  border-radius:8px;
-  padding:4px 6px;
-}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-.btn{
-  padding:12px 16px;
-  border-radius:12px;
-  background:var(--accent);
-  color:#120a00;
-  font-weight:700;
-}
-.btn.outline{
-  background:none;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.2);
-}
+    /* ===== Topbar ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
 
-/* Submenu */
-.subnav{
-  padding-bottom:12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;
-}
-.submenu a{
-  padding:6px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-}
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
 
-/* Content */
-.section{padding:40px 0}
-.h1{font-size:clamp(26px,3.5vw,40px);margin:0 0 10px;font-weight:800}
-.lead{color:var(--muted);max-width:760px}
+    /* ===== Header ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
 
-/* FAQ */
-details{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;
-  padding:16px;
-}
-details+details{margin-top:12px}
-summary{
-  cursor:pointer;
-  font-weight:700;
-}
-summary::-webkit-details-marker{display:none}
-details p{
-  margin:10px 0 0;
-  color:var(--muted);
-}
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active::after{width:100%;}
 
-.cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
 
-footer{
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:24px 0;
-  color:var(--muted);
-}
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
 
-@media(max-width:520px){
-  .menu{display:none}
-}
-</style>
+    /* ===== Drawer ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
+
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
+
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 10px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
+
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:900;
+      font-size:13px;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(34px, 4.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 34ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 92ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.02);
+      background: rgba(246,247,249,.98);
+    }
+
+    /* ===== Content ===== */
+    .section{
+      position:relative;
+      padding: 26px 0 62px;
+    }
+
+    .searchRow{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .search{
+      flex: 1 1 320px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+    .search span{opacity:.85}
+    .search input{
+      width:100%;
+      background:transparent;
+      border:none;
+      outline:none;
+      color: var(--text);
+      font-size:14px;
+    }
+    .search input::placeholder{color: rgba(246,247,249,.55);}
+
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .chip{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:850;
+      font-size:13px;
+      color: rgba(246,247,249,.92);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+    }
+    .chip:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .faqGrid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .faqGrid{grid-template-columns: 1fr;}
+    }
+
+    details{
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 14px 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    details[open]{
+      border-color: rgba(255,255,255,.18);
+      background: rgba(0,0,0,.32);
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      font-weight: 900;
+      font-size: 15px;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 10px 36px rgba(0,0,0,.55);
+    }
+    summary::-webkit-details-marker{display:none}
+    .chev{
+      width:34px;height:34px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      transition: transform .2s ease;
+    }
+    details[open] .chev{transform: rotate(180deg);}
+
+    .answer{
+      margin-top: 10px;
+      color: rgba(246,247,249,.78);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .noteCard{
+      margin-top: 14px;
+      background: rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+    .noteCard b{font-weight:900}
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      padding:24px 0;
+      color:rgba(246,247,249,.70);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/en/contact/">Ibraimova 115/3a, office 405</a>
+        </div>
 
-<div class="topbar">
-  <div class="container wrap">
-    <div>+996 990 241 949</div>
-    <div class="lang">
-      <a href="/hrdirectkg/faq/">RU</a> ·
-      <a href="/hrdirectkg/kg/faq/">KG</a> ·
-      <a href="/hrdirectkg/en/faq/" class="active">EN</a>
+        <div class="lang" aria-label="Language switch">
+          <a href="/hrdirectkg/faq/">RU</a>
+          <a href="/hrdirectkg/kg/faq/">KG</a>
+          <a href="/hrdirectkg/en/faq/" class="active" aria-current="page">EN</a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<header>
-  <div class="container nav">
-    <div class="logo"><span class="mark"></span>HR Direct KG</div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/en/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-    <nav class="menu">
-      <a href="/hrdirectkg/en/">Home</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/hrdirectkg/en/visas/">Visas</a>
+          <a href="/hrdirectkg/en/employment/">Employment</a>
+          <a href="/hrdirectkg/en/partners/">For partners</a>
+          <a class="active" href="/hrdirectkg/en/faq/">FAQ</a>
+          <a href="/hrdirectkg/en/contact/">Contacts</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Menu</b>
+      <button class="drawer-close" id="close" aria-label="Close">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Site sections">
       <a href="/hrdirectkg/en/about/">About</a>
+
       <a href="/hrdirectkg/en/visas/">Visas</a>
+      <a href="/hrdirectkg/en/employment/">Employment</a>
+      <a href="/hrdirectkg/en/partners/">For partners</a>
+
       <a href="/hrdirectkg/en/insurance/">Insurance</a>
       <a href="/hrdirectkg/en/forms/">Forms</a>
       <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
+
       <a href="/hrdirectkg/en/pricing/">Pricing</a>
+      <a class="active" href="/hrdirectkg/en/faq/">FAQ</a>
+      <a href="/hrdirectkg/en/contact/">Contacts</a>
     </nav>
 
-    <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20have%20a%20question%20about%20a%20visa." target="_blank">Consultation</a>
-  </div>
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Hello!%20I%20have%20a%20visa%20question.%20Destination:%20____%20Dates:%20____"
+         target="_blank" rel="noopener">Ask a question</a>
+    </div>
+  </aside>
 
-  <div class="subnav">
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <span class="badge">FAQ</span>
+      <h1>Visa FAQ — Common Questions</h1>
+      <p class="lead">
+        Clear answers, no false promises. If your case is unusual — message us and we’ll tell you what is realistic.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary"
+           href="https://wa.me/996990241949?text=Hello!%20I%20have%20a%20visa%20question.%20Destination:%20____%20Dates:%20____"
+           target="_blank" rel="noopener">Ask on WhatsApp</a>
+        <a class="btn" href="/hrdirectkg/en/pricing/">Pricing</a>
+        <a class="btn" href="/hrdirectkg/en/contact/">Contacts</a>
+      </div>
+
+      <div class="searchRow" aria-label="FAQ search">
+        <div class="search">
+          <span>🔎</span>
+          <input id="q" type="search" placeholder="Search: timelines, refusal, insurance, documents..." autocomplete="off" />
+        </div>
+
+        <div class="chips" aria-label="Quick filters">
+          <button class="chip" type="button" data-filter="all">All</button>
+          <button class="chip" type="button" data-filter="timelines">Timelines</button>
+          <button class="chip" type="button" data-filter="documents">Documents</button>
+          <button class="chip" type="button" data-filter="forms">Forms</button>
+          <button class="chip" type="button" data-filter="refusal">Refusal</button>
+          <button class="chip" type="button" data-filter="payments">Fees</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FAQ -->
+  <section class="section">
     <div class="container">
-      <nav class="submenu">
-        <a href="/hrdirectkg/en/faq/">FAQ</a>
-        <a href="/hrdirectkg/en/contact/">Contacts</a>
-        <a href="/hrdirectkg/en/employment/">Employment</a>
-        <a href="/hrdirectkg/en/partners/">For partners</a>
-      </nav>
+
+      <div class="faqGrid" id="faq">
+
+        <!-- Timelines -->
+        <details data-tags="timelines">
+          <summary>
+            <span>How long does the visa process take?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            It depends on the country and appointment availability. Often it ranges from a few days up to 4–6 weeks.
+            We clarify realistic timelines during consultation for your exact destination and dates.
+          </div>
+        </details>
+
+        <details data-tags="timelines documents">
+          <summary>
+            <span>When should I start preparing?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            The earlier, the calmer. Ideally, start as soon as your travel dates are clear.
+            For countries with limited appointment slots, early planning is the key.
+          </div>
+        </details>
+
+        <!-- Guarantees -->
+        <details data-tags="refusal">
+          <summary>
+            <span>Do you guarantee a 100% visa approval?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            No. The final decision is always made by the embassy/consulate. We prepare a correct, consistent package
+            and reduce risks — but we don’t promise the impossible.
+          </div>
+        </details>
+
+        <!-- Documents -->
+        <details data-tags="documents">
+          <summary>
+            <span>What documents are usually needed?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            The set depends on the country and your purpose (tourism/business/visit).
+            Typically: passport, photos, forms, proof of funds, employment info, bookings/itinerary, and insurance (if required).
+            We give you a clear checklist for your case.
+          </div>
+        </details>
+
+        <details data-tags="documents">
+          <summary>
+            <span>Do you help with bookings and itinerary?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            Yes. We advise what type of bookings are suitable for submission and help structure an itinerary
+            so it looks logical and consistent with your documents.
+          </div>
+        </details>
+
+        <!-- Forms -->
+        <details data-tags="forms documents">
+          <summary>
+            <span>Do you fill out visa application forms?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            Yes. We fill the form accurately and check consistency with your documents (names, dates, work history, contacts),
+            so you don’t get refused because of technical mistakes.
+          </div>
+        </details>
+
+        <!-- Insurance -->
+        <details data-tags="documents">
+          <summary>
+            <span>Is insurance required?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            For many visas (especially Schengen) insurance is usually mandatory for submission.
+            For other destinations it may be recommended or required depending on visa type. We advise based on your destination.
+          </div>
+        </details>
+
+        <!-- Refusal -->
+        <details data-tags="refusal documents forms">
+          <summary>
+            <span>What are common reasons for refusal?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            Typical reasons: inconsistencies in documents and form, weak financial proof, unclear travel purpose,
+            errors in dates, and weak justification of ties to home country (varies by destination).
+          </div>
+        </details>
+
+        <details data-tags="refusal">
+          <summary>
+            <span>Can I reapply after a refusal?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            In most cases — yes. The key is to understand the refusal reason, fix weak points, and adjust the strategy.
+            We review your situation and tell you what to improve.
+          </div>
+        </details>
+
+        <!-- Fees -->
+        <details data-tags="payments">
+          <summary>
+            <span>What do your prices include?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            Usually: consultation, form completion, document checking, and guidance to submission.
+            Consular/service fees paid to the embassy/visa center are typically separate.
+          </div>
+        </details>
+
+        <details data-tags="payments">
+          <summary>
+            <span>Can I pay only for forms or insurance?</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="answer">
+            Yes — we can help with separate services (forms, insurance, document check), depending on your needs.
+            Message us with your destination and travel dates.
+          </div>
+        </details>
+
+      </div>
+
+      <div class="noteCard">
+        <b>Didn’t find your question?</b>
+        <div style="margin-top:8px; color: rgba(246,247,249,.78); line-height:1.7; font-size:14px;">
+          Send your destination + dates and a short description of your situation — we’ll reply with a clear plan.
+          No “fairy-tale guarantees”, only realistic steps.
+        </div>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary"
+             href="https://wa.me/996990241949?text=Hello!%20I%20have%20a%20visa%20question.%20Destination:%20____%20Dates:%20____%20My%20case:%20____"
+             target="_blank" rel="noopener">Ask on WhatsApp</a>
+          <a class="btn" href="/hrdirectkg/en/visas/">Choose a visa</a>
+          <a class="btn" href="/hrdirectkg/en/forms/">Forms</a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="h1">Visa FAQ — Common Questions</h1>
-    <p class="lead">
-      Clear answers, no false promises.
-    </p>
-
-    <div style="margin-top:20px">
-      <details>
-        <summary>Do you guarantee a 100% visa approval?</summary>
-        <p>No. The final decision is always made by the embassy or consulate. We prepare a correct application and reduce risks, but we do not promise the impossible.</p>
-      </details>
-
-      <details>
-        <summary>How long does the visa process take?</summary>
-        <p>It depends on the country and appointment availability. On average, from a few days up to 4–6 weeks. Exact timelines are discussed during consultation.</p>
-      </details>
-
-      <details>
-        <summary>Do you help with forms and appointments?</summary>
-        <p>Yes. We complete visa application forms, check documents, and assist with appointment booking when required.</p>
-      </details>
-
-      <details>
-        <summary>What are the most common reasons for refusal?</summary>
-        <p>Errors in the application form, weak financial proof, inconsistencies in travel purpose, or poor visa history.</p>
-      </details>
-
-      <details>
-        <summary>Can I reapply after a refusal?</summary>
-        <p>In most cases, yes. The key is to understand the refusal reason and correct the application strategy.</p>
-      </details>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — visa support
     </div>
+  </footer>
 
-    <div class="cta">
-      <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20have%20a%20question%20about%20a%20visa." target="_blank">Ask on WhatsApp</a>
-      <a class="btn outline" href="/hrdirectkg/en/pricing/">Pricing</a>
-      <a class="btn outline" href="/hrdirectkg/en/contact/">Contacts</a>
-    </div>
-  </div>
-</section>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<footer>
-  <div class="container">
-    © <span id="year"></span> HR Direct KG — visa support
-  </div>
-</footer>
+    // Drawer
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
 
+    // FAQ Search + Filter
+    const input = document.getElementById('q');
+    const items = Array.from(document.querySelectorAll('#faq details'));
+    const chips = Array.from(document.querySelectorAll('[data-filter]'));
+    let activeFilter = 'all';
+
+    function normalize(s){ return (s || '').toLowerCase().trim(); }
+
+    function apply(){
+      const q = normalize(input.value);
+
+      items.forEach(d => {
+        const tags = normalize(d.getAttribute('data-tags'));
+        const text = normalize(d.innerText);
+
+        const matchQuery = !q || text.includes(q);
+        const matchFilter = (activeFilter === 'all') || tags.includes(activeFilter);
+
+        d.style.display = (matchQuery && matchFilter) ? '' : 'none';
+        if(d.style.display === 'none') d.removeAttribute('open');
+      });
+    }
+
+    input.addEventListener('input', apply);
+
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.getAttribute('data-filter') || 'all';
+        chips.forEach(b => b.style.opacity = (b === btn ? '1' : '.85'));
+        apply();
+      });
+    });
+
+    // default chip styling
+    const first = chips.find(c => c.getAttribute('data-filter') === 'all');
+    if(first) first.style.opacity = '1';
+  </script>
 </body>
 </html>
