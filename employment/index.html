@@ -1,16 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Трудоустройство за границей — HR Direct KG | Официальная работа</title>
-  <meta name="description" content="HR Direct KG — помощь в официальном трудоустройстве за границей для граждан Кыргызстана. Подбор вакансий, документы, сопровождение. Производство, отели, клининг, стройка." />
+  <title>Трудоустройство за границей — HR Direct KG | Работа за рубежом и подбор персонала</title>
+  <meta name="description" content="HR Direct KG — лицензированное рекрутинговое агентство из Кыргызстана. Трудоустройство за границей с полным сопровождением: подбор вакансий, помощь с документами и координация процесса. Производство, заводы, отели, клининг, строительство." />
 
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/employment/" />
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="HR Direct KG">
-  <meta name="publisher" content="HR Direct KG">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/employment/" />
 
   <!-- hreflang -->
   <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/employment/" />
@@ -23,539 +21,760 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c;
-  --surface:#111114;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
+  <style>
+    :root{
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+      --hero-img: url("/hrdirectkg/ben.jpg"); /* как в FAQ */
+    }
 
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
-  --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-  --radius:16px;
-}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:8px 0;
-}
-.topbar .phone a{opacity:.92; text-decoration:underline; text-underline-offset:3px}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-/* Language switch */
-.lang{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  opacity:.95;
-  white-space:nowrap;
-  user-select:none;
-}
-.lang a{opacity:.75}
-.lang a.active{opacity:1;font-weight:900}
-.sep{opacity:.35}
+    /* ===== Верхняя панель (как в FAQ) ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
 
-/* Header */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-  overflow:visible;
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:18px;
-  padding:14px 0 10px;
-  overflow:visible;
-}
-.nav__left{min-width:max-content}
-.nav__center{min-width:0; overflow:visible}
-.nav__right{min-width:max-content}
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:900;
-  white-space:nowrap;
-}
-.logo .mark{
-  width:28px;
-  height:28px;
-  border-radius:8px;
-  background:var(--accent-grad);
-  flex:0 0 auto;
-}
+    /* ===== Шапка (как в FAQ) ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
 
-/* Menu */
-.menu{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  white-space:nowrap;
-  justify-content:flex-start;
-  min-width:0;
-  font-size:13px;
-}
-.menu a{
-  white-space:nowrap;
-  color:rgba(246,247,249,.92);
-  padding:4px 2px;
-  opacity:.9;
-}
-.menu a:hover{opacity:1}
-.menu a.active{opacity:1;font-weight:900}
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active::after{width:100%;}
 
-/* Submenu */
-.subnav{
-  padding:0 0 12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;
-  color:rgba(246,247,249,.86);
-}
-.submenu a{
-  padding:6px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  white-space:nowrap;
-}
-.submenu a:hover{background:rgba(255,255,255,.07);}
-.submenu a.active{border-color:rgba(255,255,255,.16); background:rgba(255,255,255,.06);}
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
 
-/* Buttons */
-.btn{
-  padding:12px 16px;
-  border-radius:12px;
-  background:var(--accent-grad);
-  color:#120a00;
-  font-weight:950;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-}
-.btn.outline{
-  background:none;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.16);
-}
+    /* Бургер */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
 
-/* Hero */
-.hero{padding:48px 0 22px}
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:var(--accent-grad);
-  color:#120a00;
-  font-weight:950;
-  font-size:14px;
-}
-.h1{
-  font-size:clamp(28px,4vw,46px);
-  margin:14px 0 10px;
-  font-weight:950;
-}
-.lead{font-size:18px;color:var(--muted);max-width:920px}
-.meta{font-size:14px;color:var(--muted);margin-top:12px}
+    /* ===== Выезжающее меню ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
 
-/* Sections */
-.section{padding:36px 0}
-.grid-2{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:16px;
-}
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:16px;
-  padding:18px;
-}
-.points{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:14px;
-}
-.point{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:12px;
-  padding:14px;
-  font-size:14px;
-}
-.steps{display:grid;gap:12px;margin-top:14px}
-.step{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:14px;
-  padding:14px;
-}
-.step strong{display:block;margin-bottom:6px}
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
 
-.list{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
-.list li{margin:7px 0}
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
 
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.note{margin-top:10px;font-size:13px;color:rgba(154,161,171,.95)}
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
 
-.kicker{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.kicker .pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:9px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  color:rgba(246,247,249,.88);
-  font-size:13px;
-}
+    /* ===== Хиро ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 10px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
 
-/* Footer */
-footer{
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:24px 0;
-  color:var(--muted);
-}
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:900;
+      font-size:13px;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(34px, 4.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 34ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 92ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
 
-/* anchor offset */
-#apply{scroll-margin-top:140px;}
-#process{scroll-margin-top:140px;}
-#requirements{scroll-margin-top:140px;}
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.02);
+      background: rgba(246,247,249,.98);
+    }
 
-/* Floating WhatsApp (как в contacts) */
-.wa{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:var(--accent-grad);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(255,122,24,.4);
-  z-index:60;
-  border:1px solid rgba(255,255,255,.14);
-}
-.wa svg{width:26px;height:26px;fill:#120a00}
+    /* ===== Контент-блоки ===== */
+    .section{
+      position:relative;
+      padding: 26px 0 62px;
+    }
 
-@media(max-width:980px){.grid-3{grid-template-columns:1fr}}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}.points{grid-template-columns:1fr}}
-@media(max-width:520px){.menu{display:none}}
-</style>
+    .glassCard{
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid2{grid-template-columns: 1fr;}
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){
+      .grid3{grid-template-columns: 1fr;}
+    }
+
+    .muted{color: rgba(246,247,249,.78); line-height:1.7; font-size:14px;}
+    .meta{color: rgba(246,247,249,.72); font-size:14px; line-height:1.75;}
+
+    .points{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width: 900px){
+      .points{grid-template-columns: 1fr;}
+    }
+    .point{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.18);
+      color: rgba(246,247,249,.92);
+      font-weight: 750;
+      font-size:14px;
+    }
+
+    .kicker{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:850;
+      font-size:13px;
+      color: rgba(246,247,249,.92);
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(246,247,249,.78);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .list li{margin:6px 0}
+
+    .steps{display:grid; gap:12px; margin-top:14px}
+    .step{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.18);
+      color: rgba(246,247,249,.86);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .step strong{display:block; margin-bottom:6px; color: rgba(246,247,249,.95);}
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      padding:24px 0;
+      color:rgba(246,247,249,.70);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    /* смещение якорей */
+    #apply{scroll-margin-top:110px;}
+    #process{scroll-margin-top:110px;}
+    #requirements{scroll-margin-top:110px;}
+  </style>
 </head>
 
 <body>
-
-<!-- Topbar -->
-<div class="topbar">
-  <div class="container wrap">
-    <div class="phone"><a href="tel:+996990241949">+996 990 241 949</a></div>
-
-    <div class="lang" aria-label="Переключение языка">
-      <a href="/hrdirectkg/employment/" class="active" aria-current="page">RU</a>
-      <span class="sep">·</span>
-      <a href="/hrdirectkg/kg/employment/">KG</a>
-      <span class="sep">·</span>
-      <a href="/hrdirectkg/en/employment/">EN</a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<header>
-  <div class="container nav">
-    <div class="nav__left">
-      <a class="logo" href="/hrdirectkg/" aria-label="HR Direct KG Главная">
-        <span class="mark"></span><span>HR Direct KG</span>
-      </a>
-    </div>
-
-    <div class="nav__center">
-      <nav class="menu" aria-label="Основная навигация">
-        <a href="/hrdirectkg/">Главная</a>
-        <a href="/hrdirectkg/about/">О компании</a>
-        <a href="/hrdirectkg/visas/">Визы</a>
-        <a href="/hrdirectkg/insurance/">Страховка</a>
-        <a href="/hrdirectkg/forms/">Анкеты</a>
-        <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-        <a href="/hrdirectkg/pricing/">Цены</a>
-      </nav>
-    </div>
-
-    <div class="nav__right">
-      <a class="btn"
-         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20узнать%20о%20трудоустройстве%20за%20границей.%20Страна:%20____%20Должность:%20____"
-         target="_blank" rel="noopener">Консультация</a>
-    </div>
-  </div>
-
-  <div class="subnav">
+  <!-- Верхняя панель -->
+  <div class="topbar">
     <div class="container">
-      <nav class="submenu" aria-label="Дополнительно">
-        <a href="/hrdirectkg/faq/">FAQ</a>
-        <a href="/hrdirectkg/contact/">Контакты</a>
-        <a class="active" href="/hrdirectkg/employment/" aria-current="page">Трудоустройство</a>
-        <a href="/hrdirectkg/partners/">Партнёрам</a>
-      </nav>
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/contact/">Ибраимова 115/3а, офис 405</a>
+        </div>
+
+        <div class="lang" aria-label="Переключение языка">
+          <a href="/hrdirectkg/employment/">RU</a>
+          <a href="/hrdirectkg/kg/employment/">KG</a>
+          <a href="/hrdirectkg/en/employment/" class="active" aria-current="page">EN</a>
+        </div>
+      </div>
     </div>
   </div>
-</header>
 
-<!-- Hero (текст по смыслу как EN) -->
-<section class="hero">
-  <div class="container">
-    <div class="badge">Трудоустройство за границей</div>
-    <h1 class="h1">Работа за границей — официально и по шагам</h1>
-    <p class="lead">
-      Мы помогаем кандидатам из Кыргызстана пройти весь процесс —
-      от первого обращения до выезда. Подбор вакансий, документы и понятное сопровождение.
-      Если вам нужен <strong>легальный и реалистичный</strong> вариант — вы по адресу.
-    </p>
+  <!-- Шапка -->
+  <header>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-    <div class="kicker" aria-label="Преимущества">
-      <div class="pill"> Официальное трудоустройство</div>
-      <div class="pill"> Понятные требования к документам</div>
-      <div class="pill"> Сопровождение по этапам</div>
-      <div class="pill"> Поддержка до выезда</div>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a class="active" href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Для партнёров</a>
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Контакты</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Меню</b>
+      <button class="drawer-close" id="close" aria-label="Закрыть">✕</button>
     </div>
 
-    <p class="meta">⚠️ Без «волшебных обещаний». Сроки и требования обсуждаем заранее.</p>
+    <nav class="drawer-nav" aria-label="Разделы сайта">
+      <a href="/hrdirectkg/about/">О компании</a>
 
-    <div class="actions">
-      <a class="btn" href="#apply">Оставить заявку</a>
-      <a class="btn outline" href="#process">Как мы работаем</a>
-      <a class="btn outline" href="#requirements">Требования</a>
+      <a href="/hrdirectkg/visas/">Визы</a>
+      <a class="active" href="/hrdirectkg/employment/">Трудоустройство</a>
+      <a href="/hrdirectkg/partners/">Для партнёров</a>
+
+      <a href="/hrdirectkg/insurance/">Страховка</a>
+      <a href="/hrdirectkg/forms/">Анкеты</a>
+      <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+
+      <a href="/hrdirectkg/pricing/">Цены</a>
+      <a href="/hrdirectkg/faq/">FAQ</a>
+      <a href="/hrdirectkg/contact/">Контакты</a>
+    </nav>
+
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20узнать%20о%20трудоустройстве%20за%20границей.%20Страна:%20____%20Должность:%20____"
+         target="_blank" rel="noopener">Оставить заявку / Задать вопрос</a>
     </div>
-  </div>
-</section>
+  </aside>
 
-<!-- Сферы + Заявка -->
-<section class="section">
-  <div class="container grid-2">
-
-    <div class="card">
-      <h2>Самые востребованные направления</h2>
-      <p class="meta">
-        Вакансии зависят от опыта, документов и готовности к графику/сменам.
-        Чаще всего есть запрос в сферах:
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <span class="badge">Трудоустройство за границей</span>
+      <h1>Работа за рубежом — официально и по шагам</h1>
+      <p class="lead">
+        Мы помогаем кандидатам из Кыргызстана пройти весь процесс —
+        от запроса до выезда. Подбор вакансий, помощь с документами и понятное сопровождение.
+        Если вам нужен <strong>легальный и реалистичный</strong> вариант — вы по адресу.
       </p>
 
-      <div class="points">
-        <div class="point"> Производство и фабрики (линии, упаковка)</div>
-        <div class="point"> Рыбная и мясопереработка</div>
-        <div class="point"> Отели и сервис (горничные, кухня)</div>
-        <div class="point"> Клининг</div>
-        <div class="point"> Строительство и подряд</div>
-        <div class="point"> Склады и логистика</div>
-      </div>
-
-      <p class="meta">
-        География зависит от актуальных проектов и требований работодателей.
-        Мы ориентируемся на страны, где возможна легальная работа и понятные условия.
-      </p>
-    </div>
-
-    <div class="card" id="apply">
-      <h2>Оставить заявку</h2>
-      <p class="meta">Отправьте базовую информацию — мы ответим по вариантам и шагам.</p>
-
-      <ul class="list">
-        <li>Возраст</li>
-        <li>Опыт работы (если есть)</li>
-        <li>Желаемая страна / сфера</li>
-        <li>Наличие загранпаспорта</li>
-        <li>Номер телефона (WhatsApp)</li>
-      </ul>
-
-      <div class="actions">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20трудоустройство%20за%20границей.%0AВозраст:%20____%0AОпыт:%20____%0AСтрана:%20____%0AСфера:%20____%0AЗагранпаспорт:%20Да/Нет%0AТелефон:%20____"
-           target="_blank" rel="noopener">Заявка в WhatsApp</a>
-
-        <a class="btn outline" href="/hrdirectkg/partners/">Для работодателей</a>
-      </div>
-
-      <p class="meta">
-        WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
-        Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a><br>
-        Офис: Бишкек, Ибраимова 115/3а, 4 этаж, офис 405
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- 3 карточки -->
-<section class="section">
-  <div class="container">
-    <div class="grid-3">
-
-      <div class="card">
-        <h3>Что мы делаем</h3>
-        <ul class="list">
-          <li>Подбор вакансии под ваш профиль</li>
-          <li>Объясняем требования и условия</li>
-          <li>Чек-лист документов и сопровождение</li>
-          <li>Коммуникация по этапам до результата</li>
-        </ul>
-        <p class="note">Ставка на ясность и законность, а не на «быстро и как-нибудь».</p>
-      </div>
-
-      <div class="card">
-        <h3>Чего лучше избегать</h3>
-        <ul class="list">
-          <li>Покупки «фейковых приглашений» и документов</li>
-          <li>Соглашений без понятного договора</li>
-          <li>Оплаты без чеков/условий</li>
-          <li>Выезда без понимания графика и обязанностей</li>
-        </ul>
-        <p class="note">Короткие пути часто выходят дорогими.</p>
-      </div>
-
-      <div class="card">
-        <h3>Прозрачность</h3>
-        <ul class="list">
-          <li>Условия работодателя обсуждаем заранее</li>
-          <li>Сроки зависят от документов и квот</li>
-          <li>Финальное решение — за работодателем/органами</li>
-        </ul>
-        <p class="note">Говорим честно «да/нет», без эмоций и сказок.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Процесс -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="card">
-      <h2>Как мы работаем</h2>
-      <p class="meta">Простая структура — и вы всегда понимаете, что дальше.</p>
-
-      <div class="steps">
-        <div class="step">
-          <strong>1) Запрос</strong>
-          Вы пишете нам: страна/сфера, опыт, возраст, язык (если есть).
-        </div>
-        <div class="step">
-          <strong>2) Подбор</strong>
-          Мы предлагаем варианты и объясняем условия, сроки и документы.
-        </div>
-        <div class="step">
-          <strong>3) Подготовка</strong>
-          Даём чек-лист и помогаем избежать типичных ошибок.
-        </div>
-        <div class="step">
-          <strong>4) Сопровождение</strong>
-          Держим связь и ведём по шагам до результата.
-        </div>
+      <div class="kicker" aria-label="Ключевые преимущества">
+        <span class="pill"> Легальное трудоустройство</span>
+        <span class="pill"> Понятные требования к документам</span>
+        <span class="pill"> Пошаговая координация</span>
+        <span class="pill"> Сопровождение до выезда</span>
       </div>
 
       <div class="actions">
-        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
-        <a class="btn outline" href="/hrdirectkg/contact/">Контакты</a>
+        <a class="btn primary" href="#apply">Оставить заявку</a>
+        <a class="btn" href="#process">Как это работает</a>
+        <a class="btn" href="#requirements">Требования</a>
       </div>
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- Требования -->
-<section class="section" id="requirements">
-  <div class="container">
-    <div class="card">
-      <h2>Базовые требования (обычно)</h2>
-      <p class="meta">Точные требования зависят от страны и вакансии. Ниже — типовой минимум.</p>
+  <!-- CONTENT -->
+  <section class="section">
+    <div class="container">
 
-      <div class="points">
-        <div class="point"> Загранпаспорт (действительный на нужный срок)</div>
-        <div class="point"> Личные документы (ID, справки при необходимости)</div>
-        <div class="point"> Готовность к сменам / физической работе</div>
-        <div class="point"> Честная и корректная информация в документах</div>
-        <div class="point"> Язык (иногда нужен, зависит от работодателя)</div>
-        <div class="point"> Дисциплина и надёжность (почти всегда обязательны)</div>
+      <!-- grid 2 -->
+      <div class="grid2">
+
+        <div class="glassCard">
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Самые востребованные сферы</h2>
+          <p class="meta" style="margin:0">
+            Вакансии зависят от опыта, документов и готовности к сменам/графику.
+            Чаще всего востребованы:
+          </p>
+
+          <div class="points">
+            <div class="point"> Производство и заводы (линии, упаковка)</div>
+            <div class="point"> Рыбные и мясоперерабатывающие предприятия</div>
+            <div class="point"> Отели и сервис (хаускипинг, кухня)</div>
+            <div class="point"> Клининг</div>
+            <div class="point"> Строительство и подрядные работы</div>
+            <div class="point"> Склады и логистика</div>
+          </div>
+
+          <p class="meta" style="margin:14px 0 0">
+            География зависит от текущих проектов и требований работодателей.
+            Мы ориентируемся на страны, где доступны легальное оформление и прозрачные условия.
+          </p>
+        </div>
+
+        <div class="glassCard" id="apply">
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Заявка на трудоустройство</h2>
+          <p class="meta" style="margin:0">Отправьте основную информацию — мы ответим с вариантами и следующими шагами.</p>
+
+          <ul class="list">
+            <li>Возраст</li>
+            <li>Опыт работы (если есть)</li>
+            <li>Предпочтительная страна / сфера</li>
+            <li>Наличие загранпаспорта</li>
+            <li>Номер телефона (WhatsApp)</li>
+          </ul>
+
+          <div class="actions" style="margin-top:14px">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20работу%20за%20границей.%0AВозраст:%20____%0AОпыт:%20____%0AЖелаемая%20страна:%20____%0AСфера:%20____%0AЗагранпаспорт:%20Да/Нет%0AТелефон:%20____"
+               target="_blank" rel="noopener">Заявка через WhatsApp</a>
+
+            <a class="btn" href="/hrdirectkg/partners/">Для работодателей</a>
+          </div>
+
+          <p class="meta" style="margin-top:14px">
+            WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
+            Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a><br>
+            Офис: Бишкек, Ибраимова 115/3а, 4 этаж, офис 405
+          </p>
+        </div>
+
       </div>
 
-      <p class="meta">Не уверены, что вам подойдёт? Напишите — подскажем реалистичные варианты.</p>
+      <!-- 3 cards -->
+      <div class="grid3">
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Что мы предоставляем</h3>
+          <ul class="list">
+            <li>Подбор вакансий под ваш профиль</li>
+            <li>Пояснение требований и условий</li>
+            <li>Чек-лист по документам и консультации</li>
+            <li>Сопровождение по этапам</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">Фокус на ясности и соблюдении правил — без “быстрых обещаний”.</p>
+        </div>
 
-      <div class="actions">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Здравствуйте!%20Подскажите%20реалистичные%20варианты%20работы.%0AВозраст:%20____%0AОпыт:%20____%0AЖелаемая%20страна:%20____"
-           target="_blank" rel="noopener">Получить варианты</a>
-        <a class="btn outline" href="/hrdirectkg/partners/">Партнёрам</a>
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Чего лучше избегать</h3>
+          <ul class="list">
+            <li>Покупки “липовых приглашений” или поддельных документов</li>
+            <li>Согласия на непонятные договоры</li>
+            <li>Оплат без чеков / условий</li>
+            <li>Выезда без понимания роли и графика</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">“Короткие пути” часто обходятся дороже.</p>
+        </div>
+
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Примечание по прозрачности</h3>
+          <ul class="list">
+            <li>Условия работодателя обсуждаются заранее</li>
+            <li>Сроки зависят от документов и квот</li>
+            <li>Финальное решение — за работодателем/органами</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">Мы честно говорим “да/нет”, без эмоций.</p>
+        </div>
       </div>
 
-      <p class="note">
-        Работодателям: подробности на странице
-        <a href="/hrdirectkg/partners/"><u>Партнёрам</u></a>.
-      </p>
+      <!-- Process -->
+      <div class="glassCard" id="process" style="margin-top:14px">
+        <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Как мы работаем</h2>
+        <p class="meta" style="margin:0">Простая структура — вы всегда понимаете следующий шаг.</p>
+
+        <div class="steps">
+          <div class="step">
+            <strong>1) Запрос</strong>
+            Вы пишете нам базовую информацию: страна, сфера, опыт, возраст, знание языка (если есть).
+          </div>
+          <div class="step">
+            <strong>2) Подбор</strong>
+            Мы предлагаем доступные варианты и объясняем условия, сроки и список документов.
+          </div>
+          <div class="step">
+            <strong>3) Подготовка</strong>
+            Даём понятный чек-лист и помогаем избежать типичных ошибок.
+          </div>
+          <div class="step">
+            <strong>4) Сопровождение</strong>
+            Держим связь и ведём по этапам до результата.
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary" href="https://wa.me/996990241949" target="_blank" rel="noopener">Написать в WhatsApp</a>
+          <a class="btn" href="/hrdirectkg/contact/">Контакты</a>
+        </div>
+      </div>
+
+      <!-- Requirements -->
+      <div class="glassCard" id="requirements" style="margin-top:14px">
+        <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Базовые требования (обычно)</h2>
+        <p class="meta" style="margin:0">
+          Точные требования зависят от страны и вакансии. Ниже — типичный минимум.
+        </p>
+
+        <div class="points">
+          <div class="point"> Загранпаспорт (валидный на нужный срок)</div>
+          <div class="point"> Личные документы (ID, справки/сертификаты при необходимости)</div>
+          <div class="point"> Готовность к сменам / физическим задачам</div>
+          <div class="point"> Честная и корректная информация в документах</div>
+          <div class="point"> Базовый язык (опционально, зависит от работодателя)</div>
+          <div class="point"> Дисциплина и надёжность (всегда важны)</div>
+        </div>
+
+        <p class="meta" style="margin-top:14px">
+          Если вы не уверены, что вам подходит — напишите, и мы предложим реалистичные варианты.
+        </p>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary"
+             href="https://wa.me/996990241949?text=Здравствуйте!%20Подскажите,%20пожалуйста,%20реалистичные%20варианты%20работы%20для%20меня.%0AВозраст:%20____%0AОпыт:%20____%0AЖелаемая%20страна:%20____"
+             target="_blank" rel="noopener">Получить варианты</a>
+          <a class="btn" href="/hrdirectkg/partners/">Для партнёров</a>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          Работодатели, которым нужен подбор персонала, могут перейти на страницу
+          <a href="/hrdirectkg/partners/"><u>«Для партнёров»</u></a>.
+        </p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    © <span id="year"></span> HR Direct KG — трудоустройство за границей и визовая поддержка.
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — трудоустройство за границей и визовая поддержка.
+    </div>
+  </footer>
 
-<!-- Floating WhatsApp icon -->
-<a class="wa"
-   href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20консультацию.%20Услуга:%20Трудоустройство%20Страна:%20____%20Позиция:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    // Drawer
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
 
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
+  </script>
 </body>
 </html>
