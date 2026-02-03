@@ -7,10 +7,8 @@
   <title>Employment Abroad — HR Direct KG | Overseas Jobs & Workforce Recruitment</title>
   <meta name="description" content="HR Direct KG is a licensed recruitment agency from Kyrgyzstan. Employment abroad with full support: job matching, document guidance, and process coordination. Manufacturing, factories, hotels, cleaning, construction." />
 
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/employment/" />
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="HR Direct KG">
-  <meta name="publisher" content="HR Direct KG">
 
   <!-- hreflang -->
   <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/employment/" />
@@ -21,510 +19,762 @@
   <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#0b0b0c;
-  --surface:#111114;
-  --muted:#9aa1ab;
-  --text:#f6f7f9;
-  --brand-1:#ff7a18;
-  --brand-2:#ff9a44;
-  --brand-3:#ffd194;
-  --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-  --radius:16px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-    radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-    var(--bg);
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <style>
+    :root{
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+      --hero-img: url("/hrdirectkg/ben.jpg"); /* same as FAQ */
+    }
 
-/* Topbar */
-.topbar{
-  background:#0f0f12;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:14px;
-}
-.topbar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:8px 0;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-/* Language switch */
-.lang{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  opacity:.95;
-  white-space:nowrap;
-  user-select:none;
-}
-.lang a{opacity:.75}
-.lang a.active{opacity:1;font-weight:800}
-.sep{opacity:.35}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
 
-/* Header */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(17,17,20,.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-  overflow:visible;
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:18px;
-  padding:14px 0 10px;
-  overflow:visible;
-}
-.nav__left{min-width:max-content}
-.nav__center{min-width:0; overflow:visible}
-.nav__right{min-width:max-content}
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:900;
-  white-space:nowrap;
-}
-.logo .mark{
-  width:28px;
-  height:28px;
-  border-radius:8px;
-  background:var(--accent-grad);
-  flex:0 0 auto;
-}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-/* Menu */
-.menu{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  white-space:nowrap;
-  justify-content:flex-start;
-  min-width:0;
-  font-size:13px;
-}
-.menu a{
-  white-space:nowrap;
-  color:rgba(246,247,249,.92);
-  padding:4px 2px;
-  opacity:.9;
-}
-.menu a:hover{opacity:1}
-.menu a.active{opacity:1;font-weight:800}
+    /* ===== Topbar (same as FAQ) ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
 
-/* Submenu */
-.subnav{
-  padding:0 0 12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;
-  color:rgba(246,247,249,.86);
-}
-.submenu a{
-  padding:6px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  white-space:nowrap;
-}
-.submenu a:hover{background:rgba(255,255,255,.07);}
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
 
-/* Buttons */
-.btn{
-  padding:12px 16px;
-  border-radius:12px;
-  background:var(--accent-grad);
-  color:#120a00;
-  font-weight:900;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-}
-.btn.outline{
-  background:none;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.16);
-}
+    /* ===== Header (same as FAQ) ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
 
-/* Hero */
-.hero{padding:48px 0 22px}
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:var(--accent-grad);
-  color:#120a00;
-  font-weight:900;
-  font-size:14px;
-}
-.h1{
-  font-size:clamp(28px,4vw,46px);
-  margin:14px 0 10px;
-  font-weight:900;
-}
-.lead{font-size:18px;color:var(--muted);max-width:920px}
-.meta{font-size:14px;color:var(--muted);margin-top:12px}
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active::after{width:100%;}
 
-/* Sections */
-.section{padding:36px 0}
-.grid-2{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:16px;
-}
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:16px;
-  padding:18px;
-}
-.points{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:14px;
-}
-.point{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:12px;
-  padding:14px;
-  font-size:14px;
-}
-.steps{display:grid;gap:12px;margin-top:14px}
-.step{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:14px;
-  padding:14px;
-}
-.step strong{display:block;margin-bottom:6px}
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
 
-.list{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
-.list li{margin:7px 0}
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
 
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.note{margin-top:10px;font-size:13px;color:rgba(154,161,171,.95)}
+    /* ===== Drawer ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
 
-.kicker{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.kicker .pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:9px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  color:rgba(246,247,249,.88);
-  font-size:13px;
-}
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
 
-/* Footer */
-footer{
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:24px 0;
-  color:var(--muted);
-}
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
 
-/* anchor offset */
-#apply{scroll-margin-top:140px;}
-#process{scroll-margin-top:140px;}
-#requirements{scroll-margin-top:140px;}
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
 
-/* Mobile */
-@media(max-width:980px){.grid-3{grid-template-columns:1fr}}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}.points{grid-template-columns:1fr}}
-@media(max-width:520px){.menu{display:none}}
-</style>
+    /* ===== Hero (same structure as FAQ hero) ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 10px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
+
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:900;
+      font-size:13px;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(34px, 4.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 34ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 92ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.02);
+      background: rgba(246,247,249,.98);
+    }
+
+    /* ===== Content blocks styled like FAQ cards ===== */
+    .section{
+      position:relative;
+      padding: 26px 0 62px;
+    }
+
+    .glassCard{
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid2{grid-template-columns: 1fr;}
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){
+      .grid3{grid-template-columns: 1fr;}
+    }
+
+    .muted{color: rgba(246,247,249,.78); line-height:1.7; font-size:14px;}
+    .meta{color: rgba(246,247,249,.72); font-size:14px; line-height:1.75;}
+
+    .points{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width: 900px){
+      .points{grid-template-columns: 1fr;}
+    }
+    .point{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.18);
+      color: rgba(246,247,249,.92);
+      font-weight: 750;
+      font-size:14px;
+    }
+
+    .kicker{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:850;
+      font-size:13px;
+      color: rgba(246,247,249,.92);
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(246,247,249,.78);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .list li{margin:6px 0}
+
+    .steps{display:grid; gap:12px; margin-top:14px}
+    .step{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.18);
+      color: rgba(246,247,249,.86);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .step strong{display:block; margin-bottom:6px; color: rgba(246,247,249,.95);}
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      padding:24px 0;
+      color:rgba(246,247,249,.70);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    /* anchor offset */
+    #apply{scroll-margin-top:110px;}
+    #process{scroll-margin-top:110px;}
+    #requirements{scroll-margin-top:110px;}
+  </style>
 </head>
 
 <body>
-
-<!-- Topbar -->
-<div class="topbar">
-  <div class="container wrap">
-    <div class="phone">+996 990 241 949</div>
-
-    <div class="lang" aria-label="Language switch">
-      <a href="/hrdirectkg/employment/">RU</a>
-      <span class="sep">·</span>
-      <a href="/hrdirectkg/kg/employment/">KG</a>
-      <span class="sep">·</span>
-      <a href="/hrdirectkg/en/employment/" class="active" aria-current="page">EN</a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<header>
-  <div class="container nav">
-    <div class="nav__left">
-      <a class="logo" href="/hrdirectkg/en/" aria-label="HR Direct KG Home">
-        <span class="mark"></span><span>HR Direct KG</span>
-      </a>
-    </div>
-
-    <div class="nav__center">
-      <nav class="menu" aria-label="Main navigation">
-        <a href="/hrdirectkg/en/">Home</a>
-        <a href="/hrdirectkg/en/about/">About</a>
-        <a href="/hrdirectkg/en/visas/">Visas</a>
-        <a href="/hrdirectkg/en/insurance/">Insurance</a>
-        <a href="/hrdirectkg/en/forms/">Forms</a>
-        <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
-        <a href="/hrdirectkg/en/pricing/">Pricing</a>
-      </nav>
-    </div>
-
-    <div class="nav__right">
-      <a class="btn"
-         href="https://wa.me/996990241949?text=Hello!%20I%20would%20like%20to%20ask%20about%20employment%20abroad.%20Country:%20____%20Position:%20____"
-         target="_blank" rel="noopener">Consultation</a>
-    </div>
-  </div>
-
-  <div class="subnav">
+  <!-- Topbar -->
+  <div class="topbar">
     <div class="container">
-      <nav class="submenu" aria-label="Secondary navigation">
-        <a href="/hrdirectkg/en/faq/">FAQ</a>
-        <a href="/hrdirectkg/en/contact/">Contacts</a>
-        <a href="/hrdirectkg/en/employment/" aria-current="page">Employment</a>
-        <a href="/hrdirectkg/en/partners/">For partners</a>
-      </nav>
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/en/contact/">Ibraimova 115/3a, office 405</a>
+        </div>
+
+        <div class="lang" aria-label="Language switch">
+          <a href="/hrdirectkg/employment/">RU</a>
+          <a href="/hrdirectkg/kg/employment/">KG</a>
+          <a href="/hrdirectkg/en/employment/" class="active" aria-current="page">EN</a>
+        </div>
+      </div>
     </div>
   </div>
-</header>
 
-<!-- Hero (TEXT KEPT) -->
-<section class="hero">
-  <div class="container">
-    <div class="badge">Employment abroad</div>
-    <h1 class="h1">Overseas jobs — officially and step by step</h1>
-    <p class="lead">
-      We help candidates from Kyrgyzstan go through the entire process —
-      from inquiry to departure. Job matching, document guidance, and structured support.
-      If you are looking for a <strong>legal and realistic</strong> option — you are in the right place.
-    </p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/en/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-    <div class="kicker" aria-label="Highlights">
-      <div class="pill">✅ Legal employment</div>
-      <div class="pill">📄 Clear document requirements</div>
-      <div class="pill">🧭 Step-by-step coordination</div>
-      <div class="pill">🤝 Support until departure</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/hrdirectkg/en/visas/">Visas</a>
+          <a class="active" href="/hrdirectkg/en/employment/">Employment</a>
+          <a href="/hrdirectkg/en/partners/">For partners</a>
+          <a href="/hrdirectkg/en/faq/">FAQ</a>
+          <a href="/hrdirectkg/en/contact/">Contacts</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Menu</b>
+      <button class="drawer-close" id="close" aria-label="Close">✕</button>
     </div>
 
-    <p class="meta">⚠️ No unrealistic promises. Timelines and requirements are discussed in advance.</p>
+    <nav class="drawer-nav" aria-label="Site sections">
+      <a href="/hrdirectkg/en/about/">About</a>
 
-    <div class="actions">
-      <a class="btn" href="#apply">Apply</a>
-      <a class="btn outline" href="#process">How it works</a>
-      <a class="btn outline" href="#requirements">Requirements</a>
+      <a href="/hrdirectkg/en/visas/">Visas</a>
+      <a class="active" href="/hrdirectkg/en/employment/">Employment</a>
+      <a href="/hrdirectkg/en/partners/">For partners</a>
+
+      <a href="/hrdirectkg/en/insurance/">Insurance</a>
+      <a href="/hrdirectkg/en/forms/">Forms</a>
+      <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
+
+      <a href="/hrdirectkg/en/pricing/">Pricing</a>
+      <a href="/hrdirectkg/en/faq/">FAQ</a>
+      <a href="/hrdirectkg/en/contact/">Contacts</a>
+    </nav>
+
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Hello!%20I%20would%20like%20to%20ask%20about%20employment%20abroad.%20Country:%20____%20Position:%20____"
+         target="_blank" rel="noopener">Apply / Ask</a>
     </div>
-  </div>
-</section>
+  </aside>
 
-<!-- Sectors + Apply (TEXT KEPT) -->
-<section class="section">
-  <div class="container grid-2">
-
-    <div class="card">
-      <h2>Most in-demand sectors</h2>
-      <p class="meta">
-        Vacancies depend on experience, documents, and readiness for shifts/schedule.
-        Common sectors include:
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <span class="badge">Employment abroad</span>
+      <h1>Overseas jobs — officially and step by step</h1>
+      <p class="lead">
+        We help candidates from Kyrgyzstan go through the entire process —
+        from inquiry to departure. Job matching, document guidance, and structured support.
+        If you are looking for a <strong>legal and realistic</strong> option — you are in the right place.
       </p>
 
-      <div class="points">
-        <div class="point">🏭 Manufacturing & factories (production lines, packaging)</div>
-        <div class="point">🐟 Fish & meat processing plants</div>
-        <div class="point">🏨 Hotels & service (housekeeping, kitchen staff)</div>
-        <div class="point">🧹 Cleaning services</div>
-        <div class="point">🏗 Construction & contracting</div>
-        <div class="point">📦 Warehouses & logistics</div>
-      </div>
-
-      <p class="meta">
-        Geography depends on current projects and employer requirements.
-        We focus on countries where legal employment and clear conditions are available.
-      </p>
-    </div>
-
-    <div class="card" id="apply">
-      <h2>Apply for a job</h2>
-      <p class="meta">Send the basics — we will reply with available options and next steps.</p>
-
-      <ul class="list">
-        <li>Age</li>
-        <li>Work experience (if any)</li>
-        <li>Preferred country / sector</li>
-        <li>Passport availability</li>
-        <li>Phone number (WhatsApp)</li>
-      </ul>
-
-      <div class="actions">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Hello!%20I%20want%20to%20apply%20for%20employment%20abroad.%0AAge:%20____%0AExperience:%20____%0APreferred%20country:%20____%0ASector:%20____%0APassport:%20Yes/No%0APhone:%20____"
-           target="_blank" rel="noopener">Apply via WhatsApp</a>
-
-        <a class="btn outline" href="/hrdirectkg/en/partners/">For employers</a>
-      </div>
-
-      <p class="meta">
-        WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
-        Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a><br>
-        Office: Bishkek, Ibraimova 115/3a, 4th floor, office 405
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- 3 cards (TEXT KEPT) -->
-<section class="section">
-  <div class="container">
-    <div class="grid-3">
-
-      <div class="card">
-        <h3>What we provide</h3>
-        <ul class="list">
-          <li>Vacancy matching based on your profile</li>
-          <li>Explanation of requirements and conditions</li>
-          <li>Document guidance and checklist</li>
-          <li>Support through the process</li>
-        </ul>
-        <p class="note">We focus on clarity and compliance — not “fast promises”.</p>
-      </div>
-
-      <div class="card">
-        <h3>What you should avoid</h3>
-        <ul class="list">
-          <li>Buying “fake invitations” or fake documents</li>
-          <li>Agreeing to unclear contracts</li>
-          <li>Paying money without receipts / terms</li>
-          <li>Leaving without understanding your role and schedule</li>
-        </ul>
-        <p class="note">Shortcuts usually become expensive later.</p>
-      </div>
-
-      <div class="card">
-        <h3>Transparency note</h3>
-        <ul class="list">
-          <li>Employer conditions are discussed before start</li>
-          <li>Timelines depend on documents and quotas</li>
-          <li>Final decision belongs to employer/authorities</li>
-        </ul>
-        <p class="note">We tell you “yes/no” honestly, not emotionally.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Process (TEXT KEPT) -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="card">
-      <h2>How we work</h2>
-      <p class="meta">Simple structure — and you always know what’s next.</p>
-
-      <div class="steps">
-        <div class="step">
-          <strong>1) Inquiry</strong>
-          You message us with basics: country, sector, experience, age, language skills (if any).
-        </div>
-        <div class="step">
-          <strong>2) Matching</strong>
-          We propose available options and explain conditions, timelines, and documents.
-        </div>
-        <div class="step">
-          <strong>3) Preparation</strong>
-          We provide a clear checklist and help avoid typical mistakes.
-        </div>
-        <div class="step">
-          <strong>4) Coordination</strong>
-          We stay in touch and guide you through each stage until the result.
-        </div>
+      <div class="kicker" aria-label="Highlights">
+        <span class="pill">✅ Legal employment</span>
+        <span class="pill">📄 Clear document requirements</span>
+        <span class="pill">🧭 Step-by-step coordination</span>
+        <span class="pill">🤝 Support until departure</span>
       </div>
 
       <div class="actions">
-        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Write on WhatsApp</a>
-        <a class="btn outline" href="/hrdirectkg/en/contact/">Contacts</a>
+        <a class="btn primary" href="#apply">Apply</a>
+        <a class="btn" href="#process">How it works</a>
+        <a class="btn" href="#requirements">Requirements</a>
       </div>
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- Requirements (TEXT KEPT) -->
-<section class="section" id="requirements">
-  <div class="container">
-    <div class="card">
-      <h2>Basic requirements (usually)</h2>
-      <p class="meta">Exact requirements depend on country and vacancy. Below is the typical minimum.</p>
+  <!-- CONTENT -->
+  <section class="section">
+    <div class="container">
 
-      <div class="points">
-        <div class="point">🛂 Passport (valid for the required period)</div>
-        <div class="point">📄 Personal documents (ID, certificates if needed)</div>
-        <div class="point">🧠 Readiness to work shifts / physical tasks</div>
-        <div class="point">🧾 Clean and honest information in documents</div>
-        <div class="point">🗣 Basic language (optional, depends on employer)</div>
-        <div class="point">✅ Discipline and reliability (always required)</div>
+      <!-- grid 2 like cards -->
+      <div class="grid2">
+
+        <div class="glassCard">
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Most in-demand sectors</h2>
+          <p class="meta" style="margin:0">
+            Vacancies depend on experience, documents, and readiness for shifts/schedule.
+            Common sectors include:
+          </p>
+
+          <div class="points">
+            <div class="point">🏭 Manufacturing & factories (production lines, packaging)</div>
+            <div class="point">🐟 Fish & meat processing plants</div>
+            <div class="point">🏨 Hotels & service (housekeeping, kitchen staff)</div>
+            <div class="point">🧹 Cleaning services</div>
+            <div class="point">🏗 Construction & contracting</div>
+            <div class="point">📦 Warehouses & logistics</div>
+          </div>
+
+          <p class="meta" style="margin:14px 0 0">
+            Geography depends on current projects and employer requirements.
+            We focus on countries where legal employment and clear conditions are available.
+          </p>
+        </div>
+
+        <div class="glassCard" id="apply">
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Apply for a job</h2>
+          <p class="meta" style="margin:0">Send the basics — we will reply with available options and next steps.</p>
+
+          <ul class="list">
+            <li>Age</li>
+            <li>Work experience (if any)</li>
+            <li>Preferred country / sector</li>
+            <li>Passport availability</li>
+            <li>Phone number (WhatsApp)</li>
+          </ul>
+
+          <div class="actions" style="margin-top:14px">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Hello!%20I%20want%20to%20apply%20for%20employment%20abroad.%0AAge:%20____%0AExperience:%20____%0APreferred%20country:%20____%0ASector:%20____%0APassport:%20Yes/No%0APhone:%20____"
+               target="_blank" rel="noopener">Apply via WhatsApp</a>
+
+            <a class="btn" href="/hrdirectkg/en/partners/">For employers</a>
+          </div>
+
+          <p class="meta" style="margin-top:14px">
+            WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
+            Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a><br>
+            Office: Bishkek, Ibraimova 115/3a, 4th floor, office 405
+          </p>
+        </div>
+
       </div>
 
-      <p class="meta">If you are not sure what you qualify for — message us, and we will suggest realistic options.</p>
+      <!-- 3 cards -->
+      <div class="grid3">
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">What we provide</h3>
+          <ul class="list">
+            <li>Vacancy matching based on your profile</li>
+            <li>Explanation of requirements and conditions</li>
+            <li>Document guidance and checklist</li>
+            <li>Support through the process</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">We focus on clarity and compliance — not “fast promises”.</p>
+        </div>
 
-      <div class="actions">
-        <a class="btn"
-           href="https://wa.me/996990241949?text=Hello!%20Please%20suggest%20realistic%20job%20options%20for%20me.%0AAge:%20____%0AExperience:%20____%0ACountry%20(preferred):%20____"
-           target="_blank" rel="noopener">Get options</a>
-        <a class="btn outline" href="/hrdirectkg/en/partners/">For partners</a>
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">What you should avoid</h3>
+          <ul class="list">
+            <li>Buying “fake invitations” or fake documents</li>
+            <li>Agreeing to unclear contracts</li>
+            <li>Paying money without receipts / terms</li>
+            <li>Leaving without understanding your role and schedule</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">Shortcuts usually become expensive later.</p>
+        </div>
+
+        <div class="glassCard">
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Transparency note</h3>
+          <ul class="list">
+            <li>Employer conditions are discussed before start</li>
+            <li>Timelines depend on documents and quotas</li>
+            <li>Final decision belongs to employer/authorities</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">We tell you “yes/no” honestly, not emotionally.</p>
+        </div>
       </div>
 
-      <p class="note">
-        Employers looking for workforce solutions can visit the
-        <a href="/hrdirectkg/en/partners/"><u>For partners</u></a> page.
-      </p>
+      <!-- Process -->
+      <div class="glassCard" id="process" style="margin-top:14px">
+        <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">How we work</h2>
+        <p class="meta" style="margin:0">Simple structure — and you always know what’s next.</p>
+
+        <div class="steps">
+          <div class="step">
+            <strong>1) Inquiry</strong>
+            You message us with basics: country, sector, experience, age, language skills (if any).
+          </div>
+          <div class="step">
+            <strong>2) Matching</strong>
+            We propose available options and explain conditions, timelines, and documents.
+          </div>
+          <div class="step">
+            <strong>3) Preparation</strong>
+            We provide a clear checklist and help avoid typical mistakes.
+          </div>
+          <div class="step">
+            <strong>4) Coordination</strong>
+            We stay in touch and guide you through each stage until the result.
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary" href="https://wa.me/996990241949" target="_blank" rel="noopener">Write on WhatsApp</a>
+          <a class="btn" href="/hrdirectkg/en/contact/">Contacts</a>
+        </div>
+      </div>
+
+      <!-- Requirements -->
+      <div class="glassCard" id="requirements" style="margin-top:14px">
+        <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Basic requirements (usually)</h2>
+        <p class="meta" style="margin:0">
+          Exact requirements depend on country and vacancy. Below is the typical minimum.
+        </p>
+
+        <div class="points">
+          <div class="point">🛂 Passport (valid for the required period)</div>
+          <div class="point">📄 Personal documents (ID, certificates if needed)</div>
+          <div class="point">🧠 Readiness to work shifts / physical tasks</div>
+          <div class="point">🧾 Clean and honest information in documents</div>
+          <div class="point">🗣 Basic language (optional, depends on employer)</div>
+          <div class="point">✅ Discipline and reliability (always required)</div>
+        </div>
+
+        <p class="meta" style="margin-top:14px">
+          If you are not sure what you qualify for — message us, and we will suggest realistic options.
+        </p>
+
+        <div class="actions" style="margin-top:14px">
+          <a class="btn primary"
+             href="https://wa.me/996990241949?text=Hello!%20Please%20suggest%20realistic%20job%20options%20for%20me.%0AAge:%20____%0AExperience:%20____%0ACountry%20(preferred):%20____"
+             target="_blank" rel="noopener">Get options</a>
+          <a class="btn" href="/hrdirectkg/en/partners/">For partners</a>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          Employers looking for workforce solutions can visit the
+          <a href="/hrdirectkg/en/partners/"><u>For partners</u></a> page.
+        </p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    © <span id="year"></span> HR Direct KG — overseas employment and visa support.
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> HR Direct KG — overseas employment and visa support.
+    </div>
+  </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Drawer
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
+  </script>
 </body>
 </html>
