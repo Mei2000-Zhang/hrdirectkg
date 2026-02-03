@@ -53,11 +53,12 @@ a{color:inherit;text-decoration:none}
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:12px;
   padding:8px 0;
 }
 
 /* Language switch */
-.lang{display:flex;gap:8px}
+.lang{display:flex;gap:8px;align-items:center;white-space:nowrap}
 .lang a{padding:2px 6px;border-radius:8px}
 .lang a.active{background:rgba(255,255,255,.10);font-weight:700}
 
@@ -72,6 +73,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:14px;
   padding:14px 0;
 }
 .logo{
@@ -79,16 +81,17 @@ header{
   align-items:center;
   gap:12px;
   font-weight:800;
+  white-space:nowrap;
 }
 .logo .mark{
   width:28px;height:28px;border-radius:8px;
   background:var(--accent);
 }
-
 .menu{
   display:flex;
   gap:10px;
   font-size:13px;
+  white-space:nowrap;
 }
 .menu a{opacity:.85}
 .menu a.active{
@@ -97,13 +100,16 @@ header{
   border-radius:8px;
   padding:4px 6px;
 }
-
 .btn{
   padding:12px 16px;
   border-radius:12px;
   background:var(--accent);
   color:#120a00;
-  font-weight:700;
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
 }
 .btn.outline{
   background:none;
@@ -132,28 +138,68 @@ header{
 
 /* Content */
 .section{padding:40px 0}
-.h1{font-size:clamp(26px,3.5vw,40px);margin:0 0 10px;font-weight:800}
-.lead{color:var(--muted);max-width:760px}
+.h1{font-size:clamp(26px,3.5vw,40px);margin:0 0 10px;font-weight:900}
+.lead{color:var(--muted);max-width:780px}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:16px;
+  margin-top:18px;
+}
+.card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:18px;
+}
+.card h2{margin:0 0 10px}
+.meta{color:var(--muted);font-size:14px;margin:8px 0 0}
 
 .cta{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:16px;
-}
-
-.note{
-  color:var(--muted);
-  font-size:14px;
   margin-top:14px;
 }
 
+.list{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+.list li{margin:8px 0}
+
 .map{
-  margin-top:20px;
-  border-radius:12px;
+  margin-top:12px;
+  border-radius:14px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
 }
+.map iframe{
+  width:100%;
+  height:270px;
+  border:0;
+  display:block;
+}
+
+.quick{
+  display:grid;
+  gap:10px;
+  margin-top:12px;
+}
+.quick a{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+.quick b{display:block}
+.quick span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 
 footer{
   border-top:1px solid rgba(255,255,255,.06);
@@ -161,23 +207,28 @@ footer{
   color:var(--muted);
 }
 
-@media(max-width:520px){
-  .menu{display:none}
-}
-
 /* Floating WhatsApp */
 .wa{
   position:fixed;
   right:16px;
   bottom:16px;
-  width:54px;
-  height:54px;
+  width:56px;
+  height:56px;
   border-radius:50%;
   background:var(--accent);
   display:grid;
   place-items:center;
   box-shadow:0 12px 26px rgba(255,122,24,.4);
   z-index:60;
+  border:1px solid rgba(255,255,255,.14);
+}
+.wa svg{width:26px;height:26px;fill:#120a00}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .menu{display:none}
 }
 </style>
 </head>
@@ -199,21 +250,24 @@ footer{
   <div class="container nav">
     <div class="logo"><span class="mark"></span>HR Direct KG</div>
 
-    <nav class="menu">
+    <nav class="menu" aria-label="Main navigation">
       <a href="/hrdirectkg/en/">Home</a>
       <a href="/hrdirectkg/en/visas/">Visas</a>
       <a href="/hrdirectkg/en/insurance/">Insurance</a>
       <a href="/hrdirectkg/en/forms/">Forms</a>
       <a href="/hrdirectkg/en/how-to-get-visa/">How to get a visa</a>
       <a href="/hrdirectkg/en/pricing/">Pricing</a>
+      <a href="/hrdirectkg/en/contact/" class="active">Contacts</a>
     </nav>
 
-    <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation." target="_blank">Consultation</a>
+    <a class="btn"
+       href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+       target="_blank" rel="noopener">Consultation</a>
   </div>
 
   <div class="subnav">
     <div class="container">
-      <nav class="submenu">
+      <nav class="submenu" aria-label="Secondary navigation">
         <a href="/hrdirectkg/en/faq/">FAQ</a>
         <a href="/hrdirectkg/en/contact/" aria-current="page">Contacts</a>
         <a href="/hrdirectkg/en/employment/">Employment</a>
@@ -227,24 +281,94 @@ footer{
   <div class="container">
     <h1 class="h1">Contacts</h1>
     <p class="lead">
-      Tell us your destination and travel dates — we will explain the next steps
-      for a visa or employment abroad.
+      Tell us your destination and dates — we’ll reply with a clear plan for a visa
+      or employment abroad (without “magic guarantees”).
     </p>
 
-    <div class="cta">
-      <a class="btn" href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation." target="_blank">WhatsApp</a>
-      <a class="btn outline" href="mailto:officehhrdirectkg@gmail.com">E-mail</a>
-      <a class="btn outline" href="tel:+996990241949">Call</a>
-    </div>
+    <div class="grid">
 
-    <p class="note">
-      Address: Bishkek, Ibraimova Street 115/3a, 4th floor, office 405
-    </p>
+      <div class="card">
+        <h2>How to reach us</h2>
 
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123!2d74.588!3d42.872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec824!2z0YPQuy4g0JrQu9Cw0YHQutC-0LPQviAxMTUvM8KgLCDQkNC70LXRgNC90YvQuSwg0JrRg9GA0LPRgNCw0L3RgiA!5e0!3m2!1sen!2skg!4v0000000000000"
-        width="100%" height="260" style="border:0;" loading="lazy"></iframe>
+        <div class="cta">
+          <a class="btn"
+             href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+             target="_blank" rel="noopener">WhatsApp</a>
+
+          <a class="btn outline" href="mailto:officehhrdirectkg@gmail.com?subject=HR%20Direct%20KG%20—%20Consultation">E-mail</a>
+          <a class="btn outline" href="tel:+996990241949">Call</a>
+        </div>
+
+        <p class="meta">
+          Phone/WhatsApp: <a href="tel:+996990241949"><u>+996 990 241 949</u></a><br>
+          Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a>
+        </p>
+
+        <h2 style="margin-top:18px">Office address</h2>
+        <p class="meta">
+          Bishkek, Ibraimova Street 115/3a, 4th floor, office 405
+        </p>
+
+        <div class="cta">
+          <!-- IMPORTANT: this link works even if the embed is not perfect -->
+          <a class="btn outline"
+             href="https://www.google.com/maps/search/?api=1&query=Ibraimova+115%2F3a+Bishkek"
+             target="_blank" rel="noopener">Open in Google Maps</a>
+          <a class="btn outline" href="/hrdirectkg/en/pricing/">Pricing</a>
+        </div>
+
+        <p class="meta">
+          Working hours: Mon–Sat (by appointment).<br>
+          If you plan to visit the office — message us first so we can confirm time.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Quick messages</h2>
+        <p class="meta">Tap a template — it opens WhatsApp with ready text.</p>
+
+        <div class="quick">
+          <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20visa%20consultation.%20Country:%20____%20Dates:%20____%20Purpose:%20Tourism/Business"
+             target="_blank" rel="noopener">
+            <div>
+              <b>Visa</b>
+              <span>Country, dates, purpose — we’ll tell you the exact steps.</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/996990241949?text=Hello!%20I%20want%20employment%20abroad.%20Age:%20____%20Experience:%20____%20Country:%20____%20Sector:%20____%20Passport:%20Yes/No"
+             target="_blank" rel="noopener">
+            <div>
+              <b>Employment abroad</b>
+              <span>Age + experience + preferred country/sector — we’ll propose options.</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/996990241949?text=Hello!%20I%20need%20insurance%20for%20a%20visa.%20Country:%20____%20Dates:%20____%20Number%20of%20travelers:%20____"
+             target="_blank" rel="noopener">
+            <div>
+              <b>Insurance</b>
+              <span>Country + travel dates + number of travelers.</span>
+            </div>
+          </a>
+        </div>
+
+        <h2 style="margin-top:18px">Map</h2>
+        <p class="meta">
+          If the embedded map doesn’t load — use “Open in Google Maps”.
+        </p>
+
+        <div class="map">
+          <!-- Universal embed: may show approximate area.
+               For exact pin: replace iframe src with your real embed from Google Maps. -->
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Ibraimova%20115/3a%20Bishkek&output=embed">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -255,7 +379,15 @@ footer{
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation." aria-label="WhatsApp" target="_blank"></a>
+<a class="wa"
+   href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
+   aria-label="WhatsApp"
+   target="_blank" rel="noopener">
+  <!-- WhatsApp icon -->
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+  </svg>
+</a>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
