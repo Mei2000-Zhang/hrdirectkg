@@ -1,14 +1,14 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Трудоустройство за границей — HR Direct KG | Работа за рубежом и подбор персонала</title>
-  <meta name="description" content="HR Direct KG — лицензированное рекрутинговое агентство из Кыргызстана. Трудоустройство за границей с полным сопровождением: подбор вакансий, помощь с документами и координация процесса. Производство, заводы, отели, клининг, строительство." />
+  <title>Трудоустройство за границей — HR Direct KG | Работа за рубежом</title>
+  <meta name="description" content="HR Direct KG — лицензированное агентство из Кыргызстана. Трудоустройство за границей с полным сопровождением: подбор вакансий, документы, координация. Производство, заводы, отели, клининг, строительство." />
 
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/employment/" />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/employment/" />
 
   <!-- hreflang -->
   <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/employment/" />
@@ -29,7 +29,7 @@
       --glass2: rgba(10,12,16,.88);
       --line:rgba(255,255,255,.12);
       --radius:18px;
-      --hero-img: url("/hrdirectkg/ben.jpg"); /* как в FAQ */
+      --hero-img: url("/hrdirectkg/ben.jpg");
     }
 
     *{box-sizing:border-box}
@@ -51,7 +51,7 @@
     a{color:inherit; text-decoration:none}
     .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-    /* ===== Верхняя панель (как в FAQ) ===== */
+    /* ===== Topbar ===== */
     .topbar{
       position:relative;
       z-index:70;
@@ -103,7 +103,7 @@
       font-weight:800;
     }
 
-    /* ===== Шапка (как в FAQ) ===== */
+    /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
@@ -167,7 +167,7 @@
       .main-nav{display:none;}
     }
 
-    /* Бургер */
+    /* Burger */
     .burger{
       width:46px;height:46px;
       border-radius: 16px;
@@ -193,7 +193,7 @@
       border-radius: 2px;
     }
 
-    /* ===== Выезжающее меню ===== */
+    /* ===== Drawer ===== */
     .drawer-backdrop{
       position: fixed;
       inset: 0;
@@ -281,7 +281,7 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Хиро ===== */
+    /* ===== Hero ===== */
     .hero{
       position:relative;
       padding: 56px 0 10px;
@@ -365,7 +365,7 @@
       background: rgba(246,247,249,.98);
     }
 
-    /* ===== Контент-блоки ===== */
+    /* ===== Content blocks ===== */
     .section{
       position:relative;
       padding: 26px 0 62px;
@@ -472,15 +472,46 @@
       text-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
 
-    /* смещение якорей */
+    /* anchor offset */
     #apply{scroll-margin-top:110px;}
     #process{scroll-margin-top:110px;}
     #requirements{scroll-margin-top:110px;}
+
+    /* ===== WhatsApp floating button (same idea as EN, round + fixed) ===== */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 120;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.22);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .wa-float:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+    .wa-float svg{
+      width: 28px;
+      height: 28px;
+      display:block;
+    }
+
+    @media (max-width: 420px){
+      .wa-float{right:14px; bottom:14px;}
+    }
   </style>
 </head>
 
 <body>
-  <!-- Верхняя панель -->
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container">
       <div class="row">
@@ -491,15 +522,15 @@
         </div>
 
         <div class="lang" aria-label="Переключение языка">
-          <a href="/hrdirectkg/employment/">RU</a>
+          <a href="/hrdirectkg/employment/" class="active" aria-current="page">RU</a>
           <a href="/hrdirectkg/kg/employment/">KG</a>
-          <a href="/hrdirectkg/en/employment/" class="active" aria-current="page">EN</a>
+          <a href="/hrdirectkg/en/employment/">EN</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Шапка -->
+  <!-- Header -->
   <header>
     <div class="container">
       <div class="head">
@@ -511,7 +542,7 @@
         <nav class="main-nav" aria-label="Основная навигация">
           <a href="/hrdirectkg/visas/">Визы</a>
           <a class="active" href="/hrdirectkg/employment/">Трудоустройство</a>
-          <a href="/hrdirectkg/partners/">Для партнёров</a>
+          <a href="/hrdirectkg/partners/">Партнёрам</a>
           <a href="/hrdirectkg/faq/">FAQ</a>
           <a href="/hrdirectkg/contact/">Контакты</a>
         </nav>
@@ -537,7 +568,7 @@
 
       <a href="/hrdirectkg/visas/">Визы</a>
       <a class="active" href="/hrdirectkg/employment/">Трудоустройство</a>
-      <a href="/hrdirectkg/partners/">Для партнёров</a>
+      <a href="/hrdirectkg/partners/">Партнёрам</a>
 
       <a href="/hrdirectkg/insurance/">Страховка</a>
       <a href="/hrdirectkg/forms/">Анкеты</a>
@@ -550,8 +581,8 @@
 
     <div class="drawer-cta">
       <a class="cta"
-         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20узнать%20о%20трудоустройстве%20за%20границей.%20Страна:%20____%20Должность:%20____"
-         target="_blank" rel="noopener">Оставить заявку / Задать вопрос</a>
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20уточнить%20по%20трудоустройству%20за%20границей.%20Страна:%20____%20Должность:%20____"
+         target="_blank" rel="noopener">Оставить заявку / спросить</a>
     </div>
   </aside>
 
@@ -561,21 +592,21 @@
       <span class="badge">Трудоустройство за границей</span>
       <h1>Работа за рубежом — официально и по шагам</h1>
       <p class="lead">
-        Мы помогаем кандидатам из Кыргызстана пройти весь процесс —
-        от запроса до выезда. Подбор вакансий, помощь с документами и понятное сопровождение.
-        Если вам нужен <strong>легальный и реалистичный</strong> вариант — вы по адресу.
+        Помогаем кандидатам из Кыргызстана пройти весь путь —
+        от первого обращения до выезда. Подбор вакансий, понятные требования по документам и структурное сопровождение.
+        Если вам нужен <strong>законный и реалистичный</strong> вариант — вы по адресу.
       </p>
 
       <div class="kicker" aria-label="Ключевые преимущества">
-        <span class="pill"> Легальное трудоустройство</span>
-        <span class="pill"> Понятные требования к документам</span>
+        <span class="pill"> Официальное оформление</span>
+        <span class="pill"> Понятные требования</span>
         <span class="pill"> Пошаговая координация</span>
-        <span class="pill"> Сопровождение до выезда</span>
+        <span class="pill"> Поддержка до выезда</span>
       </div>
 
       <div class="actions">
         <a class="btn primary" href="#apply">Оставить заявку</a>
-        <a class="btn" href="#process">Как это работает</a>
+        <a class="btn" href="#process">Как мы работаем</a>
         <a class="btn" href="#requirements">Требования</a>
       </div>
     </div>
@@ -585,49 +616,48 @@
   <section class="section">
     <div class="container">
 
-      <!-- grid 2 -->
       <div class="grid2">
 
         <div class="glassCard">
-          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Самые востребованные сферы</h2>
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Самые востребованные направления</h2>
           <p class="meta" style="margin:0">
-            Вакансии зависят от опыта, документов и готовности к сменам/графику.
-            Чаще всего востребованы:
+            Вакансии зависят от опыта, документов и готовности к графику/сменам.
+            Часто встречаются:
           </p>
 
           <div class="points">
-            <div class="point"> Производство и заводы (линии, упаковка)</div>
-            <div class="point"> Рыбные и мясоперерабатывающие предприятия</div>
-            <div class="point"> Отели и сервис (хаускипинг, кухня)</div>
+            <div class="point"> Производство и фабрики (линии, упаковка)</div>
+            <div class="point"> Рыбные и мясоперерабатывающие заводы</div>
+            <div class="point"> Отели и сервис (горничные, кухня)</div>
             <div class="point"> Клининг</div>
-            <div class="point"> Строительство и подрядные работы</div>
+            <div class="point"> Стройка и подрядчики</div>
             <div class="point"> Склады и логистика</div>
           </div>
 
           <p class="meta" style="margin:14px 0 0">
-            География зависит от текущих проектов и требований работодателей.
-            Мы ориентируемся на страны, где доступны легальное оформление и прозрачные условия.
+            География зависит от текущих проектов и требований работодателя.
+            Мы ориентируемся на страны, где есть легальные условия и понятные правила.
           </p>
         </div>
 
         <div class="glassCard" id="apply">
-          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Заявка на трудоустройство</h2>
-          <p class="meta" style="margin:0">Отправьте основную информацию — мы ответим с вариантами и следующими шагами.</p>
+          <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Оставить заявку</h2>
+          <p class="meta" style="margin:0">Напишите базовую информацию — мы ответим с доступными вариантами и шагами.</p>
 
           <ul class="list">
             <li>Возраст</li>
             <li>Опыт работы (если есть)</li>
-            <li>Предпочтительная страна / сфера</li>
+            <li>Желаемая страна / направление</li>
             <li>Наличие загранпаспорта</li>
             <li>Номер телефона (WhatsApp)</li>
           </ul>
 
           <div class="actions" style="margin-top:14px">
             <a class="btn primary"
-               href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20работу%20за%20границей.%0AВозраст:%20____%0AОпыт:%20____%0AЖелаемая%20страна:%20____%0AСфера:%20____%0AЗагранпаспорт:%20Да/Нет%0AТелефон:%20____"
+               href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20трудоустройство%20за%20границей.%0AВозраст:%20____%0AОпыт:%20____%0AСтрана:%20____%0AСфера:%20____%0AПаспорт:%20Да/Нет%0AТелефон:%20____"
                target="_blank" rel="noopener">Заявка через WhatsApp</a>
 
-            <a class="btn" href="/hrdirectkg/partners/">Для работодателей</a>
+            <a class="btn" href="/hrdirectkg/partners/">Работодателям</a>
           </div>
 
           <p class="meta" style="margin-top:14px">
@@ -639,62 +669,60 @@
 
       </div>
 
-      <!-- 3 cards -->
       <div class="grid3">
         <div class="glassCard">
-          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Что мы предоставляем</h3>
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Что мы делаем</h3>
           <ul class="list">
-            <li>Подбор вакансий под ваш профиль</li>
-            <li>Пояснение требований и условий</li>
-            <li>Чек-лист по документам и консультации</li>
-            <li>Сопровождение по этапам</li>
+            <li>Подбираем вакансии по вашему профилю</li>
+            <li>Объясняем условия и требования</li>
+            <li>Даём чек-лист документов</li>
+            <li>Сопровождаем по шагам</li>
           </ul>
-          <p class="muted" style="margin-top:10px">Фокус на ясности и соблюдении правил — без “быстрых обещаний”.</p>
+          <p class="muted" style="margin-top:10px">Ставка на ясность и законность — без “быстрых обещаний”.</p>
         </div>
 
         <div class="glassCard">
           <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Чего лучше избегать</h3>
           <ul class="list">
-            <li>Покупки “липовых приглашений” или поддельных документов</li>
-            <li>Согласия на непонятные договоры</li>
-            <li>Оплат без чеков / условий</li>
-            <li>Выезда без понимания роли и графика</li>
+            <li>«Левых приглашений» и поддельных документов</li>
+            <li>Договоров с размытыми условиями</li>
+            <li>Оплат без чеков/понятных условий</li>
+            <li>Выезда без понимания графика и обязанностей</li>
           </ul>
-          <p class="muted" style="margin-top:10px">“Короткие пути” часто обходятся дороже.</p>
+          <p class="muted" style="margin-top:10px">“Срезать углы” потом обычно дороже.</p>
         </div>
 
         <div class="glassCard">
-          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Примечание по прозрачности</h3>
+          <h3 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Важное про прозрачность</h3>
           <ul class="list">
             <li>Условия работодателя обсуждаются заранее</li>
             <li>Сроки зависят от документов и квот</li>
             <li>Финальное решение — за работодателем/органами</li>
           </ul>
-          <p class="muted" style="margin-top:10px">Мы честно говорим “да/нет”, без эмоций.</p>
+          <p class="muted" style="margin-top:10px">Мы говорим “да/нет” честно, а не “лишь бы успокоить”.</p>
         </div>
       </div>
 
-      <!-- Process -->
       <div class="glassCard" id="process" style="margin-top:14px">
         <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Как мы работаем</h2>
-        <p class="meta" style="margin:0">Простая структура — вы всегда понимаете следующий шаг.</p>
+        <p class="meta" style="margin:0">Простая структура — и вы всегда понимаете, что дальше.</p>
 
         <div class="steps">
           <div class="step">
-            <strong>1) Запрос</strong>
-            Вы пишете нам базовую информацию: страна, сфера, опыт, возраст, знание языка (если есть).
+            <strong>1) Обращение</strong>
+            Пишете нам базовую информацию: страна, сфера, опыт, возраст, язык (если есть).
           </div>
           <div class="step">
             <strong>2) Подбор</strong>
-            Мы предлагаем доступные варианты и объясняем условия, сроки и список документов.
+            Предлагаем доступные варианты и объясняем условия, сроки и документы.
           </div>
           <div class="step">
             <strong>3) Подготовка</strong>
             Даём понятный чек-лист и помогаем избежать типичных ошибок.
           </div>
           <div class="step">
-            <strong>4) Сопровождение</strong>
-            Держим связь и ведём по этапам до результата.
+            <strong>4) Координация</strong>
+            Остаёмся на связи и ведём по этапам до результата.
           </div>
         </div>
 
@@ -704,7 +732,6 @@
         </div>
       </div>
 
-      <!-- Requirements -->
       <div class="glassCard" id="requirements" style="margin-top:14px">
         <h2 style="margin:0 0 10px; text-shadow: 0 12px 40px rgba(0,0,0,.55);">Базовые требования (обычно)</h2>
         <p class="meta" style="margin:0">
@@ -712,28 +739,28 @@
         </p>
 
         <div class="points">
-          <div class="point"> Загранпаспорт (валидный на нужный срок)</div>
-          <div class="point"> Личные документы (ID, справки/сертификаты при необходимости)</div>
-          <div class="point"> Готовность к сменам / физическим задачам</div>
-          <div class="point"> Честная и корректная информация в документах</div>
-          <div class="point"> Базовый язык (опционально, зависит от работодателя)</div>
-          <div class="point"> Дисциплина и надёжность (всегда важны)</div>
+          <div class="point"> Загранпаспорт (действующий на нужный срок)</div>
+          <div class="point"> Личные документы (ID, справки при необходимости)</div>
+          <div class="point"> Готовность к сменам / физической работе</div>
+          <div class="point"> Честные данные в документах</div>
+          <div class="point"> Базовый язык (не всегда нужен)</div>
+          <div class="point"> Дисциплина и надёжность (нужно всегда)</div>
         </div>
 
         <p class="meta" style="margin-top:14px">
-          Если вы не уверены, что вам подходит — напишите, и мы предложим реалистичные варианты.
+          Если не уверены, что вам подходит — напишите, и мы предложим реалистичные варианты.
         </p>
 
         <div class="actions" style="margin-top:14px">
           <a class="btn primary"
-             href="https://wa.me/996990241949?text=Здравствуйте!%20Подскажите,%20пожалуйста,%20реалистичные%20варианты%20работы%20для%20меня.%0AВозраст:%20____%0AОпыт:%20____%0AЖелаемая%20страна:%20____"
-             target="_blank" rel="noopener">Получить варианты</a>
-          <a class="btn" href="/hrdirectkg/partners/">Для партнёров</a>
+             href="https://wa.me/996990241949?text=Здравствуйте!%20Подскажите,%20пожалуйста,%20реалистичные%20варианты%20работы%20для%20меня.%0AВозраст:%20____%0AОпыт:%20____%0AПредпочтительная%20страна:%20____"
+             target="_blank" rel="noopener">Подобрать варианты</a>
+          <a class="btn" href="/hrdirectkg/partners/">Партнёрам</a>
         </div>
 
         <p class="muted" style="margin-top:10px">
-          Работодатели, которым нужен подбор персонала, могут перейти на страницу
-          <a href="/hrdirectkg/partners/"><u>«Для партнёров»</u></a>.
+          Работодатели, которым нужен персонал, могут перейти на страницу
+          <a href="/hrdirectkg/partners/"><u>Партнёрам</u></a>.
         </p>
       </div>
 
@@ -746,6 +773,17 @@
       © <span id="year"></span> HR Direct KG — трудоустройство за границей и визовая поддержка.
     </div>
   </footer>
+
+  <!-- WhatsApp floating icon (bottom-right) -->
+  <a class="wa-float"
+     href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20уточнить%20по%20трудоустройству%20за%20границей."
+     target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+    <!-- WhatsApp logo (inline SVG) -->
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path fill="#fff" d="M19.11 17.17c-.26-.13-1.54-.76-1.78-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.57.07-.26-.13-1.1-.4-2.1-1.28-.78-.69-1.31-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.4-.46.13-.15.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.46-.82-2-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.85 2.83 4.48 3.97.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.18-.5-.31z"/>
+      <path fill="#fff" d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.32.68 4.49 1.86 6.33L4 29l7.93-1.8a12.02 12.02 0 0 0 4.11.72C22.68 27.92 28 22.56 28 15.96 28 9.36 22.68 3 16.04 3zm0 22.85c-1.33 0-2.63-.27-3.82-.79l-.27-.12-4.7 1.07 1.02-4.57-.14-.29a10.83 10.83 0 0 1-1.12-4.79c0-5.99 4.92-10.86 11.03-10.86 6.08 0 10.96 4.87 10.96 10.86 0 5.99-4.88 10.49-10.96 10.49z"/>
+    </svg>
+  </a>
 
   <script>
     // Year
