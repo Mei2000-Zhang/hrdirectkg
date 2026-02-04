@@ -3,263 +3,687 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>О компании — HR Direct KG | Визы и трудоустройство за границей | Бишкек</title>
-  <meta name="description" content="HR Direct KG — визовая поддержка и трудоустройство за границей для граждан Кыргызстана.Визы: Шенген, Япония, ОАЭ, Китай. Офис в Бишкеке: Ибраимова 115/3а, 4 этаж, офис 405." />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/" />
+
+  <title>О компании — HR Direct KG | Визы и трудоустройство за границей</title>
+  <meta name="description" content="HR Direct KG — визовая поддержка и трудоустройство за границей для граждан Кыргызстана. Шенген, Япония, ОАЭ, Китай. Офис в Бишкеке." />
+
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/about/" />
   <meta name="robots" content="index, follow">
   <meta name="author" content="HR Direct KG">
   <meta name="publisher" content="HR Direct KG">
 
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/about/" />
+  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/about/" />
+  <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/about/" />
+  <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/about/" />
+
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#0b0b0c; --surface:#111114; --muted:#9aa1ab; --text:#f6f7f9;
-      --brand-1:#ff7a18; --brand-2:#ff9a44; --brand-3:#ffd194;
-      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
-      --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.3);
+      --text:#f6f7f9;
+      --muted:rgba(246,247,249,.82);
+      --glass: rgba(10,12,16,.50);
+      --glass2: rgba(10,12,16,.88);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+
+      --hero-img: url("/hrdirectkg/ben.jpg");
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(255,154,68,.15), transparent 60%),
-        radial-gradient(1000px 500px at 100% 0%, rgba(255,122,24,.18), transparent 55%),
-        var(--bg);
-      line-height:1.55;
+      overflow-x:hidden;
+
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
+
     a{color:inherit; text-decoration:none}
-    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+    .container{width:min(1140px, calc(100% - 32px)); margin:0 auto}
 
-    .topbar{background:#0f0f12; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px}
-    .topbar .wrap{display:flex; gap:16px; justify-content:space-between; align-items:center; padding:8px 0}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06)}
-
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(17,17,20,.8);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.06)
+    /* ===== Topbar ===== */
+    .topbar{
+      position:relative;
+      z-index:70;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .logo{display:flex; align-items:center; gap:12px; font-weight:800}
-    .logo .mark{width:28px; height:28px; border-radius:8px; background:var(--accent-grad); box-shadow:0 6px 14px rgba(255,122,24,.35)}
-
-    /* ✅ МЕНЮ — КАК НА СТРАНИЦЕ ВИЗ (КОМПАКТНОЕ) */
-    .menu{
+    .topbar .row{
       display:flex;
       align-items:center;
-      gap:10px;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      font-size:13.5px;
+      color:rgba(246,247,249,.95);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .topbar a{
+      color:rgba(246,247,249,.98);
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom:1px;
+    }
+    .topbar a:hover{border-bottom-color: rgba(255,255,255,.40);}
+
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
       white-space:nowrap;
+    }
+    .lang a{
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(246,247,249,.90);
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .lang a:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+    }
+    .lang a.active{
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.12);
+      color: var(--text);
+      font-weight:800;
+    }
+
+    /* ===== Header ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:max-content;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .mark{
+      width:32px;height:32px;
+      border-radius:12px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
+
+    .main-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+    .main-nav a{
+      font-weight:700;
+      font-size:14px;
+      color:rgba(246,247,249,.92);
+      position:relative;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:rgba(246,247,249,.85);
+      transition:width .2s ease;
+    }
+    .main-nav a:hover::after{width:100%;}
+    .main-nav a.active::after{width:100%;}
+
+    @media (max-width: 980px){
+      .main-nav{display:none;}
+    }
+
+    /* Burger */
+    .burger{
+      width:46px;height:46px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .burger:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.32);
+      background: rgba(0,0,0,.24);
+    }
+    .burger span{
+      width:18px;height:2px;
+      background: rgba(246,247,249,.92);
+      border-radius: 2px;
+    }
+
+    /* ===== Drawer ===== */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.60);
+      z-index: 90;
+    }
+    .drawer{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(460px, 88vw);
+      background: var(--glass2);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12);
+      z-index: 100;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+    }
+    .drawer.open{ transform: translateX(0); }
+
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-close{
+      width:42px;height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+    }
+
+    .drawer-nav{
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      overflow:auto;
+    }
+    .drawer-nav a{
+      padding: 13px 12px;
+      border-radius: 16px;
+      border:1px solid transparent;
+      color: rgba(246,247,249,.86);
+      font-weight: 800;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .drawer-nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .drawer-nav a.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+
+    .drawer-cta{
+      margin-top:auto;
+      padding: 14px 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .drawer-cta .cta{
+      display:block;
+      text-align:center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--text);
+    }
+    .drawer-cta .cta:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;
+      padding: 56px 0 10px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+      pointer-events:none;
+    }
+    .hero .content{position:relative; z-index:2;}
+
+    .badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      font-weight:900;
       font-size:13px;
-      font-weight:500;
-      min-width:0;
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
-    .menu a{
-      padding:4px 2px;
-      opacity:.9;
-      white-space:nowrap;
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(34px, 4.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 34ch;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
     }
-    .menu a.active{
-      background:rgba(255,255,255,.08);
-      border-radius:8px;
-      opacity:1;
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 92ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
     }
 
-    /* Submenu — как на странице виз */
-.subnav{
-  padding:0 0 12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.submenu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding-top:10px;
-  font-size:12px;                 /* 🔑 ВАЖНО */
-  color:rgba(246,247,249,.86);
-}
-
-.submenu a{
-  padding:6px 8px;                /* 🔑 компактно */
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  white-space:nowrap;
-}
-
-.submenu a:hover{
-  background:rgba(255,255,255,.07);
-}
-
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px; border-radius:12px;
-      background:var(--accent-grad);
-      color:#100a00; font-weight:700;
-      box-shadow:0 10px 24px rgba(255,122,24,.35)
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.02);
+      background: rgba(246,247,249,.98);
     }
 
-    .hero{padding:48px 0}
-    .badge{display:inline-flex; align-items:center; gap:8px; font-weight:600; color:#130c00; background:var(--accent-grad); padding:6px 12px; border-radius:999px}
-    .h1{font-size:clamp(28px,4.1vw,46px); line-height:1.15; margin:14px 0 8px; font-weight:800}
-    .lead{font-size:18px; color:var(--muted)}
-
-    .section{padding:40px 0}
-    .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:18px; border-radius:16px}
-    .grid-2{display:grid; grid-template-columns:1.2fr .8fr; gap:20px}
-
-    /* ✅ FIX: было 1ю0px */
-    .list{display:grid; gap:10px; margin:10px 0 0}
-
-    .points{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-    .point{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:14px; font-size:14px}
-    .cta{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:10px}
-    footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; color:var(--muted)}
-    .map{margin-top:20px; border-radius:12px; overflow:hidden;}
-
-    @media (max-width:900px){
-      .grid-2{grid-template-columns:1fr}
-      .points{grid-template-columns:1fr}
+    /* ===== Content ===== */
+    .section{
+      position:relative;
+      padding: 26px 0 62px;
     }
 
-    /* ✅ чтобы меню не ломало мобилку */
-    @media (max-width:520px){
-      .menu{display:none}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr;}
     }
 
-    /* === Extra mobile tuning === */
-    @media (max-width: 400px){
-      .container{padding-left:12px; padding-right:12px}
-      .h1{font-size:24px; line-height:1.25; word-break:break-word}
-      .lead{font-size:16px}
+    .card{
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+      overflow:hidden;
     }
-    @media (max-width: 360px){
-      .h1{font-size:22px}
+    .card h2{
+      margin:0 0 10px;
+      font-weight: 950;
+      letter-spacing: -0.01em;
+      text-shadow: 0 10px 36px rgba(0,0,0,.55);
     }
+    .meta{
+      color: rgba(246,247,249,.78);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .heroCard{
+      margin-top:16px;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.35);
+    }
+    .points{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 720px){
+      .points{grid-template-columns:1fr;}
+    }
+    .point{
+      padding:12px 12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(246,247,249,.84);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(246,247,249,.78);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .list li{margin:7px 0}
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      padding:24px 0;
+      color:rgba(246,247,249,.70);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    /* ===== Floating WhatsApp (как на contacts) ===== */
+    .wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .wa svg{width:26px;height:26px;fill:#0b0b0c}
   </style>
 </head>
 
 <body>
   <!-- Topbar -->
   <div class="topbar">
-    <div class="container wrap">
-      <div class="chip">+996&nbsp;990&nbsp;24&nbsp;19&nbsp;49</div>
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="tel:+996990241949">+996 990 241 949</a>
+          <span style="opacity:.75"> · </span>
+          <a href="/hrdirectkg/contact/">Ибраимова 115/3а, офис 405</a>
+        </div>
 
-       <!-- clickable language switch -->
-      <div class="lang" aria-label="Выбор языка">
-        <a href="/hrdirectkg/" class="active" aria-current="page">RU</a>
-        <span class="sep">·</span>
-        <a href="/hrdirectkg/kg/">KG</a>
-        <span class="sep">·</span>
-        <a href="/hrdirectkg/en/">EN</a>
+        <div class="lang" aria-label="Переключение языка">
+          <a class="active" href="/hrdirectkg/about/" aria-current="page">RU</a>
+          <a href="/hrdirectkg/kg/about/">KG</a>
+          <a href="/hrdirectkg/en/about/">EN</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Header/Nav -->
+  <!-- Header -->
   <header>
-    <div class="container nav">
-      <div class="logo"><span class="mark"></span><span>HR Direct KG</span></div>
+    <div class="container">
+      <div class="head">
+        <a class="brand" href="/hrdirectkg/">
+          <span class="mark" aria-hidden="true"></span>
+          <span>HR Direct KG</span>
+        </a>
 
-      <nav class="menu">
-        <a href="../#top">Главная</a>
-        <a href="/hrdirectkg/visas/">Визы</a>
-        <a href="/hrdirectkg/insurance/">Страховка для виз</a>
-        <a href="/hrdirectkg/forms/">Заполнение анкет</a>
-        <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
-        <a href="/hrdirectkg/pricing/">Цены</a>
-        <a href="./" class="active">О компании</a>
-      </nav>
-
-      <a class="btn" href="https://wa.me/996990241949?text=Здравствуйте!%20Хочу%20оформить%20визу." target="_blank" rel="noopener">Консультация</a>
-    </div>
-    <div class="subnav">
-      <div class="container">
-        <nav class="submenu" aria-label="Дополнительная навигация">
+        <nav class="main-nav" aria-label="Основная навигация">
+          <a href="/hrdirectkg/visas/">Визы</a>
+          <a href="/hrdirectkg/employment/">Трудоустройство</a>
+          <a href="/hrdirectkg/partners/">Партнёрам</a>
           <a href="/hrdirectkg/faq/">FAQ</a>
           <a href="/hrdirectkg/contact/">Контакты</a>
-          <a href="/hrdirectkg/employment/">Трудоустройство</a>
-          <a href="/hrdirectkg/partners/">Для партнёров</a>
         </nav>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge">О нас</div>
-      <h1 class="h1">HR Direct KG — визовая поддержка и трудоустройство за границей в Бишкеке</h1>
-      <p class="lead">Помогаем гражданам Кыргызстана с оформлением виз и трудоустройством за рубежом: Шенген, Япония, ОАЭ, Китай и другие направления. Прозрачно, быстро, официально.</p>
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <b>Меню</b>
+      <button class="drawer-close" id="close" aria-label="Закрыть">✕</button>
     </div>
-  </section>
 
-  <!-- About content -->
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>Кто мы</h2>
-        <p><strong>HR Direct KG</strong> — компания, предоставляющая визовую поддержку
-  и консультационные услуги по международным поездкам и трудоустройству за рубежом.
-  Мы сопровождаем клиентов на этапах подготовки документов и подачи заявлений.</p>
+    <nav class="drawer-nav" aria-label="Разделы сайта">
+      <a class="active" href="/hrdirectkg/about/">О компании</a>
 
-        <h2>Наш опыт</h2>
-        <p>Работаем со странами Европы (Шенген), Азии (Япония, Китай, ОАЭ). Знаем актуальные требования и типичные ошибки — экономим ваше время и снижаем риск отказа.</p>
+      <a href="/hrdirectkg/visas/">Визы</a>
+      <a href="/hrdirectkg/employment/">Трудоустройство</a>
+      <a href="/hrdirectkg/partners/">Партнёрам</a>
 
+      <a href="/hrdirectkg/insurance/">Страховка</a>
+      <a href="/hrdirectkg/forms/">Анкеты</a>
+      <a href="/hrdirectkg/how-to-get-visa/">Как получить визу</a>
+
+      <a href="/hrdirectkg/pricing/">Цены</a>
+      <a href="/hrdirectkg/faq/">FAQ</a>
+      <a href="/hrdirectkg/contact/">Контакты</a>
+    </nav>
+
+    <div class="drawer-cta">
+      <a class="cta"
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация.%20Услуга:%20Виза/Трудоустройство%20Страна:%20____%20Даты:%20____"
+         target="_blank" rel="noopener">Консультация</a>
+    </div>
+  </aside>
+
+  <!-- HERO -->
+  <main class="hero" role="main">
+    <div class="container content">
+      <span class="badge">О компании</span>
+      <h1>HR Direct KG — визовая поддержка и трудоустройство за границей</h1>
+      <p class="lead">
+        Помогаем гражданам Кыргызстана спокойно и правильно подготовить документы —
+        для виз (Шенген, Япония, ОАЭ, Китай) и для легального трудоустройства за рубежом.
+      </p>
+
+      <div class="heroCard">
+        <strong>Что вы получаете:</strong>
         <div class="points">
-          <div class="point">Шенген — туристические, гостевые, деловые визы</div>
-          <div class="point">Япония — пакет под консульство, переводы, брони</div>
-          <div class="point">ОАЭ и Китай — электронные/бизнес/туристические визы</div>
-          <div class="point">Европа, Турция, Россия — трудоустройство в отелях, на заводах и в строительстве</div>                                                                       
+          <div class="point">• Пошаговый план (без хаоса)</div>
+          <div class="point">• Проверка данных и документов (без противоречий)</div>
+          <div class="point">• Честные сроки и требования</div>
+          <div class="point">• Поддержка от начала до результата</div>
         </div>
       </div>
 
-      <div class="card">
-        <h2>Миссия</h2>
-        <p>Сделать международные поездки и трудоустройство за границей понятными и честными:
-    без «магии», с прозрачными сроками и шагами. Вы занимаетесь целями — мы берём на себя документы и бюрократию.
- .</p>
-
-        <h2>Контакты</h2>
-        <div class="list">
-          <div>Адрес: г. Бишкек, ул. Ибраимова 115/3а, 4 этаж, офис 405</div>
-          <div>Телефон / WhatsApp: <a href="https://wa.me/996990241949" target="_blank" rel="noopener">+996 990 241 949</a></div>
-          <div>Email: <a href="mailto:officehhrdirectkg@gmail.com">officehhrdirectkg@gmail.com</a></div>
-        </div>
-
-        <div class="cta">
-          <a class="btn" href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация%20по%20визе." target="_blank" rel="noopener">Написать в WhatsApp</a>
-        </div>
+      <div class="actions">
+        <a class="btn primary" href="/hrdirectkg/contact/">Связаться</a>
+        <a class="btn" href="/hrdirectkg/pricing/">Посмотреть цены</a>
+        <a class="btn" href="/hrdirectkg/visas/">Выбрать визу</a>
       </div>
+
+      <p class="meta" style="margin-top:14px">
+        Важно: финальное решение всегда принимает посольство/консульство. Мы помогаем подготовить аккуратный и соответствующий требованиям пакет.
+      </p>
     </div>
-  </section>
+  </main>
 
-  <!-- Map -->
+  <!-- CONTENT -->
   <section class="section">
     <div class="container">
-      <h2>Наш офис</h2>
-      <p>Мы находимся в центре Бишкека. Перед визитом лучше написать в WhatsApp — подберём удобное время.</p>
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.123!2d74.588!3d42.872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec824!2z0YPQuy4g0JrQu9Cw0YHQutC-0LPQviAxMTUvM8KgLCDQkNC70LXRgNC90YvQuSwg0JrRg9GA0LPRgNCw0L3RgiA!5e0!3m2!1sru!2skg!4v0000000000000"
-          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+      <div class="grid">
+
+        <div class="card">
+          <h2>Кто мы</h2>
+          <p class="meta">
+            <strong>HR Direct KG</strong> — консультативная компания в Бишкеке по визовым вопросам и зарубежному трудоустройству.
+            Наша задача — сделать процесс организованным: корректные анкеты, согласованные документы и реалистичные ожидания.
+          </p>
+
+          <h2 style="margin-top:18px">Что мы делаем</h2>
+          <ul class="list">
+            <li>Консультация по визе и стратегии (под цель и документы)</li>
+            <li>Заполнение анкет и проверка данных</li>
+            <li>Страховка под даты поездки и требования</li>
+            <li>Помощь с бронированиями и структурой пакета (при необходимости)</li>
+            <li>Консультации по трудоустройству и координация процесса</li>
+          </ul>
+
+          <h2 style="margin-top:18px">Направления</h2>
+          <div class="points">
+            <div class="point">• Шенген — туризм, бизнес, частные визиты</div>
+            <div class="point">• Япония — пакет документов, логика и согласованность</div>
+            <div class="point">• ОАЭ (Дубай) — сопровождение подачи e-visa</div>
+            <div class="point">• Китай — туризм/бизнес, консультации по приглашениям</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Почему выбирают нас</h2>
+          <ul class="list">
+            <li>Мы не обещаем “100% одобрение” — мы обещаем точность</li>
+            <li>Ловим типичные ошибки до подачи</li>
+            <li>Честно объясняем, что реально в вашем кейсе</li>
+            <li>Держим коммуникацию простой и понятной</li>
+          </ul>
+
+          <h2 style="margin-top:18px">Офис и контакты</h2>
+          <p class="meta">
+            Адрес: Бишкек, ул. Ибраимова 115/3а, 4 этаж, офис 405<br>
+            Телефон/WhatsApp:
+            <a href="https://wa.me/996990241949" target="_blank" rel="noopener"><u>+996 990 241 949</u></a><br>
+            Email: <a href="mailto:officehhrdirectkg@gmail.com"><u>officehhrdirectkg@gmail.com</u></a>
+          </p>
+
+          <div class="actions">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация.%20Услуга:%20Виза/Трудоустройство%20Страна:%20____%20Даты:%20____"
+               target="_blank" rel="noopener">Написать в WhatsApp</a>
+            <a class="btn" href="/hrdirectkg/contact/">Страница контактов</a>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      © <span id="year"></span> HR Direct KG — визовая поддержка и трудоусройство за границей. Все права защищены.
+      © <span id="year"></span> HR Direct KG — визовая поддержка и трудоустройство за границей.
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Floating WhatsApp -->
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация.%20Услуга:%20Виза/Трудоустройство%20Страна:%20____%20Даты:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Drawer
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('close');
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      backdrop.hidden = false;
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      backdrop.hidden = true;
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
+  </script>
 </body>
 </html>
