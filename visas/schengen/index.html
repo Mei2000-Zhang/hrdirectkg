@@ -369,7 +369,32 @@
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.10);
       transition:.18s ease;
-    }
+   }
+    .country-france{
+  background-image: url("/hrdirectkg/assets/france/france-banner.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* затемнение чтобы текст читался */
+.country-france::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.3) 0%,
+      rgba(0,0,0,.6) 100%
+  );
+}
+
+.country-france > *{
+  position:relative;
+  z-index:2;
+}
+
     .country-card:hover{
       transform: translateY(-1px);
       background:rgba(255,255,255,.07);
@@ -541,11 +566,15 @@
         <p class="note">Коротко и по делу — выберите направление.</p>
 
         <div class="grid">
-          <a class="country-card" href="/hrdirectkg/visas/schengen/france/">
-          <div class="flag">FR</div>
-          <strong>Франция</strong>
-          <div class="meta">Туризм, гости</div>
-        </a>
+          <a class="country-card country-france"
+             href="/hrdirectkg/visas/schengen/france/">
+
+            <div class="flag">Франция</div>
+            <strong>Франция</strong>
+            <div class="meta">Туризм, гости</div>
+
+         </a>
+
 
           <div class="country-card">
             <div class="flag">🇩🇪</div>
