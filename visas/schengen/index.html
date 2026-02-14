@@ -370,55 +370,35 @@
       border:1px solid rgba(255,255,255,.10);
       transition:.18s ease;
    }
-    .country-france{
+    /* ===== Франция (баннер только внутри карточки) ===== */
+.country-card.country-france{
   background-image: url("/hrdirectkg/assets/france/france-banner.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* затемнение чтобы текст читался */
-.country-france::before{
+.country-card.country-france::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-      180deg,
-      rgba(0,0,0,.3) 0%,
-      rgba(0,0,0,.6) 100%
-  );
+  background:linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.60) 100%);
+  z-index:1;
 }
 
-.country-france > *{
-  position:relative;
-  z-index:2;
-}
-   .country-germany{
+/* ===== Германия (баннер только внутри карточки) ===== */
+.country-card.country-germany{
   background-image: url("/hrdirectkg/assets/germany/germany-banner.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* затемнение чтобы текст читался */
-.country-germany::before{
+.country-card.country-germany::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-      180deg,
-      rgba(0,0,0,.3) 0%,
-      rgba(0,0,0,.6) 100%
-  );
+  background:linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.60) 100%);
+  z-index:1;
 }
-
-.country-germany > *{
-  position:relative;
-  z-index:2;
-}
- 
     .country-card:hover{
       transform: translateY(-1px);
       background:rgba(255,255,255,.07);
@@ -595,7 +575,6 @@
            
             <strong>Франция</strong>
             <div class="meta">Туризм, гости</div>
-
          </a>
 
 
@@ -604,7 +583,7 @@
             
             <strong>Германия</strong>
             <div class="meta">Туризм, гости</div>
-          </div>
+          </a>
 
           <div class="country-card">
             <div class="flag">🇪🇸</div>
