@@ -394,7 +394,31 @@
   position:relative;
   z-index:2;
 }
+   .country-germany{
+  background-image: url("/hrdirectkg/assets/germany/germany-banner.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
 
+/* затемнение чтобы текст читался */
+.country-germany::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.3) 0%,
+      rgba(0,0,0,.6) 100%
+  );
+}
+
+.country-germany > *{
+  position:relative;
+  z-index:2;
+}
+ 
     .country-card:hover{
       transform: translateY(-1px);
       background:rgba(255,255,255,.07);
@@ -575,10 +599,11 @@
          </a>
 
 
-          <div class="country-card">
-            <div class="flag">🇩🇪</div>
+          <a class="country-card country-germany"
+             href="/hrdirectkg/visas/schengen/germany/"
+            
             <strong>Германия</strong>
-            <div class="meta">Чёткая логика пакета</div>
+            <div class="meta">Туризм, гости</div>
           </div>
 
           <div class="country-card">
