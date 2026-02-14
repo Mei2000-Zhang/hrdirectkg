@@ -442,6 +442,21 @@
   border:1px solid rgba(255,255,255,.18);
 }
 .wa svg{width:26px;height:26px;fill:#0b0b0c}
+
+    .visa-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.flag{
+  width:24px;
+  height:24px;
+  object-fit:cover;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  flex-shrink:0;
+}
   </style>
 </head>
 
@@ -536,25 +551,39 @@
         <h2 class="h2">Направления виз</h2>
         <p class="note">Кликайте — откроется страница с полной информацией.</p>
 
-        <div class="visa-list">
           <a class="visa-link" href="/hrdirectkg/visas/schengen/">
+            <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/eu.jpeg" class="flag" alt="EU">
             <span>Шенгенская виза</span>
-            <span class="visa-meta">Франция, Германия, Италия… →</span>
-          </a>
+          </div>
+          <span class="visa-meta">Франция, Германия, Италия… →</span>
+        </a>
+
 
           <a class="visa-link" href="/hrdirectkg/visas/china/">
+           <div class="visa-left">
+            <img src="/hrdirectkg/assets/flags/cn.jpg" class="flag" alt="China">
             <span>Виза в Китай</span>
-            <span class="visa-meta">туризм / бизнес →</span>
-          </a>
+          </div>
+          <span class="visa-meta">туризм / бизнес →</span>
+         </a>
+
 
           <a class="visa-link" href="/hrdirectkg/visas/japan/">
-            <span>Виза в Японию</span>
-            <span class="visa-meta">туризм →</span>
-          </a>
+            <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/jp.jpeg" class="flag" alt="Japan">
+             <span>Виза в Японию</span>
+           </div>
+           <span class="visa-meta">туризм →</span>
+         </a>
+
 
           <a class="visa-link" href="/hrdirectkg/visas/dubai/">
-            <span>Виза в Дубай (ОАЭ)</span>
-            <span class="visa-meta">туризм →</span>
+           <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/ae.png" class="flag" alt="UAE">
+             <span>Виза в Дубай (ОАЭ)</span>
+           </div>
+           <span class="visa-meta">туризм →</span>
           </a>
         </div>
       </section>
