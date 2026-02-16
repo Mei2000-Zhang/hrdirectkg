@@ -354,6 +354,58 @@
   border:1px solid rgba(255,255,255,.18);
 }
 .wa svg{width:26px;height:26px;fill:#0b0b0c}
+
+    /* ===== Visa types (Japan) — нормальные карточки с документами ===== */
+.types-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+@media (max-width: 820px){
+  .types-grid{grid-template-columns: 1fr;}
+}
+
+.type-card{
+  padding:16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.type-top{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:8px;
+}
+.type-ico{font-size:20px; line-height:1;}
+.type-title{
+  font-weight:900;
+  font-size:16px;
+  margin:0;
+}
+.type-sub{
+  margin:4px 0 0;
+  color:rgba(246,247,249,.78);
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+.type-list{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:rgba(246,247,249,.88);
+  line-height:1.7;
+  font-size:14px;
+}
+.type-list li{margin:6px 0;}
+
+.small-note{
+  margin-top:10px;
+  color:rgba(246,247,249,.72);
+  font-size:13.5px;
+}
   </style>
 </head>
 
@@ -449,15 +501,53 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Частые вопросы</h2>
-      <div class="grid">
-        <div class="mini">🧳 Цель поездки — логика маршрута</div>
-        <div class="mini">📝 Анкета без противоречий</div>
-        <div class="mini">🏨 Подходящие брони</div>
-        <div class="mini">⏳ Сроки без спешки</div>
+    <section class="card" aria-label="Типы виз в Японию">
+  <h2>Типы виз в Японию</h2>
+  <p class="lead" style="margin-top:6px;">
+    Для граждан Кыргызстана чаще всего оформляют <b>туристическую</b> визу.
+    По ситуации может подойти <b>гостевая</b> (если едете к друзьям/родным).
+  </p>
+
+  <div class="types-grid">
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Туристическая виза</p>
+          <p class="type-sub">Для путешествий, экскурсий и отдыха — без посещения по приглашению.</p>
+        </div>
       </div>
-    </section>
+
+      <ul class="type-list">
+        <li>загранпаспорт</li>
+        <li>анкета (поможем заполнить)</li>
+        <li>фото по требованиям</li>
+        <li>план поездки / маршрут</li>
+        <li>брони проживания (по ситуации)</li>
+        <li>финансы: выписка/подтверждение средств (по ситуации)</li>
+      </ul>
+
+      <div class="small-note">*Точный список зависит от вашей занятости и истории поездок.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Гостевая (по приглашению)</p>
+          <p class="type-sub">Если едете к друзьям/родственникам — пакет строится вокруг приглашающей стороны.</p>
+        </div>
+      </div>
+
+      <ul class="type-list">
+        <li>загранпаспорт + анкета + фото</li>
+        <li>приглашение / письмо от принимающей стороны (если требуется)</li>
+        <li>документы приглашающей стороны (по ситуации)</li>
+        <li>подтверждение связи и цели визита (по ситуации)</li>
+      </ul>
+
+      <div class="small-note">*Если приглашения нет — скажем, как лучше оформить туристическую.</div>
+    </div>
+  </div>
+</section>
 
     <div class="actions">
       <a class="btn primary"
