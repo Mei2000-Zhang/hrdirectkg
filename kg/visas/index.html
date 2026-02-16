@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ky">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Визалар — Шенген, Кытай, Япония, Дубай | HR Direct KG</title>
-  <meta name="description" content="Виза багытын тандаңыз: Шенген, Кытай, Япония, Дубай (БАЭ). HR Direct KG — анкета, камсыздандыруу, тапшырууга жазуу жана коштоо. Бишкек." />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/kg/visas/" />
+  <meta name="description" content="Виза багытын тандаңыз: Шенген, Кытай, Япония, Дубай (БАЭ). HR Direct KG — анкета, камсыздандыруу, жазылуу жана коштоо. Бишкек." />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/visas/" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="HR Direct KG" />
   <meta name="publisher" content="HR Direct KG" />
-  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
 
+  <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -27,7 +27,7 @@
       --line:rgba(255,255,255,.12);
       --radius:18px;
 
-      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
+      /* ✅ фон-картинка (как у тебя на главной) */
       --hero-img: url("/hrdirectkg/ben.jpg");
     }
 
@@ -38,8 +38,8 @@
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       overflow-x:hidden;
-      line-height:1.55;
 
+      /* ✅ фон на эту страницу (визы) */
       background-image: var(--hero-img);
       background-size: cover;
       background-position: center;
@@ -137,6 +137,7 @@
       flex:0 0 auto;
     }
 
+    /* ===== Main navigation ===== */
     .main-nav{
       display:flex;
       gap:22px;
@@ -159,7 +160,7 @@
       background:rgba(246,247,249,.85);
       transition:width .2s ease;
     }
-    .main-nav a:hover::after{width:100%;}
+    .main-nav a:hover::after{width:100%}
 
     @media (max-width: 980px){
       .main-nav{display:none;}
@@ -190,6 +191,157 @@
       background: rgba(246,247,249,.92);
       border-radius: 2px;
     }
+
+    /* ===== Page content wrapper ===== */
+    main.page{
+      position:relative;
+      padding: 44px 0 70px;
+    }
+    /* общий затемняющий слой, чтобы текст читался на фоне */
+    main.page::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.66) 60%, rgba(0,0,0,.82) 100%);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .card{
+      background: var(--glass);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    /* ===== Text styles (как на главной) ===== */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: rgba(246,247,249,.95);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      backdrop-filter: blur(12px);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .badge .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: rgba(246,247,249,.90);
+      box-shadow: 0 0 0 6px rgba(246,247,249,.08);
+    }
+
+    h1{
+      margin:18px 0 12px;
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.75;
+      max-width: 72ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+      white-space:nowrap;
+      backdrop-filter: blur(12px);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,.28);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: rgba(246,247,249,.94);
+      color:#0b0b0c;
+      border-color: rgba(246,247,249,.92);
+      backdrop-filter: none;
+    }
+    .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
+
+    /* ===== визовые карточки ===== */
+    .section{
+      margin-top: 22px;
+      padding: 18px;
+    }
+    .h2{
+      margin:0 0 6px;
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
+    .note{
+      margin:0 0 14px;
+      color: rgba(246,247,249,.78);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .visa-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width: 560px;
+    }
+    .visa-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:800;
+      transition:.18s ease;
+    }
+    .visa-link:hover{
+      transform: translateY(-1px);
+      background:rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.16);
+    }
+    .visa-meta{
+      color:rgba(246,247,249,.72);
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+    }
+
+    /* anchor offset for sticky header */
+    #directions{scroll-margin-top:120px;}
 
     /* ===== Drawer ===== */
     .drawer-backdrop{
@@ -274,145 +426,7 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Page ===== */
-    main.page{
-      position:relative;
-      padding: 44px 0 72px;
-    }
-    main.page::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.66) 60%, rgba(0,0,0,.82) 100%);
-      pointer-events:none;
-      z-index:-1;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.22);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      backdrop-filter: blur(12px);
-      text-shadow: 0 12px 40px rgba(0,0,0,.55);
-    }
-    .badge .dot{
-      width:8px;height:8px;border-radius:999px;
-      background: rgba(246,247,249,.90);
-      box-shadow: 0 0 0 6px rgba(246,247,249,.08);
-    }
-
-    h1{
-      margin:18px 0 12px;
-      font-size: clamp(28px, 4.2vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      text-shadow: 0 14px 44px rgba(0,0,0,.60);
-    }
-    .lead{
-      margin:0;
-      color: var(--muted);
-      font-size:16px;
-      line-height:1.75;
-      max-width: 78ch;
-      text-shadow: 0 12px 40px rgba(0,0,0,.50);
-    }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:22px;
-      align-items:center;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:16px;
-      font-weight:900;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
-      white-space:nowrap;
-      backdrop-filter: blur(12px);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(0,0,0,.28);
-      border-color: rgba(255,255,255,.26);
-    }
-    .btn.primary{
-      background: rgba(246,247,249,.94);
-      color:#0b0b0c;
-      border-color: rgba(246,247,249,.92);
-      backdrop-filter: none;
-    }
-    .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
-
-    /* Visa list (kept your content, rest styled like main) */
-    .card{
-      margin-top:18px;
-      background: var(--glass);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
-    }
-    .cardPad{padding:18px}
-
-    .h2{margin:0; font-size:20px}
-    .note{margin:8px 0 0; color:rgba(246,247,249,.72); font-size:14px}
-
-    .visa-list{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      margin-top:14px;
-      max-width:560px;
-    }
-    .visa-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 16px;
-      border-radius:16px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      font-weight:750;
-      transition:.18s ease;
-    }
-    .visa-link:hover{
-      transform: translateY(-1px);
-      background:rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.16);
-    }
-    .visa-meta{color:rgba(246,247,249,.70); font-size:13px; font-weight:600; white-space:nowrap}
-
-    #directions{scroll-margin-top:140px;}
-
-    footer{
-      margin-top:26px;
-      padding:18px 0;
-      color:rgba(246,247,249,.70);
-      border-top:1px solid rgba(255,255,255,.10);
-      font-size:14px;
-    }
-
-    /* ===== Floating WhatsApp (серый круг) ===== */
+       /* ===== Floating WhatsApp (серый круг) ===== */
 .wa{
   position:fixed;
   right:16px;
@@ -429,6 +443,20 @@
 }
 .wa svg{width:26px;height:26px;fill:#0b0b0c}
 
+    .visa-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.flag{
+  width:24px;
+  height:24px;
+  object-fit:cover;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  flex-shrink:0;
+}
   </style>
 </head>
 
@@ -440,13 +468,13 @@
         <div>
           <a href="tel:+996990241949">+996 990 241 949</a>
           <span style="opacity:.75"> · </span>
-          <a href="/hrdirectkg/kg/contact/">Ибраимова 115/3а, офис 405</a>
+          <a href="/hrdirectkg/contact/">Ибраимова 115/3а, кеңсе 405</a>
         </div>
 
         <div class="lang" aria-label="Тилди тандоо">
-          <a href="/hrdirectkg/visas/">RU</a>
-          <a href="/hrdirectkg/kg/visas/" class="active" aria-current="page">KG</a>
-          <a href="/hrdirectkg/en/visas/">EN</a>
+          <a href="/hrdirectkg/">RU</a>
+          <a href="/hrdirectkg/kg/" class="active">KG</a>
+          <a href="/hrdirectkg/en/">EN</a>
         </div>
       </div>
     </div>
@@ -456,17 +484,17 @@
   <header>
     <div class="container">
       <div class="head">
-        <a class="brand" href="/hrdirectkg/kg/">
+        <a class="brand" href="/hrdirectkg/">
           <span class="mark" aria-hidden="true"></span>
           <span>HR Direct KG</span>
         </a>
 
         <nav class="main-nav" aria-label="Негизги меню">
-          <a href="/hrdirectkg/kg/visas/">Визалар</a>
-          <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
-          <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
-          <a href="/hrdirectkg/kg/faq/">FAQ</a>
-          <a href="/hrdirectkg/kg/contact/">Байланыш</a>
+          <a href="/hrdirectkg/visas/">Визалар</a>
+          <a href="/hrdirectkg/employment/">Ишке орноштуруу</a>
+          <a href="/hrdirectkg/partners/">Өнөктөштөргө</a>
+          <a href="/hrdirectkg/faq/">FAQ</a>
+          <a href="/hrdirectkg/contact/">Байланыш</a>
         </nav>
 
         <button class="burger" id="burger" aria-label="Менюну ачуу" aria-controls="drawer" aria-expanded="false">
@@ -486,40 +514,32 @@
     </div>
 
     <nav class="drawer-nav" aria-label="Сайт бөлүмдөрү">
-      <a href="/hrdirectkg/kg/about/">Компания жөнүндө</a>
+      <a href="/hrdirectkg/about/">Компания жөнүндө</a>
+      <a href="/hrdirectkg/visas/">Визалар</a>
+      <a href="/hrdirectkg/employment/">Ишке орноштуруу</a>
+      <a href="/hrdirectkg/partners/">Өнөктөштөр үчүн</a>
 
-      <a href="/hrdirectkg/kg/visas/">Визалар</a>
-      <a href="/hrdirectkg/kg/visas/schengen/">Шенген</a>
-      <a href="/hrdirectkg/kg/visas/china/">Кытай</a>
-      <a href="/hrdirectkg/kg/visas/dubai/">Дубай</a>
-      <a href="/hrdirectkg/kg/visas/japan/">Жапония</a>
+      <a href="/hrdirectkg/insurance/">Камсыздандыруу</a>
+      <a href="/hrdirectkg/forms/">Анкеталар</a>
+      <a href="/hrdirectkg/how-to-get-visa/">Визаны кантип алуу</a>
 
-      <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
-      <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
-
-      <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
-      <a href="/hrdirectkg/kg/forms/">Анкеталар</a>
-      <a href="/hrdirectkg/kg/how-to-get-visa/">Визаны кантип алуу</a>
-
-      <a href="/hrdirectkg/kg/pricing/">Баалар</a>
-      <a href="/hrdirectkg/kg/faq/">FAQ</a>
-      <a href="/hrdirectkg/kg/contact/">Байланыш</a>
+      <a href="/hrdirectkg/pricing/">Баалар</a>
+      <a href="/hrdirectkg/faq/">FAQ</a>
+      <a href="/hrdirectkg/contact/">Байланыш</a>
     </nav>
 
     <div class="drawer-cta">
-      <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener">WhatsApp консультация</a>
+      <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener">WhatsApp аркылуу кеңеш алуу</a>
     </div>
   </aside>
 
-  <!-- Content -->
+  <!-- Page content (твой текст сохранён) -->
   <main class="page" role="main">
     <div class="container">
-
-      <!-- kept your text -->
       <span class="badge"><span class="dot" aria-hidden="true"></span>Визалар</span>
       <h1>Багытты тандаңыз</h1>
       <p class="lead">
-        Төмөндө негизги багыттар көрсөтүлгөн. Керектүүсүн бассаңыз — визанын толук маалыматы бар бет ачылат.
+        Төмөндө негизги багыттар көрсөтүлгөн. Керектүүсүн бассаңыз — ошол виза боюнча толук маалымат бар бет ачылат.
       </p>
 
       <div class="actions">
@@ -527,50 +547,50 @@
         <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Суроо берүү</a>
       </div>
 
-      <section class="card" id="directions" aria-label="Виза багыттары" style="margin-top:18px;">
-        <div class="cardPad">
-          <h2 class="h2">Виза багыттары</h2>
-          <p class="note">Басыңыз — толук маалымат барагы ачылат.</p>
+      <section class="card section" id="directions" aria-label="Виза багыттары">
+        <h2 class="h2">Виза багыттары</h2>
+        <p class="note">Бассаңыз — толук маалымат бар баракча ачылат.</p>
 
-            <a class="visa-link" href="/hrdirectkg/visas/schengen/">
-              <div class="visa-left">
-               <img src="/hrdirectkg/assets/flags/eu.jpeg" class="flag" alt="EU">
-              <span>Шенген визасы</span>
-            </div>
-              <span class="visa-meta">Германия, Венгрия… →</span>
-            </a>
+          <a class="visa-link" href="/hrdirectkg/visas/schengen/">
+            <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/eu.jpeg" class="flag" alt="EU">
+            <span>Шенген визасы</span>
+          </div>
+          <span class="visa-meta">Германия, Венгрия… →</span>
+        </a>
 
-            <a class="visa-link" href="/hrdirectkg/kg/visas/china/">
-              <div class="visa-left">
-               <img src="/hrdirectkg/assets/flags/cn.jpg" class="flag" alt="China">
-               <span>Кытай визасы</span>
-            </div>
-              <span class="visa-meta">туризм / бизнес →</span>
-            </a>
 
-            <a class="visa-link" href="/hrdirectkg/kg/visas/japan/">
-              <div class="visa-left">
-               <img src="/hrdirectkg/assets/flags/jp.jpeg" class="flag" alt="Japan">
-               <span>Япония визасы</span>
-            </div>
-              <span class="visa-meta">туризм →</span>
-            </a>
+          <a class="visa-link" href="/hrdirectkg/visas/china/">
+           <div class="visa-left">
+            <img src="/hrdirectkg/assets/flags/cn.jpg" class="flag" alt="China">
+            <span>Кытай визасы</span>
+          </div>
+          <span class="visa-meta">туризм / бизнес →</span>
+         </a>
 
-            <a class="visa-link" href="/hrdirectkg/kg/visas/dubai/">
-                <div class="visa-left">
-                  <img src="/hrdirectkg/assets/flags/ae.png" class="flag" alt="UAE">
-              <span>Дубай (БАЭ) визасы</span>
-              </div>
-              <span class="visa-meta">туризм →</span>
-            </a>
+
+          <a class="visa-link" href="/hrdirectkg/visas/japan/">
+            <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/jp.jpeg" class="flag" alt="Japan">
+             <span>Япония визасы</span>
+           </div>
+           <span class="visa-meta">туризм →</span>
+         </a>
+
+
+          <a class="visa-link" href="/hrdirectkg/visas/dubai/">
+           <div class="visa-left">
+             <img src="/hrdirectkg/assets/flags/ae.png" class="flag" alt="UAE">
+             <span>Дубайга (БАЭ) виза</span>
+           </div>
+           <span class="visa-meta">туризм →</span>
+          </a>
         </div>
       </section>
     </div>
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
     const burger = document.getElementById('burger');
     const drawer = document.getElementById('drawer');
     const backdrop = document.getElementById('backdrop');
@@ -601,14 +621,14 @@
     });
   </script>
 
- <!-- Floating WhatsApp (KG) -->
-<a class="wa"
-   href="https://wa.me/996990241949?text=Салам!%20Мага%20кеңеш%20керек.%20Кызмат:%20Виза/Жумушка%20жайгашуу%20Өлкө:%20____%20Даталар:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
+   <!-- Floating WhatsApp -->
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Саламатсызбы!%20Кеңеш%20керек.%20Кызмат:%20Виза/%20Ишке%20орноштуруу%20Өлкө:%20____%20Даталар:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
 </body>
 </html>
