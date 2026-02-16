@@ -351,6 +351,55 @@
 }
 .wa svg{width:26px;height:26px;fill:#0b0b0c}
 
+    /* ===== Types (улучшенная сетка + нормальные карточки) ===== */
+.types-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+@media (max-width: 820px){
+  .types-grid{grid-template-columns: 1fr;}
+}
+
+.type-card{
+  padding:16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+}
+.type-top{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:8px;
+}
+.type-ico{font-size:20px; line-height:1;}
+.type-title{
+  font-weight:900;
+  font-size:16px;
+  margin:0;
+}
+.type-sub{
+  margin:4px 0 0;
+  color:rgba(246,247,249,.78);
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+.type-list{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:rgba(246,247,249,.88);
+  line-height:1.7;
+  font-size:14px;
+}
+.type-list li{margin:6px 0;}
+.small-note{
+  margin-top:10px;
+  color:rgba(246,247,249,.72);
+  font-size:13.5px;
+}
   </style>
 </head>
 
@@ -445,15 +494,56 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Типы виз</h2>
-      <div class="grid">
-        <div class="mini">🧳 Туристическая виза</div>
-        <div class="mini">💼 Бизнес-виза</div>
-        <div class="mini">📄 Приглашение</div>
-        <div class="mini">🩺 Страховка</div>
+    <section class="card" aria-label="Типы виз в Китай">
+  <h2>Типы виз в Китай</h2>
+  <p class="lead" style="margin-top:6px;">
+    Два самых частых варианта: туризм и бизнес. Подскажем, какой подходит по цели поездки.
+  </p>
+
+  <div class="types-grid">
+    <div class="type-card">
+      <div class="type-top">
+        <div class="type-ico">🧳</div>
+        <div>
+          <p class="type-title">Туристическая виза</p>
+          <p class="type-sub">Для поездок, экскурсий, отдыха и личных визитов без деловой деятельности.</p>
+        </div>
       </div>
-    </section>
+
+      <ul class="type-list">
+        <li>загранпаспорт + фото</li>
+        <li>анкета (поможем заполнить)</li>
+        <li>подтверждение маршрута/проживания (брони)</li>
+        <li>финансы: выписка/подтверждение средств (по ситуации)</li>
+      </ul>
+
+      <div class="small-note">*Точный список зависит от кейса и требований подачи.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-top">
+        <div class="type-ico">💼</div>
+        <div>
+          <p class="type-title">Бизнес-виза</p>
+          <p class="type-sub">Для переговоров, выставок, встреч с партнёрами, командировок.</p>
+        </div>
+      </div>
+
+      <ul class="type-list">
+        <li>загранпаспорт + фото</li>
+        <li>анкета</li>
+        <li><b>приглашение</b> от китайской стороны (если требуется)</li>
+        <li>документы по занятости/компании (по ситуации)</li>
+      </ul>
+
+      <div class="small-note">*Если приглашения нет — объясним варианты, что можно сделать.</div>
+    </div>
+  </div>
+
+  <div class="small-note" style="margin-top:14px;">
+    <b>Важно:</b> “Приглашение” и “страховка” — это не типы виз. Это дополнительные элементы, которые могут понадобиться в зависимости от вашей ситуации.
+  </div>
+</section>
 
     <div class="actions">
       <a class="btn primary"
