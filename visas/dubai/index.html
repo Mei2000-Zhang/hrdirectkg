@@ -348,6 +348,57 @@
   border:1px solid rgba(255,255,255,.18);
 }
 .wa svg{width:26px;height:26px;fill:#0b0b0c}
+    /* ===== Visa types (Dubai/UAE) — карточки с документами ===== */
+.types-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+@media (max-width: 820px){
+  .types-grid{grid-template-columns: 1fr;}
+}
+
+.type-card{
+  padding:16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.type-top{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:8px;
+}
+.type-ico{font-size:20px; line-height:1;}
+.type-title{
+  font-weight:900;
+  font-size:16px;
+  margin:0;
+}
+.type-sub{
+  margin:4px 0 0;
+  color:rgba(246,247,249,.78);
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+.type-list{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:rgba(246,247,249,.88);
+  line-height:1.7;
+  font-size:14px;
+}
+.type-list li{margin:6px 0;}
+
+.small-note{
+  margin-top:10px;
+  color:rgba(246,247,249,.72);
+  font-size:13.5px;
+}
   </style>
 </head>
 
@@ -443,15 +494,86 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Как проходит оформление</h2>
-      <div class="grid">
-        <div class="mini">📩 Вы пишете нам</div>
-        <div class="mini">🧾 Проверяем документы</div>
-        <div class="mini">🖥️ Подаём онлайн</div>
-        <div class="mini">✅ Получаете визу</div>
+   <section class="card" aria-label="Типы виз в ОАЭ и документы">
+  <h2>Типы виз в ОАЭ (электронная)</h2>
+  <p class="lead" style="margin-top:6px;">
+    ОАЭ оформляется онлайн. Мы подбираем срок под вашу поездку и проверяем документы,
+    чтобы не было отказа из-за мелочей.
+  </p>
+
+  <div class="types-grid">
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Туристическая e-виза (короткая)</p>
+          <p class="type-sub">Для отдыха, поездки в Дубай/Абу-Даби, без работы.</p>
+        </div>
       </div>
-    </section>
+
+      <ul class="type-list">
+        <li>скан загранпаспорта</li>
+        <li>фото (как на документы)</li>
+        <li>контакты и данные поездки (даты)</li>
+        <li>при необходимости: бронь отеля/билеты</li>
+      </ul>
+
+      <div class="small-note">*Срок и формат уточним на консультации — под ваш маршрут.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Туристическая e-виза (дольше)</p>
+          <p class="type-sub">Если планируете поездку подольше или с запасом по датам.</p>
+        </div>
+      </div>
+
+      <ul class="type-list">
+        <li>скан загранпаспорта</li>
+        <li>фото</li>
+        <li>даты поездки + город/адрес проживания</li>
+        <li>при необходимости: бронь/маршрут</li>
+      </ul>
+
+      <div class="small-note">*Подскажем оптимальный вариант, чтобы не переплачивать.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Семейная подача</p>
+          <p class="type-sub">Если едете вместе — важно правильно связать заявки.</p>
+        </div>
+      </div>
+
+      <ul class="type-list">
+        <li>паспорта и фото всех заявителей</li>
+        <li>данные поездки</li>
+        <li>при необходимости: подтверждение родства</li>
+      </ul>
+
+      <div class="small-note">*Чтобы не было “разрыва” по статусам у членов семьи.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-top">
+        <div>
+          <p class="type-title">Проверка перед подачей</p>
+          <p class="type-sub">Если документы уже есть — мы просто проверим и скажем, что исправить.</p>
+        </div>
+      </div>
+
+      <ul class="type-list">
+        <li>паспорт/фото</li>
+        <li>ваши данные</li>
+        <li>проверка качества сканов</li>
+        <li>проверка написания ФИО/номеров</li>
+      </ul>
+
+      <div class="small-note">*90% проблем — это “не тот формат/не так написали”, и мы это ловим.</div>
+    </div>
+  </div>
+</section>
 
     <div class="actions">
       <a class="btn primary"
