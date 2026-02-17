@@ -4,19 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>HR Direct KG — Visas and overseas employment</title>
-  <meta name="description" content="HR Direct KG — visas and overseas employment for citizens of Kyrgyzstan. Applications, insurance, appointment booking, forms, and support. Bishkek." />
-  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/" />
-
+  <title>Visas — Schengen, China, Japan, Dubai | HR Direct KG</title>
+  <meta name="description" content="Choose your visa destination: Schengen, China, Japan, Dubai (UAE). HR Direct KG — forms, insurance, appointment and full support. Bishkek." />
+  <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/en/visas/" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="HR Direct KG" />
   <meta name="publisher" content="HR Direct KG" />
-
-  <!-- hreflang -->
-  <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/" />
-  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/" />
-  <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/" />
 
   <link rel="icon" type="image/x-icon" href="/hrdirectkg/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,20 +27,19 @@
       --line:rgba(255,255,255,.12);
       --radius:18px;
 
-      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
+      /* ✅ background image */
       --hero-img: url("/hrdirectkg/ben.jpg");
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
-
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       overflow-x:hidden;
 
-      /* Photo as global background */
+      /* ✅ page background */
       background-image: var(--hero-img);
       background-size: cover;
       background-position: center;
@@ -168,8 +160,7 @@
       background:rgba(246,247,249,.85);
       transition:width .2s ease;
     }
-    .main-nav a:hover::after{width:100%;}
-    .main-nav a.active{font-weight:900;}
+    .main-nav a:hover::after{width:100%}
 
     @media (max-width: 980px){
       .main-nav{display:none;}
@@ -201,32 +192,59 @@
       border-radius: 2px;
     }
 
-    /* ===== HERO (ONE SCREEN ONLY) ===== */
-    .hero{
+    /* ===== Page content wrapper ===== */
+    main.page{
       position:relative;
-      min-height: calc(100vh - 106px);
-      display:flex;
-      align-items:flex-end;
-      padding: 56px 0 60px;
-      overflow:hidden;
+      padding: 44px 0 70px;
     }
-    .hero::before{
+    /* overlay for readability */
+    main.page::before{
       content:"";
-      position:absolute;
+      position:fixed;
       inset:0;
       background:
         radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
+        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.66) 60%, rgba(0,0,0,.82) 100%);
       pointer-events:none;
+      z-index:-1;
     }
-    .hero .content{position:relative; width:100%; z-index:2;}
+
+    .card{
+      background: var(--glass);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    /* ===== Text styles ===== */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: rgba(246,247,249,.95);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      backdrop-filter: blur(12px);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .badge .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: rgba(246,247,249,.90);
+      box-shadow: 0 0 0 6px rgba(246,247,249,.08);
+    }
 
     h1{
       margin:18px 0 12px;
-      font-size: clamp(34px, 4.6vw, 60px);
-      line-height: 1.02;
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height: 1.05;
       letter-spacing: -0.03em;
-      max-width: 22ch;
       text-shadow: 0 14px 44px rgba(0,0,0,.60);
     }
 
@@ -273,29 +291,57 @@
       border-color: rgba(246,247,249,.92);
       backdrop-filter: none;
     }
-    .btn.primary:hover{
-      filter: brightness(1.02);
-      background: rgba(246,247,249,.98);
+    .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
+
+    /* ===== Visa cards ===== */
+    .section{
+      margin-top: 22px;
+      padding: 18px;
+    }
+    .h2{
+      margin:0 0 6px;
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
+    .note{
+      margin:0 0 14px;
+      color: rgba(246,247,249,.78);
+      font-size:14px;
+      line-height:1.6;
     }
 
-    .subline{
-      margin-top:18px;
+    .visa-list{
       display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      color: rgba(246,247,249,.86);
+      flex-direction:column;
+      gap:12px;
+      max-width: 560px;
+    }
+    .visa-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:800;
+      transition:.18s ease;
+    }
+    .visa-link:hover{
+      transform: translateY(-1px);
+      background:rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.16);
+    }
+    .visa-meta{
+      color:rgba(246,247,249,.72);
       font-size:13px;
-      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+      font-weight:600;
+      white-space:nowrap;
     }
-    .subline a{
-      color: rgba(246,247,249,.92);
-      border-bottom: 1px solid rgba(255,255,255,.32);
-      padding-bottom:2px;
-    }
-    .subline a:hover{
-      color:var(--text);
-      border-bottom-color: rgba(255,255,255,.50)
-    }
+
+    /* anchor offset for sticky header */
+    #directions{scroll-margin-top:120px;}
 
     /* ===== Drawer ===== */
     .drawer-backdrop{
@@ -359,11 +405,6 @@
       border-color: rgba(255,255,255,.12);
       color: var(--text);
     }
-    .drawer-nav a.active{
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.14);
-      color: var(--text);
-    }
 
     .drawer-cta{
       margin-top:auto;
@@ -385,28 +426,37 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    @media (max-width: 760px){
-      .hero{padding: 44px 0 54px;}
-      h1{max-width: 24ch;}
+    /* ===== Floating WhatsApp ===== */
+    .wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .wa svg{width:26px;height:26px;fill:#0b0b0c}
+
+    .visa-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
 
-    /* ===== Floating WhatsApp (серый круг) ===== */
-.wa{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background: rgba(246,247,249,.92);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(0,0,0,.45);
-  z-index:95;
-  border:1px solid rgba(255,255,255,.18);
-}
-.wa svg{width:26px;height:26px;fill:#0b0b0c}
-
+    .flag{
+      width:24px;
+      height:24px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.25);
+      flex-shrink:0;
+    }
   </style>
 </head>
 
@@ -421,10 +471,10 @@
           <a href="/hrdirectkg/en/contact/">Ibraimova 115/3a, office 405</a>
         </div>
 
-        <div class="lang" aria-label="Language switch">
+        <div class="lang" aria-label="Language selection">
           <a href="/hrdirectkg/">RU</a>
           <a href="/hrdirectkg/kg/">KG</a>
-          <a href="/hrdirectkg/en/" class="active" aria-current="page">EN</a>
+          <a href="/hrdirectkg/en/" class="active">EN</a>
         </div>
       </div>
     </div>
@@ -439,12 +489,12 @@
           <span>HR Direct KG</span>
         </a>
 
-        <nav class="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" aria-label="Main menu">
           <a href="/hrdirectkg/en/visas/">Visas</a>
           <a href="/hrdirectkg/en/employment/">Employment</a>
-          <a href="/hrdirectkg/en/partners/">For partners</a>
+          <a href="/hrdirectkg/en/partners/">Partners</a>
           <a href="/hrdirectkg/en/faq/">FAQ</a>
-          <a href="/hrdirectkg/en/contact/">Contacts</a>
+          <a href="/hrdirectkg/en/contact/">Contact</a>
         </nav>
 
         <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
@@ -464,8 +514,7 @@
     </div>
 
     <nav class="drawer-nav" aria-label="Site sections">
-      <a href="/hrdirectkg/en/about/">About</a>
-
+      <a href="/hrdirectkg/en/about/">About company</a>
       <a href="/hrdirectkg/en/visas/">Visas</a>
       <a href="/hrdirectkg/en/employment/">Employment</a>
       <a href="/hrdirectkg/en/partners/">For partners</a>
@@ -476,41 +525,67 @@
 
       <a href="/hrdirectkg/en/pricing/">Pricing</a>
       <a href="/hrdirectkg/en/faq/">FAQ</a>
-      <a href="/hrdirectkg/en/contact/">Contacts</a>
+      <a href="/hrdirectkg/en/contact/">Contact</a>
     </nav>
 
     <div class="drawer-cta">
-      <a class="cta"
-         href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation."
-         target="_blank" rel="noopener">WhatsApp consultation</a>
+      <a class="cta" href="https://wa.me/996990241949" target="_blank" rel="noopener">WhatsApp consultation</a>
     </div>
   </aside>
 
-  <!-- HERO -->
-  <main class="hero" role="main">
-    <div class="container content">
-      <!-- TEXT BELOW IS UNCHANGED -->
-      <h1>Visas and overseas jobs for citizens of Kyrgyzstan</h1>
+  <!-- Page content -->
+  <main class="page" role="main">
+    <div class="container">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>Visas</span>
 
+      <h1>Choose destination</h1>
       <p class="lead">
-        Schengen, China, UAE, and other destinations.
-        Document preparation, insurance, appointment booking,
-        and support with overseas employment.
+        Below are the main destinations. Click the one you need and you’ll open a page with full visa details.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation." target="_blank" rel="noopener">
-          Consultation
-        </a>
-        <a class="btn" href="/hrdirectkg/en/visas/">Choose a visa</a>
-        <a class="btn" href="/hrdirectkg/en/employment/">Employment</a>
-        <a class="btn" href="/hrdirectkg/en/pricing/">View pricing</a>
+        <a class="btn primary" href="#directions">View destinations</a>
+        <a class="btn" href="https://wa.me/996990241949" target="_blank" rel="noopener">Ask a question</a>
       </div>
 
-      <div class="subline">
-        <span>Office: <a href="/hrdirectkg/en/contact/">Ibraimova 115/3a, office 405</a></span>
-        <span>Tel: <a href="tel:+996990241949">+996 990 241 949</a></span>
-      </div>
+      <section class="card section" id="directions" aria-label="Visa destinations">
+        <h2 class="h2">Visa destinations</h2>
+        <p class="note">Click to open the full information page.</p>
+
+        <div class="visa-list">
+          <a class="visa-link" href="/hrdirectkg/en/visas/schengen/">
+            <div class="visa-left">
+              <img src="/hrdirectkg/assets/flags/eu.jpeg" class="flag" alt="EU" />
+              <span>Schengen visa</span>
+            </div>
+            <span class="visa-meta">Germany, Hungary… →</span>
+          </a>
+
+          <a class="visa-link" href="/hrdirectkg/en/visas/china/">
+            <div class="visa-left">
+              <img src="/hrdirectkg/assets/flags/cn.jpg" class="flag" alt="China" />
+              <span>China visa</span>
+            </div>
+            <span class="visa-meta">tourism / business →</span>
+          </a>
+
+          <a class="visa-link" href="/hrdirectkg/en/visas/japan/">
+            <div class="visa-left">
+              <img src="/hrdirectkg/assets/flags/jp.jpeg" class="flag" alt="Japan" />
+              <span>Japan visa</span>
+            </div>
+            <span class="visa-meta">tourism →</span>
+          </a>
+
+          <a class="visa-link" href="/hrdirectkg/en/visas/dubai/">
+            <div class="visa-left">
+              <img src="/hrdirectkg/assets/flags/ae.png" class="flag" alt="UAE" />
+              <span>Dubai visa (UAE)</span>
+            </div>
+            <span class="visa-meta">tourism →</span>
+          </a>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -545,14 +620,14 @@
     });
   </script>
 
- <!-- Floating WhatsApp (EN) -->
-<a class="wa"
-   href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Destination:%20____%20Dates:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
+  <!-- Floating WhatsApp -->
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Hello!%20I%20need%20a%20consultation.%20Service:%20Visa/Employment%20Country:%20____%20Dates:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
 </body>
 </html>
