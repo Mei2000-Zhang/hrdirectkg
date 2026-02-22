@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Виза үчүн камсыздандыруу — Шенген, Япония, Кытай, БАЭ | HR Direct KG</title>
-  <meta name="description" content="Виза үчүн камсыздандыруу (travel insurance): Шенген, Япония, Кытай, БАЭ. Сапар мөөнөтүнө ылайык полис тандап, талаптарга туура кылабыз. Бишкек. HR Direct KG." />
+  <title>Виза жана сапар үчүн камсыздандыруу — Шенген, Япония, Кытай, БАЭ | HR Direct KG</title>
+  <meta name="description" content="Өлкөнүн талаптарына ылайык медициналык камсыздандырууну даярдайбыз: туура даталар, камтуу, формат. Шенген, Япония, Кытай, БАЭ. Бишкек. HR Direct KG." />
 
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/kg/insurance/" />
 
   <!-- hreflang -->
-  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/insurance/" />
   <link rel="alternate" hreflang="ru" href="https://mei2000-zhang.github.io/hrdirectkg/insurance/" />
+  <link rel="alternate" hreflang="ky" href="https://mei2000-zhang.github.io/hrdirectkg/kg/insurance/" />
   <link rel="alternate" hreflang="en" href="https://mei2000-zhang.github.io/hrdirectkg/en/insurance/" />
   <link rel="alternate" hreflang="x-default" href="https://mei2000-zhang.github.io/hrdirectkg/insurance/" />
 
@@ -32,26 +32,26 @@
       --glass2: rgba(10,12,16,.88);
       --line:rgba(255,255,255,.12);
       --radius:18px;
-
-      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
+      --brand-1:#ff7a18;
+      --brand-2:#ff9a44;
+      --brand-3:#ffd194;
+      --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
       --hero-img: url("/hrdirectkg/ben.jpg");
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       overflow-x:hidden;
-
       background-image: var(--hero-img);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-
-      line-height:1.55;
     }
 
     a{color:inherit; text-decoration:none}
@@ -144,7 +144,7 @@
       flex:0 0 auto;
     }
 
-    /* ===== Main navigation ===== */
+    /* Desktop nav */
     .main-nav{
       display:flex;
       gap:22px;
@@ -169,10 +169,7 @@
     }
     .main-nav a:hover::after{width:100%;}
     .main-nav a.active{font-weight:900;}
-
-    @media (max-width: 980px){
-      .main-nav{display:none;}
-    }
+    @media (max-width: 980px){ .main-nav{display:none;} }
 
     /* Burger */
     .burger{
@@ -194,115 +191,52 @@
       border-color: rgba(255,255,255,.32);
       background: rgba(0,0,0,.24);
     }
-    .burger span{
-      width:18px;height:2px;
-      background: rgba(246,247,249,.92);
-      border-radius: 2px;
-    }
+    .burger span{ width:18px;height:2px; background: rgba(246,247,249,.92); border-radius: 2px; }
 
-    /* ===== Drawer ===== */
-    .drawer-backdrop{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.60);
-      z-index: 90;
-    }
+    /* Drawer */
+    .drawer-backdrop{ position: fixed; inset: 0; background: rgba(0,0,0,.60); z-index: 90; }
     .drawer{
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: min(460px, 88vw);
-      background: var(--glass2);
-      backdrop-filter: blur(16px);
-      border-left: 1px solid rgba(255,255,255,.12);
-      z-index: 100;
-      transform: translateX(105%);
-      transition: transform .25s ease;
-      display:flex;
-      flex-direction:column;
-      box-shadow: -24px 0 70px rgba(0,0,0,.60);
+      position: fixed; top: 0; right: 0; height: 100vh; width: min(460px, 88vw);
+      background: var(--glass2); backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255,255,255,.12); z-index: 100;
+      transform: translateX(105%); transition: transform .25s ease;
+      display:flex; flex-direction:column; box-shadow: -24px 0 70px rgba(0,0,0,.60);
     }
     .drawer.open{ transform: translateX(0); }
-
-    .drawer-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:16px 18px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .drawer-close{
-      width:42px;height:42px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      cursor:pointer;
-    }
-
-    .drawer-nav{
-      padding: 10px;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      overflow:auto;
-    }
+    .drawer-head{ display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border-bottom: 1px solid rgba(255,255,255,.10); }
+    .drawer-close{ width:42px;height:42px; border-radius: 14px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.03); color: var(--text); cursor:pointer; }
+    .drawer-nav{ padding: 10px; display:flex; flex-direction:column; gap:6px; overflow:auto; }
     .drawer-nav a{
-      padding: 13px 12px;
-      border-radius: 16px;
-      border:1px solid transparent;
-      color: rgba(246,247,249,.86);
-      font-weight: 800;
+      padding: 13px 12px; border-radius: 16px; border:1px solid transparent;
+      color: rgba(246,247,249,.86); font-weight: 800;
       transition: background .18s ease, border-color .18s ease, transform .18s ease;
     }
-    .drawer-nav a:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.04);
-      border-color: rgba(255,255,255,.12);
-      color: var(--text);
-    }
-
-    .drawer-cta{
-      margin-top:auto;
-      padding: 14px 14px 18px;
-      border-top: 1px solid rgba(255,255,255,.10);
-    }
+    .drawer-nav a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12); color: var(--text); }
+    .drawer-nav a.active{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color: var(--text); }
+    .drawer-cta{ margin-top:auto; padding: 14px 14px 18px; border-top: 1px solid rgba(255,255,255,.10); }
     .drawer-cta .cta{
-      display:block;
-      text-align:center;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      font-weight: 950;
-      color: var(--text);
+      display:block; text-align:center; padding: 14px 16px; border-radius: 16px;
+      border:1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06);
+      font-weight: 950; color: var(--text);
     }
-    .drawer-cta .cta:hover{
-      background: rgba(255,255,255,.10);
-      border-color: rgba(255,255,255,.24);
-    }
+    .drawer-cta .cta:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.24); }
 
-    /* ===== Page blocks ===== */
-    .hero{
-      position:relative;
-      padding: 52px 0 26px;
+    /* Content */
+    main.page{
+      position:relative; min-height: calc(100vh - 106px);
+      padding: 44px 0 64px; overflow:hidden;
     }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
+    main.page::before{
+      content:""; position:absolute; inset:0;
       background:
         radial-gradient(900px 520px at 16% 20%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.55) 70%, rgba(0,0,0,.70) 100%);
+        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.78) 100%);
       pointer-events:none;
     }
-    .hero .content{position:relative; z-index:2;}
+    .page .content{position:relative; z-index:2;}
 
     .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-block;
       padding:7px 12px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.18);
@@ -310,136 +244,111 @@
       backdrop-filter: blur(12px);
       font-weight:900;
       font-size:13px;
-    }
-    .h1{
-      margin:16px 0 12px;
-      font-size: clamp(30px, 4.2vw, 52px);
-      line-height:1.05;
-      letter-spacing:-0.02em;
-      text-shadow: 0 14px 44px rgba(0,0,0,.60);
-      max-width: 34ch;
-    }
-    .lead{
-      margin:0;
-      color: var(--muted);
-      font-size:16px;
-      line-height:1.75;
-      max-width: 92ch;
-      text-shadow: 0 12px 40px rgba(0,0,0,.50);
+      color: rgba(246,247,249,.95);
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
 
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:22px;
-      align-items:center;
-      position:relative;
-      z-index:2;
+    .h1{
+      margin:18px 0 12px;
+      font-size: clamp(30px, 3.6vw, 52px);
+      line-height: 1.06; letter-spacing: -0.03em;
+      max-width: 34ch; text-shadow: 0 14px 44px rgba(0,0,0,.60);
+    }
+    .lead{
+      margin:0; color: var(--muted); font-size:16px; line-height:1.75;
+      max-width: 86ch; text-shadow: 0 12px 40px rgba(0,0,0,.50);
+    }
+
+    .heroCard{
+      margin-top:18px; background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 16px; backdrop-filter: blur(12px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+      color: rgba(246,247,249,.90);
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+
+    .points{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px; margin-top:10px;
+    }
+    .point{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 14px;
+      color: rgba(246,247,249,.86);
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+
+    .section{ padding: 10px 0 0; }
+    .note{
+      margin-top:8px; font-size:14px; color: rgba(246,247,249,.78);
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+      max-width: 90ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:16px; margin-top:16px;
+    }
+    .card{
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 18px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+    .flag{font-size:26px}
+    .meta{
+      font-size:14px; color: rgba(246,247,249,.78);
+      margin:6px 0 12px; line-height:1.6;
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+
+    .req{
+      margin-top:10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 12px;
+      color: rgba(246,247,249,.86);
+    }
+    .req b{display:block; margin-bottom:6px; color: rgba(246,247,249,.94);}
+    .req ul{margin:0; padding-left:18px;}
+    .req li{margin:6px 0; font-size:13.5px; line-height:1.45;}
+
+    .actionsRow{
+      margin-top:14px;
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
     }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:16px;
-      font-weight:900;
-      font-size:14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:16px;
+      font-weight:900; font-size:14px;
       border:1px solid rgba(255,255,255,.18);
       background: rgba(0,0,0,.22);
       color: var(--text);
       transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
       white-space:nowrap;
       backdrop-filter: blur(12px);
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(0,0,0,.28);
-      border-color: rgba(255,255,255,.26);
-    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(0,0,0,.28); border-color: rgba(255,255,255,.26); }
     .btn.primary{
       background: rgba(246,247,249,.94);
       color:#0b0b0c;
       border-color: rgba(246,247,249,.92);
       backdrop-filter: none;
+      text-shadow: none;
     }
     .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
-
-    .section{
-      padding: 22px 0 50px;
-      position:relative;
-    }
-    .section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(0,0,0,.42);
-      backdrop-filter: blur(10px);
-      border-top:1px solid rgba(255,255,255,.10);
-      border-bottom:1px solid rgba(255,255,255,.10);
-      pointer-events:none;
-    }
-    .section .inner{position:relative; z-index:2;}
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:14px;
-      margin-top:16px;
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr;}
-    }
-
-    .card{
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius: var(--radius);
-      padding:16px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size:20px;
-      letter-spacing:-0.01em;
-    }
-    .small{
-      color: var(--muted);
-      font-size:14px;
-      margin:0 0 14px;
-    }
-
-    .pillGrid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:10px;
-      margin-top:10px;
-    }
-    @media (max-width: 560px){
-      .pillGrid{grid-template-columns:1fr;}
-    }
-    .pill{
-      padding:12px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      font-size:14px;
-    }
-
-    .list{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .item{
-      padding:12px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      font-size:14px;
-    }
-    .item b{color:rgba(246,247,249,.95)}
 
     footer{
       border-top:1px solid rgba(255,255,255,.10);
@@ -448,44 +357,33 @@
       padding:18px 0;
       color: rgba(246,247,249,.80);
       font-size:13px;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+    @media (max-width: 760px){
+      main.page{padding: 38px 0 54px;}
+      .h1{max-width: 36ch;}
     }
 
-    /* ===== Floating WhatsApp (серый круг) ===== */
-.wa{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background: rgba(246,247,249,.92);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(0,0,0,.45);
-  z-index:95;
-  border:1px solid rgba(255,255,255,.18);
-}
-.wa svg{width:26px;height:26px;fill:#0b0b0c}
-.ig{
-  position:fixed;
-  right:16px;
-  bottom:84px; /* выше WhatsApp */
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background: rgba(246,247,249,.92);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(0,0,0,.45);
-  z-index:95;
-  border:1px solid rgba(255,255,255,.18);
-}
-
-.ig svg{
-  width:26px;
-  height:26px;
-  fill:#0b0b0c;
-}
+    .wa{
+      position:fixed; right:16px; bottom:16px; width:56px; height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid; place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .wa svg{width:26px;height:26px;fill:#0b0b0c}
+    .ig{
+      position:fixed; right:16px; bottom:84px; width:56px; height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid; place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .ig svg{width:26px;height:26px;fill:#0b0b0c}
   </style>
 </head>
 
@@ -497,7 +395,7 @@
         <div>
           <a href="tel:+996990241949">+996 990 241 949</a>
           <span style="opacity:.75"> · </span>
-          <a href="/hrdirectkg/kg/contact/">Ибраимова 115/3а, офис 405</a>
+          <a href="/hrdirectkg/kg/contact/">Ибраимова 115/3а, кеңсе 405</a>
         </div>
 
         <div class="lang" aria-label="Тилди тандоо">
@@ -520,13 +418,13 @@
 
         <nav class="main-nav" aria-label="Негизги меню">
           <a href="/hrdirectkg/kg/visas/">Визалар</a>
-          <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
-          <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
+          <a href="/hrdirectkg/kg/employment/">Ишке орноштуруу</a>
+          <a href="/hrdirectkg/kg/partners/">Өнөктөштөргө</a>
           <a href="/hrdirectkg/kg/faq/">FAQ</a>
           <a href="/hrdirectkg/kg/contact/">Байланыш</a>
         </nav>
 
-        <button class="burger" id="burger" aria-label="Меню ачуу" aria-controls="drawer" aria-expanded="false">
+        <button class="burger" id="burger" aria-label="Менюну ачуу" aria-controls="drawer" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -546,12 +444,12 @@
       <a href="/hrdirectkg/kg/about/">Компания жөнүндө</a>
 
       <a href="/hrdirectkg/kg/visas/">Визалар</a>
-      <a href="/hrdirectkg/kg/employment/">Жумушка орноштуруу</a>
+      <a href="/hrdirectkg/kg/employment/">Ишке орноштуруу</a>
       <a href="/hrdirectkg/kg/partners/">Өнөктөштөр үчүн</a>
 
-      <a href="/hrdirectkg/kg/insurance/">Камсыздандыруу</a>
+      <a class="active" href="/hrdirectkg/kg/insurance/" aria-current="page">Камсыздандыруу</a>
       <a href="/hrdirectkg/kg/forms/">Анкеталар</a>
-      <a href="/hrdirectkg/kg/how-to-get-visa/">Визаны кантип алуу</a>
+      <a href="/hrdirectkg/kg/how-to-get-visa/">Визаны кантип алса болот</a>
 
       <a href="/hrdirectkg/kg/pricing/">Баалар</a>
       <a href="/hrdirectkg/kg/faq/">FAQ</a>
@@ -560,81 +458,142 @@
 
     <div class="drawer-cta">
       <a class="cta"
-         href="https://wa.me/996990241949?text=Салам!%20Виза%20үчүн%20камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам%20саны:%20____"
-         target="_blank" rel="noopener"
-      >WhatsApp'ка жазуу</a>
+         href="https://wa.me/996990241949?text=Салам!%20Камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам:%20____%20Жаш:%20____%20Максат:%20____"
+         target="_blank" rel="noopener">WhatsApp аркылуу камсыздандыруу</a>
     </div>
   </aside>
 
-  <!-- HERO -->
-  <main class="hero" role="main">
+  <!-- CONTENT -->
+  <main class="page" role="main">
     <div class="container content">
-      <div class="badge">Камсыздандыруу</div>
-
-      <h1 class="h1">Виза үчүн медициналык камсыздандыруу</h1>
-
+      <div class="badge">Виза жана сапар үчүн камсыздандыруу</div>
+      <h1 class="h1">Өлкө боюнча туура даталар жана камтуу менен полис тандап беребиз</h1>
       <p class="lead">
-        Сапарга чыгарда полис көп учурда милдеттүү. Биз талап кылынган өлкөгө ылайык
-        камсыздандырууну туура мөөнөткө чыгарып, документтерди “талапка туура” кылып беребиз.
+        Бул жерде камсыздандырууну өзүнчө кызмат катары жасайсыз. Төмөндө — өлкөлөр боюнча түшүнүктүү талаптар (ашыкча “кагаз тили” жок).
       </p>
 
-      <div class="actions">
-        <a class="btn primary"
-           href="https://wa.me/996990241949?text=Салам!%20Камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам%20саны:%20____"
-           target="_blank" rel="noopener"
-        >WhatsApp</a>
-
-        <a class="btn" href="/hrdirectkg/kg/visas/">Виза тандап көрүү</a>
-        <a class="btn" href="/hrdirectkg/kg/contact/">Офис</a>
+      <div class="heroCard">
+        <strong>Эмне аласыз:</strong>
+        <div class="points">
+          <div class="point">• Өлкө жана сапардын максаты боюнча тандоо</div>
+          <div class="point">• Туура даталар ( “кабыл алынбайт” деген болбосун)</div>
+          <div class="point">• Электрондук полис (сизге жөнөтөбүз)</div>
+          <div class="point">• Кайсы документтерди кошууну айтып беребиз</div>
+        </div>
       </div>
+
+      <section class="section">
+        <h2 style="margin:18px 0 6px; text-shadow:0 14px 44px rgba(0,0,0,.60);">
+          Өлкөлөр боюнча камсыздандыруу талаптары
+        </h2>
+        <p class="note">
+          Эгер ишенбей жатсаңыз — өлкөнү жана даталарды жаза салыңыз. Сизге кайсы полис ылайыктуу экенин айтып беребиз.
+        </p>
+
+        <div class="grid">
+          <!-- Schengen -->
+          <article class="card">
+            <div class="flag">🇪🇺</div>
+            <h3 style="margin:8px 0 0">Шенген</h3>
+            <div class="meta">Көп учурда камсыздандыруу милдеттүү. Негизгиси — даталар жана камтуу туура болушу керек.</div>
+            <div class="req">
+              <b>Талаптар:</b>
+              <ul>
+                <li>Камсыздандыруу мөөнөтү — сапардын бардык күндөрүнө (1–2 күн запас жакшы).</li>
+                <li>Камтуу — адатта 30 000 € кем эмес (керектүүсүн жасап беребиз).</li>
+                <li>Шенген аймагында жарактуу болушу керек.</li>
+                <li>“Чет өлкөгө чыгуу үчүн медициналык камсыздандыруу” ылайыктуу.</li>
+              </ul>
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Салам!%20Шенген%20үчүн%20камсыздандыруу%20керек.%20Даталар:%20____%20Адам:%20____%20Жаш:%20____"
+                 target="_blank" rel="noopener">Камсыздандырууну жасатуу</a>
+            </div>
+          </article>
+
+          <!-- Japan -->
+          <article class="card">
+            <div class="flag">🇯🇵</div>
+            <h3 style="margin:8px 0 0">Япония</h3>
+            <div class="meta">Кээде милдеттүү эмес, бирок документтер топтомун “таза” кылып көрсөтөт.</div>
+            <div class="req">
+              <b>Сунуштайбыз:</b>
+              <ul>
+                <li>Мөөнөт — сапардын бардык күндөрүнө (1 күн запас болот).</li>
+                <li>Камтуу — медицина үчүн жетиштүү (коопсуз вариант тандайбыз).</li>
+                <li>Полис англисче же түшүнүктүү маалымат менен (аты-жөнү/дата/өлкө).</li>
+                <li>“travel/medical insurance” деп көрсөтүлгөнү жакшы.</li>
+              </ul>
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Салам!%20Япония%20үчүн%20камсыздандыруу%20керек.%20Даталар:%20____%20Адам:%20____%20Жаш:%20____"
+                 target="_blank" rel="noopener">Камсыздандырууну жасатуу</a>
+            </div>
+          </article>
+
+          <!-- China -->
+          <article class="card">
+            <div class="flag">🇨🇳</div>
+            <h3 style="margin:8px 0 0">Кытай</h3>
+            <div class="meta">Талаптар визанын түрүнө жана сапарга жараша өзгөрөт. Тактап, туура кылып даярдайбыз.</div>
+            <div class="req">
+              <b>Көп учурда маанилүү:</b>
+              <ul>
+                <li>Мөөнөт — сапардын толук убактысына.</li>
+                <li>Камтуу — медициналык чыгымдар (сизге ылайык тандайбыз).</li>
+                <li>Полистеги маалымат катаасыз: аты-жөнү чет паспорттогудай.</li>
+                <li>Узак сапар болсо — кеңейтилген камтуу жакшы.</li>
+              </ul>
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Салам!%20Кытай%20үчүн%20камсыздандыруу%20керек.%20Виза%20түрү:%20____%20Даталар:%20____%20Адам:%20____%20Жаш:%20____"
+                 target="_blank" rel="noopener">Камсыздандырууну жасатуу</a>
+            </div>
+          </article>
+
+          <!-- UAE -->
+          <article class="card">
+            <div class="flag">🇦🇪</div>
+            <h3 style="margin:8px 0 0">БАЭ (Дубай)</h3>
+            <div class="meta">Сапарда тынч болуу үчүн алышат. Кээде документтер үчүн талап болушу мүмкүн.</div>
+            <div class="req">
+              <b>Сунуштайбыз:</b>
+              <ul>
+                <li>Мөөнөт — сапардын бардык күндөрүнө.</li>
+                <li>Медициналык камтуу + шашылыш жардам.</li>
+                <li>Полис электрондук форматта (PDF) — сапар үчүн ыңгайлуу.</li>
+                <li>Аты-жөнү жана даталар чет паспорттогудай так болушу керек.</li>
+              </ul>
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Салам!%20БАЭ%20үчүн%20камсыздандыруу%20керек.%20Даталар:%20____%20Адам:%20____%20Жаш:%20____"
+                 target="_blank" rel="noopener">Камсыздандырууну жасатуу</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="heroCard" style="margin-top:16px">
+          <strong>Камсыздандырууну тез жасоо үчүн — жазыңыз:</strong>
+          <div class="points">
+            <div class="point">• Өлкө</div>
+            <div class="point">• Сапардын даталары (…ден …ге чейин)</div>
+            <div class="point">• Адам саны жана жашы</div>
+            <div class="point">• Максат: туризм / конок / бизнес</div>
+          </div>
+          <div class="actionsRow">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Салам!%20Камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам:%20____%20Жаш:%20____%20Максат:%20____"
+               target="_blank" rel="noopener">WhatsAppка жазуу</a>
+            <a class="btn" href="/hrdirectkg/kg/contact/">Байланыш</a>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
-
-  <!-- CONTENT -->
-  <section class="section">
-    <div class="container inner">
-      <div class="grid">
-        <article class="card">
-          <h2>Кайсы учурларда керек</h2>
-          <p class="small">Эң көп суроо берилген учурлар — булар.</p>
-
-          <div class="pillGrid">
-            <div class="pill"> Шенген визасы үчүн (көп учурда милдеттүү)</div>
-            <div class="pill"> Япония / Кытай / БАЭ — талапка жараша</div>
-            <div class="pill"> Үй-бүлөлүк сапарлар</div>
-            <div class="pill"> Узагыраак сапар / көп жолу кирүү</div>
-          </div>
-
-          <div class="list">
-            <div class="item"><b>1) Сиз жазасыз</b> — өлкө, даталар, адам саны</div>
-            <div class="item"><b>2) Биз тандайбыз</b> — ылайыктуу вариант жана мөөнөт</div>
-            <div class="item"><b>3) Даяр полис</b> — PDF/басып берүү (керек болсо)</div>
-          </div>
-        </article>
-
-        <aside class="card">
-          <h2>Бизге эмне керек</h2>
-          <p class="small">Полисти тез чыгаруу үчүн ушул маалымат жетиштүү.</p>
-
-          <div class="list">
-            <div class="item"><b>Өлкө</b> — кайсы жакка барасыз</div>
-            <div class="item"><b>Даталар</b> — башталышы жана бүтүшү</div>
-            <div class="item"><b>Адам саны</b> — 1 / үй-бүлө</div>
-            <div class="item"><b>Паспорт</b> — аты-жөнү (латынча) / туулган күнү</div>
-          </div>
-
-          <div class="actions" style="margin-top:14px">
-            <a class="btn primary"
-               href="https://wa.me/996990241949?text=Салам!%20Камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам%20саны:%20____%20Аты-жөнү:%20____%20Туулган%20күңү:%20____"
-               target="_blank" rel="noopener"
-            >Тез заказ берүү</a>
-
-            <a class="btn" href="mailto:officehhrdirectkg@gmail.com?subject=Камсыздандыруу%20—%20HR%20Direct%20KG">E-mail</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="container">
@@ -668,36 +627,37 @@
     burger.addEventListener('click', openDrawer);
     closeBtn.addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
+
     document.addEventListener('keydown', (e) => {
       if(e.key === 'Escape') closeDrawer();
     });
   </script>
 
-  <!-- Floating WhatsApp (KG) -->
-<a class="wa"
-   href="https://wa.me/996990241949?text=Салам!%20Мага%20кеңеш%20керек.%20Кызмат:%20Виза/Жумушка%20жайгашуу%20Өлкө:%20____%20Даталар:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
-  <a class="ig"
-   href="https://www.instagram.com/hrdirect_kg"
-   aria-label="Instagram"
-   target="_blank" rel="noopener">
+  <!-- Floating WhatsApp -->
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Салам!%20Камсыздандыруу%20керек.%20Өлкө:%20____%20Даталар:%20____%20Адам:%20____%20Жаш:%20____%20Максат:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
 
-  <svg viewBox="0 0 24 24">
-    <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 
-    0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 
-    2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 
-    3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 
-    1.34-3 3-3h10zm-5 3a5 5 0 100 
-    10 5 5 0 000-10zm0 2.2A2.8 
-    2.8 0 1112 14.8 2.8 2.8 0 
-    0112 9.2zM17.5 6a1 1 0 
-    100 2 1 1 0 000-2z"/>
-  </svg>
-</a>
+  <a class="ig"
+     href="https://www.instagram.com/hrdirect_kg"
+     aria-label="Instagram"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 
+      0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 
+      2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 
+      3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 
+      1.34-3 3-3h10zm-5 3a5 5 0 100 
+      10 5 5 0 000-10zm0 2.2A2.8 
+      2.8 0 1112 14.8 2.8 2.8 0 
+      0112 9.2zM17.5 6a1 1 0 
+      100 2 1 1 0 000-2z"/>
+    </svg>
+  </a>
 </body>
 </html>
