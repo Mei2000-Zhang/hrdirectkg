@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Страховка для виз — Шенген, Япония, Китай, ОАЭ | HR Direct KG</title>
-  <meta name="description" content="Страховка для виз: подбираем полис под требования страны и сроки поездки. Шенген, Япония, Китай, ОАЭ. Бишкек. HR Direct KG." />
+  <title>Страховка для виз и поездок — Шенген, Япония, Китай, ОАЭ | HR Direct KG</title>
+  <meta name="description" content="Оформим медицинскую страховку для виз и поездок: под требования страны, правильные даты и покрытие. Шенген, Япония, Китай, ОАЭ. Бишкек. HR Direct KG." />
 
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mei2000-zhang.github.io/hrdirectkg/insurance/" />
@@ -40,7 +40,6 @@
       --brand-3:#ffd194;
       --accent-grad:linear-gradient(135deg,var(--brand-1),var(--brand-2) 50%,var(--brand-3));
 
-      /* ✅ IMPORTANT: absolute path for GitHub Pages project site */
       --hero-img: url("/hrdirectkg/ben.jpg");
     }
 
@@ -52,8 +51,6 @@
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       overflow-x:hidden;
-
-      /* Background like main page */
       background-image: var(--hero-img);
       background-size: cover;
       background-position: center;
@@ -151,7 +148,6 @@
       flex:0 0 auto;
     }
 
-    /* Desktop nav */
     .main-nav{
       display:flex;
       gap:22px;
@@ -181,7 +177,6 @@
       .main-nav{display:none;}
     }
 
-    /* Burger */
     .burger{
       width:46px;height:46px;
       border-radius: 16px;
@@ -207,7 +202,6 @@
       border-radius: 2px;
     }
 
-    /* ===== Drawer ===== */
     .drawer-backdrop{
       position: fixed;
       inset: 0;
@@ -295,7 +289,6 @@
       border-color: rgba(255,255,255,.24);
     }
 
-    /* ===== Page content (оставляем твой текст/смысл) ===== */
     main.page{
       position:relative;
       min-height: calc(100vh - 106px);
@@ -332,7 +325,7 @@
       font-size: clamp(30px, 3.6vw, 52px);
       line-height: 1.06;
       letter-spacing: -0.03em;
-      max-width: 30ch;
+      max-width: 34ch;
       text-shadow: 0 14px 44px rgba(0,0,0,.60);
     }
 
@@ -341,7 +334,7 @@
       color: var(--muted);
       font-size:16px;
       line-height:1.75;
-      max-width: 80ch;
+      max-width: 86ch;
       text-shadow: 0 12px 40px rgba(0,0,0,.50);
     }
 
@@ -373,15 +366,14 @@
       text-shadow: 0 10px 30px rgba(0,0,0,.55);
     }
 
-    .section{
-      padding: 10px 0 0;
-    }
+    .section{ padding: 10px 0 0; }
 
     .note{
       margin-top:8px;
       font-size:14px;
       color: rgba(246,247,249,.78);
       text-shadow: 0 10px 30px rgba(0,0,0,.55);
+      max-width: 90ch;
     }
 
     .grid{
@@ -448,6 +440,17 @@
     }
     .btn.primary:hover{filter: brightness(1.02); background: rgba(246,247,249,.98);}
 
+    /* NEW: link-style secondary */
+    .btn.link{
+      background: transparent;
+      border-color: rgba(255,255,255,.16);
+      color: rgba(246,247,249,.92);
+    }
+    .btn.link:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.22);
+    }
+
     footer{
       border-top:1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.45);
@@ -460,46 +463,41 @@
 
     @media (max-width: 760px){
       main.page{padding: 38px 0 54px;}
-      .h1{max-width: 34ch;}
+      .h1{max-width: 36ch;}
     }
 
-    /* ===== Floating WhatsApp (серый круг) ===== */
-.wa{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background: rgba(246,247,249,.92);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(0,0,0,.45);
-  z-index:95;
-  border:1px solid rgba(255,255,255,.18);
-}
-.wa svg{width:26px;height:26px;fill:#0b0b0c}
+    /* ===== Floating WhatsApp + Instagram ===== */
+    .wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .wa svg{width:26px;height:26px;fill:#0b0b0c}
+
     .ig{
-  position:fixed;
-  right:16px;
-  bottom:84px; /* выше WhatsApp */
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background: rgba(246,247,249,.92);
-  display:grid;
-  place-items:center;
-  box-shadow:0 12px 26px rgba(0,0,0,.45);
-  z-index:95;
-  border:1px solid rgba(255,255,255,.18);
-}
-
-.ig svg{
-  width:26px;
-  height:26px;
-  fill:#0b0b0c;
-}
-
+      position:fixed;
+      right:16px;
+      bottom:84px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background: rgba(246,247,249,.92);
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 26px rgba(0,0,0,.45);
+      z-index:95;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .ig svg{width:26px;height:26px;fill:#0b0b0c}
   </style>
 </head>
 
@@ -558,7 +556,6 @@
 
     <nav class="drawer-nav" aria-label="Разделы сайта">
       <a href="/hrdirectkg/about/">О компании</a>
-
       <a href="/hrdirectkg/visas/">Визы</a>
       <a href="/hrdirectkg/employment/">Трудоустройство</a>
       <a href="/hrdirectkg/partners/">Для партнёров</a>
@@ -574,80 +571,125 @@
 
     <div class="drawer-cta">
       <a class="cta"
-         href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20визы.%20Страна:%20____%20Даты:%20____"
-         target="_blank" rel="noopener">WhatsApp консультация</a>
+         href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка.%20Страна:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____%20Цель:%20____"
+         target="_blank" rel="noopener">Оформить страховку в WhatsApp</a>
     </div>
   </aside>
 
-  <!-- CONTENT (твой текст) -->
+  <!-- CONTENT -->
   <main class="page" role="main">
     <div class="container content">
-      <div class="badge">Страховка для виз</div>
-      <h1 class="h1">Подберём полис под требования страны и сроки поездки</h1>
+      <div class="badge">Страховка — отдельная услуга</div>
+
+      <h1 class="h1">Оформим страховку для виз и поездок — быстро, но без косяков</h1>
       <p class="lead">
-        Без “случайных” вариантов. Делается быстро, но аккуратно: чтобы страховка подходила под пакет документов.
+        Страховка — это не “приложение к визе”, а документ, который должен совпасть с требованиями страны.
+        Мы подберём покрытие и даты, оформим и отправим вам готовый полис.
       </p>
 
       <div class="heroCard">
         <strong>Что вы получаете:</strong>
         <div class="points">
-          <div class="point">• Подбор страховки под страну и тип визы</div>
-          <div class="point">• Правильные даты и покрытие (без ошибок)</div>
+          <div class="point">• Подбор страховки под страну и цель поездки</div>
+          <div class="point">• Правильные даты и покрытие (чтобы приняли)</div>
           <div class="point">• Быстрое оформление и отправка вам</div>
-          <div class="point">• Подсказка: что приложить к пакету</div>
+          <div class="point">• Подсказка: что приложить к пакету документов</div>
         </div>
       </div>
 
+      <div class="actionsRow" style="margin-top:14px;">
+        <a class="btn primary"
+           href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка.%20Страна:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____%20Цель:%20____"
+           target="_blank" rel="noopener">Оформить страховку</a>
+        <a class="btn" href="/hrdirectkg/contact/">Контакты</a>
+        <a class="btn" href="/hrdirectkg/pricing/">Цены</a>
+      </div>
+
       <section class="section">
-        <h2 style="margin:18px 0 6px; text-shadow:0 14px 44px rgba(0,0,0,.60);">Когда страховка точно нужна</h2>
-        <p class="note">Если не уверены — напишите страну, и мы скажем, нужна ли страховка именно для подачи.</p>
+        <h2 style="margin:22px 0 6px; text-shadow:0 14px 44px rgba(0,0,0,.60);">
+          Когда страховка обязательна (и где чаще всего ошибаются)
+        </h2>
+        <p class="note">
+          Если вы пришли только за страховкой — отлично, вы по адресу.
+          А ссылки на визы ниже — это <b>не “переброс”,</b> а страницы с требованиями, чтобы вы понимали, какой полис нужен.
+        </p>
 
         <div class="grid">
+          <!-- Schengen -->
           <article class="card">
             <div class="flag">🇪🇺</div>
-            <h3 style="margin:8px 0 0">Шенген</h3>
-            <div class="meta">Обычно обязательна для подачи. Важно, чтобы даты и покрытие совпадали с поездкой.</div>
-            <a class="btn primary" href="/hrdirectkg/visas/schengen/">Шенген</a>
+            <h3 style="margin:8px 0 0">Страховка для Шенгена</h3>
+            <div class="meta">
+              Обычно обязательна для подачи. Критично: корректные даты и покрытие под поездку.
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20Шенгена.%20Даты:%20____%20Людей:%20____%20Возраст:%20____"
+                 target="_blank" rel="noopener">Оформить</a>
+              <a class="btn link" href="/hrdirectkg/visas/schengen/">Требования по визе</a>
+            </div>
           </article>
 
+          <!-- Japan -->
           <article class="card">
             <div class="flag">🇯🇵</div>
-            <h3 style="margin:8px 0 0">Япония</h3>
-            <div class="meta">Часто просят порядок в документах. Страховка — плюс к “аккуратному” пакету.</div>
-            <a class="btn primary" href="/hrdirectkg/visas/japan/">Япония</a>
+            <h3 style="margin:8px 0 0">Страховка для Японии</h3>
+            <div class="meta">
+              Часто не “железное требование”, но сильно усиливает пакет документов и порядок.
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20Японии.%20Даты:%20____%20Людей:%20____%20Возраст:%20____"
+                 target="_blank" rel="noopener">Оформить</a>
+              <a class="btn link" href="/hrdirectkg/visas/japan/">Требования по визе</a>
+            </div>
           </article>
 
+          <!-- China -->
           <article class="card">
             <div class="flag">🇨🇳</div>
-            <h3 style="margin:8px 0 0">Китай</h3>
-            <div class="meta">Подскажем, нужна ли страховка именно для вашего типа визы и маршрута.</div>
-            <a class="btn primary" href="/hrdirectkg/visas/china/">Китай</a>
+            <h3 style="margin:8px 0 0">Страховка для Китая</h3>
+            <div class="meta">
+              Зависит от типа визы и маршрута. Мы уточним, нужна ли страховка именно для подачи.
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20Китая.%20Тип%20визы:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____"
+                 target="_blank" rel="noopener">Оформить</a>
+              <a class="btn link" href="/hrdirectkg/visas/china/">Требования по визе</a>
+            </div>
           </article>
 
+          <!-- UAE -->
           <article class="card">
             <div class="flag">🇦🇪</div>
-            <h3 style="margin:8px 0 0">ОАЭ (Дубай)</h3>
-            <div class="meta">Для спокойствия в поездке — и иногда для требований по документам.</div>
-            <a class="btn primary" href="/hrdirectkg/visas/dubai/">ОАЭ</a>
+            <h3 style="margin:8px 0 0">Страховка для ОАЭ (Дубай)</h3>
+            <div class="meta">
+              Часто берут для спокойствия в поездке. Иногда — под требования документов.
+            </div>
+            <div class="actionsRow">
+              <a class="btn primary"
+                 href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20ОАЭ.%20Даты:%20____%20Людей:%20____%20Возраст:%20____"
+                 target="_blank" rel="noopener">Оформить</a>
+              <a class="btn link" href="/hrdirectkg/visas/dubai/">Требования по визе</a>
+            </div>
           </article>
         </div>
 
         <div class="heroCard" style="margin-top:16px">
-          <strong>Чтобы мы оформили страховку быстро — напишите:</strong>
+          <strong>Чтобы оформить страховку быстро — напишите:</strong>
           <div class="points">
             <div class="point">• Страна / направление</div>
             <div class="point">• Даты поездки (с… по…)</div>
             <div class="point">• Кол-во людей и возраст (примерно)</div>
             <div class="point">• Цель: туризм / гости / бизнес</div>
           </div>
-        </div>
-
-        <div class="actionsRow">
-          <a class="btn primary"
-             href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка%20для%20визы.%20Страна:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____"
-             target="_blank" rel="noopener">Написать в WhatsApp</a>
-          <a class="btn" href="/hrdirectkg/visas/">Все визы</a>
-          <a class="btn" href="/hrdirectkg/contact/">Контакты</a>
+          <div class="actionsRow" style="margin-top:12px;">
+            <a class="btn primary"
+               href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка.%20Страна:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____%20Цель:%20____"
+               target="_blank" rel="noopener">Написать и оформить</a>
+            <a class="btn" href="/hrdirectkg/visas/">Если нужна ещё и виза</a>
+          </div>
         </div>
       </section>
     </div>
@@ -692,30 +734,30 @@
   </script>
 
   <!-- Floating WhatsApp -->
-<a class="wa"
-   href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20консультация.%20Услуга:%20Виза/Трудоустройство%20Страна:%20____%20Даты:%20____"
-   aria-label="WhatsApp"
-   target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
-  </svg>
-</a>
-  <a class="ig"
-   href="https://www.instagram.com/hrdirect_kg"
-   aria-label="Instagram"
-   target="_blank" rel="noopener">
+  <a class="wa"
+     href="https://wa.me/996990241949?text=Здравствуйте!%20Нужна%20страховка.%20Страна:%20____%20Даты:%20____%20Людей:%20____%20Возраст:%20____%20Цель:%20____"
+     aria-label="WhatsApp"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.46c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1.01 2.71 1.15 2.9.14.19 1.99 3.04 4.83 4.26.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27.7h-.01c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-4.02 1.05 1.07-3.92-.26-.4c-1.05-1.69-1.6-3.65-1.6-5.67 0-5.92 4.82-10.74 10.74-10.74 2.87 0 5.57 1.12 7.6 3.15 2.03 2.03 3.14 4.73 3.14 7.6 0 5.92-4.82 10.74-10.85 10.74zm9.18-19.92A12.33 12.33 0 0016.13 4C9.3 4 3.74 9.56 3.74 16.39c0 2.16.56 4.27 1.63 6.12L3.64 28.7l6.33-1.66a12.35 12.35 0 006.03 1.56h.01c6.83 0 12.39-5.56 12.39-12.39 0-3.31-1.29-6.43-3.2-8.43z"/>
+    </svg>
+  </a>
 
-  <svg viewBox="0 0 24 24">
-    <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 
-    0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 
-    2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 
-    3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 
-    1.34-3 3-3h10zm-5 3a5 5 0 100 
-    10 5 5 0 000-10zm0 2.2A2.8 
-    2.8 0 1112 14.8 2.8 2.8 0 
-    0112 9.2zM17.5 6a1 1 0 
-    100 2 1 1 0 000-2z"/>
-  </svg>
-</a>
+  <a class="ig"
+     href="https://www.instagram.com/hrdirect_kg"
+     aria-label="Instagram"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 
+      0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 
+      2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 
+      3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 
+      1.34-3 3-3h10zm-5 3a5 5 0 100 
+      10 5 5 0 000-10zm0 2.2A2.8 
+      2.8 0 1112 14.8 2.8 2.8 0 
+      0112 9.2zM17.5 6a1 1 0 
+      100 2 1 1 0 000-2z"/>
+    </svg>
+  </a>
 </body>
 </html>
